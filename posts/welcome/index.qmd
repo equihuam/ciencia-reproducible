@@ -1,11 +1,12 @@
 ---
-title: "Welcome To My Blog"
-author: "Tristan O'Malley"
-date: "2024-05-23"
-categories: [news]
+title: "Blog de Reproducibilidad Científica"
+author: "Miguel Equihua"
+date: "2024/05/23"
+lang: es
+categories: [inicio]
 ---
 
-This is the first post in a Quarto blog. Welcome!
+Este es un post inicial de Ciencia Reproducible
 
 ![](thumbnail.jpg)
 

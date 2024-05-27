@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "Acerca de"
 image: profile.jpg
 about:
   template: jolla
@@ -16,4 +16,4 @@ about:
 
 ---
 
-About this blog
+Este es un blog de ejemplo sobre como escribir para propiciar una ciencia más reproducible

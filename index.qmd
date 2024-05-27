@@ -1,5 +1,5 @@
 ---
-title: "ciencia-reproducible"
+title: "Por una Ciencia Reproducible"
 listing:
   contents: posts
   sort: "date desc"

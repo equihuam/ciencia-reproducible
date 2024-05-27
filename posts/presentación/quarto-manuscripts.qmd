@@ -2,6 +2,9 @@
 title: "Quarto for Reproducible Medical Manuscripts"
 author: "Mine Çetinkaya-Rundel"
 institute: "Duke University + Posit<br>{{< fa link >}} [mine.quarto.pub/quarto-manuscripts-rmed](https://mine.quarto.pub/quarto-manuscripts-rmed)"
+
+draft: true
+
 title-slide-attributes:
   data-background-image: "images/towfiqu-barbhuiya-KKHs1e2yiwc-unsplash.jpg"
   data-background-size: cover

@@ -4,7 +4,7 @@ author: "Miguel Equihua"
 lang: es
 date: "2024/05/26"
 date-format: "D [de] MMMM, YYYY"
-categories: [news, code, analysis]
+categories: [taller]
 image: "Poster-r-ciencia.png"
 format: 
   html:
@@ -29,6 +29,18 @@ El curso-taller se propone acercar al estudiante a la increíble evolución mund
 \
 ![](Poster-r-ciencia.png){width=88%}
 
+```{r}
+#| label: codigo_qr
+#| echo: false
+#| out-width: "40mm"
+#| fig-align: right
+
+library(qrcode)
+
+code <- qr_code("QR CODE")
+plot(code)
+```
+
 Los estudiantes aprenderán a producir reportes académicos en distintos formatos: páginas web, documento tipo Word&reg;, PDF, carteles, presentaciones e incluso artículos o libros. Todo esto sin que se requiera un conocimiento previo de **R** o **RStudio**. Lo haremos paso a paso y con un enfoque de _manos a la obra_. El estudiante podrá elegir los materiales, datos y textos que le interese ensayar.
 
 Las actividades se desarrollarán a lo largo de 4 semanas teórico prácticas. Habrá sesiones presenciales de 3 horas martes y jueves. El resto de la semana el estudiante desarrollará  actividades a su paso, con un carga de trabajo que se estima requerirá 9 horas adicionales cada semana.
@@ -49,9 +61,9 @@ El curso-taller abordará los siguientes temas:
   + docx
   + pptx
   + pdf
-+ Preparación de diapositivas para presentaciones
++ Diapositivas para presentaciones _Web_
 + Organización de múltiples documentos
-  + Sitio Web
+  + Sitio _Web_
   + Blog
   + Libro
 + Producción de manuscritos científicos
@@ -61,24 +73,13 @@ El curso-taller abordará los siguientes temas:
 ## Requisitos previos
 El estudiante tendrá familiaridad con el uso de computadoras y el uso de Internet. Para algunas de las actividades será provechoso tener cuentas activas en los servicios en línea Github (como sistema de control de versiones) y Netlify (para publicar blogs y sitios web personales). El estudiante tendrá que generar su cuenta personal en cada uno de estos servicios, se recomienda hacerlo con antelación.
 
-1.[Alta en Github.](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home)
-2.[Alta en Netlify.](https://app.netlify.com/signup)
+1. [Alta en Github.](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home)
+2. [Alta en Netlify.](https://app.netlify.com/signup)
 
 Para las actividades en clase se espera que tendrá ya instalado en su máquina el sistema de control de versiones **Git** (se sugiere [Github Desktop](https://docs.github.com/es/desktop)), el interprete del lenguaje de computo **R** y la interface de desarrollo **RStudio**. Las [instrucciones para estos dós últimos están aquí](https://posit.co/download/rstudio-desktop/), en el caso de ambiente _MS-Windows&reg;_ pueden usarse los siguientes enlaces:
  
  1. [Instalar Github Desktop](https://desktop.github.com/?ref_cta=download+desktop&ref_loc=about+github+desktop&ref_page=docs)
  2. [Instalar R](https://cran.rstudio.com/)
  3. [Instalar RStudio](https://download1.rstudio.org/electron/windows/RStudio-2024.04.1-748.exe)
-
-```{r}
-#| label: codigo_qr
-#| echo: false
-#| out-width: "40mm"
-
-library(qrcode)
-
-code <- qr_code("QR CODE")
-plot(code)
-```
 
 

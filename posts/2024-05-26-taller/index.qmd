@@ -4,21 +4,22 @@ author: "Miguel Equihua"
 lang: es
 date: "2024/05/26"
 date-format: "D [de] MMMM, YYYY"
-
 categories: [news, code, analysis]
 image: "Poster-r-ciencia.png"
 format: 
   html:
+    
     toc: true
     html-math-method: katex
     css: styles.css
-    
   pdf:
     toc: false
     date: 2024/05/26
     number-sections: false
     colorlinks: true
     papersize: letter
+editor_options: 
+  chunk_output_type: console
 ---
 
 Curso-taller para iniciarse en las habilidades que promueve la ciencia abierta. La apertura invita a ampliar la colaboración, pero  también la eficacia con la que se colabora Hay mucho que ya se puede hacer con el apoyo de Dropbox&reg;, GoogleDocs&reg; y con las mismas aplicaciones de Microsoft&reg; ¿Qué significa que esto esté ocurriendo? ¿Qué implicaciones podría tener sobre la forma como se hace y comunica la ciencia?
@@ -68,5 +69,16 @@ Para las actividades en clase se espera que tendrá ya instalado en su máquina 
  1. [Instalar Github Desktop](https://desktop.github.com/?ref_cta=download+desktop&ref_loc=about+github+desktop&ref_page=docs)
  2. [Instalar R](https://cran.rstudio.com/)
  3. [Instalar RStudio](https://download1.rstudio.org/electron/windows/RStudio-2024.04.1-748.exe)
+
+```{r}
+#| label: codigo_qr
+#| echo: false
+#| out-width: "40mm"
+
+library(qrcode)
+
+code <- qr_code("QR CODE")
+plot(code)
+```
 
 

@@ -1,0 +1,240 @@
+[
+  {
+    "objectID": "posts/2024-05-26-taller/index.html",
+    "href": "posts/2024-05-26-taller/index.html",
+    "title": "Una Nueva Manera de Escribir",
+    "section": "",
+    "text": "Curso-taller para iniciarse en las habilidades que promueve la ciencia abierta. La apertura invita a ampliar la colaboración, pero también la eficacia con la que se colabora Hay mucho que ya se puede hacer con el apoyo de Dropbox®, GoogleDocs® y con las mismas aplicaciones de Microsoft® ¿Qué significa que esto esté ocurriendo? ¿Qué implicaciones podría tener sobre la forma como se hace y comunica la ciencia?\nEl curso-taller se propone acercar al estudiante a la increíble evolución mundial de las capacidades de cómputo y de comunicación que ya está en marcha. No sólo porque cada vez hay mayores facilidades para colaborar, sino por la capacidad actual para producir documentos que combinan el texto con el procesamiento estadístico de datos y las gráficas resultantes. El que la secuencia completa datos→análisis→texto se pueda unificar, da todo un nuevo significado al proceso de comunicación en favor de la reproducibilidad científica.\nLos estudiantes aprenderán a producir reportes académicos en distintos formatos: páginas web, documento tipo Word®, PDF, carteles, presentaciones e incluso artículos o libros. Todo esto sin que se requiera un conocimiento previo de R o RStudio. Lo haremos paso a paso y con un enfoque de manos a la obra. El estudiante podrá elegir los materiales, datos y textos que le interese ensayar.\nLas actividades se desarrollarán a lo largo de 4 semanas teórico prácticas. Habrá sesiones presenciales de 3 horas martes y jueves. El resto de la semana el estudiante desarrollará actividades a su paso, con un carga de trabajo que se estima requerirá 9 horas adicionales cada semana.\nEl curso-taller abordará los siguientes temas:"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#simplest",
+    "href": "posts/presentación/quarto-manuscripts.html#simplest",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Simplest",
+    "text": "Simplest\nCan run all code in a single file, and don’t mind running it over and over again with each edit.\n\n\n\n \n\n\n\n \n\n\n\n\n\n\n\ne.g. Data Science 101 - HW 1, Stat 101 - Final project, a blog post, a tutorial, a not-too-extensive consulting report, etc."
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#simple",
+    "href": "posts/presentación/quarto-manuscripts.html#simple",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Simple",
+    "text": "Simple\nCan run all code in a single file, and don’t mind running it over and over again with each edit, and need an output that conforms to journal style.\n\n\n\n \n+ Quarto Journal Articles Extension\n\n\n\n \n\n\n\n or \n\n\nformatted with journal style\n\n\n\ne.g., a not-too-computational journal article."
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#but-science-is-rarely-simple",
+    "href": "posts/presentación/quarto-manuscripts.html#but-science-is-rarely-simple",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "but science is rarely simple…",
+    "text": "but science is rarely simple…\n\n\nmultiple collaborators, each with their favorite computing language and code editor\nmultiple stages of a project, each with their own level of feasibility of what can be re-run with each edit and what needs to be cached"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#more-complex",
+    "href": "posts/presentación/quarto-manuscripts.html#more-complex",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "More complex",
+    "text": "More complex\n\n\n\n\n\n\n\n\n   \n\n\n\n\n \n\n\n\n or"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#even-more-complex",
+    "href": "posts/presentación/quarto-manuscripts.html#even-more-complex",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Even more complex",
+    "text": "Even more complex\n\n\n\n\n      \n \n\n\n\n \n\n\n\n or"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#aside-what-is-in-a-notebook",
+    "href": "posts/presentación/quarto-manuscripts.html#aside-what-is-in-a-notebook",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Aside: What is in a notebook?",
+    "text": "Aside: What is in a notebook?\nA notebook is a document that contains both code and narrative:\n\nJupyter notebooks (.ipynb)\nQuarto documents (.qmd) – a potential mindshift"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#current-state-of-affairs",
+    "href": "posts/presentación/quarto-manuscripts.html#current-state-of-affairs",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Current state of affairs",
+    "text": "Current state of affairs\nMost computational science is born in notebooks\n\n\nPeer-review and publication workflows don’t support notebooks as research outputs\nThe more complex scenarios involve a lot of manual finagling to bring the project to journal submission stage\nOften during this process reproducibility is lost, or takes second seat to the formatting requirements\nFinal submission rarely captures all computations, which are, at best, relegated to supplementary materials\n\n\nand dies ends in PDF or Word documents"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#section",
+    "href": "posts/presentación/quarto-manuscripts.html#section",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "",
+    "text": "More at https://data.agu.org/notebooks-now.\n\n\nCaprarelli, Graziella, et al. “Notebooks Now! The Future of Reproducible Research.” Earth and Space Science 10.12 (2023): e2023EA003458. https://doi.org/10.1029/2023EA003458."
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#roadmap-to-fully-reproducible-scientific-manuscripts",
+    "href": "posts/presentación/quarto-manuscripts.html#roadmap-to-fully-reproducible-scientific-manuscripts",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Roadmap to fully reproducible scientific manuscripts",
+    "text": "Roadmap to fully reproducible scientific manuscripts\nthat are not just PDFs that are the outputs of a single qmd file\n\n An end-to-end scholarly publishing workflow that treats Jupyter and Quarto notebooks as a primary element of the scientific record.\n\n\n A publication process that elevates transparent and reproducible work by authors, where data and software, together with narrative, are documented, shared, and archived.\n\n\n New forms of credit to the wider research community, including research software engineers."
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#quarto-can",
+    "href": "posts/presentación/quarto-manuscripts.html#quarto-can",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Quarto can…",
+    "text": "Quarto can…\n\n\nbe authored in your favorite code editor\nrender from qmd or Jupyter notebook to PDF, Word, HTML, etc.\nexecute code in R, Python, and more\napply journal styles to your outputs with Quarto extensions\npublish to GitHub Pages, Netlify, and more\norchestrate multiple inputs and outputs with Quarto projects\norchestrate multiple inputs and outputs with embedded computing using a new Quarto project type: manuscript"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#quarto-manuscript",
+    "href": "posts/presentación/quarto-manuscripts.html#quarto-manuscript",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Quarto manuscript",
+    "text": "Quarto manuscript\nQuarto manuscripts (Quarto 1.4+), in addition to doing everything you can do with journal articles, can\n\nproduce manuscripts in multiple formats (including LaTeX or MS Word formats required by journals), and give readers easy access to all of the formats through a website\npublish computations from one or more notebooks alongside the manuscript, allowing readers to dive into your code and view it or interact with it in a virtual environment"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#getting-started",
+    "href": "posts/presentación/quarto-manuscripts.html#getting-started",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Getting started",
+    "text": "Getting started\n\nApproach 1: Start from scratch\n\nCreating a Quarto manuscript\n\nRStudio: New Project &gt; New Directory &gt; Quarto Manuscript\nquarto create project manuscript &lt;name&gt;\n\nAdd manuscript content\n\nApproach 2: Start with a sample from https://quarto.org/docs/manuscripts\n\n\n\n\n\n\n\nManuscripts ♥️ Git + GitHub\n\n\nTrack your project with Git and host on GitHub for easy publishing."
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#create-a-new-project",
+    "href": "posts/presentación/quarto-manuscripts.html#create-a-new-project",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Create a new project",
+    "text": "Create a new project\n\n\nTerminal\n\nquarto create project manuscript indo-rct\n\n\nCreating project at /Users/mine/indo-rct:\n  - Created _quarto.yml\n  - Created index.qmd\n  - Created references.bib\n ? Open With\n   vscode\n ❯ rstudio\n   (don't open)"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#manuscript-project-in-rstudio",
+    "href": "posts/presentación/quarto-manuscripts.html#manuscript-project-in-rstudio",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Manuscript project in RStudio",
+    "text": "Manuscript project in RStudio"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#manuscript-project-_quarto.yml",
+    "href": "posts/presentación/quarto-manuscripts.html#manuscript-project-_quarto.yml",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Manuscript project _quarto.yml",
+    "text": "Manuscript project _quarto.yml\n\n\n_quarto.yml\n\nproject:\n  type: manuscript\n\nmanuscript:\n  article: index.qmd\n\nformat:\n  html:\n    comments:\n      hypothesis: true\n  docx: default\n  jats: default\n\n  # (other formats)\n  # pdf: default\n\nexecute:\n  freeze: true"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#a-finished-product",
+    "href": "posts/presentación/quarto-manuscripts.html#a-finished-product",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "A finished product",
+    "text": "A finished product"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#multiple-formats-from-one-source",
+    "href": "posts/presentación/quarto-manuscripts.html#multiple-formats-from-one-source",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Multiple formats from one source",
+    "text": "Multiple formats from one source"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#multiple-formats-from-one-source-1",
+    "href": "posts/presentación/quarto-manuscripts.html#multiple-formats-from-one-source-1",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Multiple formats from one source",
+    "text": "Multiple formats from one source\nIn quarto.yml of the project:\n\n\n_quarto.yml\n\nformat:\n  html:\n    comments:\n      hypothesis: true\n  docx: default\n  jats: default\n  plos-pdf:\n    keep-tex: true"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#rich-front-matter",
+    "href": "posts/presentación/quarto-manuscripts.html#rich-front-matter",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Rich front matter",
+    "text": "Rich front matter\nIn index.qmd of the project:\n\n\nindex.qmd\n\ntitle: A Randomized Trial of Rectal Indomethacin to Prevent Post-ERCP Pancreatitis\nsubtitle: Reproduction\nauthors:\n  - name: B. Joseph Elmunzer, M.D.\n    affiliation: University of Michigan Medical Center\n    roles: writing\n    corresponding: true\n  - name: James M. Scheiman, M.D.\n    affiliation: University of Michigan Medical Center\n  - name: Glen A. Lehman, M.D.\n    affiliation:  Indiana University Medical Center\n  - name: Amitabh Chak, M.D.\n    affiliation: University Hospitals Case Medical Center\n  - name: Patrick Mosler, M.D., Ph.D.\n    affiliation: University of Kentucky Medical Center\n  - name: Peter D.R. Higgins, M.D., Ph.D.\n    affiliation: University of Michigan Medical Center\n    orcid: 0000-0003-1602-4341\n    email: phiggins@umich.edu\n  - name: Rodney A. Hayward, M.D.\n    affiliation: University of Michigan Medical Center\n  - name: Joseph Romagnuolo, M.D.\n    affiliation: Medical University of South Carolina\n  - name: Grace H. Elta, M.D.\n    affiliation: University of Michigan Medical Center\n  - name: Stuart Sherman, M.D.\n    affiliation:  Indiana University Medical Center\n  - name: Akbar K. Waljee, M.D.\n    affiliation: University of Michigan Medical Center\n  - name: Aparna Repaka, M.D.\n    affiliation: University Hospitals Case Medical Center\n  - name: Matthew R. Atkinson, M.D.\n    affiliation: University Hospitals Case Medical Center\n  - name: Gregory A. Cote, M.D.\n    affiliation:  Indiana University Medical Center\n  - name: Richard S. Kwon, M.D.\n    affiliation: University of Michigan Medical Center\n  - name: Lee McHenry, M.D.\n    affiliation:  Indiana University Medical Center\n  - name: Cyrus R. Piraka, M.D.\n    affiliation: University of Michigan Medical Center\n  - name: Erik J. Wamsteker, M.D.\n    affiliation: University of Michigan Medical Center\n  - name: James L. Watkins, M.D.\n    affiliation:  Indiana University Medical Center\n  - name: Sheryl J. Korsnes, M.A.\n    affiliation: University of Michigan Medical Center\n  - name: Suzette E. Schmidt, B.S.N., C.C.R.P.\n    affiliation:  Indiana University Medical Center\n  - name: Sarah M. Turner, B.S.\n    affiliation: University of Kentucky Medical Center\n  - name: Sylvia Nicholson, C.C.R.C.\n    affiliation: University of Kentucky Medical Center\n  - name: Evan L. Fogel, M.D.\n    affiliation:  Indiana University Medical Center\nbibliography: references.bib\nabstract: |\n  **BACKGROUND**\n  Preliminary research suggests that rectally administered nonsteroidal antiinflammatory drugs may reduce the incidence of pancreatitis after endoscopic retrograde cholangiopancreatography (ERCP).\n  \n  **METHODS**\n  In this multicenter, randomized, placebo-controlled, double-blind clinical trial, we assigned patients at elevated risk for post-ERCP pancreatitis to receive a single dose of rectal indomethacin or placebo immediately after ERCP. Patients were determined to be at high risk on the basis of validated patient- and procedure-related risk factors. The primary outcome was post-ERCP pancreatitis, which was defined as new upper abdominal pain, an elevation in pancreatic enzymes to at least three times the upper limit of the normal range 24 hours after the procedure, and hospitalization for at least 2 nights.\n  \n  **RESULTS**\n  A total of 602 patients were enrolled and completed follow-up. The majority of patients (82%) had a clinical suspicion of sphincter of Oddi dysfunction. Post-ERCP pancreatitis developed in 27 of 295 patients (9.2%) in the indomethacin group and in 52 of 307 patients (16.9%) in the placebo group (P=0.005). Moderate-to-severe pancreatitis developed in 13 patients (4.4%) in the indomethacin group and in 27 patients (8.8%) in the placebo group (P=0.03).\n  \n  **CONCLUSIONS**\n  Among patients at high risk for post-ERCP pancreatitis, rectal indomethacin significantly reduced the incidence of the condition. (Funded by the National Institutes of Health; ClinicalTrials.gov number, NCT00820612. opens in new tab.)"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#rich-front-matter-1",
+    "href": "posts/presentación/quarto-manuscripts.html#rich-front-matter-1",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Rich front matter",
+    "text": "Rich front matter\nfrom source \\(\\rightarrow\\) only relevant / required metadata in manuscript:"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#rich-front-matter-2",
+    "href": "posts/presentación/quarto-manuscripts.html#rich-front-matter-2",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Rich front matter",
+    "text": "Rich front matter\nfrom source \\(\\rightarrow\\) only relevant / required metadata in manuscript:"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#embedded-computations",
+    "href": "posts/presentación/quarto-manuscripts.html#embedded-computations",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Embedded computations",
+    "text": "Embedded computations"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#everything-you-love",
+    "href": "posts/presentación/quarto-manuscripts.html#everything-you-love",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Everything you love…",
+    "text": "Everything you love…\nabout authoring Quarto documents in RStudio\n\n A brief demo"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#actually-dive-into-the-code",
+    "href": "posts/presentación/quarto-manuscripts.html#actually-dive-into-the-code",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Actually dive into the code",
+    "text": "Actually dive into the code\n\n\nWe’ve seen that you can peruse the code underlying the figures and tables in the manuscript\nWhat if you wanted to interact with the code – in a computational environment that’s just a click away and that has all the software and packages needed to reproduce the manuscript?"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#back-in-2019",
+    "href": "posts/presentación/quarto-manuscripts.html#back-in-2019",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Back in 2019…",
+    "text": "Back in 2019…"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#binder-with-quarto",
+    "href": "posts/presentación/quarto-manuscripts.html#binder-with-quarto",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Binder with Quarto",
+    "text": "Binder with Quarto\nwith quarto use binder:"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#binder-with-quarto-1",
+    "href": "posts/presentación/quarto-manuscripts.html#binder-with-quarto-1",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Binder with Quarto",
+    "text": "Binder with Quarto\n ## Binder with Quarto"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#rewind-and-get-started-again",
+    "href": "posts/presentación/quarto-manuscripts.html#rewind-and-get-started-again",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Rewind,and get started again",
+    "text": "Rewind,and get started again\n https://quarto.org/docs/manuscripts"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#before-i-wrap-up",
+    "href": "posts/presentación/quarto-manuscripts.html#before-i-wrap-up",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Before I wrap up…",
+    "text": "Before I wrap up…\n\nR/Medicine 2024\nJune 10-14, 2024 (Virtual)\nAbstract submissions at rconsortium.github.io/RMedicine_website"
+  },
+  {
+    "objectID": "posts/presentación/quarto-manuscripts.html#thank-you",
+    "href": "posts/presentación/quarto-manuscripts.html#thank-you",
+    "title": "Quarto for Reproducible Medical Manuscripts",
+    "section": "Thank you!",
+    "text": "Thank you!\nSlides:\n mine.quarto.pub/quarto-manuscripts-rmed\n github.com/mine-cetinkaya-rundel/quarto-manuscripts-rmed\nManuscript:\n mine-cetinkaya-rundel.github.io/indo-rct\n github.com/mine-cetinkaya-rundel/indo-rct"
+  },
+  {
+    "objectID": "posts/2024-05-26-taller/index.html#requisitos-previos",
+    "href": "posts/2024-05-26-taller/index.html#requisitos-previos",
+    "title": "Una Nueva Manera de Escribir",
+    "section": "Requisitos previos",
+    "text": "Requisitos previos\nEl estudiante tendrá familiaridad con el uso de computadoras y el uso de Internet. Para algunas de las actividades será provechoso tener cuentas activas en los servicios en línea Github (como sistema de control de versiones) y Netlify (para publicar blogs y sitios web personales). El estudiante tendrá que generar su cuenta personal en cada uno de estos servicios, y o podrá hacer con antelación.\n1.Alta en Github. 2.Alta en Netlify.\nTendrá ya instalado en su máquina el sistema de control de versiones Git, el interprete del lenguaje de computo R y la interface de desarrollo RStudio. Las instrucciones para hacerlo están aquí, en el caso de ambiente MS-Windows®:\n\nInstalar Github Desktop\nInstalar R\nInstalar RStudio"
+  }
+]

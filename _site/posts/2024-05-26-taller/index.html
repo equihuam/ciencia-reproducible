@@ -40,6 +40,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -163,7 +166,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="no-row-height column-margin column-container"><div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/codigo_qr_html-1.png" class="img-fluid figure-img" style="width:40mm"></p>
+<p><a href="index_files/figure-html/codigo_qr_html-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="index_files/figure-html/codigo_qr_html-1.png" class="img-fluid figure-img" style="width:40mm"></a></p>
 </figure>
 </div>
 </div></div></div>
@@ -172,10 +175,10 @@ ul.task-list li input[type="checkbox"] {
 </p>
 <div class="quarto-figure quarto-figure-right">
 <figure class="figure">
-<p><img src="Poster-r-ciencia.png" class="img-fluid quarto-figure quarto-figure-right figure-img" style="width:79.0%" data-fig-pos="h"></p>
+<p><a href="Poster-r-ciencia.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="Poster-r-ciencia.png" class="img-fluid quarto-figure quarto-figure-right figure-img" style="width:79.0%" data-fig-pos="h"></a></p>
 </figure>
 </div>
-<p>Los estudiantes aprenderán a producir reportes académicos en distintos formatos: páginas web, documento tipo Word®, PDF, carteles, presentaciones e incluso artículos o libros. Todo esto sin que se requiera un conocimiento previo de <strong>R</strong> o <strong>RStudio</strong>. Lo haremos paso a paso y con un enfoque de <em>manos a la obra</em>. El estudiante podrá elegir los materiales, datos y textos que le interese ensayar.</p>
+<p>Los estudiantes aprenderán a producir reportes académicos en distintos formatos: páginas web, documentos tipo Word®, PDF, carteles, presentaciones e incluso artículos o libros. Todo esto sin que se requiera un conocimiento previo de <strong>R</strong> o <strong>RStudio</strong>. Lo haremos paso a paso y con un enfoque de <em>manos a la obra</em>. El estudiante podrá elegir los materiales, datos y textos que le interese ensayar.</p>
 <p>Las actividades se desarrollarán a lo largo de 4 semanas teórico prácticas. Habrá sesiones presenciales de 3 horas martes y jueves. El resto de la semana el estudiante desarrollará actividades a su paso, con un carga de trabajo que se estima requerirá 9 horas adicionales cada semana.</p>
 <p>El curso-taller abordará los siguientes temas:</p>
 <ul>
@@ -209,18 +212,18 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <section id="requisitos-previos" class="level2">
 <h2 class="anchored" data-anchor-id="requisitos-previos">Requisitos previos</h2>
-<p>El estudiante tiene familiaridad con el uso de computadoras y el uso de Internet. Para algunas de las actividades será provechoso tener cuentas activas en los servicios en línea <strong>Github</strong> (como sistema de control de versiones) y <strong>Netlify</strong> (para publicar blogs y sitios web personales). El estudiante tendrá que generar su cuenta personal en cada uno de estos servicios, se recomienda hacerlo con antelación.</p>
+<p>El estudiante tiene familiaridad con el uso de computadoras y el uso de Internet. Para algunas de las actividades será provechoso tener cuentas activas en los servicios en línea <strong>Github</strong> (como sistema de control de versiones) y <strong>Netlify</strong> (para publicar blogs y sitios web personales). El estudiante tendrá que generar su cuenta personal en cada uno de estos servicios. Se recomienda hacerlo con antelación.</p>
 <ol type="1">
 <li><a href="https://github.com/signup?ref_cta=Sign+up&amp;ref_loc=header+logged+out&amp;ref_page=%2F&amp;source=header-home">Alta en Github.</a></li>
 <li><a href="https://app.netlify.com/signup">Alta en Netlify.</a></li>
 </ol>
-<p>Para las actividades en clase se espera que tendrá ya instalado en su máquina el sistema de control de versiones <strong>Git</strong> (se sugiere <a href="https://docs.github.com/es/desktop">Github Desktop</a>), el interprete del lenguaje de computo <strong>R</strong> y la interface de desarrollo <strong>RStudio</strong>. Las <a href="https://posit.co/download/rstudio-desktop/">instrucciones para estos dós últimos están aquí</a>, en el caso de ambiente <em>MS-Windows®</em> pueden usarse los siguientes enlaces:</p>
+<p>Para las actividades en clase se espera que tendrá ya instalado en su máquina el sistema de control de versiones <strong>Git</strong> (se sugiere utiliizar <a href="https://docs.github.com/es/desktop">Github Desktop</a>), el interprete del lenguaje de computo <strong>R</strong> y la interface de desarrollo <strong>RStudio</strong>. Las <a href="https://posit.co/download/rstudio-desktop/">instrucciones para estos dós últimos están aquí</a>, en el caso de ambiente <em>MS-Windows®</em> pueden usarse los siguientes enlaces:</p>
 <ol type="1">
 <li><a href="https://desktop.github.com/?ref_cta=download+desktop&amp;ref_loc=about+github+desktop&amp;ref_page=docs">Instalar Github Desktop</a></li>
 <li><a href="https://cran.rstudio.com/">Instalar R</a></li>
 <li><a href="https://download1.rstudio.org/electron/windows/RStudio-2024.04.1-748.exe">Instalar RStudio</a></li>
 </ol>
-<p>Si interesa verificar la publicación Web de documentos hay que preveer que no estén bloqueados en el <em>Firewall</em> de la institución los sitios con terminación <code>.netlify.app</code>, pues es la que utilizará el servicio <strong>Netlify</strong> por defecto.</p>
+<p>Si interesa verificar la publicación Web de documentos hay que prever que no estén bloqueados en el <em>Firewall</em> de la institución los sitios con terminación <code>.netlify.app</code>, pues es la que utilizará el servicio <strong>Netlify</strong> por defecto.</p>
 
 
 </section>
@@ -636,6 +639,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

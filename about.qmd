@@ -1,6 +1,6 @@
 ---
 title: "Acerca de"
-image: profile.jpg
+image: lonely.jpg
 about:
   template: jolla
   links:
@@ -10,4 +10,4 @@ about:
 
 ---
 
-Este es un blog de ejemplo sobre como escribir para propiciar una ciencia más reproducible
+Este es un blog de reflexión sobre actitudes que conviene cultivar y formas como se puede escribir para propiciar una ciencia más reproducible

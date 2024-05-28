@@ -34,15 +34,16 @@ Curso-taller para iniciarse en las habilidades que promueve la ciencia abierta. 
 
 library(qrcode)
 
-code <- qr_code("QR CODE")
+code <- qr_code("https://ciencia-reproducible.netlify.app/")
 plot(code, col = c("white", "#2268bb"))
 ```
 :::
 
 El curso-taller se propone acercar al estudiante a la increíble evolución mundial de las capacidades de cómputo y de comunicación que ya está en marcha. No sólo porque cada vez hay mayores facilidades para colaborar, sino por la capacidad actual para producir documentos que combinan el texto con el procesamiento estadístico de datos y las gráficas resultantes. El que la secuencia completa **datos&rarr;análisis&rarr;texto** se pueda unificar, da todo un nuevo significado al proceso de comunicación en favor de la _reproducibilidad_ científica. 
 
+\
 
-![](Poster-r-ciencia.png){width=88%}
+![](Poster-r-ciencia.png){fig-pos='h' width=79% fig-align="right"}
 
 Los estudiantes aprenderán a producir reportes académicos en distintos formatos: páginas web, documento tipo Word&reg;, PDF, carteles, presentaciones e incluso artículos o libros. Todo esto sin que se requiera un conocimiento previo de **R** o **RStudio**. Lo haremos paso a paso y con un enfoque de _manos a la obra_. El estudiante podrá elegir los materiales, datos y textos que le interese ensayar.
 
@@ -86,6 +87,7 @@ Para las actividades en clase se espera que tendrá ya instalado en su máquina 
  2. [Instalar R](https://cran.rstudio.com/)
  3. [Instalar RStudio](https://download1.rstudio.org/electron/windows/RStudio-2024.04.1-748.exe)
 
+Si interesa verificar la publicación Web de documentos hay que preveer que no estén bloqueados en el _Firewall_ de la institución los sitios con terminación `.netlify.app`, pues es la que utilizará el servicio **Netlify** por defecto.
 
 ::: {.content-visible when-format="pdf"}
 ```{r}
@@ -96,7 +98,7 @@ Para las actividades en clase se espera que tendrá ya instalado en su máquina 
 
 library(qrcode)
 
-code <- qr_code("QR CODE")
+code <- qr_code("https://ciencia-reproducible.netlify.app/")
 plot(code, col = c("white", "#2268bb"))
 ```
 :::

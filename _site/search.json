@@ -18,7 +18,7 @@
     "href": "posts/2024-05-26-taller/index.html#requisitos-previos",
     "title": "Una Nueva Manera de Escribir",
     "section": "Requisitos previos",
-    "text": "Requisitos previos\nEl estudiante tendrá familiaridad con el uso de computadoras y el uso de Internet. Para algunas de las actividades será provechoso tener cuentas activas en los servicios en línea Github (como sistema de control de versiones) y Netlify (para publicar blogs y sitios web personales). El estudiante tendrá que generar su cuenta personal en cada uno de estos servicios, se recomienda hacerlo con antelación.\n\nAlta en Github.\nAlta en Netlify.\n\nPara las actividades en clase se espera que tendrá ya instalado en su máquina el sistema de control de versiones Git (se sugiere Github Desktop), el interprete del lenguaje de computo R y la interface de desarrollo RStudio. Las instrucciones para estos dós últimos están aquí, en el caso de ambiente MS-Windows® pueden usarse los siguientes enlaces:\n\nInstalar Github Desktop\nInstalar R\nInstalar RStudio"
+    "text": "Requisitos previos\nEl estudiante tiene familiaridad con el uso de computadoras y el uso de Internet. Para algunas de las actividades será provechoso tener cuentas activas en los servicios en línea Github (como sistema de control de versiones) y Netlify (para publicar blogs y sitios web personales). El estudiante tendrá que generar su cuenta personal en cada uno de estos servicios, se recomienda hacerlo con antelación.\n\nAlta en Github.\nAlta en Netlify.\n\nPara las actividades en clase se espera que tendrá ya instalado en su máquina el sistema de control de versiones Git (se sugiere Github Desktop), el interprete del lenguaje de computo R y la interface de desarrollo RStudio. Las instrucciones para estos dós últimos están aquí, en el caso de ambiente MS-Windows® pueden usarse los siguientes enlaces:\n\nInstalar Github Desktop\nInstalar R\nInstalar RStudio"
   },
   {
     "objectID": "about.html",
@@ -32,6 +32,6 @@
     "href": "index.html",
     "title": "Por una Ciencia Reproducible",
     "section": "",
-    "text": "Una Nueva Manera de Escribir\n\n\n\n\n\n\ntaller\n\n\n\n\n\n\n\n\n\nMay 26, 2024\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nBlog de Reproducibilidad Científica\n\n\n\n\n\n\ninicio\n\n\n\n\n\n\n\n\n\nMay 23, 2024\n\n\nMiguel Equihua\n\n\n\n\n\n\nNo matching items"
+    "text": "Una Nueva Manera de Escribir\n\n\n\n\n\n\ntaller\n\n\n\n\n\n\n\n\n\n26 may 2024\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nBlog de Reproducibilidad Científica\n\n\n\n\n\n\ninicio\n\n\n\n\n\n\n\n\n\n23 may 2024\n\n\nMiguel Equihua\n\n\n\n\n\n\nNo hay resultados"
   }
 ]

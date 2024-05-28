@@ -6,9 +6,9 @@ date: "2024/05/26"
 date-format: "D [de] MMMM, YYYY"
 categories: [taller]
 image: "Poster-r-ciencia.png"
+
 format: 
   html:
-    
     toc: true
     html-math-method: katex
     css: styles.css
@@ -18,33 +18,37 @@ format:
     number-sections: false
     colorlinks: true
     papersize: letter
+    
 editor_options: 
   chunk_output_type: console
 ---
 
 Curso-taller para iniciarse en las habilidades que promueve la ciencia abierta. La apertura invita a ampliar la colaboración, pero  también la eficacia con la que se colabora Hay mucho que ya se puede hacer con el apoyo de Dropbox&reg;, GoogleDocs&reg; y con las mismas aplicaciones de Microsoft&reg; ¿Qué significa que esto esté ocurriendo? ¿Qué implicaciones podría tener sobre la forma como se hace y comunica la ciencia?
 
-El curso-taller se propone acercar al estudiante a la increíble evolución mundial de las capacidades de cómputo y de comunicación que ya está en marcha. No sólo porque cada vez hay mayores facilidades para colaborar, sino por la capacidad actual para producir documentos que combinan el texto con el procesamiento estadístico de datos y las gráficas resultantes. El que la secuencia completa **datos&rarr;análisis&rarr;texto** se pueda unificar, da todo un nuevo significado al proceso de comunicación en favor de la _reproducibilidad_ científica. 
-
-\
-![](Poster-r-ciencia.png){width=88%}
-
+::: {.content-visible when-format="html"}
 ```{r}
-#| label: codigo_qr
+#| label: codigo_qr_html
 #| echo: false
 #| out-width: "40mm"
-#| fig-align: right
+#| column: margin
 
 library(qrcode)
 
 code <- qr_code("QR CODE")
-plot(code)
+plot(code, col = c("white", "#2268bb"))
 ```
+:::
+
+El curso-taller se propone acercar al estudiante a la increíble evolución mundial de las capacidades de cómputo y de comunicación que ya está en marcha. No sólo porque cada vez hay mayores facilidades para colaborar, sino por la capacidad actual para producir documentos que combinan el texto con el procesamiento estadístico de datos y las gráficas resultantes. El que la secuencia completa **datos&rarr;análisis&rarr;texto** se pueda unificar, da todo un nuevo significado al proceso de comunicación en favor de la _reproducibilidad_ científica. 
+
+
+![](Poster-r-ciencia.png){width=88%}
 
 Los estudiantes aprenderán a producir reportes académicos en distintos formatos: páginas web, documento tipo Word&reg;, PDF, carteles, presentaciones e incluso artículos o libros. Todo esto sin que se requiera un conocimiento previo de **R** o **RStudio**. Lo haremos paso a paso y con un enfoque de _manos a la obra_. El estudiante podrá elegir los materiales, datos y textos que le interese ensayar.
 
 Las actividades se desarrollarán a lo largo de 4 semanas teórico prácticas. Habrá sesiones presenciales de 3 horas martes y jueves. El resto de la semana el estudiante desarrollará  actividades a su paso, con un carga de trabajo que se estima requerirá 9 horas adicionales cada semana.
 
+ 
 El curso-taller abordará los siguientes temas: 
 
 + ¿Ciencia abierta y reproducibilidad?
@@ -71,7 +75,7 @@ El curso-taller abordará los siguientes temas:
 
 
 ## Requisitos previos
-El estudiante tendrá familiaridad con el uso de computadoras y el uso de Internet. Para algunas de las actividades será provechoso tener cuentas activas en los servicios en línea Github (como sistema de control de versiones) y Netlify (para publicar blogs y sitios web personales). El estudiante tendrá que generar su cuenta personal en cada uno de estos servicios, se recomienda hacerlo con antelación.
+El estudiante tiene familiaridad con el uso de computadoras y el uso de Internet. Para algunas de las actividades será provechoso tener cuentas activas en los servicios en línea **Github** (como sistema de control de versiones) y **Netlify** (para publicar blogs y sitios web personales). El estudiante tendrá que generar su cuenta personal en cada uno de estos servicios, se recomienda hacerlo con antelación.
 
 1. [Alta en Github.](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home)
 2. [Alta en Netlify.](https://app.netlify.com/signup)
@@ -83,3 +87,16 @@ Para las actividades en clase se espera que tendrá ya instalado en su máquina 
  3. [Instalar RStudio](https://download1.rstudio.org/electron/windows/RStudio-2024.04.1-748.exe)
 
 
+::: {.content-visible when-format="pdf"}
+```{r}
+#| label: codigo_qr_pdf
+#| echo: false
+#| out-width: "50mm"
+#| fig-align: center
+
+library(qrcode)
+
+code <- qr_code("QR CODE")
+plot(code, col = c("white", "#2268bb"))
+```
+:::

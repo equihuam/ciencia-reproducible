@@ -1,6 +1,8 @@
 project:
   type: website
 
+lang: es
+
 website:
   title: "Ciencia Abierta"
   navbar:
@@ -12,6 +14,12 @@ format:
   html:
     theme: cosmo
     css: styles.css
+  pdf: 
+    toc: false
+    number-sections: false
+    colorlinks: true
+    papersize: letter
+
 
 execute: 
   freeze: true

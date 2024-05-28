@@ -78,9 +78,6 @@ El curso-taller abordará los siguientes temas:
 
 
 \
-\
-
-## Las fechas
 
 ::: {layout="[-1,3,-1]"}
 
@@ -90,7 +87,7 @@ El curso-taller abordará los siguientes temas:
 |julio| 3-5 |
 |julio|8-10 |
 |agosto |1-2 y 5-9|
-: {.striped .hover tbl-colwidths="[40,25]"}
+: Las fechas {.striped .hover tbl-colwidths="[40,25]"}
 
 :::
 

@@ -67,19 +67,18 @@ El curso-taller abordará los siguientes temas:
     -   Leer datos desde distintos orígenes: *Excel®*, *Google Sheets®*, *OneCloud®*
     -   Colaboración y control de versiones
     -   Publicación en línea.
--   Tematica 3
     -   Producción de textos en diversos formatos:
         -   html
         -   docx
         -   pptx
         -   pdf
--   Tematica 4
+-   Tematica 3
     -   Diapositivas para presentaciones *Web*
--   Tematica 5
+-   Tematica 4
     -   Organización de múltiples documentos
         -   Sitio *Web*
         -   Blog
--   Tematica 6
+-   Tematica 5
     -   Producción científica
         -   Libros
         -   Manuscritos
@@ -103,7 +102,7 @@ El curso-taller abordará los siguientes temas:
 
 ## Actividades presenciales
 
-Las sesiones presenciales se realizarán de 10-13hrs de acuerdo con el siguiente calendario.
+Las sesiones presenciales se llevarán a cabo en el **Aula 9** (por confirmar). Se desarrollarán de 10-13hrs de acuerdo con el siguiente calendario.
 
 \
 ```{r}

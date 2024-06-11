@@ -98,6 +98,11 @@ El curso-taller abordará los siguientes temas:
 :::
 -->
 
+\
+
+Las sesiones presenciales se realizarán de 10-13hrs de acuerdo con el siguiente calendario.
+
+\
 ```{r}
 #| label: calendario
 #| echo: false

@@ -11,7 +11,7 @@
     "href": "posts/2024-05-26-taller/index.html",
     "title": "Una Nueva Manera de Escribir",
     "section": "",
-    "text": "Curso-taller para iniciarse en las habilidades que promueve la ciencia abierta. La apertura invita a ampliar la colaboración, pero también la eficacia con la que se colabora Hay mucho que ya se puede hacer con el apoyo de Dropbox®, GoogleDocs® y con las mismas aplicaciones de Microsoft® ¿Qué significa que esto esté ocurriendo? ¿Qué implicaciones podría tener sobre la forma como se hace y comunica la ciencia?\nEl curso-taller se propone acercar al estudiante a la increíble evolución mundial de las capacidades de cómputo y de comunicación que ya está en marcha. No sólo porque cada vez hay mayores facilidades para colaborar, sino por la capacidad actual para producir documentos que combinan el texto con el procesamiento estadístico de datos y las gráficas resultantes. El que la secuencia completa datos→análisis→texto se pueda unificar, da todo un nuevo significado al proceso de comunicación en favor de la reproducibilidad científica.\nLos estudiantes aprenderán a producir reportes académicos en distintos formatos: páginas web, documentos tipo Word®, PDF, carteles, presentaciones e incluso artículos o libros. Todo esto sin que se requiera un conocimiento previo de R o RStudio. Lo haremos paso a paso y con un enfoque de manos a la obra. El estudiante podrá elegir los materiales, datos y textos que le interese ensayar.\nLas actividades se desarrollarán a lo largo de 4 semanas teórico prácticas. Habrá sesiones presenciales de 3 horas martes y jueves. El resto de la semana el estudiante desarrollará actividades a su paso, con un carga de trabajo que se estima requerirá 9 horas adicionales cada semana.\nEl curso-taller abordará los siguientes temas:"
+    "text": "Curso-taller para iniciarse en las habilidades que promueve la ciencia abierta. La apertura invita a ampliar la colaboración, pero también la eficacia con la que se colabora Hay mucho que ya se puede hacer con el apoyo de Dropbox®, GoogleDocs® y con las mismas aplicaciones de Microsoft® ¿Qué significa que esto esté ocurriendo? ¿Qué implicaciones podría tener sobre la forma como se hace y comunica la ciencia?\nEl curso-taller se propone acercar al estudiante a la increíble evolución mundial de las capacidades de cómputo y de comunicación que ya está en marcha. No sólo porque cada vez hay mayores facilidades para colaborar, sino por la capacidad actual para producir documentos que combinan el texto con el procesamiento estadístico de datos y las gráficas resultantes. El que la secuencia completa datos→análisis→texto se pueda unificar, da todo un nuevo significado al proceso de comunicación en favor de la reproducibilidad científica.\nLos estudiantes aprenderán a producir reportes académicos en distintos formatos: páginas web, documentos tipo Word®, PDF, carteles, presentaciones e incluso artículos o libros. Todo esto sin que se requiera un conocimiento previo de R o RStudio. Lo haremos paso a paso y con un enfoque de manos a la obra. El estudiante podrá elegir los materiales, datos y textos que le interese ensayar.\nLas actividades se desarrollarán a lo largo de 4 semanas teórico prácticas. Habrá sesiones presenciales de 3 horas martes y jueves. El resto de la semana el estudiante desarrollará actividades a su paso, con un carga de trabajo que se estima requerirá 9 horas adicionales cada semana.\nEl curso-taller abordará los siguientes temas:\nCalendarioTemáticaDía 1Día 21martes 11 de juniojueves 13 de junio2martes 18 de juniojueves 20 de junio3martes 25 de juniojueves 27 de junio4miércoles 03 de juliojueves 04 de julio5martes 09 de juliomiércoles 10 de julio6martes 06 de agostojueves 08 de agosto"
   },
   {
     "objectID": "posts/2024-05-26-taller/index.html#requisitos-previos",
@@ -32,7 +32,7 @@
     "href": "index.html",
     "title": "Por una Ciencia Reproducible",
     "section": "",
-    "text": "Una Nueva Manera de Escribir\n\n\n\n\n\n\ntaller\n\n\n\n\n\n\n\n\n\n26 may 2024\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nBlog de Reproducibilidad Científica\n\n\n\n\n\n\ninicio\n\n\n\n\n\n\n\n\n\n23 may 2024\n\n\nMiguel Equihua\n\n\n\n\n\n\nNo hay resultados"
+    "text": "Una Nueva Manera de Escribir\n\n\n\n\n\n\ntaller\n\n\n\n\n\n\n\n\n\n26 may 2024\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nBlog de Reproducibilidad Científica\n\n\n\n\n\n\ninicio\n\n\n\n\n\n\n\n\n\n23 may 2024\n\n\nMiguel Equihua\n\n\n\n\n\n\n\n\n\n\n\n\nBloguear desde RStudio\n\n\n\n\n\nRutina de publicación transparente o fluida con Rstudio &gt; Github &gt; Netlify. \n\n\n\n\n\n2 feb 2022\n\n\nMiguel Equihua, Octavio Pérez-Maqueo & Julián Equihua\n\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "posts/2024-05-26-taller/index.html#las-fechas",
@@ -40,5 +40,12 @@
     "title": "Una Nueva Manera de Escribir",
     "section": "Las fechas",
     "text": "Las fechas\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\nMes\nDías\n\n\n\n\njunio\n24-30\n\n\njulio\n3-5\n\n\njulio\n8-10\n\n\nagosto\n1-2 y 5-9"
+  },
+  {
+    "objectID": "posts/2022-02-02-prueba-rb-github/prueba-rb-github.html",
+    "href": "posts/2022-02-02-prueba-rb-github/prueba-rb-github.html",
+    "title": "Bloguear desde RStudio",
+    "section": "",
+    "text": "Preparación\nSimplemente hay que clonar el repositorio de Github y asegurarse de trabajar desde ahí, RStudio debería reconocer la configuración en forma automática, incluyendo las credenciales usadas para acceder al repositorio vinculadas a la referencia origin.\n\n\nContribuir posts desde RStudio\n\nPost: edita o usa el comando: distill::create_post(nombre_de_archivo_nuevo&gt;)\nknit: Para generar la versión de despliegue de la contribución.\ncommit: Para agregar lo hecho a git con todos los archivos nuevos creados por el knit.\npush: Para depositar la contribución en el repositorio remoto desde donde Netlify lo tomará y publicará automáticamente.\n\nPara mayores detalles vease esta página.\nDistill es un formato nativo de la Web de publicación para escritos científicos y técnicos.\nPuedes aprender sobre como usar Distill en https://rstudio.github.io/distill."
   }
 ]

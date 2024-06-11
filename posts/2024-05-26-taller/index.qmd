@@ -6,26 +6,24 @@ date: "2024/05/26"
 date-format: "D [de] MMMM, YYYY"
 categories: [taller]
 image: "Poster-r-ciencia.png"
-
 format: 
   html:
     toc: true
     html-math-method: katex
     css: styles.css
   pdf:
+    
     toc: false
     date: 2024/05/26
     number-sections: false
     colorlinks: true
     papersize: letter
-    
 editor_options: 
   chunk_output_type: console
-
 lightbox: true
 ---
 
-Curso-taller para iniciarse en las habilidades que promueve la ciencia abierta. La apertura invita a ampliar la colaboración, pero  también la eficacia con la que se colabora Hay mucho que ya se puede hacer con el apoyo de Dropbox&reg;, GoogleDocs&reg; y con las mismas aplicaciones de Microsoft&reg; ¿Qué significa que esto esté ocurriendo? ¿Qué implicaciones podría tener sobre la forma como se hace y comunica la ciencia?
+Curso-taller para iniciarse en las habilidades que promueve la ciencia abierta. La apertura invita a ampliar la colaboración, pero también la eficacia con la que se colabora Hay mucho que ya se puede hacer con el apoyo de Dropbox®, GoogleDocs® y con las mismas aplicaciones de Microsoft® ¿Qué significa que esto esté ocurriendo? ¿Qué implicaciones podría tener sobre la forma como se hace y comunica la ciencia?
 
 ::: {.content-visible when-format="html"}
 ```{r}
@@ -43,44 +41,50 @@ plot(code, col = c("white", "#2268bb"))
 ```
 :::
 
-El curso-taller se propone acercar al estudiante a la increíble evolución mundial de las capacidades de cómputo y de comunicación que ya está en marcha. No sólo porque cada vez hay mayores facilidades para colaborar, sino por la capacidad actual para producir documentos que combinan el texto con el procesamiento estadístico de datos y las gráficas resultantes. El que la secuencia completa **datos&rarr;análisis&rarr;texto** se pueda unificar, da todo un nuevo significado al proceso de comunicación en favor de la _reproducibilidad_ científica. 
+El curso-taller se propone acercar al estudiante a la increíble evolución mundial de las capacidades de cómputo y de comunicación que ya está en marcha. No sólo porque cada vez hay mayores facilidades para colaborar, sino por la capacidad actual para producir documentos que combinan el texto con el procesamiento estadístico de datos y las gráficas resultantes. El que la secuencia completa **datos→análisis→texto** se pueda unificar, da todo un nuevo significado al proceso de comunicación en favor de la *reproducibilidad* científica.
 
 \
 
-![](Poster-r-ciencia.png){fig-pos='h' width=79% fig-align="right"}
+![](Poster-r-ciencia.png){fig-pos="h" width="79%" fig-align="right"}
 
-Los estudiantes aprenderán a producir reportes académicos en distintos formatos: páginas web, documentos tipo Word&reg;, PDF, carteles, presentaciones e incluso artículos o libros. Todo esto sin que se requiera un conocimiento previo de **R** o **RStudio**. Lo haremos paso a paso y con un enfoque de _manos a la obra_. El estudiante podrá elegir los materiales, datos y textos que le interese ensayar.
+Los estudiantes aprenderán a producir reportes académicos en distintos formatos: páginas web, documentos tipo Word®, PDF, carteles, presentaciones e incluso artículos o libros. Todo esto sin que se requiera un conocimiento previo de **R** o **RStudio**. Lo haremos paso a paso y con un enfoque de *manos a la obra*. El estudiante podrá elegir los materiales, datos y textos que le interese ensayar.
 
-Las actividades se desarrollarán a lo largo de 4 semanas teórico prácticas. Habrá sesiones presenciales de 3 horas martes y jueves. El resto de la semana el estudiante desarrollará  actividades a su paso, con un carga de trabajo que se estima requerirá 9 horas adicionales cada semana.
+Las actividades se desarrollarán a lo largo de 4 semanas teórico prácticas. Habrá sesiones presenciales de 3 horas martes y jueves. El resto de la semana el estudiante desarrollará actividades a su paso, con un carga de trabajo que se estima requerirá 9 horas adicionales cada semana.
 
- 
-El curso-taller abordará los siguientes temas: 
+El curso-taller abordará los siguientes temas:
 
-+ ¿Ciencia abierta y reproducibilidad?
-+ El proceso científico abierto
-+ Escribir en **RStudio**
-  + _markdown_
-  + _Quarto_
-  + _pandoc_
-  + _ecuaciones Latex_
-+ Leer datos desde distintos orígenes: _Excel&reg;_, _Google Sheets&reg;_, _OneCloud&reg;_
-+ Colaboración y control de versiones
-+ Producción de textos en diversos formatos:
-  + html
-  + docx
-  + pptx
-  + pdf
-+ Diapositivas para presentaciones _Web_
-+ Organización de múltiples documentos
-  + Sitio _Web_
-  + Blog
-  + Libro
-+ Producción de manuscritos científicos
-+ Publicación en línea.
-
+-   Tematica 1
+    -   ¿Ciencia abierta y reproducibilidad?
+    -   El proceso científico abierto
+    -   Escribir en **RStudio**
+        -   *markdown*
+        -   *Quarto*
+        -   *pandoc*
+        -   *ecuaciones Latex*
+-   Tematica 2
+    -   Leer datos desde distintos orígenes: *Excel®*, *Google Sheets®*, *OneCloud®*
+    -   Colaboración y control de versiones
+    -   Publicación en línea.
+-   Tematica 3
+    -   Producción de textos en diversos formatos:
+        -   html
+        -   docx
+        -   pptx
+        -   pdf
+-   Tematica 4
+    -   Diapositivas para presentaciones *Web*
+-   Tematica 5
+    -   Organización de múltiples documentos
+        -   Sitio *Web*
+        -   Blog
+-   Tematica 6
+    -   Producción científica
+        -   Libro
+        -   Manuscritos
 
 \
 
+<!---
 ::: {layout="[-1,3,-1]"}
 
 |Mes | Días|
@@ -92,50 +96,54 @@ El curso-taller abordará los siguientes temas:
 : Las fechas {.striped .hover"}
 
 :::
+-->
 
 ```{r}
+#| label: calendario
+#| echo: false
+#| warning: false
+#| tbl-cap: Calendario
+
 library(readxl)
 library(flextable)
 library(dplyr)
 library(lubridate)
-calendario <- read_excel("calendario.xlsx", 
+
+excel_f <- list.files(".", "\\.xlsx", recursive = T, full.names = TRUE)
+
+calendario <- read_excel(excel_f, 
     col_names = c("semana", "fecha1", "fecha2"),
     col_types = c("numeric", "date", "date"),
     skip = 1)
 
-calendario <- as_tibble(calendario) %>%
-  select(semana, fecha1, fecha2) %>% 
-  mutate(sesion = paste("sesión", semana))
+calendario %>% select(c(semana, fecha1, fecha2)) %>% 
+  mutate(pres_1 = format(date(fecha1), "%A %d de %B"),
+         pres_2 = format(date(fecha2), "%A %d de %B")) %>% 
+  select(semana, pres_1, pres_2) %>% 
+  flextable() %>% 
+  set_header_labels(semana = "Temática", pres_1 = "Día 1", pres_2 = "Día 2") %>% 
+  width(j = 1, width = "20mm") %>% 
+  width(j = 2:3, width = "40mm") %>% 
+  bg(i = c(1, 3, 5), bg = "#EFEFEF")
 
-calendario %>% select(c(sesion, fecha1, fecha2)) %>% 
-  mutate(pres_1 = format(date(fecha1), "%A %d %B"),
-         pres_2 = format(date(fecha2), "%A %d %B")) %>% 
- flextable() %>%
- colformat_date(j = 2:3, )
-
-
-#%>% 
-  width(1, "20mm") %>% 
-  width(2:3, "40mm")
-
-format(calendario[2], "%Y-%m-%d")
 ```
 
+\
 
 ## Requisitos previos
 
 El estudiante tiene familiaridad con el uso de computadoras y el uso de Internet. Para algunas de las actividades será provechoso tener cuentas activas en los servicios en línea **Github** (como sistema de control de versiones) y **Netlify** (para publicar blogs y sitios web personales). El estudiante tendrá que generar su cuenta personal en cada uno de estos servicios. Se recomienda hacerlo con antelación.
 
-1. [Alta en Github.](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home)
-2. [Alta en Netlify.](https://app.netlify.com/signup)
+1.  [Alta en Github.](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home)
+2.  [Alta en Netlify.](https://app.netlify.com/signup)
 
-Para las actividades en clase se espera que tendrá ya instalado en su máquina el sistema de control de versiones **Git** (se sugiere utiliizar [Github Desktop](https://docs.github.com/es/desktop)), el interprete del lenguaje de computo **R** y la interface de desarrollo **RStudio**. Las [instrucciones para estos dós últimos están aquí](https://posit.co/download/rstudio-desktop/), en el caso de ambiente _MS-Windows&reg;_ pueden usarse los siguientes enlaces:
- 
- 1. [Instalar Github Desktop](https://desktop.github.com/?ref_cta=download+desktop&ref_loc=about+github+desktop&ref_page=docs)
- 2. [Instalar R](https://cran.rstudio.com/)
- 3. [Instalar RStudio](https://download1.rstudio.org/electron/windows/RStudio-2024.04.1-748.exe)
+Para las actividades en clase se espera que tendrá ya instalado en su máquina el sistema de control de versiones **Git** (se sugiere utiliizar [Github Desktop](https://docs.github.com/es/desktop)), el interprete del lenguaje de computo **R** y la interface de desarrollo **RStudio**. Las [instrucciones para estos dós últimos están aquí](https://posit.co/download/rstudio-desktop/), en el caso de ambiente *MS-Windows®* pueden usarse los siguientes enlaces:
 
-Si interesa verificar la publicación Web de documentos hay que prever que no estén bloqueados en el _Firewall_ de la institución los sitios con terminación `.netlify.app`, pues es la que utilizará el servicio **Netlify** por defecto.
+1.  [Instalar Github Desktop](https://desktop.github.com/?ref_cta=download+desktop&ref_loc=about+github+desktop&ref_page=docs)
+2.  [Instalar R](https://cran.rstudio.com/)
+3.  [Instalar RStudio](https://download1.rstudio.org/electron/windows/RStudio-2024.04.1-748.exe)
+
+Si interesa verificar la publicación Web de documentos hay que prever que no estén bloqueados en el *Firewall* de la institución los sitios con terminación `.netlify.app`, pues es la que utilizará el servicio **Netlify** por defecto.
 
 ::: {.content-visible when-format="pdf"}
 ```{r}

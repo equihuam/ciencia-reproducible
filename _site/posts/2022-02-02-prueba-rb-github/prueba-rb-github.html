@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Miguel Equihua">
+<meta name="author" content="Miguel Equihua, Octavio Pérez-Maqueo &amp; Julián Equihua">
+<meta name="description" content="Rutina de publicación transparente o fluida con Rstudio > Github > Netlify.">
 
-<title>Ciencia Abierta - Una Nueva Manera de Escribir</title>
+<title>Ciencia Abierta - Bloguear desde RStudio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -40,9 +41,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,14 +68,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
-<link href="../../site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
-
-<script src="../../site_libs/tabwid-1.1.3/tabwid.js"></script>
-
 
 
 <link rel="stylesheet" href="../../styles.css">
-<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -117,11 +110,13 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Una Nueva Manera de Escribir</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">taller</div>
-              </div>
-                  </div>
+      <h1 class="title">Bloguear desde RStudio</h1>
+                  <div>
+        <div class="description">
+          <p>Rutina de publicación transparente o fluida con Rstudio &gt; Github &gt; Netlify.</p>
+        </div>
+      </div>
+                </div>
   </div>
     
   
@@ -130,14 +125,14 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Autor/a</div>
       <div class="quarto-title-meta-contents">
-               <p>Miguel Equihua </p>
+               <p><a href="https://www.ie-gamma.net">Miguel Equihua, Octavio Pérez-Maqueo &amp; Julián Equihua</a> </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Fecha de publicación</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">26 de mayo, 2024</p>
+        <p class="date">2 de febrero de 2022</p>
       </div>
     </div>
     
@@ -149,128 +144,39 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
-   
-  <ul>
-  <li><a href="#requisitos-previos" id="toc-requisitos-previos" class="nav-link active" data-scroll-target="#requisitos-previos">Requisitos previos</a></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
-    </div>
+        
+    <div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="prueba-rb-github.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <!-- main -->
-<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
-<p>Curso-taller para iniciarse en las habilidades que promueve la ciencia abierta. La apertura invita a ampliar la colaboración, pero también la eficacia con la que se colabora Hay mucho que ya se puede hacer con el apoyo de Dropbox®, GoogleDocs® y con las mismas aplicaciones de Microsoft® ¿Qué significa que esto esté ocurriendo? ¿Qué implicaciones podría tener sobre la forma como se hace y comunica la ciencia?</p>
-<div class="cell page-columns page-full">
-
-<div class="no-row-height column-margin column-container"><div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="index_files/figure-html/codigo_qr_html-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="index_files/figure-html/codigo_qr_html-1.png" class="img-fluid figure-img" style="width:40mm"></a></p>
-</figure>
-</div>
-</div></div></div>
-<p>El curso-taller se propone acercar al estudiante a la increíble evolución mundial de las capacidades de cómputo y de comunicación que ya está en marcha. No sólo porque cada vez hay mayores facilidades para colaborar, sino por la capacidad actual para producir documentos que combinan el texto con el procesamiento estadístico de datos y las gráficas resultantes. El que la secuencia completa <strong>datos→análisis→texto</strong> se pueda unificar, da todo un nuevo significado al proceso de comunicación en favor de la <em>reproducibilidad</em> científica.</p>
-<p><br>
-</p>
-<div class="quarto-figure quarto-figure-right">
-<figure class="figure">
-<p><a href="Poster-r-ciencia.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="Poster-r-ciencia.png" class="img-fluid quarto-figure quarto-figure-right figure-img" style="width:79.0%" data-fig-pos="h"></a></p>
-</figure>
-</div>
-<p>Los estudiantes aprenderán a producir reportes académicos en distintos formatos: páginas web, documentos tipo Word®, PDF, carteles, presentaciones e incluso artículos o libros. Todo esto sin que se requiera un conocimiento previo de <strong>R</strong> o <strong>RStudio</strong>. Lo haremos paso a paso y con un enfoque de <em>manos a la obra</em>. El estudiante podrá elegir los materiales, datos y textos que le interese ensayar.</p>
-<p>Las actividades se desarrollarán a lo largo de 4 semanas teórico prácticas. Habrá sesiones presenciales de 3 horas martes y jueves. El resto de la semana el estudiante desarrollará actividades a su paso, con un carga de trabajo que se estima requerirá 9 horas adicionales cada semana.</p>
-<p>El curso-taller abordará los siguientes temas:</p>
-<ul>
-<li>Tematica 1
-<ul>
-<li>¿Ciencia abierta y reproducibilidad?</li>
-<li>El proceso científico abierto</li>
-<li>Escribir en <strong>RStudio</strong>
-<ul>
-<li><em>markdown</em></li>
-<li><em>Quarto</em></li>
-<li><em>pandoc</em></li>
-<li><em>ecuaciones Latex</em></li>
-</ul></li>
-</ul></li>
-<li>Tematica 2
-<ul>
-<li>Leer datos desde distintos orígenes: <em>Excel®</em>, <em>Google Sheets®</em>, <em>OneCloud®</em></li>
-<li>Colaboración y control de versiones</li>
-<li>Publicación en línea.</li>
-</ul></li>
-<li>Tematica 3
-<ul>
-<li>Producción de textos en diversos formatos:
-<ul>
-<li>html</li>
-<li>docx</li>
-<li>pptx</li>
-<li>pdf</li>
-</ul></li>
-</ul></li>
-<li>Tematica 4
-<ul>
-<li>Diapositivas para presentaciones <em>Web</em></li>
-</ul></li>
-<li>Tematica 5
-<ul>
-<li>Organización de múltiples documentos
-<ul>
-<li>Sitio <em>Web</em></li>
-<li>Blog</li>
-</ul></li>
-</ul></li>
-<li>Tematica 6
-<ul>
-<li>Producción científica
-<ul>
-<li>Libro</li>
-<li>Manuscritos</li>
-</ul></li>
-</ul></li>
-</ul>
-<p><br>
-</p>
-<!---
-::: {layout="[-1,3,-1]"}
-
-|Mes | Días|
-|----|-----|
-|junio| 24-30 
-|julio| 3-5 |
-|julio|8-10 |
-|agosto |1-2 y 5-9|
-: Las fechas {.striped .hover"}
-
-:::
--->
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="tabwid"><style>.cl-cd5b15e8{}.cl-cd44cde2{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-cd4920f4{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-cd492108{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-cd4938dc{width:20mmin;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cd4938e6{width:40mmin;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cd4938e7{width:20mmin;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cd4938f0{width:40mmin;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cd4938f1{width:20mmin;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cd4938f2{width:40mmin;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cd4938f3{width:20mmin;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-cd4938fa{width:40mmin;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-cd5b15e8"><caption><p>Calendario</p></caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-cd4938dc"><p class="cl-cd4920f4"><span class="cl-cd44cde2">Temática</span></p></th><th class="cl-cd4938e6"><p class="cl-cd492108"><span class="cl-cd44cde2">Día 1</span></p></th><th class="cl-cd4938e6"><p class="cl-cd492108"><span class="cl-cd44cde2">Día 2</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-cd4938e7"><p class="cl-cd4920f4"><span class="cl-cd44cde2">1</span></p></td><td class="cl-cd4938f0"><p class="cl-cd492108"><span class="cl-cd44cde2">martes 11 de junio</span></p></td><td class="cl-cd4938f0"><p class="cl-cd492108"><span class="cl-cd44cde2">jueves 13 de junio</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cd4938f1"><p class="cl-cd4920f4"><span class="cl-cd44cde2">2</span></p></td><td class="cl-cd4938f2"><p class="cl-cd492108"><span class="cl-cd44cde2">martes 18 de junio</span></p></td><td class="cl-cd4938f2"><p class="cl-cd492108"><span class="cl-cd44cde2">jueves 20 de junio</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cd4938e7"><p class="cl-cd4920f4"><span class="cl-cd44cde2">3</span></p></td><td class="cl-cd4938f0"><p class="cl-cd492108"><span class="cl-cd44cde2">martes 25 de junio</span></p></td><td class="cl-cd4938f0"><p class="cl-cd492108"><span class="cl-cd44cde2">jueves 27 de junio</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cd4938f1"><p class="cl-cd4920f4"><span class="cl-cd44cde2">4</span></p></td><td class="cl-cd4938f2"><p class="cl-cd492108"><span class="cl-cd44cde2">miércoles 03 de julio</span></p></td><td class="cl-cd4938f2"><p class="cl-cd492108"><span class="cl-cd44cde2">jueves 04 de julio</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cd4938e7"><p class="cl-cd4920f4"><span class="cl-cd44cde2">5</span></p></td><td class="cl-cd4938f0"><p class="cl-cd492108"><span class="cl-cd44cde2">martes 09 de julio</span></p></td><td class="cl-cd4938f0"><p class="cl-cd492108"><span class="cl-cd44cde2">miércoles 10 de julio</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-cd4938f3"><p class="cl-cd4920f4"><span class="cl-cd44cde2">6</span></p></td><td class="cl-cd4938fa"><p class="cl-cd492108"><span class="cl-cd44cde2">martes 06 de agosto</span></p></td><td class="cl-cd4938fa"><p class="cl-cd492108"><span class="cl-cd44cde2">jueves 08 de agosto</span></p></td></tr></tbody></table></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Git-Netlify.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
 </div>
 </div>
-<p><br>
-</p>
-<section id="requisitos-previos" class="level2">
-<h2 class="anchored" data-anchor-id="requisitos-previos">Requisitos previos</h2>
-<p>El estudiante tiene familiaridad con el uso de computadoras y el uso de Internet. Para algunas de las actividades será provechoso tener cuentas activas en los servicios en línea <strong>Github</strong> (como sistema de control de versiones) y <strong>Netlify</strong> (para publicar blogs y sitios web personales). El estudiante tendrá que generar su cuenta personal en cada uno de estos servicios. Se recomienda hacerlo con antelación.</p>
+</div>
+<section id="preparación" class="level1">
+<h1>Preparación</h1>
+<p>Simplemente hay que clonar el repositorio de <em>Github</em> y asegurarse de trabajar desde ahí, RStudio debería reconocer la configuración en forma automática, incluyendo las credenciales usadas para acceder al repositorio vinculadas a la referencia <strong>origin</strong>.</p>
+</section>
+<section id="contribuir-posts-desde-rstudio" class="level1">
+<h1>Contribuir <em>posts</em> desde RStudio</h1>
 <ol type="1">
-<li><a href="https://github.com/signup?ref_cta=Sign+up&amp;ref_loc=header+logged+out&amp;ref_page=%2F&amp;source=header-home">Alta en Github.</a></li>
-<li><a href="https://app.netlify.com/signup">Alta en Netlify.</a></li>
+<li><strong>Post</strong>: edita o usa el comando: <code>distill::create_post(nombre_de_archivo_nuevo&gt;)</code></li>
+<li><strong>knit</strong>: Para generar la <em>versión de despliegue</em> de la contribución.</li>
+<li><strong>commit</strong>: Para agregar lo hecho a <strong>git</strong> con todos los archivos nuevos creados por el <em>knit</em>.</li>
+<li><strong>push</strong>: Para depositar la contribución en el repositorio remoto desde donde <em>Netlify</em> lo tomará y publicará automáticamente.</li>
 </ol>
-<p>Para las actividades en clase se espera que tendrá ya instalado en su máquina el sistema de control de versiones <strong>Git</strong> (se sugiere utiliizar <a href="https://docs.github.com/es/desktop">Github Desktop</a>), el interprete del lenguaje de computo <strong>R</strong> y la interface de desarrollo <strong>RStudio</strong>. Las <a href="https://posit.co/download/rstudio-desktop/">instrucciones para estos dós últimos están aquí</a>, en el caso de ambiente <em>MS-Windows®</em> pueden usarse los siguientes enlaces:</p>
-<ol type="1">
-<li><a href="https://desktop.github.com/?ref_cta=download+desktop&amp;ref_loc=about+github+desktop&amp;ref_page=docs">Instalar Github Desktop</a></li>
-<li><a href="https://cran.rstudio.com/">Instalar R</a></li>
-<li><a href="https://download1.rstudio.org/electron/windows/RStudio-2024.04.1-748.exe">Instalar RStudio</a></li>
-</ol>
-<p>Si interesa verificar la publicación Web de documentos hay que prever que no estén bloqueados en el <em>Firewall</em> de la institución los sitios con terminación <code>.netlify.app</code>, pues es la que utilizará el servicio <strong>Netlify</strong> por defecto.</p>
+<p>Para mayores detalles <a href="https://yuzar-blog.netlify.app/posts/2020-12-26-how-to-create-a-blog-or-a-website-in-r-with-distill-package/">vease esta página</a>.</p>
+<p>Distill es un formato <em>nativo de la Web</em> de publicación para escritos científicos y técnicos.</p>
+<p>Puedes aprender sobre como usar Distill en <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a>.</p>
 
 
 </section>
@@ -686,31 +592,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":false,"closeEffect":"zoom","descPosition":"bottom"});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
-    }
-  });
-
-};
-          </script>
 
 
 

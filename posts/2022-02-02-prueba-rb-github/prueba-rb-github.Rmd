@@ -1,0 +1,43 @@
+---
+title: "Bloguear desde RStudio"
+description: |
+  Rutina de publicación transparente o fluida con Rstudio > Github > Netlify.
+author:
+  - name: Miguel Equihua, 
+          Octavio Pérez-Maqueo & 
+          Julián Equihua
+    url: https://www.ie-gamma.net
+date: 2022-02-02
+output:
+  distill::distill_article:
+    toc: TRUE
+    self_contained: false
+---
+
+```{r, echo = FALSE, fig.align = 'center', out.width = '90%'}
+
+knitr::include_graphics("Git-Netlify.png")
+```
+
+
+# Preparación
+Simplemente hay que clonar el repositorio de _Github_ y asegurarse de trabajar desde ahí, RStudio debería reconocer la configuración en forma automática, incluyendo las credenciales usadas para acceder al repositorio vinculadas a la referencia __origin__.
+
+# Contribuir _posts_ desde RStudio
+
+1. __Post__: edita o usa el comando: `distill::create_post(nombre_de_archivo_nuevo>)`
+3. __knit__: Para generar la _versión de despliegue_ de la contribución.
+4. __commit__: Para agregar lo hecho a __git__ con todos los archivos nuevos creados por el _knit_.
+5. __push__: Para depositar la contribución en el repositorio remoto desde donde _Netlify_ lo tomará y publicará automáticamente.
+
+Para mayores detalles [vease esta página ](https://yuzar-blog.netlify.app/posts/2020-12-26-how-to-create-a-blog-or-a-website-in-r-with-distill-package/).
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill es un formato _nativo de la Web_ de publicación para escritos científicos y técnicos.
+
+Puedes aprender sobre como usar Distill en <https://rstudio.github.io/distill>.
+
+

@@ -34,6 +34,8 @@ Curso-taller para iniciarse en las habilidades que promueve la ciencia abierta. 
 #| out-width: "40mm"
 #| column: margin
 
+# devtools::install_github("benjcunningham/googlecalendar", force=TRUE)
+
 library(qrcode)
 
 code <- qr_code("https://ciencia-reproducible.netlify.app/")
@@ -90,6 +92,35 @@ El curso-taller abordará los siguientes temas:
 : Las fechas {.striped .hover"}
 
 :::
+
+```{r}
+library(readxl)
+library(flextable)
+library(dplyr)
+library(lubridate)
+calendario <- read_excel("calendario.xlsx", 
+    col_names = c("semana", "fecha1", "fecha2"),
+    col_types = c("numeric", "date", "date"),
+    skip = 1)
+
+calendario <- as_tibble(calendario) %>%
+  select(semana, fecha1, fecha2) %>% 
+  mutate(sesion = paste("sesión", semana))
+
+calendario %>% select(c(sesion, fecha1, fecha2)) %>% 
+  mutate(pres_1 = format(date(fecha1), "%A %d %B"),
+         pres_2 = format(date(fecha2), "%A %d %B")) %>% 
+ flextable() %>%
+ colformat_date(j = 2:3, )
+
+
+#%>% 
+  width(1, "20mm") %>% 
+  width(2:3, "40mm")
+
+format(calendario[2], "%Y-%m-%d")
+```
+
 
 ## Requisitos previos
 

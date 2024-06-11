@@ -51,6 +51,8 @@ Los estudiantes aprenderán a producir reportes académicos en distintos formato
 
 Las actividades se desarrollarán a lo largo de 4 semanas teórico prácticas. Habrá sesiones presenciales de 3 horas martes y jueves. El resto de la semana el estudiante desarrollará actividades a su paso, con un carga de trabajo que se estima requerirá 9 horas adicionales cada semana.
 
+## Temario
+
 El curso-taller abordará los siguientes temas:
 
 -   Tematica 1

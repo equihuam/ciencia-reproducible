@@ -3,7 +3,7 @@ title: "Una Nueva Manera de Escribir"
 author: "Miguel Equihua"
 lang: es
 date: "2024/05/26"
-date-format: "D [de] MMMM, YYYY"
+
 categories: [taller]
 image: "Poster-r-ciencia.png"
 format: 

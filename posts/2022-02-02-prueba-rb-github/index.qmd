@@ -6,7 +6,6 @@ author:
   - name: Miguel Equihua
     url: https://www.ie-gamma.net
 date: 2/02/2024
-date-format: "[Xalapa, Ver.,] D [de] MMMM, YYYY"
 categories: [taller, github]
 format: 
   html:

@@ -1,0 +1,17 @@
+{
+  "hash": "79d8934f6e4352fa08bdbc42d090d9a1",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Bloguear desde RStudio\"\ndescription: |\n  Rutina de publicación transparente o fluida con Rstudio > Github > Netlify.\nauthor:\n  - name: Miguel Equihua\n    url: https://www.ie-gamma.net\ndate: 2/02/2024\ndate-format: \"D [de] MMMM, YYYY\"\ncategories: [taller, github]\nformat: \n  html:\n    toc: true\n    html-math-method: katex\n    css: styles.css\n  pdf:\n    \n    toc: false\n    date: 2024/05/26\n    number-sections: false\n    colorlinks: true\n    papersize: letter\neditor_options: \n  chunk_output_type: console\nlightbox: true\n---\n\n::: {.cell layout-align=\"center\"}\n::: {.cell-output-display}\n![](Git-Netlify.png){fig-align='center' width=90%}\n:::\n:::\n\n\n\n\n# Preparación\nSimplemente hay que crear o clonar clonar un repositorio en _Github_ (o algún otro servico semejante) y asegurarse de trabajar desde con vinculación a ese repositorio. Esto es muy cómodo hacerlo con [Github Desktop](https://desktop.github.com/). RStudio debería reconocer la configuración en forma automática, incluyendo las credenciales usadas para acceder al repositorio vinculadas a la referencia __origin__.\n\n# Contribuir _posts_ desde RStudio\n\n1. __Post__: crear un folder para la nueva contribución y crear en él un documento _Quarto_ con nombre `index.qmd`.\n2. __Editar__: Especificar la sección _front matter_ al inicio del documeno y agregar el contenido deseado.\n3. __Render__: Para generar la _versión de despliegue_ de la contribución.\n4. __commit__: Desde el menú **Git** en Rstudio, para registrar el avance en el sistema de control de versiones.\n5. __push__: Para depositar la contribución en el repositorio remoto desde donde _Netlify_ lo tomará y publicará automáticamente.\n\nPara mayores detalles [vease esta página ](https://yuzar-blog.netlify.app/posts/2020-12-26-how-to-create-a-blog-or-a-website-in-r-with-distill-package/).\n\n\n\n\n\n\n\nDistill es un formato _nativo de la Web_ de publicación para escritos científicos y técnicos.\n\nPuedes aprender sobre como usar Distill en <https://rstudio.github.io/distill>.\n\nLa construcción de _comunidades de aprendizaje_ requiere compartir intereses y actitudes. Al respecto pongo a su consideración\nel [_Acuerdo de Contribuyentes_](https://www.contributor-covenant.org/es/version/1/4/code-of-conduct/), que busca exponer ideas y conceptos que hace la convivencia grata y productiva.\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": null,
+    "postProcess": false
+  }
+}

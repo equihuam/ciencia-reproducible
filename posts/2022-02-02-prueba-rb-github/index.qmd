@@ -5,7 +5,7 @@ description: |
 author:
   - name: Miguel Equihua
     url: https://www.ie-gamma.net
-date: 20/jun/2024
+date: 25/jun/2024
 categories: [taller, github]
 format: 
   html:

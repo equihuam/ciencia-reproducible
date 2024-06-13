@@ -1,11 +1,11 @@
 ---
-title: "Bloguear desde RStudio"
+title: "Publicar desde RStudio"
 description: |
-  Rutina de publicación transparente o fluida con Rstudio > Github > Netlify.
+  Rutina de publicación fluida: Rstudio > Github > Netlify.
 author:
   - name: Miguel Equihua
     url: https://www.ie-gamma.net
-date: 2/02/2024
+date: 18/06/2024
 categories: [taller, github]
 format: 
   html:
@@ -15,7 +15,7 @@ format:
   pdf:
     
     toc: false
-    date: 2024/05/26
+    date: 26/06/2024
     number-sections: false
     colorlinks: true
     papersize: letter
@@ -42,8 +42,8 @@ knitr::include_graphics("Git-Netlify.png")
 
 # Contribuir _posts_ desde RStudio
 
-1. __Post__: crear un folder para la nueva contribución y crear en él un documento _Quarto_ con nombre `index.qmd`.
-2. __Editar__: Especificar la sección _front matter_ al inicio del documeno y agregar el contenido deseado.
+1. __Empezar__: crear un folder descriptivo para la nueva contribución y crear en él un documento _Quarto_ con nombre un nombre apropiado, `index.qmd` es usualmente conveniente.
+2. __Editar__: Especificar la sección _front matter_ al inicio del documento y agregar el contenido deseado.
 3. __Render__: Para generar la _versión de despliegue_ de la contribución.
 4. __commit__: Desde el menú **Git** en Rstudio, para registrar el avance en el sistema de control de versiones.
 5. __pull__: Después de guardar el avance con __commit__, es buena práctica pedir al sistema descargar posibles cambios del registro remoto.
@@ -55,11 +55,3 @@ Para mayores detalles [vease esta página ](https://yuzar-blog.netlify.app/posts
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-
-**Quarto** es un sistema de _fuente abierta_ para la autoría de documentos científicos y técnicos.
-
-Puedes aprender más sobre lo que ofrece [**Quarto** en este enlace.](https://quarto.org/)
-
-La construcción de _comunidades de aprendizaje_ requiere compartir intereses y actitudes. Al respecto pongo a su consideración
-el [_Pacto del Contribuyente_](https://www.contributor-covenant.org/es/version/1/4/code-of-conduct/), que busca exponer ideas y conceptos que hace la convivencia grata y productiva. Pienso que el espíritu de este documento es muy adecuado para estimular la reflexión que buscamos propicie lo que estaremos haciendo en este taller.
-

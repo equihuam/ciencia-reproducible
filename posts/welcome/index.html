@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta charset="utf-8" />
+<meta name="generator" content="quarto-1.4.553" />
 
-<meta name="author" content="Miguel Equihua">
-<meta name="description" content="Rutina de publicación fluida: Rstudio > Github > Netlify.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 
-<title>Ciencia Abierta - Publicar desde RStudio</title>
+<meta name="author" content="Miguel Equihua" />
+
+<title>Ciencia Abierta – Blog de Reproducibilidad Científica</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,26 +25,7 @@ ul.task-list li input[type="checkbox"] {
 }
 </style>
 
-
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<!-- htmldependencies:E3FAD763 -->
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,33 +55,37 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css" />
 </head>
 
-<body class="nav-fixed">
+<body>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="/index.html">
     <span class="navbar-title">Ciencia Abierta</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+  aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca"
+  onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
+    <a class="nav-link" href="/about.html"> 
 <span class="menu-text">Acerca de</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/"> <i 
+  class="bi bi-github" 
+  role="img" 
+>
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -111,18 +97,22 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <div id="quarto-toc-target"></div>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+  <div class="quarto-title-banner">
     <div class="quarto-title column-body">
-      <h1 class="title">Publicar desde RStudio</h1>
-                  <div>
-        <div class="description">
-          <p>Rutina de publicación fluida: Rstudio &gt; Github &gt; Netlify.</p>
-        </div>
-      </div>
-                          <div class="quarto-categories">
-                <div class="quarto-category">taller</div>
-                <div class="quarto-category">github</div>
+      <h1 class="title">Blog de Reproducibilidad Científica</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">inicio</div>
               </div>
                   </div>
   </div>
@@ -133,14 +123,14 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Autor/a</div>
       <div class="quarto-title-meta-contents">
-               <p><a href="https://www.ie-gamma.net">Miguel Equihua</a> </p>
+               <p>Miguel Equihua </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Fecha de publicación</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Xalapa, Ver., 6 de junio, 2025</p>
+        <p class="date">Xalapa, Ver., 6 de noviembre, 2024</p>
       </div>
     </div>
     
@@ -148,67 +138,20 @@ ul.task-list li input[type="checkbox"] {
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
-   
-  <ul>
-  <li><a href="#preparación" id="toc-preparación" class="nav-link active" data-scroll-target="#preparación">Preparación</a></li>
-  <li><a href="#contribuir-posts-desde-rstudio" id="toc-contribuir-posts-desde-rstudio" class="nav-link" data-scroll-target="#contribuir-posts-desde-rstudio">Contribuir <em>posts</em> desde RStudio</a></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
-    </div>
-<!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+  </header>
 
 
-
-
-
-<section id="preparación" class="level1">
-<h1>Preparación</h1>
-<div>
-
+<p>Este es un espacio para conversar sobre Ciencia Reproducible. La figura ilustra los pilares de la reproducibilidad de acuerdo con lo expresado en este artículo de <a href="https://www.revistabiomedica.mx/index.php/revbiomed/article/view/840/845">González-Rayas, et al., 2020</a></p>
+<p><img src="images/840-2404-1-PB.png" class="img-fluid" /></p>
+<div id="quarto-navigation-envelope" class="hidden">
+<p><span class="hidden" data-render-id="quarto-int-sidebar-title">Ciencia Abierta</span> <span class="hidden" data-render-id="quarto-int-navbar-title">Ciencia Abierta</span> <span class="hidden" data-render-id="quarto-int-navbar:Acerca de">Acerca de</span> <span class="hidden" data-render-id="quarto-int-navbar:/about.html">/about.html</span> <span class="hidden" data-render-id="quarto-int-navbar:https://github.com/">https://github.com/</span></p>
 </div>
-<div class="quarto-layout-panel" data-layout="[60, 40]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: flex-start;">
-<p>Simplemente hay que crear o clonar un repositorio en <em>Github</em> (o algún otro servico semejante) y asegurarse de trabajar con vinculación a ese repositorio. Esto es muy cómodo hacerlo con <a href="https://desktop.github.com/">Github Desktop</a>. RStudio debería reconocer la configuración en forma automática, incluyendo las credenciales usadas para acceder al repositorio, que habrán sido registradas por Git en la referencia al repositorio base que se suele etiquetar como <strong>origin</strong>.</p>
+<div id="quarto-meta-markdown" class="hidden">
+<p><span class="hidden" data-render-id="quarto-metatitle">Ciencia Abierta - Blog de Reproducibilidad Científica</span> <span class="hidden" data-render-id="quarto-twittercardtitle">Ciencia Abierta - Blog de Reproducibilidad Científica</span> <span class="hidden" data-render-id="quarto-ogcardtitle">Ciencia Abierta - Blog de Reproducibilidad Científica</span> <span class="hidden" data-render-id="quarto-metasitename">Ciencia Abierta</span> <span class="hidden" data-render-id="quarto-twittercarddesc"></span> <span class="hidden" data-render-id="quarto-ogcardddesc"></span></p>
 </div>
-<div class="cell quarto-layout-cell" style="flex-basis: 40.0%;justify-content: flex-start;">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="Git-Netlify.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="Git-Netlify.png" class="img-fluid figure-img" width="1570"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="contribuir-posts-desde-rstudio" class="level1">
-<h1>Contribuir <em>posts</em> desde RStudio</h1>
-<ol type="1">
-<li><strong>Empezar</strong>: crear un folder descriptivo para la nueva contribución y crear en él un documento <em>Quarto</em> con nombre un nombre apropiado, <code>index.qmd</code> es usualmente conveniente.</li>
-<li><strong>Editar</strong>: Especificar la sección <em>front matter</em> al inicio del documento y agregar el contenido deseado.</li>
-<li><strong>Render</strong>: Para generar la <em>versión de despliegue</em> de la contribución.</li>
-<li><strong>commit</strong>: Desde el menú <strong>Git</strong> en Rstudio, para registrar el avance en el sistema de control de versiones.</li>
-<li><strong>pull</strong>: Después de guardar el avance con <strong>commit</strong>, es buena práctica pedir al sistema descargar posibles cambios del registro remoto.</li>
-<li><strong>push</strong>: Para depositar la contribución en el repositorio remoto desde donde <em>Netlify</em> lo tomará y publicará automáticamente.</li>
-</ol>
-<p>Para mayores detalles <a href="https://yuzar-blog.netlify.app/posts/2020-12-26-how-to-create-a-blog-or-a-website-in-r-with-distill-package/">vease esta página</a>.</p>
-<p><strong>Quarto</strong> es un sistema de <em>fuente abierta</em> para la autoría de documentos científicos y técnicos.</p>
-<p>Puedes aprender más sobre lo que ofrece <a href="https://quarto.org/"><strong>Quarto</strong> en este enlace.</a></p>
-
-
-</section>
 
 </main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+<script id = "quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -618,33 +561,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","loop":false,"closeEffect":"zoom"});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
 
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
-    }
-  });
+</body>
 
-};
-          </script>
-
-
-
-
-</body></html>
+</html>

@@ -1,0 +1,199 @@
+/*-- scss:defaults --*/
+
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+// fonts
+$font-family-sans-serif: "Open Sans", sans-serif !default;
+
+// colors
+$ligero: #693954;
+$body-bg: #f7fbfc !default;
+$body-color: #333 !default;
+$link-color: #3b759e !default;
+$selection-bg: #134674 !default;
+
+
+// headings
+$presentation-heading-font: "Quicksand", sans-serif !default;
+/*--$presentation-heading-text-transform: uppercase !default;--*/
+$presentation-heading-font-weight: normal !default;
+$presentation-heading-letter-spacing: -0.05em;
+
+// code blocks
+$code-block-border-color: lighten($link-color, 30%) !default;
+$code-block-bg: transparent !default;
+
+/*-- scss:mixins --*/
+
+// Background generator
+@mixin bodyBackground() { @include radial-gradient(#c8a875, #f7fbfc); }
+
+/*-- scss:rules --*/
+
+// Fix links so they are not cut off
+.reveal a {
+  line-height: 1.3em;
+}
+
+.l-double {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.l-multiple {
+  display: flex;
+  justify-content: space-around;
+}
+
+.livecode {
+  display: grid;
+  grid-gap: 0.5em;
+  margin: 0;
+  padding: 0;
+
+  .result {
+    max-height: 100%;
+    overflow-y: scroll;
+    width: 100%;
+    border: 1px dashed $headingColor;
+  }
+
+  .code {
+    text-align: left;
+    width: 100%;
+    font-family: 'Dank Mono', monospace;
+    font-size: 75%;
+    color: #efdcbc;
+    background-color: #3f3f3f;
+    padding: 0.5em;
+    border-radius: 0.25em;
+    overflow-y: scroll;
+  }
+}
+
+.code-editor {
+  display: block;
+  height: 100%;
+  white-space: pre-wrap;
+}
+
+#title-slide .title {
+  font-size: 90px;
+  font-weight: bold;
+  font-style: italic;
+  color: $ligero;
+}
+
+.subtitle {
+  font-size: 40px;
+  font-style: italic;
+  color: $ligero;
+}
+
+.quarto-title-author {
+  font-size: 40px;
+  font-weight: lighter;
+  color: $ligero;
+}
+
+.date {
+  font-size: 30px;
+  color: $ligero;
+}
+
+.bala_1 {
+  font-size: 100%; 
+  list-style-type: disc;
+}
+
+.bala_2 {
+  font-size: 70%; 
+  list-style-type: circle;
+}
+
+ul:nth-of-type(1) {
+  list-style-type: disc;
+}
+
+
+ul:nth-of-type(2) {
+  font-size: 70%; 
+  list-style-type: circle;
+}
+
+
+ul:nth-of-type(3) {
+  list-style-type: square;
+}
+
+ul:nth-of-type(4) {
+  list-style-type: decimal;
+}
+
+ul:nth-of-type(5) {
+  list-style-type: decimal-leading-zero;
+}
+
+ul:nth-of-type(6) {
+  list-style-type: lower-roman;
+}
+
+ul:nth-of-type(7) {
+  list-style-type: upper-roman;
+}
+
+ul:nth-of-type(8) {
+  list-style-type: lower-greek;
+}
+
+ul:nth-of-type(9) {
+  list-style-type: lower-latin;
+}
+
+ul:nth-of-type(10) {
+  list-style-type: upper-latin;
+}
+
+ul:nth-of-type(11) {
+  list-style-type: armenian;
+}
+
+ul:nth-of-type(12) {
+  list-style-type: georgian;
+}
+
+ul:nth-of-type(13) {
+  list-style-type: lower-alpha;
+}
+
+ul:nth-of-type(14) {
+  list-style-type: upper-alpha;
+}
+
+ul:nth-of-type(15) {
+  list-style-type: none;
+}
+
+.amarillo-text-title {
+  position: absolute;
+  top: 0.5%; 
+  left: 20%; 
+  background-color: #FFC627; 
+  color: #000; 
+  padding: 10px 20px; 
+  font-size: 34px; 
+  text-align: center;
+}
+
+.verde-text-title {
+  position: absolute;
+  top: 77.5%; 
+  left: 30%; 
+  background-color: #008000; 
+  color: #fff; 
+  padding: 10px 20px; 
+  font-size: 26px; 
+  text-align: center;
+}
+

@@ -1,7 +1,31 @@
 ---
-title: "La escritura"
+title: "Escritura, ciencia y empirismo"
 author: "Miguel Equihua"
-format: revealjs
+  
+date: "2024/jun/18"
+date-format: "[Xalapa, Ver.] D MMMM YYYY"
+categories: [presentación, conceptos, propuestas]
+lang: es
+draft: false
+
+image: img/900-el-infinito-en-un-junco-irene-vallejo.jpg
+image-width: 100px
+image-height: 50px
+
+transition: convex
+format: 
+  revealjs:
+    chalkboard: true
+    auto-stretch: false
+    theme: sky_02.scss
+    width: 1280
+    height: 720
+    footer: "[Reproducibilidad](https://ciencia-reproducible.netlify.app)"
+
+title-slide-attributes:
+    data-background-image: "img/Gamma plantillas_alfa.png"
+    data-background-size: "100%"
+    data-background-opacity: "50%"
 ---
 
 ## Irene Vallejo
@@ -9,7 +33,7 @@ format: revealjs
 :::: {.columns}
 
 ::: {.column width="40%"}
-![](img/900-el-infinito-en-un-junco-irene-vallejo.jpg){width="90%"}
+![](img/900-el-infinito-en-un-junco-irene-vallejo-alfa.png){width="90%"}
 :::
 
 
@@ -45,10 +69,6 @@ compañía será difícil de soportar, porque se creerán sabios en lugar de ser
 
 > Frente a la oralidad, que favorecía las formas e ideas tradicionales, reconocibles para su auditorio, eI discurso alfabetizado podía abrirse a horizontes desconocidos porque el lector tenía tiempo para asimilar y meditar con tranquilidad las ideas novedosas. En los libros caben planteamientos excéntricos, voces de identidades individuales, desafíos a la tradición.
 
-## Teoría
-
-> Aristóteles eligió la palabra _theoría_ y el verbo correspondiente _theorein_, que en griego aluden al acto de mirar algo. Esa elección es muy reveladora: el oficio de pensar eI mundo existe gracias a los libros y la lectura, es decir, cuando podemos ver las palabras, y reflexionar despacio sobre ellas, en lugar de solo oírlas pronunciar en el veloz río del discurso.
-
 
 ## El alfabeto
 
@@ -72,4 +92,19 @@ A partir del modelo fenicio, él inventó, para su lengua griega, eI primer alfa
 ## Escribir y la importancia de reflexionar
 
 Sócrates temía que, por culpa de la escritura, los hombres abandonasen el esfuerzo de la propia reflexión. Sospechaba que, gracias al auxilio de las letras, se confiaría el saber a los textos y, sin el empeño de comprenderlos a fondo, bastaría con tenerlos al alcance de la mano. Y así ya no seria sabiduría propia, incorporada a nosotros e indeleble, parte del bagaje de cada uno, sino un apéndice ajeno.
+
+
+## Teoría
+
+> Aristóteles eligió la palabra _theoría_ y el verbo correspondiente _theorein_, que en griego aluden al acto de mirar algo. Esa elección es muy reveladora: el oficio de pensar eI mundo existe gracias a los libros y la lectura, es decir, cuando podemos ver las palabras, y reflexionar despacio sobre ellas, en lugar de solo oírlas pronunciar en el veloz río del discurso.
+
+
+## Apertura científica
+
+![](img/OpenScienceLifeCycle-500x506.png)
+
+
+## Ciclo de investigación y amenazas
+
+![](img/ciclo-investigar.png)
 

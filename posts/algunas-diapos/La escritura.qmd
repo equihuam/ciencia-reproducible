@@ -25,14 +25,6 @@ format: revealjs
 Socrates no es el único gran pensador que, en la encrucijada de la comunicación, se abstuvo de escribir.
 Como él, Pitágoras, Diógenes, Buda y Jesús de Nazaret optaron por la oralidad. No obstante, todos ellos sabían leer y dominaban la escritura.
 
-## Narrar y Escribir
-
-> Frente a la oralidad, que favorecía las formas e ideas tradicionales, reconocibles para su auditorio, eI discurso alfabetizado podía abrirse a horizontes desconocidos porque el lector tenía tiempo para asimilar y meditar con tranquilidad las ideas novedosas. En los libros caben planteamientos excéntricos, voces de identidades individuales, desafíos a la tradición.
-
-## Teoría
-
-> Aristóteles eligió la palabra _theoría_ y el verbo correspondiente _theorein_, que en griego aluden al acto de mirar algo. Esa elección es muy reveladora: el oficio de pensar eI mundo existe gracias a los libros y la lectura, es decir, cuando podemos ver las palabras, y reflexionar despacio sobre ellas, en lugar de solo oírlas pronunciar en el veloz río del discurso.
-
 ## Leer y saber  {.smaller}
 
 El dios Theuth de Egipto, inventor de los dados, el juego de damas, los números, la geometría, la astronomía y las letras, visitó al rey de Egipto y le ofreció estas invenciones para que las enseñase a sus súbditos. Sócrates habla:
@@ -44,6 +36,16 @@ Entonces Thamus le dijo:
 
 > —iOh Theuth!, por ser el padre de la escritura le atribuyes ventajas que no tiene. Es olvido lo que producirán las letras en quienes las aprendan, al descuidar la memoria, ya que, fiándose de los libros, llegarán al recuerdo desde fuera. Será, por tanto, la apariencia de la sabiduría, no su verdad, 1o que la escritura dará a los hombres; y, cuando haya hecho de ellos entendidos en todo sin verdadera instrucción, su
 compañía será difícil de soportar, porque se creerán sabios en lugar de serlo».
+
+
+
+## Narrar y Escribir
+
+> Frente a la oralidad, que favorecía las formas e ideas tradicionales, reconocibles para su auditorio, eI discurso alfabetizado podía abrirse a horizontes desconocidos porque el lector tenía tiempo para asimilar y meditar con tranquilidad las ideas novedosas. En los libros caben planteamientos excéntricos, voces de identidades individuales, desafíos a la tradición.
+
+## Teoría
+
+> Aristóteles eligió la palabra _theoría_ y el verbo correspondiente _theorein_, que en griego aluden al acto de mirar algo. Esa elección es muy reveladora: el oficio de pensar eI mundo existe gracias a los libros y la lectura, es decir, cuando podemos ver las palabras, y reflexionar despacio sobre ellas, en lugar de solo oírlas pronunciar en el veloz río del discurso.
 
 
 ## El alfabeto

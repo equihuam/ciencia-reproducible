@@ -12,13 +12,6 @@ format:
     toc: true
     html-math-method: katex
     css: styles.css
-  pdf:
-    
-    toc: false
-    date: 20/06/2024
-    number-sections: false
-    colorlinks: true
-    papersize: letter
 editor_options: 
   chunk_output_type: console
 lightbox: true

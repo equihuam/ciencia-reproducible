@@ -1,0 +1,60 @@
+---
+title: "Ciencia abierta"
+author: "Miguel Equihua"
+  
+date: "2024/jun/20"
+date-format: "[Xalapa, Ver.] D MMMM YYYY"
+categories: [presentación, conceptos, propuestas]
+lang: es
+draft: false
+
+image: "img/OpenScienceLifeCycle-500x506.png"
+image-width: 100px
+image-height: 50px
+
+css: simple.css
+transition: convex
+format: 
+  revealjs:
+    chalkboard: true
+    auto-stretch: false
+    theme: sky_03.scss
+    width: 1280
+    height: 720
+    footer: "[Reproducibilidad](https://ciencia-reproducible.netlify.app)"
+
+title-slide-attributes:
+    data-background-image: "img/Gamma plantillas_alfa.png"
+    data-background-size: "100%"
+    data-background-opacity: "50%"
+---
+
+##
+
+::: {layout="[[-1],[1,1]]"}
+
+**Pilares de la reproducibilidad de acuerdo con** [**González-Rayas, et al., 2020**](https://www.revistabiomedica.mx/index.php/revbiomed/article/view/840/845)
+
+
+![](img/840-2404-1-PB-A.png){width=60% fig-align="center"}
+:::
+
+## 
+
+::: {layout="[1,1.5,-0.35 ]"}
+
+**Ciclo de investigación y amenazas a la reproducibbilidad**
+
+![](img/ciclo-investigar.png)
+:::
+
+
+## 
+::: {layout="[1,2]"}
+
+**Apertura científica**
+
+
+![](img/OpenScienceLifeCycle-500x506.png){width=650}
+:::
+

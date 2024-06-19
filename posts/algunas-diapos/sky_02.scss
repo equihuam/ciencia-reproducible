@@ -12,7 +12,7 @@ $body-bg: #f7fbfc !default;
 $body-color: #333 !default;
 $link-color: #3b759e !default;
 $selection-bg: #134674 !default;
-
+$arena: #c8a875;
 
 // headings
 $presentation-heading-font: "Quicksand", sans-serif !default;
@@ -27,7 +27,7 @@ $code-block-bg: transparent !default;
 /*-- scss:mixins --*/
 
 // Background generator
-@mixin bodyBackground() { @include radial-gradient(#c8a875, #f7fbfc); }
+@mixin bodyBackground() { @include radial-gradient($arena, #f7fbfc); }
 
 /*-- scss:rules --*/
 

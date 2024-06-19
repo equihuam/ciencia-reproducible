@@ -11,13 +11,6 @@ format:
     toc: true
     html-math-method: katex
     css: styles.css
-  pdf:
-    
-    toc: false
-    date: 2024/06/18
-    number-sections: false
-    colorlinks: true
-    papersize: letter
 editor_options: 
   chunk_output_type: console
 lightbox: true
@@ -116,7 +109,7 @@ library(flextable)
 library(dplyr)
 library(lubridate)
 
-excel_f <- list.files(".", "\\.xlsx", recursive = T, full.names = TRUE)
+excel_f <- list.files("./", "\\.xlsx", recursive = T, full.names = TRUE)
 
 calendario <- read_excel(excel_f, 
     col_names = c("semana", "fecha1", "fecha2"),

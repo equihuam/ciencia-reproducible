@@ -98,13 +98,3 @@ Sócrates temía que, por culpa de la escritura, los hombres abandonasen el esfu
 
 > Aristóteles eligió la palabra _theoría_ y el verbo correspondiente _theorein_, que en griego aluden al acto de mirar algo. Esa elección es muy reveladora: el oficio de pensar eI mundo existe gracias a los libros y la lectura, es decir, cuando podemos ver las palabras, y reflexionar despacio sobre ellas, en lugar de solo oírlas pronunciar en el veloz río del discurso.
 
-
-## Apertura científica
-
-![](img/OpenScienceLifeCycle-500x506.png)
-
-
-## Ciclo de investigación y amenazas
-
-![](img/ciclo-investigar.png)
-

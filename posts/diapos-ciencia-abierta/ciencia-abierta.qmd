@@ -12,6 +12,7 @@ image: "img/OpenScienceLifeCycle-500x506.png"
 image-width: 100px
 image-height: 50px
 
+css: simple.css
 transition: convex
 format: 
   revealjs:

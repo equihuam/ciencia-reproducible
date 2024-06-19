@@ -31,6 +31,17 @@
                                #C8CBF9 100%);
     background-color:var(--r-background-color)}
 
-#title-slide .title{font-size:90px;font-weight:bold;
-                    font-style:italic;color:#264c66}
+#title-slide .title{
+  font-size:90px;
+  font-weight:bold;
+  font-style:italic;color:#264c66}
+  
+.quarto-title-author{
+  font-size:40px;
+  font-weight:lighter;
+  color:#0710ae}
+
+.date{
+  font-size:30px;
+  color:#0710ae}
                     

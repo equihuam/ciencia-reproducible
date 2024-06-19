@@ -7,38 +7,30 @@
  * GLOBAL STYLES
  *********************************************/
 
-@import"https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic";
-@import"https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700";
-@import"./fonts/source-sans-pro/source-sans-pro.css";
-:root{--r-background-color: #f7fbfc;
+.reveal-viewport{
+    background:#c8cbf9;
+    background:-moz-radial-gradient(center, circle cover, #f7fbfc 0%, 
+                                    #C8CBF9 100%);
+    background:-webkit-gradient(radial, 
+                                center center, 0px, 
+                                center center, 100%, 
+                                color-stop(0%, #f7fbfc), 
+                                color-stop(100%, #C8CBF9));
+    background:-webkit-radial-gradient(center, 
+                                       circle cover, 
+                                       #f7fbfc 0%, 
+                                       #C8CBF9 100%);
+    background:-o-radial-gradient(center, circle cover, 
+                                  #f7fbfc 0%,
+                                  #C8CBF9 100%);
+    background:-ms-radial-gradient(center, circle cover,
+                                   #f7fbfc 0%, 
+                                   #C8CBF9 100%);
+    background:radial-gradient(center, circle cover,
+                               #f7fbfc 0%,
+                               #C8CBF9 100%);
+    background-color:var(--r-background-color)}
 
---r-main-font: Open Sans, sans-serif;
---r-main-font-size: 40px;
---r-main-color: #333;
---r-block-margin: 12px;
---r-heading-margin: 0 0 12px 0;
---r-heading-font: Quicksand, sans-serif;
---r-heading-color: #333;
---r-heading-line-height: 1.2;
---r-heading-letter-spacing: -0.05em;
---r-heading-text-transform: none;
---r-heading-text-shadow: none;
---r-heading-font-weight: normal;
---r-heading1-text-shadow: none;
---r-heading1-size: 2.5em;
---r-heading2-size: 1.6em;
---r-heading3-size: 1.3em;
---r-heading4-size: 1em;
---r-code-font: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
---r-link-color: #3b759e;
---r-link-color-dark: #264c66;
---r-link-color-hover: #4f8fbd;
---r-selection-background-color: #134674;
---r-selection-color: #f7fbfc}.reveal-viewport{background:#c8cbf9;
-background:-moz-radial-gradient(center, circle cover, #f7fbfc 0%, #C8CBF9 100%);
-background:-webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #f7fbfc), color-stop(100%, #C8CBF9));
-background:-webkit-radial-gradient(center, circle cover, #f7fbfc 0%, #C8CBF9 100%);
-background:-o-radial-gradient(center, circle cover, #f7fbfc 0%, #C8CBF9 100%);
-background:-ms-radial-gradient(center, circle cover, #f7fbfc 0%, #C8CBF9 100%);
-background:radial-gradient(center, circle cover, #f7fbfc 0%, #C8CBF9 100%);
-background-color:var(--r-background-color)}
+#title-slide .title{font-size:90px;font-weight:bold;
+                    font-style:italic;color:#264c66}
+                    

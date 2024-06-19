@@ -7,11 +7,11 @@
     "text": "Este es un espacio para conversar sobre Ciencia Reproducible. La figura ilustra los pilares de la reproducibilidad de acuerdo con lo expresado en este artículo de González-Rayas, et al., 2020"
   },
   {
-    "objectID": "posts/diapos-ciencia-abierta/ciencia-abierta.html#apertura-científica",
-    "href": "posts/diapos-ciencia-abierta/ciencia-abierta.html#apertura-científica",
+    "objectID": "posts/diapos-ciencia-abierta/ciencia-abierta.html#comunidades-de-aprendizaje",
+    "href": "posts/diapos-ciencia-abierta/ciencia-abierta.html#comunidades-de-aprendizaje",
     "title": "Ciencia abierta",
-    "section": "Apertura científica",
-    "text": "Apertura científica\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\nReproducibilidad"
+    "section": "Comunidades de aprendizaje",
+    "text": "Comunidades de aprendizaje\n\nEl Pacto del Contribuyente.\nExpone ideas y conceptos que hacen la convivencia grata y productiva.\nEl espíritu de este documento reflexiona sobre lo que estaremos haciendo en este taller."
   },
   {
     "objectID": "posts/diapos-ciencia-abierta/ciencia-abierta.html#section",
@@ -19,6 +19,20 @@
     "title": "Ciencia abierta",
     "section": "",
     "text": "Pilares de la reproducibilidad de acuerdo con González-Rayas, et al., 2020"
+  },
+  {
+    "objectID": "posts/diapos-ciencia-abierta/ciencia-abierta.html#section-1",
+    "href": "posts/diapos-ciencia-abierta/ciencia-abierta.html#section-1",
+    "title": "Ciencia abierta",
+    "section": "",
+    "text": "Ciclo de investigación y amenazas a la reproducibbilidad"
+  },
+  {
+    "objectID": "posts/diapos-ciencia-abierta/ciencia-abierta.html#section-2",
+    "href": "posts/diapos-ciencia-abierta/ciencia-abierta.html#section-2",
+    "title": "Ciencia abierta",
+    "section": "",
+    "text": "Apertura científica\n\n\n\n\n\n\n\n\n\nReproducibilidad"
   },
   {
     "objectID": "posts/2024-05-26-taller/index.html",
@@ -131,26 +145,5 @@
     "title": "Escritura, ciencia y empirismo",
     "section": "Teoría",
     "text": "Teoría\n\nAristóteles eligió la palabra theoría y el verbo correspondiente theorein, que en griego aluden al acto de mirar algo. Esa elección es muy reveladora: el oficio de pensar eI mundo existe gracias a los libros y la lectura, es decir, cuando podemos ver las palabras, y reflexionar despacio sobre ellas, en lugar de solo oírlas pronunciar en el veloz río del discurso.\n\n\n\n\nReproducibilidad"
-  },
-  {
-    "objectID": "posts/diapos-ciencia-abierta/ciencia-abierta.html#pilares",
-    "href": "posts/diapos-ciencia-abierta/ciencia-abierta.html#pilares",
-    "title": "Ciencia abierta",
-    "section": "Pilares",
-    "text": "Pilares\n\n\n\n\n\n\nPilares de la reproducibilidad de acuerdo González-Rayas, et al., 2020"
-  },
-  {
-    "objectID": "posts/diapos-ciencia-abierta/ciencia-abierta.html#section-1",
-    "href": "posts/diapos-ciencia-abierta/ciencia-abierta.html#section-1",
-    "title": "Ciencia abierta",
-    "section": "",
-    "text": "Ciclo de investigación y amenazas a la reproducibbilidad"
-  },
-  {
-    "objectID": "posts/diapos-ciencia-abierta/ciencia-abierta.html#section-2",
-    "href": "posts/diapos-ciencia-abierta/ciencia-abierta.html#section-2",
-    "title": "Ciencia abierta",
-    "section": "",
-    "text": "Apertura científica\n\n\n\n\n\n\n\n\n\nReproducibilidad"
   }
 ]

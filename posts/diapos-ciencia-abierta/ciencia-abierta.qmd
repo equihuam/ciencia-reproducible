@@ -12,7 +12,6 @@ image: "img/OpenScienceLifeCycle-500x506.png"
 image-width: 100px
 image-height: 50px
 
-css: simple.css
 transition: convex
 format: 
   revealjs:
@@ -28,6 +27,14 @@ title-slide-attributes:
     data-background-size: "100%"
     data-background-opacity: "50%"
 ---
+
+
+## Comunidades de aprendizaje
+
++ El [_Pacto del Contribuyente_](https://www.contributor-covenant.org/es/version/1/4/code-of-conduct/).
++ Expone ideas y conceptos que hacen la convivencia grata y productiva.
++ El espíritu de este documento reflexiona sobre lo que estaremos haciendo en este taller.
+
 
 ##
 
@@ -57,4 +64,5 @@ title-slide-attributes:
 
 ![](img/OpenScienceLifeCycle-500x506.png){width=650}
 :::
+
 

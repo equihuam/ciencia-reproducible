@@ -7,12 +7,13 @@
 $font-family-sans-serif: "Open Sans", sans-serif !default;
 
 // colors
-$ligero: #693954;
+$ligero: #0710AE!default;
+$ligero-bg: #C8CBF9 !default;
 $body-bg: #f7fbfc !default;
 $body-color: #333 !default;
 $link-color: #3b759e !default;
 $selection-bg: #134674 !default;
-
+$arena:#c8a875 !default;
 
 // headings
 $presentation-heading-font: "Quicksand", sans-serif !default;
@@ -27,7 +28,7 @@ $code-block-bg: transparent !default;
 /*-- scss:mixins --*/
 
 // Background generator
-@mixin bodyBackground() { @include radial-gradient(#c8a875, #f7fbfc); }
+@mixin bodyBackground() { @include radial-gradient($ligero-bg, #f7fbfc); }
 
 /*-- scss:rules --*/
 

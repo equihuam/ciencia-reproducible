@@ -10,11 +10,20 @@ website:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
+        href: https://github.com/equihuam/ciencia-reproducible
+      - icon: x
+        href: https://x.com/
+      - icon: instagram
+        href: https://www.instagram.com/ 
 format:
   html:
     theme: cosmo
     css: styles.css
+  pdf: 
+    toc: false
+    number-sections: false
+    colorlinks: true
+    papersize: letter
 
 execute: 
   freeze: true

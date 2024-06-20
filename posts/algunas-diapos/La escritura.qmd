@@ -12,6 +12,7 @@ image: img/900-el-infinito-en-un-junco-irene-vallejo.jpg
 image-width: 100px
 image-height: 50px
 
+css: simple-2.css
 transition: convex
 format: 
   revealjs:

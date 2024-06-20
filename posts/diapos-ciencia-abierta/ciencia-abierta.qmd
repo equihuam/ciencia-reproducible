@@ -7,6 +7,7 @@ date-format: "[Xalapa, Ver.] D MMMM YYYY"
 categories: [presentación, conceptos, propuestas]
 lang: es
 draft: false
+toc: true
 
 image: "img/OpenScienceLifeCycle-500x506.png"
 image-width: 100px
@@ -16,7 +17,8 @@ css: simple.css
 transition: convex
 format: 
   revealjs:
-    chalkboard: true
+    chalkboard: 
+      src: ""
     auto-stretch: false
     theme: sky_03.scss
     width: 1280

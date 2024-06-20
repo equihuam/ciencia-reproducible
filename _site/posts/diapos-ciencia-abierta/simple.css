@@ -8,6 +8,7 @@
  *********************************************/
 
 .reveal-viewport{
+    --r-background-color: #f7fbfc;
     background:#c8cbf9;
     background:-moz-radial-gradient(center, circle cover, #f7fbfc 0%, 
                                     #C8CBF9 100%);
@@ -29,19 +30,23 @@
     background:radial-gradient(center, circle cover,
                                #f7fbfc 0%,
                                #C8CBF9 100%);
-    background-color:var(--r-background-color)}
+    background-color:var(--r-background-color)
+}
 
 #title-slide .title{
   font-size:90px;
   font-weight:bold;
-  font-style:italic;color:#264c66}
+  font-style:italic;color:#264c66
+}
   
 .quarto-title-author{
   font-size:40px;
   font-weight:lighter;
-  color:#0710ae}
+  color:#0710ae
+}
 
 .date{
   font-size:30px;
-  color:#0710ae}
+  color:#0710ae
+}
                     

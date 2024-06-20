@@ -1,0 +1,62 @@
+/**
+ * A simple theme for reveal.js presentations, similar
+ * to the default theme.
+ */
+
+/*********************************************
+ * GLOBAL STYLES
+ #4A7402
+ *********************************************/
+
+:root{
+  --titulo: #555E02;
+  --autor: #555E02;  
+  --r-background-color: #FBF8F2;
+  --main-bg-strong: #F8D987;
+  --main-bg-light: #FBF8F2;
+}
+
+.reveal-viewport{
+    background:#F8D987;
+    background:-moz-radial-gradient(center, circle cover, #FBF8F2 0%, 
+                                    #F8D987 100%);
+    background:-webkit-gradient(radial, 
+                                center center, 0px, 
+                                center center, 100%, 
+                                color-stop(0%, #FBF8F2), 
+                                color-stop(100%, #F8D987));
+    background:-webkit-radial-gradient(center, 
+                                       circle cover, 
+                                       #FBF8F2 0%, 
+                                       #F8D987 100%);
+    background:-o-radial-gradient(center, circle cover, 
+                                  #FBF8F2 0%,
+                                  #F8D987 100%);
+    background:-ms-radial-gradient(center, circle cover,
+                                   #FBF8F2 0%, 
+                                   #F8D987 100%);
+    background:radial-gradient(center, circle cover,
+                               #FBF8F2 0%,
+                               #F8D987 100%);
+    background-color:var(--r-background-color)
+}
+
+#title-slide .title{
+  font-size:90px;
+  font-weight:bold;
+  font-style:italic;
+  color:var(--titulo)
+}
+  
+.quarto-title-author{
+  font-size:40px;
+  font-weight:normal;
+  color:var(--autor)
+}
+
+.date{
+  font-size:30px;
+  font-weight:lighter;
+  color: var(--autor)
+}
+                    

@@ -13,32 +13,35 @@ format:
     code-fold: true
 ---
 
-::: {layout="[1,1]"}
-
-> Experimentaremos con la preparación de un reporte técnico con _Quarto_. En respuesta a lo que me han preguntado y para averiguar un poco más sobre lo que puede hacerse con esta herramienta [les invito a visitar este documento](https://quarto.org/docs/manuscripts/authoring/rstudio.html). Les podría interesar tambien [este tutorial introductorio](https://quarto.org/docs/get-started/hello/rstudio.html). Una guía de referencia a _markdown_ [la pueden encontrar aca](https://tutorialmarkdown.com/guia)
-
-![](Noteook.png)
-:::
-
-\
-\
 
 ## Preparación de la Masa
 
-::: {layout="[1,2]"}
+:::: {.columns}
 
-![](pizza-masa.jpg){width="300"}
+::: {.column width="20%" }
 
-Para encontrar una mejor manera de hacer su pizza favorita, Marcelo se propuso reducir el tiempo que tarda en preparar la masa. Para hacerlo siguió el camino de la ciencia y diseñó un experimento para poner a prueba el efecto de la cantidad de azúcar y de leche en los tiempos de activación de la levadura. En concreto, probó cuatro recetas diferentes y midió cuántos segundos tardaba la misma cantidad de masa en llenar un recipiente hasta una marca que fijo como referencia. Aleatorizó el orden de las recetas y repitió cada tratamiento 4 veces.
+![](pizza-masa.jpg){width="600"}
 
+![](img/vaso-de-precipitados-sin-embudo.svg){width="100" fig-align="center"}
 
 :::
+
+::: {.column width="10%"}
+:::
+
+
+::: {.column width="50%"}
+Para encontrar una mejor manera de hacer su pizza favorita, Marcelo se propuso reducir el tiempo que tarda en preparar la masa. Para hacerlo siguió el camino de la ciencia y **diseñó un experimento** para poner a prueba el efecto de la cantidad de azúcar y de leche en los tiempos de activación de la levadura. En concreto, probó cuatro recetas diferentes y midió cuántos segundos tardaba la misma cantidad de masa en llenar un recipiente hasta una marca que fijo como referencia. **Aleatorizó** el orden de las recetas y repitió cada tratamiento 4 veces.
+:::
+
+::::
+
 
 [Descargar los datos en formato de texto simple](masa-para-pizza.txt)
 o
 [Utiliza este vínculo para otenerlo de Google Drive](https://drive.google.com/file/d/1uVUOqwobv67E5xTsSSxjg9f9qypW-aIS/view?usp=sharing)
 
-Pueden usar estas instrucciones para leer los datos en R, directamente desde un documento en la nube, en _Google Drive_.
+Pueden usar tomar instrucciones parecidas a las que siguen para leer los datos en **R**, directamente desde un documento en la nube de _Google Drive_.
 
 -------------------------------
 
@@ -67,3 +70,18 @@ datos <- read.csv(sprintf(url_drive, dat_datos_id))
 :::
 
 [Cómo lo abordé yo](solucion-pizzas/solucion-masa-pizza.qmd)
+
+\
+\
+
+![](img/1538965145.svg)
+
+
+::: {layout="[2,1]"}
+
+> Experimentaremos con la preparación de un reporte técnico con _Quarto_. En respuesta a lo que me han preguntado y para averiguar un poco más sobre lo que puede hacerse con esta herramienta [les invito a visitar este documento](https://quarto.org/docs/manuscripts/authoring/rstudio.html). Les podría interesar tambien [este tutorial introductorio](https://quarto.org/docs/get-started/hello/rstudio.html). Una guía de referencia a _markdown_ [la pueden encontrar aca](https://tutorialmarkdown.com/guia)
+
+![](Noteook.png)
+:::
+
+

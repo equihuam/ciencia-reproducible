@@ -65,3 +65,5 @@ datos <- read.csv(sprintf(url_drive, dat_datos_id))
  9. Resuelve que tratamientos difieren de los demás
 10. Argumenta tus conclusiones
 :::
+
+[Cómo lo abordé yo](solucion-pizzas/solucion-masa-pizza.qmd)

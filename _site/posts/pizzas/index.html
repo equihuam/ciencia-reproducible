@@ -74,6 +74,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -196,10 +199,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="preparación-de-la-masa">Preparación de la Masa</h2>
 <div class="columns">
 <div class="column" style="width:20%;">
-<p><img src="pizza-masa.jpg" class="img-fluid" width="600"></p>
+<p><a href="pizza-masa.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="pizza-masa.jpg" class="img-fluid" width="600"></a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/vaso-de-precipitados-sin-embudo.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="100"></p>
+<p><a href="img/vaso-de-precipitados-sin-embudo.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img/vaso-de-precipitados-sin-embudo.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="100"></a></p>
 </figure>
 </div>
 </div><div class="column" style="width:10%;">
@@ -240,7 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="section" class="level2">
 <h2 class="anchored" data-anchor-id="section"><br>
 </h2>
-<p><img src="img/1538965145.svg" class="img-fluid"></p>
+<p><a href="img/1538965145.svg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img/1538965145.svg" class="img-fluid"></a></p>
 <div>
 
 </div>
@@ -252,7 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </blockquote>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><img src="Noteook.png" class="img-fluid"></p>
+<p><a href="Noteook.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="Noteook.png" class="img-fluid"></a></p>
 </div>
 </div>
 </div>
@@ -682,6 +685,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","loop":false});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

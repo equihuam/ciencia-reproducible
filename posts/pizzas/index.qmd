@@ -6,6 +6,7 @@ lang: es
 draft: false
 
 image: pizza-masa.jpg
+lightbox: true
 
 categories: [taller]
 format:

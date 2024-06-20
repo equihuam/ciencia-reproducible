@@ -17,7 +17,6 @@ format:
 ## Preparación de la Masa
 
 :::: {.columns}
-
 ::: {.column width="20%" }
 
 ![](pizza-masa.jpg){width="600"}
@@ -32,8 +31,8 @@ format:
 
 ::: {.column width="50%"}
 Para encontrar una mejor manera de hacer su pizza favorita, Marcelo se propuso reducir el tiempo que tarda en preparar la masa. Para hacerlo siguió el camino de la ciencia y **diseñó un experimento** para poner a prueba el efecto de la cantidad de azúcar y de leche en los tiempos de activación de la levadura. En concreto, probó cuatro recetas diferentes y midió cuántos segundos tardaba la misma cantidad de masa en llenar un recipiente hasta una marca que fijo como referencia. **Aleatorizó** el orden de las recetas y repitió cada tratamiento 4 veces.
-:::
 
+:::
 ::::
 
 
@@ -43,7 +42,7 @@ o
 
 Pueden usar tomar instrucciones parecidas a las que siguen para leer los datos en **R**, directamente desde un documento en la nube de _Google Drive_.
 
--------------------------------
+---------------------
 
 ```r
 library(stringr)
@@ -57,6 +56,7 @@ datos <- read.csv(sprintf(url_drive, dat_datos_id))
 --------------------
 
 ::: {style="color:GoldenRod"}
+
  1. ¿Diseño experimental?
  2. ¿Arreglo de tratamientos?
  3. ¿Modelo que corresponde a este experimento?
@@ -67,12 +67,17 @@ datos <- read.csv(sprintf(url_drive, dat_datos_id))
  8. Valora la calidad del modelo, incluyendo el análisis de los residuos
  9. Resuelve que tratamientos difieren de los demás
 10. Argumenta tus conclusiones
+
 :::
+
+\
+\
 
 [Cómo lo abordé yo](solucion-pizzas/solucion-masa-pizza.qmd)
 
+
 \
-\
+--------------
 
 ![](img/1538965145.svg)
 
@@ -81,7 +86,9 @@ datos <- read.csv(sprintf(url_drive, dat_datos_id))
 
 > Experimentaremos con la preparación de un reporte técnico con _Quarto_. En respuesta a lo que me han preguntado y para averiguar un poco más sobre lo que puede hacerse con esta herramienta [les invito a visitar este documento](https://quarto.org/docs/manuscripts/authoring/rstudio.html). Les podría interesar tambien [este tutorial introductorio](https://quarto.org/docs/get-started/hello/rstudio.html). Una guía de referencia a _markdown_ [la pueden encontrar aca](https://tutorialmarkdown.com/guia)
 
+
 ![](Noteook.png)
+
 :::
 
 

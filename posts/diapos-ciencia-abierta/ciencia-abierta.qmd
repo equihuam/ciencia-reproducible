@@ -7,7 +7,6 @@ date-format: "[Xalapa, Ver.] D MMMM YYYY"
 categories: [presentación, conceptos, propuestas]
 lang: es
 draft: false
-toc: true
 
 image: "img/OpenScienceLifeCycle-500x506.png"
 image-width: 100px

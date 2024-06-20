@@ -2,11 +2,12 @@
 title: "Masa para Pizza"
 author: ["Miguel Equihua"]
 date: "20/jun/2024"
-draft: true
 
-crossref: 
-  lst-title: Código 
-  
+draft: true
+toc: true
+
+css: styles.css
+
 format:
   html:
     code-fold: true
@@ -117,9 +118,9 @@ plot(masa_lm_BD)
 
 El comportamiento de los residuos se ve muy semejante al comportamiento del modelo completo. Sigo sin ver mayores problemas en el ajuste. Es cierto que se ven detallitos que hacen tener ligeras dudas, quizás relacionados con heterocedasticidad. Así que hagamos algo al respecto, aunque no sea más que con **fines didácticos**.
 
-### Opciones avanzadas de análisis
+## Opciones avanzadas de análisis
 
-#### Modelo ponderado
+### Modelo ponderado
 
 Lo que haremos es utilizar la opción `weight` de la función `lm`, esto nos permite hacer lo que se llama *modelos de regresión ponderados*. Hay muchas posibles razones para utilizar *esquemas de ponderación*, todos relacionados con la idea de que podemos proponer argumentos sobre qué datos deberían influir más sobre el ajuste del modelo. En este caso utilizaremos la idea que anoté al principio y que es relativamente común encontrarla en la práctica. Muchas veces pasa que cuando el tamaño de la respuesta aumenta también lo hace la variación con la que la observamos. Es decir a mayor media, mayor varianza. En el modelo ponderado lo podemos expresar pensando que deberíamos darle menos credibilidad (peso) a las observaciones asociadas con tratamientos que producen medias más grandes.
 
@@ -161,7 +162,7 @@ plot((masa_lm_BD_pond))
 
 Los resultados se sostienen. Quizás ahora la falta de normalidad podría ser una inquietud, pero dada la congruencia entre los resultados de los varios modelos, sospecho que no está afectando fundamentalmente la naturaleza del patrón que estamos detectando. Marcelo debería tener mucha confianza al afirmar que las recetas *B* y *D* tiene un mejor desempeño que las otras dos y que entre estas dos no hay una diferencia detectable.
 
-#### Offset: Modelo "redondeado"
+### Offset: Modelo "redondeado"
 
 Un último asunto ¿cómo puedo poner a prueba hipótesis de interés que no sean la *H*<sub>0</sub>=0?. Una manera es recurrir a la opción `offset` en **R**. A continuación muestro una forma de hacerlo. Lo que haré es tomar los coeficientes estimados y redondearlos, para ver que tanto de la capacidad predictiva del ajuste se pierde en la *versión simplificada* por el acto de redondear.
 
@@ -186,7 +187,8 @@ bd_pond_mat <- model.matrix(masa_lm_BD_pond)
 # Ahora tenemos que armar la matriz con el modelo para cada renglón
 mode_off <-  data.frame(intercept = coef_BD_pond[1] * bd_pond_mat[, 1],
                         receta_BD = coef_BD_pond[2] * bd_pond_mat[, 2],
-                        receta_C  = coef_BD_pond[3] * bd_pond_mat[, 3])
+                        receta_C  = coef_BD_pond[3] * bd_pond_mat[, 3],
+                        receta_D  = coef_BD_pond[4] * bd_pond_mat[, 4])
 mode_off
 
 # Otra forma de hacer esto mismo es esta
@@ -203,14 +205,26 @@ Ahora pongamos a prueba que tan bien funciona esta versión *redondeada* del mod
 
 masa_lm_BD_pond_off <- lm(tiempo ~ receta_BD, data = masa, 
                         weights = pond, 
-                        offset = mode_off[,1] + mode_off[,2] + mode_off[, 3])
+                        offset = (mode_off[,1] + mode_off[,2] + 
+                                  mode_off[, 3] + mode_off[, 4]))
 
 summary(masa_lm_BD_pond_off)
-anova(masa_lm_BD_pond_off, masa_lm_BD_pond)
+anova(masa_lm_BD_pond_off)
 ```
 
 Como puedes ver funciona muy bien, es prácticamente indistinguible del modelo ajustado con todas las cifras significativas que resultaron del cálculo que hizo la computadora. Hay uun correspondencia término a término entre el *offset* y los coeficientes estimados y ahí también puede verse que los coeficientes corresponden muy bien y dado el *offcet*, no habría razón para estimarlos con algún ajuste. Las sumas de cuadrados residuales son prácticamente iguales en las dos versiones del modelo, difiere en menos de $1 \times 10^{-14}$ en el estimador de varianza del error. No habría razón para no entregarle esa ecuación con coeficientes redondeados a Marcelo para que hiciera cálculos futuros al preparar pizzas.
 
 ## Tarea
 
-De hecho, ¿por qué no repetimos este experimento en casa? Se los proponggo como tarea y les pido que organicen los datos en la nube de google Drive y repitan todo el proceso analítico que hicimos, por lo menos los elementos básicos de la prueba de hipótesis.Podemos empezar por discutir el diseño esperimental, cenvenir en lo que harán y podemos finalmente discutir *reroducibilidad* considerando los hallazgos de cada quién.
+De hecho, ¿por qué no repetimos este experimento en casa? Se los propongo como tarea y si les parece bien, habría que reunir los datos, organizarlos para tenerlos en la nube de Google Drive y repetir individualmente el proceso analítico que vimos aquí, por lo menos los elementos básicos de la _prueba de hipótesis_.A partir de la experiencia, podremos empezar por discutir el diseño experimental, convenir en lo que harán y podríamos finalmente discutir ideas sobre *reroducibilidad*, considerando los hallazgos de cada quién y de todos en conjunto.
+
+::: {.callout-tip collapse="true"}
+## Referencia
+
++ Harina: 150 g
++ Agua: 50 ml 
++ Leche: 25 ml
++ Azucar: 1/3 cdt
++ Levadura seca: 1/3 sobre (sobre de 11g)
+
+:::

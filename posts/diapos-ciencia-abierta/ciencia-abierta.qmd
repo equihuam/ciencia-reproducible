@@ -79,7 +79,9 @@ title-slide-attributes:
 + [The MIT License](https://opensource.org/license/mit)
 + [DOI](https://www.doi.org/)
 
-## Indautor
+## Indautor {.smaller}
+
+Puedes visitar en México el [Instituto Nacional del Derecho de Autor](https://www.indautor.gob.mx/) para obtener más información.
 
 ```{=html}
 <iframe data-src="https://www.indautor.gob.mx/"

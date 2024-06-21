@@ -32,7 +32,7 @@
     "href": "posts/diapos-ciencia-abierta/ciencia-abierta.html#section-2",
     "title": "Ciencia abierta",
     "section": "",
-    "text": "Apertura científica\n\n\n\n\n\n\n\n\n\nReproducibilidad"
+    "text": "Apertura científica"
   },
   {
     "objectID": "posts/2024-05-26-taller/index.html",
@@ -208,5 +208,19 @@
     "title": "Pizzas",
     "section": "\n",
     "text": "Experimentaremos con la preparación de un reporte técnico con Quarto. En respuesta a lo que me han preguntado y para averiguar un poco más sobre lo que puede hacerse con esta herramienta les invito a visitar este documento. Les podría interesar tambien este tutorial introductorio. Una guía de referencia a markdown la pueden encontrar aca"
+  },
+  {
+    "objectID": "posts/diapos-ciencia-abierta/ciencia-abierta.html#gráficos",
+    "href": "posts/diapos-ciencia-abierta/ciencia-abierta.html#gráficos",
+    "title": "Ciencia abierta",
+    "section": "Gráficos",
+    "text": "Gráficos\n\nDibujos vectoriales\nFotografías e ilustraciones en mapa de bits"
+  },
+  {
+    "objectID": "posts/diapos-ciencia-abierta/ciencia-abierta.html#licencias-para-compartir",
+    "href": "posts/diapos-ciencia-abierta/ciencia-abierta.html#licencias-para-compartir",
+    "title": "Ciencia abierta",
+    "section": "Licencias para compartir",
+    "text": "Licencias para compartir\n\nCreative commons\nCopyleft\nThe MIT License\nDOI\nIndautor\n\n\n\n\nReproducibilidad"
   }
 ]

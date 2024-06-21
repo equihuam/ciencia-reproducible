@@ -78,6 +78,16 @@ title-slide-attributes:
 + [Copyleft](https://web.archive.org/web/20070710185741/http://www.gnu.org/copyleft/copyleft.html)
 + [The MIT License](https://opensource.org/license/mit)
 + [DOI](https://www.doi.org/)
-+ [Indautor](https://www.indautor.gob.mx/)
- 
+
+## Indautor
+
+```{=html}
+<iframe data-src="https://www.indautor.gob.mx/"
+        title="Sitio Indautor de México"
+        allowfullscreen= "true"
+        height="70%"
+        width="100%"
+        style="border:10px solid blue;">
+</iframe>
+```
 

@@ -203,13 +203,14 @@ Ahora pongamos a prueba que tan bien funciona esta versión *redondeada* del mod
 ```{r}
 # valora-modelos
 
-masa_lm_BD_pond_off <- lm(tiempo ~ receta_BD, data = masa, 
+masa_lm_BD_pond_off <- lm(tiempo ~ -1, data = masa, 
                         weights = pond, 
                         offset = (mode_off[,1] + mode_off[,2] + 
                                   mode_off[, 3] + mode_off[, 4]))
 
 summary(masa_lm_BD_pond_off)
-anova(masa_lm_BD_pond_off)
+anova(masa_lm_BD_pond, masa_lm_BD_pond_off)
+
 ```
 
 Como puedes ver funciona muy bien, es prácticamente indistinguible del modelo ajustado con todas las cifras significativas que resultaron del cálculo que hizo la computadora. Hay uun correspondencia término a término entre el *offset* y los coeficientes estimados y ahí también puede verse que los coeficientes corresponden muy bien y dado el *offcet*, no habría razón para estimarlos con algún ajuste. Las sumas de cuadrados residuales son prácticamente iguales en las dos versiones del modelo, difiere en menos de $1 \times 10^{-14}$ en el estimador de varianza del error. No habría razón para no entregarle esa ecuación con coeficientes redondeados a Marcelo para que hiciera cálculos futuros al preparar pizzas.

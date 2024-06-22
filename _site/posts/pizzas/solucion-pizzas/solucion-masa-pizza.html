@@ -101,6 +101,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Buscar"
   }
 }</script>
+<link href="../../../site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+
+<script src="../../../site_libs/tabwid-1.1.3/tabwid.js"></script>
+
 <meta name="quarto:status" content="draft">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -379,19 +383,20 @@ F-statistic: 44.74 on 3 and 12 DF,  p-value: 8.64e-07</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>masa<span class="sc">$</span>receta_BD <span class="ot">&lt;-</span> <span class="fu">recode</span>(masa<span class="sc">$</span>receta, <span class="at">B =</span> <span class="st">"BD"</span>, <span class="at">D =</span> <span class="st">"BD"</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>masa_lm_BD <span class="ot">&lt;-</span> <span class="fu">lm</span>(tiempo <span class="sc">~</span> receta_BD, <span class="at">data =</span> masa)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(masa_lm_BD, masa_lm)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>masa<span class="sc">$</span>receta_BD <span class="ot">&lt;-</span> masa<span class="sc">$</span>receta</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(masa<span class="sc">$</span>receta_BD) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"BD"</span>, <span class="st">"C"</span>, <span class="st">"BD"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>masa_lm_BD <span class="ot">&lt;-</span> <span class="fu">lm</span>(tiempo <span class="sc">~</span> receta_BD, <span class="at">data =</span> masa)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(masa_lm_BD, masa_lm)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Analysis of Variance Table
 
 Model 1: tiempo ~ receta_BD
 Model 2: tiempo ~ receta
-  Res.Df   RSS Df Sum of Sq F Pr(&gt;F)
-1     12 57128                      
-2     12 57128  0         0         </code></pre>
+  Res.Df   RSS Df Sum of Sq      F Pr(&gt;F)
+1     13 57441                           
+2     12 57128  1     312.5 0.0656 0.8021</code></pre>
 </div>
 <details class="code-fold">
 <summary>Código</summary>
@@ -403,21 +408,20 @@ Call:
 lm(formula = tiempo ~ receta_BD, data = masa)
 
 Residuals:
-     Min       1Q   Median       3Q      Max 
--102.000  -39.375    3.875   49.000   88.750 
+    Min      1Q  Median      3Q     Max 
+-102.00  -43.75    2.00   48.00   90.00 
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)   486.25      34.50  14.095 7.90e-09 ***
-receta_BD B  -290.00      48.79  -5.944 6.78e-05 ***
-receta_BD C   169.75      48.79   3.479  0.00455 ** 
-receta_BD D  -302.50      48.79  -6.200 4.59e-05 ***
+(Intercept)   486.25      33.24  14.630 1.88e-09 ***
+receta_BDBD  -296.25      40.71  -7.278 6.20e-06 ***
+receta_BDC    169.75      47.00   3.611  0.00316 ** 
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 69 on 12 degrees of freedom
-Multiple R-squared:  0.9179,    Adjusted R-squared:  0.8974 
-F-statistic: 44.74 on 3 and 12 DF,  p-value: 8.64e-07</code></pre>
+Residual standard error: 66.47 on 13 degrees of freedom
+Multiple R-squared:  0.9175,    Adjusted R-squared:  0.9048 
+F-statistic: 72.27 on 2 and 13 DF,  p-value: 9.069e-08</code></pre>
 </div>
 </div>
 <p>Este resultado me sugiere que hay una mínima pérdida de ajuste a los datos y que el nuevo modelo podría considerarse prácticamente equivalente a la versión más compleja que distingue cada receta. Así que la proposición de que es razonable considerar a las recetas <em>B</em> y <em>D</em> como equivalentes se puede defender. Al hacerlo no pierdo mucho de correspondencia entre los valores que produce el nuevo modelo y los datos. En realidad ya no me interesa averiguar que pasa con las otras recetas, pues ambas tienen un desempeño más lento que las que he indentificado, así que este modelo es el <strong>mínimo adecuado para esta historia</strong>. ¿Se habrá producido alguna distorsión en otros aspectos estadísticos del modelo?</p>
@@ -560,9 +564,9 @@ F-statistic: 42.82 on 3 and 12 DF,  p-value: 1.097e-06</code></pre>
 
 Model 1: tiempo ~ receta
 Model 2: tiempo ~ receta_BD
-  Res.Df    RSS Df Sum of Sq F Pr(&gt;F)
-1     12 20.889                      
-2     12 20.889  0         0         </code></pre>
+  Res.Df    RSS Df Sum of Sq      F Pr(&gt;F)
+1     12 20.889                           
+2     13 21.033 -1  -0.14415 0.0828 0.7784</code></pre>
 </div>
 <details class="code-fold">
 <summary>Código</summary>
@@ -575,20 +579,19 @@ lm(formula = tiempo ~ receta_BD, data = masa, weights = pond)
 
 Weighted Residuals:
      Min       1Q   Median       3Q      Max 
--1.70827 -0.80847  0.09686  0.82064  1.79195 
+-1.70827 -0.94219  0.05806  0.82064  1.92669 
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)   486.25      36.23  13.421 1.38e-08 ***
-receta_BD B  -290.00      47.57  -6.096 5.37e-05 ***
-receta_BD C   169.75      53.52   3.172  0.00804 ** 
-receta_BD D  -302.50      47.42  -6.379 3.51e-05 ***
+(Intercept)   486.25      34.93  13.921 3.45e-09 ***
+receta_BDBD  -296.30      40.72  -7.276 6.22e-06 ***
+receta_BDC    169.75      51.59   3.290  0.00586 ** 
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 1.319 on 12 degrees of freedom
-Multiple R-squared:  0.9146,    Adjusted R-squared:  0.8932 
-F-statistic: 42.82 on 3 and 12 DF,  p-value: 1.097e-06</code></pre>
+Residual standard error: 1.272 on 13 degrees of freedom
+Multiple R-squared:  0.914, Adjusted R-squared:  0.9007 
+F-statistic: 69.06 on 2 and 13 DF,  p-value: 1.188e-07</code></pre>
 </div>
 <details class="code-fold">
 <summary>Código</summary>
@@ -627,79 +630,82 @@ F-statistic: 42.82 on 3 and 12 DF,  p-value: 1.097e-06</code></pre>
 </section>
 <section id="offset-modelo-redondeado" class="level3">
 <h3 class="anchored" data-anchor-id="offset-modelo-redondeado">Offset: Modelo “redondeado”</h3>
-<p>Un último asunto ¿cómo puedo poner a prueba hipótesis de interés que no sean la <em>H</em><sub>0</sub>=0?. Una manera es recurrir a la opción <code>offset</code> en <strong>R</strong>. A continuación muestro una forma de hacerlo. Lo que haré es tomar los coeficientes estimados y redondearlos, para ver que tanto de la capacidad predictiva del ajuste se pierde en la <em>versión simplificada</em> por el acto de redondear.</p>
+<p>Un último asunto ¿cómo puedo poner a prueba hipótesis de interés que no sean la <em>H</em><sub>0</sub>=0?. Una manera es recurrir a la opción <code>offset</code> en <strong>R</strong>. A continuación muestro una forma de hacerlo. Lo que haré es tomar los coeficientes estimados y redondearlos, para ver que tanto de la capacidad predictiva del ajuste se pierde en la <em>versión simplificada</em> por el acto de redondear o incluso optando por usar coeficientes <em>fáciles de recordar</em>.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tomo los coeficientes estimados del modelo y elimino todos los decimales</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>coef_BD_pond <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">coef</span>(masa_lm_BD_pond), <span class="dv">0</span>)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>coef_BD_pond</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(coef_BD_pond) <span class="ot">&lt;-</span>  <span class="fu">names</span>(<span class="fu">coef</span>(masa_lm_BD_pond))</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>coef_BD_pond_facil <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">490</span>, <span class="sc">-</span><span class="dv">300</span>, <span class="dv">170</span>)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(coef_BD_pond_facil) <span class="ot">&lt;-</span> <span class="fu">names</span>(<span class="fu">coef</span>(masa_lm_BD_pond))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>(Intercept) receta_BD B receta_BD C receta_BD D 
-        486        -290         170        -302 </code></pre>
-</div>
 </div>
 <p>Como vimos en clase, puedo obtener la matriz de variables explicativas (<em>dummy</em> o no) incluidas en el modelo con la función <code>model.matrix</code>. Si multiplico las columnas de esta matriz por el coeficiente que le corresponde (multiplicación normal, no matricial), tengo una nueva matriz que contiene en cada renglón, el valor que predice el modelo ajustado para la observación correspondiente.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># La matriz del modelo es esta</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>bd_pond_mat <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(masa_lm_BD_pond)</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Ahora tenemos que armar la matriz con el modelo para cada renglón</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>mode_off <span class="ot">&lt;-</span>  <span class="fu">data.frame</span>(<span class="at">intercept =</span> coef_BD_pond[<span class="dv">1</span>] <span class="sc">*</span> bd_pond_mat[, <span class="dv">1</span>],</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>                        <span class="at">receta_BD =</span> coef_BD_pond[<span class="dv">2</span>] <span class="sc">*</span> bd_pond_mat[, <span class="dv">2</span>],</span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>                        <span class="at">receta_C  =</span> coef_BD_pond[<span class="dv">3</span>] <span class="sc">*</span> bd_pond_mat[, <span class="dv">3</span>],</span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>                        <span class="at">receta_D  =</span> coef_BD_pond[<span class="dv">4</span>] <span class="sc">*</span> bd_pond_mat[, <span class="dv">4</span>])</span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>mode_off</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># La matriz del modelo es esta</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>bd_pond_mat <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(masa_lm_BD_pond)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Ahora tenemos que armar la matriz con el modelo para cada renglón</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>mode_off <span class="ot">&lt;-</span>  <span class="fu">data.frame</span>(<span class="at">intercept =</span> coef_BD_pond[<span class="dv">1</span>] <span class="sc">*</span> bd_pond_mat[, <span class="dv">1</span>],</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>                        <span class="at">receta_BD =</span> coef_BD_pond[<span class="dv">2</span>] <span class="sc">*</span> bd_pond_mat[, <span class="dv">2</span>],</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>                        <span class="at">receta_C  =</span> coef_BD_pond[<span class="dv">3</span>] <span class="sc">*</span> bd_pond_mat[, <span class="dv">3</span>])</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>mode_off</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>   intercept receta_BD receta_C receta_D
-1        486         0        0        0
-2        486         0        0        0
-3        486      -290        0        0
-4        486      -290        0        0
-5        486         0      170        0
-6        486         0      170        0
-7        486         0        0     -302
-8        486         0        0     -302
-9        486         0        0        0
-10       486         0        0        0
-11       486      -290        0        0
-12       486      -290        0        0
-13       486         0      170        0
-14       486         0      170        0
-15       486         0        0     -302
-16       486         0        0     -302</code></pre>
+<pre><code>   intercept receta_BD receta_C
+1        486         0        0
+2        486         0        0
+3        486      -296        0
+4        486      -296        0
+5        486         0      170
+6        486         0      170
+7        486      -296        0
+8        486      -296        0
+9        486         0        0
+10       486         0        0
+11       486      -296        0
+12       486      -296        0
+13       486         0      170
+14       486         0      170
+15       486      -296        0
+16       486      -296        0</code></pre>
 </div>
 <details class="code-fold">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Otra forma de hacer esto mismo es esta</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>mode_off_2 <span class="ot">&lt;-</span> <span class="fu">t</span>(coef_BD_pond <span class="sc">*</span> <span class="fu">t</span>(<span class="fu">model.matrix</span>(masa_lm_BD_pond)))</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>mode_off_2 <span class="sc">==</span> mode_off</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Otra forma de hacer esto mismo es esta</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>mode_off_2 <span class="ot">&lt;-</span> <span class="fu">t</span>(coef_BD_pond <span class="sc">*</span> <span class="fu">t</span>(<span class="fu">model.matrix</span>(masa_lm_BD_pond)))</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>mode_off_2 <span class="sc">==</span> mode_off</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>   intercept receta_BD receta_C receta_D
-1       TRUE      TRUE     TRUE     TRUE
-2       TRUE      TRUE     TRUE     TRUE
-3       TRUE      TRUE     TRUE     TRUE
-4       TRUE      TRUE     TRUE     TRUE
-5       TRUE      TRUE     TRUE     TRUE
-6       TRUE      TRUE     TRUE     TRUE
-7       TRUE      TRUE     TRUE     TRUE
-8       TRUE      TRUE     TRUE     TRUE
-9       TRUE      TRUE     TRUE     TRUE
-10      TRUE      TRUE     TRUE     TRUE
-11      TRUE      TRUE     TRUE     TRUE
-12      TRUE      TRUE     TRUE     TRUE
-13      TRUE      TRUE     TRUE     TRUE
-14      TRUE      TRUE     TRUE     TRUE
-15      TRUE      TRUE     TRUE     TRUE
-16      TRUE      TRUE     TRUE     TRUE</code></pre>
+<pre><code>   intercept receta_BD receta_C
+1       TRUE      TRUE     TRUE
+2       TRUE      TRUE     TRUE
+3       TRUE      TRUE     TRUE
+4       TRUE      TRUE     TRUE
+5       TRUE      TRUE     TRUE
+6       TRUE      TRUE     TRUE
+7       TRUE      TRUE     TRUE
+8       TRUE      TRUE     TRUE
+9       TRUE      TRUE     TRUE
+10      TRUE      TRUE     TRUE
+11      TRUE      TRUE     TRUE
+12      TRUE      TRUE     TRUE
+13      TRUE      TRUE     TRUE
+14      TRUE      TRUE     TRUE
+15      TRUE      TRUE     TRUE
+16      TRUE      TRUE     TRUE</code></pre>
 </div>
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># modelo con offcets fáciles de recordar</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>mode_off_facil <span class="ot">&lt;-</span> <span class="fu">t</span>(coef_BD_pond_facil <span class="sc">*</span> <span class="fu">t</span>(<span class="fu">model.matrix</span>(masa_lm_BD_pond)))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Ahora pongamos a prueba que tan bien funciona esta versión <em>redondeada</em> del modelo que hemos ajustado.</p>
 <div class="cell">
@@ -707,54 +713,59 @@ F-statistic: 42.82 on 3 and 12 DF,  p-value: 1.097e-06</code></pre>
 <summary>Código</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># valora-modelos</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>masa_lm_BD_pond_off <span class="ot">&lt;-</span> <span class="fu">lm</span>(tiempo <span class="sc">~</span> receta_BD, <span class="at">data =</span> masa, </span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>masa_lm_BD_pond_off <span class="ot">&lt;-</span> <span class="fu">lm</span>(tiempo <span class="sc">~</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">data =</span> masa, </span>
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>                        <span class="at">weights =</span> pond, </span>
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>                        <span class="at">offset =</span> (mode_off[,<span class="dv">1</span>] <span class="sc">+</span> mode_off[,<span class="dv">2</span>] <span class="sc">+</span> </span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>                                  mode_off[, <span class="dv">3</span>] <span class="sc">+</span> mode_off[, <span class="dv">4</span>]))</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>                                  mode_off[, <span class="dv">3</span>]))</span>
 <span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(masa_lm_BD_pond_off)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>masa_lm_BD_pond_off_facil <span class="ot">&lt;-</span> <span class="fu">lm</span>(tiempo <span class="sc">~</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">data =</span> masa, </span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>                        <span class="at">weights =</span> pond, </span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>                        <span class="at">offset =</span> (mode_off_facil[,<span class="dv">1</span>] <span class="sc">+</span> mode_off_facil[,<span class="dv">2</span>] <span class="sc">+</span> </span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>                                  mode_off_facil[, <span class="dv">3</span>]))</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(flextable)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
+<div class="cell-output cell-output-stderr">
 <pre><code>
-Call:
-lm(formula = tiempo ~ receta_BD, data = masa, weights = pond, 
-    offset = (mode_off[, 1] + mode_off[, 2] + mode_off[, 3] + 
-        mode_off[, 4]))
+Attaching package: 'flextable'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:purrr':
 
-Weighted Residuals:
-     Min       1Q   Median       3Q      Max 
--1.70827 -0.80847  0.09686  0.82064  1.79195 
-
-Coefficients:
-              Estimate Std. Error t value Pr(&gt;|t|)
-(Intercept)  2.500e-01  3.623e+01   0.007    0.995
-receta_BD B  1.334e-14  4.757e+01   0.000    1.000
-receta_BD C -2.500e-01  5.352e+01  -0.005    0.996
-receta_BD D -5.000e-01  4.742e+01  -0.011    0.992
-
-Residual standard error: 1.319 on 12 degrees of freedom
-Multiple R-squared:  1.419e-05, Adjusted R-squared:  -0.25 
-F-statistic: 5.675e-05 on 3 and 12 DF,  p-value: 1</code></pre>
+    compose</code></pre>
 </div>
 <details class="code-fold">
 <summary>Código</summary>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(masa_lm_BD_pond_off)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>resumen <span class="ot">&lt;-</span> <span class="fu">as_tibble_row</span>(<span class="fu">coef</span>(masa_lm_BD_pond)) <span class="sc">%&gt;%</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>           <span class="fu">bind_rows</span>(coef_BD_pond, </span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>                     coef_BD_pond_facil) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">bind_cols</span>(<span class="st">`</span><span class="at">Pr(&gt;F)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>, </span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">anova</span>(masa_lm_BD_pond, masa_lm_BD_pond_off)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;F)</span><span class="st">`</span>[<span class="dv">2</span>],</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>                       <span class="fu">anova</span>(masa_lm_BD_pond, masa_lm_BD_pond_off_facil)<span class="sc">$</span><span class="st">`</span><span class="at">Pr(&gt;F)</span><span class="st">`</span>[<span class="dv">2</span>]),</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">modelo =</span> <span class="fu">c</span>(<span class="st">"Ajuste"</span>, <span class="st">"Redondeo"</span>, <span class="st">"Fácil"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>           <span class="fu">select</span>(<span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">4</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>           <span class="fu">flextable</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>           <span class="fu">set_header_labels</span>(<span class="st">"(Intercept)"</span> <span class="ot">=</span> <span class="st">"A (ref.)"</span>, </span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>                             <span class="at">receta_BDBD =</span> <span class="st">"BD"</span>, </span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>                             <span class="at">receta_BDC =</span> <span class="st">"C"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>           <span class="fu">add_header_row</span>(<span class="at">colwidths =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>),</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>                          <span class="at">values =</span> <span class="fu">c</span>(<span class="st">""</span>, <span class="st">"Receta (tiempo)"</span>, <span class="st">"Pr"</span>),</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a>                          <span class="at">top =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a>           <span class="fu">theme_zebra</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a>           <span class="fu">vline</span>(<span class="at">j =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>)) </span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-19"><a href="#cb33-19" aria-hidden="true" tabindex="-1"></a>resumen</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Analysis of Variance Table
-
-Response: tiempo
-          Df  Sum Sq Mean Sq F value Pr(&gt;F)
-receta_BD  3  0.0003  0.0001   1e-04      1
-Residuals 12 20.8887  1.7407               </code></pre>
+<div class="cell-output-display">
+<div class="tabwid"><style>.cl-8d228244{}.cl-8d029d12{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8d029d30{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8d0e9bc6{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8d0e9be4{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8d0ed848{width:0.75in;background-color:rgba(207, 207, 207, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d0ed87a{width:0.75in;background-color:rgba(207, 207, 207, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d0ed884{width:0.75in;background-color:rgba(207, 207, 207, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d0ed885{width:0.75in;background-color:rgba(207, 207, 207, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d0ed88e{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d0ed88f{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d0ed898{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d0ed899{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d0ed8a2{width:0.75in;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d0ed8a3{width:0.75in;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d0ed8ac{width:0.75in;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8d0ed8ad{width:0.75in;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-8d228244"><thead><tr style="overflow-wrap:break-word;"><th class="cl-8d0ed848"><p class="cl-8d0e9bc6"><span class="cl-8d029d12"></span></p></th><th colspan="3" class="cl-8d0ed87a"><p class="cl-8d0e9be4"><span class="cl-8d029d12">Receta (tiempo)</span></p></th><th class="cl-8d0ed87a"><p class="cl-8d0e9be4"><span class="cl-8d029d12">Pr</span></p></th></tr><tr style="overflow-wrap:break-word;"><th class="cl-8d0ed88e"><p class="cl-8d0e9bc6"><span class="cl-8d029d12">modelo</span></p></th><th class="cl-8d0ed88f"><p class="cl-8d0e9be4"><span class="cl-8d029d12">A (ref.)</span></p></th><th class="cl-8d0ed898"><p class="cl-8d0e9be4"><span class="cl-8d029d12">BD</span></p></th><th class="cl-8d0ed899"><p class="cl-8d0e9be4"><span class="cl-8d029d12">C</span></p></th><th class="cl-8d0ed88f"><p class="cl-8d0e9be4"><span class="cl-8d029d12">Pr(&gt;F)</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-8d0ed8a2"><p class="cl-8d0e9bc6"><span class="cl-8d029d30">Ajuste</span></p></td><td class="cl-8d0ed8a3"><p class="cl-8d0e9be4"><span class="cl-8d029d30">486.25</span></p></td><td class="cl-8d0ed8ac"><p class="cl-8d0e9be4"><span class="cl-8d029d30">-296.2973</span></p></td><td class="cl-8d0ed8ad"><p class="cl-8d0e9be4"><span class="cl-8d029d30">169.75</span></p></td><td class="cl-8d0ed8a3"><p class="cl-8d0e9be4"><span class="cl-8d029d30">0.0000000</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8d0ed88e"><p class="cl-8d0e9bc6"><span class="cl-8d029d30">Redondeo</span></p></td><td class="cl-8d0ed88f"><p class="cl-8d0e9be4"><span class="cl-8d029d30">486.00</span></p></td><td class="cl-8d0ed898"><p class="cl-8d0e9be4"><span class="cl-8d029d30">-296.0000</span></p></td><td class="cl-8d0ed899"><p class="cl-8d0e9be4"><span class="cl-8d029d30">170.00</span></p></td><td class="cl-8d0ed88f"><p class="cl-8d0e9be4"><span class="cl-8d029d30">0.9999999</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8d0ed8a2"><p class="cl-8d0e9bc6"><span class="cl-8d029d30">Fácil</span></p></td><td class="cl-8d0ed8a3"><p class="cl-8d0e9be4"><span class="cl-8d029d30">490.00</span></p></td><td class="cl-8d0ed8ac"><p class="cl-8d0e9be4"><span class="cl-8d029d30">-300.0000</span></p></td><td class="cl-8d0ed8ad"><p class="cl-8d0e9be4"><span class="cl-8d029d30">170.00</span></p></td><td class="cl-8d0ed8a3"><p class="cl-8d0e9be4"><span class="cl-8d029d30">0.9990516</span></p></td></tr></tbody></table></div>
 </div>
 </div>
-<p>Como puedes ver funciona muy bien, es prácticamente indistinguible del modelo ajustado con todas las cifras significativas que resultaron del cálculo que hizo la computadora. Hay uun correspondencia término a término entre el <em>offset</em> y los coeficientes estimados y ahí también puede verse que los coeficientes corresponden muy bien y dado el <em>offcet</em>, no habría razón para estimarlos con algún ajuste. Las sumas de cuadrados residuales son prácticamente iguales en las dos versiones del modelo, difiere en menos de <span class="math inline">\(1 \times 10^{-14}\)</span> en el estimador de varianza del error. No habría razón para no entregarle esa ecuación con coeficientes redondeados a Marcelo para que hiciera cálculos futuros al preparar pizzas.</p>
+<p>Como puedes ver funciona muy bien, es prácticamente indistinguible del modelo ajustado con todas las cifras significativas que resultaron del cálculo que hizo la computadora. Hay uun correspondencia término a término entre el <em>offset</em> y los coeficientes estimados y ahí también puede verse que los coeficientes corresponden muy bien y dado el <em>offcet</em>, no habría razón para estimarlos con algún ajuste. Las sumas de cuadrados residuales son prácticamente iguales en las dos versiones del modelo, difiere muy poco, la probabilidad de que los estimadores correspondan al mismo modelo es muy alta, mayor a 99.9%. No habría razón para no entregarle cualquiera de esa ecuaciones a Marcelo para que hiciera cálculos futuros al preparar pizzas.</p>
 </section>
 </section>
 <section id="tarea" class="level2">
 <h2 class="anchored" data-anchor-id="tarea">Tarea</h2>
-<p>De hecho, ¿por qué no repetimos este experimento en casa? Se los propongo como tarea y si les parece bien, habría que reunir los datos, organizarlos para tenerlos en la nube de Google Drive y repetir individualmente el proceso analítico que vimos aquí, por lo menos los elementos básicos de la <em>prueba de hipótesis</em>.A partir de la experiencia, podremos empezar por discutir el diseño experimental, convenir en lo que harán y podríamos finalmente discutir ideas sobre <em>reroducibilidad</em>, considerando los hallazgos de cada quién y de todos en conjunto.</p>
+<p>De hecho, ¿por qué no repetimos este experimento en casa? Se los propongo como tarea y si les parece bien, habría que reunir los datos, organizarlos para tenerlos en la nube de Google Drive y repetir individualmente el proceso analítico que vimos aquí, por lo menos los elementos básicos de la <em>prueba de hipótesis</em>. A partir de la experiencia, podremos empezar por discutir el diseño experimental, convenir en lo que harán y podríamos finalmente discutir ideas sobre <em>reroducibilidad</em>, considerando los hallazgos de cada quién y de todos en conjunto.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">

@@ -52,12 +52,13 @@ url_drive <- "https://docs.google.com/uc?id=%s&export=download"
 masa <- read.csv(sprintf(url_drive, dat_datos_id)) 
 
 masa %>% 
-  mutate(receta = factor(receta)) -> masa # también puedo guardar resultados así
+  mutate(receta = factor(receta)) %>%            
+  arrange(receta) -> masa # también puedo guardar resultados así
 
 masa %>% group_by(receta) %>% 
          summarise(media = median(tiempo, na.rm = TRUE), 
                    mediana = median(tiempo, na.rm = TRUE),
-                   var = var(tiempo))
+                   var = var(tiempo)) 
 
 ```
 
@@ -71,7 +72,18 @@ Use una gráfica simple con letras para las recetas para tener una idea de los d
 plot(masa$tiempo, type = "n", ylab = "tiempo")
 text(masa$tiempo, labels = masa$receta,
      col = as.integer(unclass(masa$receta)))
+
 ```
+
+
+Si quisieramos hacer una gráfica más profesional podemos usar `ggplot2` en la forma siguiente: 1) datos, los de masa, 2) arreglo (_estética_) x=recetas, y=tiempo y colorear según recetas, finalmente 3) la geometría de la gráfica: representa los datos como puntos.
+
+```{r}
+ggplot(masa, aes(x = receta, y = tiempo, colour = receta)) +
+  geom_point(size = 3, show.legend = FALSE)
+
+```
+
 
 ## Prueba de hipótesis
 

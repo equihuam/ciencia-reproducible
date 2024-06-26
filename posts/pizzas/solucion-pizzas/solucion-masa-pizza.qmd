@@ -42,6 +42,7 @@ Una vez leídos los datos del archivo plano *texto separado por comas*, con acr�
 
 ```{r}
 #| label: lee_datos
+#| echo: true
 
 # masa <- read_csv("masa-para-pizza.txt", col_names = TRUE)
 
@@ -68,6 +69,7 @@ Use una gráfica simple con letras para las recetas para tener una idea de los d
 
 ```{r}
 #| label: explora
+#| echo: true
 
 plot(masa$tiempo, type = "n", ylab = "tiempo")
 text(masa$tiempo, labels = masa$receta,
@@ -79,6 +81,9 @@ text(masa$tiempo, labels = masa$receta,
 Si quisieramos hacer una gráfica más profesional podemos usar `ggplot2` en la forma siguiente: 1) datos, los de masa, 2) arreglo (_estética_) x=recetas, y=tiempo y colorear según recetas, finalmente 3) la geometría de la gráfica: representa los datos como puntos.
 
 ```{r}
+#| label: graf-ggp-explora
+#| echo: true
+
 ggplot(masa, aes(x = receta, y = tiempo, colour = receta)) +
   geom_point(size = 3, show.legend = FALSE)
 
@@ -102,6 +107,7 @@ El cuadro de ANOVA obtenido sugiere que es razonable rechazar la **H**<sub>0</su
 
 ```{r}
 #| label: graf-modelo-1
+#| echo: true
 
 plot(masa_lm)
 ```
@@ -112,6 +118,7 @@ Con los resultados anteriores puedo avanzar con bastante confianza para atender 
 
 ```{r}
 #| label: combo-recetas
+#| echo: true
 
 masa$receta_BD <- masa$receta
 levels(masa$receta_BD) <- c("A", "BD", "C", "BD")
@@ -125,6 +132,7 @@ Este resultado me sugiere que hay una mínima pérdida de ajuste a los datos y q
 
 ```{r}
 #| label: graf-combo-recetas
+#| echo: true
 
 plot(masa_lm_BD)
 ```
@@ -145,6 +153,7 @@ $$
 
 ```{r}
 #| label: modelo-pond
+#| echo: true
 
 # Modelo ponderado para enfrentarnos a la heterocedasticidad
 # Defino los ponderadores a usar
@@ -164,6 +173,7 @@ Para completar el análisis hago la valoración de la relevancia de separar las 
 
 ```{r}
 #| label: modPond-combo
+#| echo: true
 
 # Ajusto un modelo ponderado con mayor peso los tratamientos con menor varianza
 masa_lm_BD_pond <- lm(tiempo ~ receta_BD, data = masa, weights = pond)
@@ -181,6 +191,7 @@ Un último asunto ¿cómo puedo poner a prueba hipótesis de interés que no sea
 
 ```{r}
 #| label: coeficiente-enteros
+#| echo: true
 
 # Tomo los coeficientes estimados del modelo y elimino todos los decimales
 coef_BD_pond <- round(coef(masa_lm_BD_pond), 0)
@@ -195,6 +206,7 @@ Como vimos en clase, puedo obtener la matriz de variables explicativas (*dummy* 
 
 ```{r}
 #| label: modelo-simplificado
+#| echo: true
 
 # La matriz del modelo es esta
 bd_pond_mat <- model.matrix(masa_lm_BD_pond)
@@ -220,7 +232,12 @@ mode_off_facil <- t(coef_BD_pond_facil * t(model.matrix(masa_lm_BD_pond)))
 Ahora pongamos a prueba que tan bien funciona esta versión *redondeada* del modelo que hemos ajustado.
 
 ```{r}
+#| label: eval-modelo
+#| echo: true
+
 # valora-modelos
+
+library(flextable, warn.conflicts = FALSE)
 
 masa_lm_BD_pond_off <- lm(tiempo ~ -1, data = masa, 
                         weights = pond, 
@@ -231,8 +248,6 @@ masa_lm_BD_pond_off_facil <- lm(tiempo ~ -1, data = masa,
                         weights = pond, 
                         offset = (mode_off_facil[,1] + mode_off_facil[,2] + 
                                   mode_off_facil[, 3]))
-
-library(flextable)
 
 resumen <- as_tibble_row(coef(masa_lm_BD_pond)) %>%
            bind_rows(coef_BD_pond, 

@@ -33,6 +33,7 @@ format:
 ::: {.column width="50%"}
 Para encontrar una mejor manera de hacer su pizza favorita, Marcelo se propuso reducir el tiempo que tarda en preparar la masa. Para hacerlo siguió el camino de la ciencia y **diseñó un experimento** para poner a prueba el efecto de la cantidad de azúcar y de leche en los tiempos de activación de la levadura. En concreto, probó cuatro recetas diferentes y midió cuántos segundos tardaba la misma cantidad de masa en llenar un recipiente hasta una marca que fijo como referencia. **Aleatorizó** el orden de las recetas y repitió cada tratamiento 4 veces.
 
+
 :::
 ::::
 
@@ -41,9 +42,22 @@ Para encontrar una mejor manera de hacer su pizza favorita, Marcelo se propuso r
 o
 [Utiliza este vínculo para otenerlo de Google Drive](https://drive.google.com/file/d/1uVUOqwobv67E5xTsSSxjg9f9qypW-aIS/view?usp=sharing)
 
-Pueden usar tomar instrucciones parecidas a las que siguen para leer los datos en **R**, directamente desde un documento en la nube de _Google Drive_.
+```{=html}
+<iframe 
+        src="https://drive.google.com/embeddedfolderview?id=1R63QN1N3r4n-aR2lL7OKnwMEfnNnRmd7#list"
+        title="Directorio de datos"
+        allowfullscreen= "true"
+        height="50%"
+        width="95%"
+        style="border:10px solid blue;">
+</iframe>
+```
+
+
+Pueden usar instrucciones parecidas a las que siguen para leer los datos en **R**, directamente desde un documento en la nube de _Google Drive_.
 
 ---------------------
+
 
 ```r
 library(stringr)

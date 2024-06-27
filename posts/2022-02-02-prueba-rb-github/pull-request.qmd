@@ -16,4 +16,120 @@ lightbox: true
 ---
 
 
+Un _Pull request_ en _Git_ podríamos llamarlo una _Solicitud de Fusión_, aunque lo común es usar la frase en inglés. Es la base del uso de un repositorio _Git_ como plataforma de colaboración además del control de versiones. Es el mecanismo seguro de solicitar la incorporación de cambios al proyecto. La ideas es tan simple como el nombre indica: se solicita al responsable del proyecto que incorpore una nueva rama (desde un repositorio que tiene cambios propuestos), en otra (del mismo o de otro repositorio).
+
+Con las peticiones de fusión puedes:
+
+
++ Comparar los cambios entre dos ramas
++ Revisar y discutir las modificaciones propuestas
++ Construir, probar y desplegar el efecto de la modificación en el proyecto.
++ Evitar que la adición solicitada se aplique antes de ser adecuadamente revisada.
+
+En `usethis` el subconjunto de funciones con el prefijo `pr_` se refieren a las operaciones relacionadas con _pull requests_ en Github. Encontraras [más información en Happy Git](https://happygitwithr.com/).
+
+Una solicitud de fusión involucra a dos participantes, los llamaremos: contribuyente y revisor. Como las funciones `pr_` usan la infraestructura interactiva de Github (API) Necesitaras un _token personal de acceso_, lo puedes hacer con este código:
+
+
+``` r
+usethis::create_github_token() 
+```
+
+Al ejecutarlo te llevará a la página adecuada para la tarea en Github con la innformación recomendada ya registrada, sólo falta describir el uso que darás al token y la caducidad que prefieres. Copia el token y registralo en forma segura en _RStudio_
+
+
+## Copiar y clonar localmente
+
+Para empezar a colaborar, lo primero es quue cada participante tenga suu propia copia (_fork_) del proyecto. Esto se puede hacer con la instrucción siguiente:
+
+
+``` r
+usethis::create_from_github("equihuam/ciencia-reproducible")
+
+```
+
+Este comando hará lo siguiente:
+
++ Una copia del repositorio _ciencia-reproducible_ que tengo en mi cuenta personal.
++ Clonará la copia del repositorio en tu equipo.
++ Definirá el _orígen remoto_ del repositorio vinculado a tuu copia en Github.
++ También definirá que t copia está vinculada a mi repositorio del mismo nombre.
++ Configura el sistema para viggilar lo que ocurra en la rama principal de mi repositorio.
++ Abrir una nueva ventana de RStudio con tu copia clonada.
++ Algunas opciones adicionales en el comando de `usethis` que podrías querer usar:
+  + controla si se debe copiar o no `fork = TRUE` o `fork = FALSE`.
+  + Usa  `destdir` para especifica en donde quieres poner tu clon del repositorio.
+  + Podrías incluso usar la opción `usethis.destdir` para que los nuevos proyectos siempre vayan a un directorio específico de tu preferencia.
+  
+## Crea una rama y propon cambios
+
+Para crear tu propuesta de cambio puedes usar la función `pr_init()` que crea una rama nueva en tu repositorio en preparación para hacer la solicitud de incorporación de cambios. Es buena práctica hacerlo así, en lugar de usar la rama principal (comunmente _main_ o _master_). En este caso llamaremos a la rama nueva idea-1
+
+``` r
+usethis::pr_init(branch = "idea-1")
+
+```
+
+La ejecución de este comando crea la rama y la hace el espacio activo de trabajo. Ahora puedes hacer todo el trabajo que gustes, hacer tus _commits_ en esta rama y demás.
+
+Cuando estés lista para enviar tu contribución con las adecuaciones y cambios que deseas proponer usa el siguiente comando.
+
+``` r
+usethis::pr_push()
+
+```
+
+La ejecución del comando hará que se presente un ventana de tu navegador de Internet en la _URL_ (Uniform Resource Locator) de interés. En la ventana podrás ver una comparación de lo que hay en el repositorio original (izquierda) y los cambios que propones (derecha). También verás un gran botón verde que dice **Create Pull Request**. Si estás lista, apriétalo para enviar la solicitud a la consideración del responsable. Al apretar el botón tendrás opción de indicar si es un borrador o una propuesta terminada. En el primer caso, no olvides marcarla como lista para ser revisada cuando hayas terminado de trabajarla y la consideres completa, momento en el que habrás de lanzar un nuevo `pr_push()`
+
+GitHub enviará un mensaje al responsable, quien revisará tu solicitud. Podrás ver lo que está pasando con la instrucción:
+
+``` r
+usethis::pr_view()
+
+```
+
+Te llevará a la página adecuada en tu navegador de Internet en donde se está dando segimientto a tu petición. 
+
+
+En el proceso de revisión el responsable decidirá en algún momento llevar tu propuesta a su máquina. Lo podrá hacer con la instrucción
+
+``` r
+usethis::pr_fetch()
+
+```
+
+Al ejecutar este comando se crea una nueva rama en el equipo del responsable con uun identificador que incluye el dato del usuario que remite la contribución. Una vez que está satisfecho con el contenido, que pdo haber ajustado según su perspectiva, deberá emitir un nuevo push:
+
+``` r
+usethis::pr_push()
+
+```
+
+que actualizará los cambios con sus sugerencias. Cuando todo se valora está en orden, el responsable emitirá la orden de incorporar los cambios y dar por terminado el proceso. Lo puede hacer con las siguiente instrucción. 
+
+``` r
+usethis::pr_finish()
+
+```
+
+Para poner tu copia del repositorio al día deberás emitir una penúltima instrucción
+
+``` r
+usethis::pr_pull()
+
+```
+
+que incorporará la versión final de los cambios en tu copia del repositorio. Finalmente, podrás cerrar el proceso desde tu lado con:
+
+``` r
+usethis::pr_finish()
+
+```
+
+lo que dará por terminado el proceso.
+
+Puedes encontrar [este texto útil](https://usethis.r-lib.org/articles/pr-functions.html) para obtener más información sobbre el tema.
+
+
+
 

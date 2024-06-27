@@ -1,0 +1,21 @@
+---
+title: "Merge request o ¡Acepta mi contribución!"
+author:
+  - name: [Miguel Equihua]
+    url: https://www.ie-gamma.net
+date: 3/jul/2024
+
+categories: [taller, github]
+
+format: 
+  html:
+    toc: true
+    html-math-method: katex
+    css: styles.css
+editor_options: 
+  chunk_output_type: console
+lightbox: true
+---
+
+
+

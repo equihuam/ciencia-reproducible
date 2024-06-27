@@ -1,0 +1,56 @@
+---
+title: "Primeros pasos con Git"
+author:
+  - name: [Miguel Equihua]
+    url: https://www.ie-gamma.net
+date: 3/jul/2024
+categories: [taller, github]
+format: 
+  html:
+    toc: true
+editor_options: 
+  chunk_output_type: console
+lightbox: true
+---
+
+## ¿Qué es Git?
+
+Es una aplicación diseñada por el iniciador del desarrollo de Linux [Linus Torvalds](https://es.wikipedia.org/wiki/Linus_Torvalds). [Git](https://git-scm.com/) es un sistema eficiente confiable y distribuido de control de versiones. El control de versiones es simplemente el seguimiento y registro de los cambios que va teniendo un documento a lo largo del tiempo. El concepto _distribuido_  se refiere a que el registro local que tengas en tu máquina o para el caso en cualquier número de máquinas, es un registro completo, **clonado** del proyecto. Estos repositorios locales plenamente funcionales permiten trabajar aún cuando no tengas acceso a Internet. Los autores realizan y registran su trabajo localmente y, cuando lo encuentren conveniente, sincronizan la copia local del repositorio con la del servidor. En la actualidad _Git_ se ha convertido en el estándar mundial _de facto_ para el control de versiones.
+
+Una forma muy sencilla de instalar _Git_, incluyendo un auxiliar gráfico, es recurrir a [Github desktop](https://desktop.github.com/). Otra forma es recurrir, si tu sistema operativo es Windows, a [Git for windows](https://gitforwindows.org/), que no incluye nada más que la plataforma básica de control de versiones. En todo caso, el prerrequisito es contar con alguna instalación de _Git_ en el sistema, para poderlo utilizar desde _RStudio_. Para utilizarlo, podemos auxiliarnos con la biblioteca `usethis`, que ofrece una amplia batería de comandos para interactuar con la plataforma de _Git_ y con el servicio de Internet _Github_.
+
+En _RStudio_ hay ayuda para utilizar _Git_ directamente. Para acceder a este apoyo deberás crear un proyecto que incluya el control de versiones como una característica activa. En la figura se ilustran las dos rutas para hacerlo en _RStudio_.
+
+![](img/proyecto-con-git.png)
+
+Evidentemete, si seguiste la ruta azul, tu repositorio ya existe en _Github_. Si optaste por la ruta verde, entonces deberás crear un repositorio allá. Parar hacerlo hay tres sencillos pasos adicionales que dar.
+
+\
+
+::: {layout="[35,60]"}
+
+1. Definir la _rama_ principal (se sugiere **main**, aunque también se usa **master**).
+
+![](img/rstudio-git-main.png){width=500}
+
+:::
+
+\
+
+::: {layout="[35,60]"}
+
+2. Haz un _commit_ seleccionando todos los archivos que aparecen en la pestaña **Git**. Los puedes comentar anotado  "inicial" o algo sugerente de ser el primer control registrado en el repositorio del proyecto.
+
+
+![](img/rstudio-commit.png){width=500}
+:::
+
+\
+
+3. Vincula tu repositorio local con un nuevo repositorio en _Github_. La forma más sencilla de hacer esto con _RStudio_ es escribir, en la pestaña de **Consola** el comando de _R_:
+
+```r
+usethis::use_github()
+```
+
+Una vez que todo está preparado la rutina de trabajo incluye hacer _commit_ cada vez que convenga preservar alguna versión. De vez en cuando sincronizar con la copia maestra del rerpositorio en _Github_, primero obteniendo el estado actual con el comando _pull_ y luego enviando la versión de tu equipo local con un _push_.

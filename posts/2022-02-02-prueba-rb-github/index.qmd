@@ -1,17 +1,15 @@
 ---
 title: "Publicar desde RStudio"
-description: |
-  Rutina de publicación fluida: Rstudio > Github > Netlify.
+description: "Rutina de publicación fluida: Rstudio > Github > Netlify"
 author:
-  - name: Miguel Equihua
+  - name: [Miguel Equihua]
     url: https://www.ie-gamma.net
 date: 25/jun/2024
+
 categories: [taller, github]
 format: 
   html:
     toc: true
-    html-math-method: katex
-    css: styles.css
 editor_options: 
   chunk_output_type: console
 lightbox: true
@@ -20,9 +18,11 @@ lightbox: true
 
 # Preparación
 
+Desde luego ya debes tener preparado _Git_ en tu máquina y una cuenta en _Github_. Si requieres realizar estos primeros pasos te sugiero [ir a esta contribución](primeros-pasos.qmd).
+
 ::: {layout="[60, 40]"}
 
-Simplemente hay que crear o clonar un repositorio en _Github_ (o algún otro servico semejante) y asegurarse de trabajar con vinculación a ese repositorio. Esto es muy cómodo hacerlo con [Github Desktop](https://desktop.github.com/). RStudio debería reconocer la configuración en forma automática, incluyendo las credenciales usadas para acceder al repositorio, que habrán sido registradas por Git en la referencia al repositorio base que se suele etiquetar como __origin__.
+Simplemente hay que crear o clonar un repositorio en _Github_ (o algún otro servicio semejante) y asegurarse de trabajar con vinculación a ese repositorio. Esto es muy cómodo hacerlo con [Github Desktop](https://desktop.github.com/). RStudio debería reconocer la configuración en forma automática, incluyendo las credenciales usadas para acceder al repositorio, que habrán sido registradas por Git en la referencia al repositorio base que se suele etiquetar como __origin__.
 
 ```{r}
 #| label: ciclo
@@ -43,8 +43,7 @@ knitr::include_graphics("Git-Netlify.png")
 5. __push__: Para depositar la contribución en el repositorio remoto desde donde _Netlify_ lo tomará y publicará automáticamente.
 
 
-Para mayores detalles [vease esta página ](https://yuzar-blog.netlify.app/posts/2020-12-26-how-to-create-a-blog-or-a-website-in-r-with-distill-package/).
+## Colaboración
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+La forma más segura de interactuar con un repositorio es mediante _pull request_ (solicitud de incorporación). Esta acción es una petición que hace el propietario de una copia del repositorio (_fork_), al propietario del repositorio original para que incorpore los _commits_ que están en la copia del solicitante. Para ver como hacer preparamos [esta contribución al respecto](pull-request.qmd).
+

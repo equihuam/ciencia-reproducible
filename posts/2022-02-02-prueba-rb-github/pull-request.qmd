@@ -10,8 +10,6 @@ categories: [taller, github]
 format: 
   html:
     toc: true
-    html-math-method: katex
-    css: styles.css
 editor_options: 
   chunk_output_type: console
 lightbox: true

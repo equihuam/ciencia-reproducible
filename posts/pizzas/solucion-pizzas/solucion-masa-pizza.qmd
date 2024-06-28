@@ -2,17 +2,20 @@
 title: "Masa para Pizza"
 author: ["Miguel Equihua"]
 date: "20/jun/2024"
+
 draft: true
 toc: true
+lot: true
 css: styles.css
+
 format:
-  
   html:
     code-fold: true
-    lot: true
-editor_options: 
+  pdf: default 
   
+editor_options: 
   chunk_output_type: inline
+
 crossref: 
   tbl-title: Cuadro
   tbl-prefix: Cuadro
@@ -33,20 +36,22 @@ knitr::opts_chunk$set(echo = TRUE)
 
 En esta libreta *RMarkdown* les comparto mis notas de lo que hice en relación con los datos de masa para pizza.
 
-El Estudio de Marcelo es un experimento *completamente aleatorizado*, no hubo restricciones a la aleatorización como para producir **bloques** o división en parcelas (**parcela dividida**). Los tratamientos los ideó Marcelo como tratamientos factoriales, resultado de la combinación de cantidades variables de azúcar y leche, pero finalmente optó por tratarlas como una serie de recetas (sin decirnos que cantidad de leche o azúcar empleo, típico de los cocineros, guardar secretos), así que no nos queda otra que tratar al arreglo de tratamientos como una clasificación simple en *recetas* (ANOVA de una sola vía dirían otros). El modelo que describe esto es algo así:
+El Estudio de Marcelo es un experimento *completamente aleatorizado*, no hubo restricciones a la aleatorización como para producir **bloques** o división en parcelas (**parcela dividida**). Los tratamientos los ideó Marcelo como tratamientos factoriales, resultado de la combinación de cantidades variables de azúcar y leche, pero finalmente optó por tratarlas como una serie de recetas (sin decirnos que cantidad de leche o azúcar empleo, típico de los cocineros, guardar secretos), así que no nos queda otra que tratar al arreglo de tratamientos como una clasificación simple en *recetas* (ANOVA de una sola vía dirían otros). El modelo que describe esto es algo así (@eq-mod-est-lin):
 
 $$
 y_{ij} = \mu + R_i + \varepsilon_{j(i)}
-$$
+$$ {#eq-mod-est-lin}
+
 
 En donde *i* tiene 4 niveles, uno por cada receta, *j* tiene 4 niveles, por el número de repeticiones de cada receta. Por lo tanto, los grados de libertad en el cuadro de análisis de la varianza deben ser 3 para las recetas y 12 para el error.
 
 ## Exploración tabular de los datos
 
-Una vez leídos los datos del archivo plano *texto separado por comas*, con acrónimo csv), definí la columna *recetas* como *factor*, lo hice con la función `mutate` para interactuar con la tabla completa. Me asomé a los datos calculando los promedios por tratamiento. Seguí la metáfora de *tubos* con ayuda de la biblioteca `tidyverse` o `dplyr`.
+Una vez leídos los datos del archivo plano *texto separado por comas*, con acrónimo csv), definí la columna *recetas* como *factor*, lo hice con la función `mutate` para interactuar con la tabla completa. Me asomé a los datos calculando los promedios por tratamiento (@tbl-lee-datos). Seguí la metáfora de *tubos* con ayuda de la biblioteca `tidyverse` o `dplyr`.
 
 ```{r}
-#| label: lee_datos
+#| label: tbl-lee-datos
+#| tbl-cap: Resumen estadístico del commportamiento de las masas de pizza.
 #| echo: true
 
 #pizzas <- list.files(".", pattern = "^masa-para", recursive = T, full.names = T)
@@ -79,7 +84,6 @@ Recetas es ahora un factor, esto implica que es un tipo especial de variable que
 | 0   | 1   | 0   | 0   |
 | 0   | 0   | 1   | 0   |
 | 0   | 0   | 0   | 1   |
-
 : Variables indicadoras derivadas del factor *receta*. {.striped .hover}
 :::
 
@@ -98,10 +102,11 @@ text(masa$tiempo, labels = masa$receta,
 
 ```
 
-Si quisieramos hacer una gráfica más profesional podemos usar `ggplot2` en la forma siguiente: 1) datos, los de masa, 2) arreglo (*estética*) x=recetas, y=tiempo y colorear según recetas, finalmente 3) la geometría de la gráfica: representa los datos como puntos.
+Si quisiéramos hacer una gráfica más profesional podemos usar `ggplot2` en la forma siguiente: 1) datos, los de masa, 2) arreglo (*estética*) x=recetas, y=tiempo y colorear según recetas, finalmente 3) la geometría de la gráfica: representa los datos como puntos.
 
 ```{r}
-#| label: graf-ggp-explora
+#| label: fig-ggp-explora
+#| fig-cap: Velocidad de leudado de masa de pizza
 #| echo: true
 
 ggplot(masa, aes(x = receta, y = tiempo, colour = receta)) +
@@ -307,7 +312,7 @@ De hecho, ¿por qué no repetimos este experimento en casa? Se los propongo como
 
 ::: {.callout-tip collapse="true"}
 
-## Referencia
+## Pistas
 
 -   Harina: 150 g
 -   Agua: 50 ml
@@ -315,3 +320,5 @@ De hecho, ¿por qué no repetimos este experimento en casa? Se los propongo como
 -   Azucar: 1/3 cdt
 -   Levadura seca: 1/3 sobre (sobre de 11g)
 :::
+
+

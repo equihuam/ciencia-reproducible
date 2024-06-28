@@ -1,5 +1,6 @@
 project:
   type: website
+  execute-dir: file
 
 lang: es
 date-format: "[Xalapa, Ver.,] D [de] MMMM, YYYY"
@@ -27,4 +28,4 @@ format:
 
 execute: 
   freeze: true
-
+  

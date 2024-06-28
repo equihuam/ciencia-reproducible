@@ -74,6 +74,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -202,6 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<p><a href="img/Pull-Request.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img/Pull-Request.png" class="img-fluid"></a></p>
 <p>Un <em>Pull request</em> en <em>Git</em> podríamos llamarlo una <em>Solicitud de Fusión</em>, aunque lo común es usar la frase en inglés. Es la base del uso de un repositorio <em>Git</em> como plataforma de colaboración además del control de versiones. Es el mecanismo seguro de solicitar la incorporación de cambios al proyecto. La ideas es tan simple como el nombre indica: se solicita al responsable del proyecto que incorpore una nueva rama (desde un repositorio que tiene cambios propuestos), en otra (del mismo o de otro repositorio).</p>
 <p>Con las peticiones de fusión puedes:</p>
 <ul>
@@ -683,6 +687,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

@@ -5,7 +5,6 @@ author:
   - name: [Miguel Equihua]
     url: https://www.ie-gamma.net
 date: 25/jun/2024
-
 categories: [taller, github]
 format: 
   html:
@@ -28,7 +27,7 @@ Simplemente hay que crear o clonar un repositorio en _Github_ (o algún otro ser
 #| label: ciclo
 #| echo: false
 
-knitr::include_graphics("Git-Netlify.png")
+knitr::include_graphics("img/Git-Netlify.png")
 ```
 
 :::

@@ -7,50 +7,50 @@
     "text": "Este es un espacio para conversar sobre Ciencia Reproducible. La figura ilustra los pilares de la reproducibilidad de acuerdo con lo expresado en este artículo de González-Rayas, et al., 2020"
   },
   {
-    "objectID": "posts/diapos-ciencia-abierta/ciencia-abierta.html#comunidades-de-aprendizaje",
-    "href": "posts/diapos-ciencia-abierta/ciencia-abierta.html#comunidades-de-aprendizaje",
+    "objectID": "posts/diapos-ciencia-abierta/index.html#comunidades-de-aprendizaje",
+    "href": "posts/diapos-ciencia-abierta/index.html#comunidades-de-aprendizaje",
     "title": "Ciencia abierta",
     "section": "Comunidades de aprendizaje",
     "text": "Comunidades de aprendizaje\n\nEl Pacto del Contribuyente.\nExpone ideas y conceptos que hacen la convivencia grata y productiva.\nEl espíritu de este documento reflexiona sobre lo que estaremos haciendo en este taller."
   },
   {
-    "objectID": "posts/diapos-ciencia-abierta/ciencia-abierta.html#section",
-    "href": "posts/diapos-ciencia-abierta/ciencia-abierta.html#section",
+    "objectID": "posts/diapos-ciencia-abierta/index.html#section",
+    "href": "posts/diapos-ciencia-abierta/index.html#section",
     "title": "Ciencia abierta",
     "section": "",
     "text": "Pilares de la reproducibilidad de acuerdo con González-Rayas, et al., 2020"
   },
   {
-    "objectID": "posts/diapos-ciencia-abierta/ciencia-abierta.html#section-1",
-    "href": "posts/diapos-ciencia-abierta/ciencia-abierta.html#section-1",
+    "objectID": "posts/diapos-ciencia-abierta/index.html#section-1",
+    "href": "posts/diapos-ciencia-abierta/index.html#section-1",
     "title": "Ciencia abierta",
     "section": "",
     "text": "Ciclo de investigación y amenazas a la reproducibbilidad"
   },
   {
-    "objectID": "posts/diapos-ciencia-abierta/ciencia-abierta.html#section-2",
-    "href": "posts/diapos-ciencia-abierta/ciencia-abierta.html#section-2",
+    "objectID": "posts/diapos-ciencia-abierta/index.html#section-2",
+    "href": "posts/diapos-ciencia-abierta/index.html#section-2",
     "title": "Ciencia abierta",
     "section": "",
     "text": "Apertura científica"
   },
   {
-    "objectID": "posts/diapos-ciencia-abierta/ciencia-abierta.html#gráficos",
-    "href": "posts/diapos-ciencia-abierta/ciencia-abierta.html#gráficos",
+    "objectID": "posts/diapos-ciencia-abierta/index.html#gráficos",
+    "href": "posts/diapos-ciencia-abierta/index.html#gráficos",
     "title": "Ciencia abierta",
     "section": "Gráficos",
     "text": "Gráficos\n\nDibujos vectoriales\nFotografías e ilustraciones en mapa de bits"
   },
   {
-    "objectID": "posts/diapos-ciencia-abierta/ciencia-abierta.html#licencias-para-compartir",
-    "href": "posts/diapos-ciencia-abierta/ciencia-abierta.html#licencias-para-compartir",
+    "objectID": "posts/diapos-ciencia-abierta/index.html#licencias-para-compartir",
+    "href": "posts/diapos-ciencia-abierta/index.html#licencias-para-compartir",
     "title": "Ciencia abierta",
     "section": "Licencias para compartir",
     "text": "Licencias para compartir\n\nCreative commons\nCopyleft\nThe MIT License\nDOI"
   },
   {
-    "objectID": "posts/diapos-ciencia-abierta/ciencia-abierta.html#indautor",
-    "href": "posts/diapos-ciencia-abierta/ciencia-abierta.html#indautor",
+    "objectID": "posts/diapos-ciencia-abierta/index.html#indautor",
+    "href": "posts/diapos-ciencia-abierta/index.html#indautor",
     "title": "Ciencia abierta",
     "section": "Indautor",
     "text": "Indautor\nPuedes visitar en México el Instituto Nacional del Derecho de Autor para obtener más información.\n\n\n\n\n\nReproducibilidad"
@@ -116,7 +116,7 @@
     "href": "posts/2022-02-02-prueba-rb-github/index.html",
     "title": "Publicar desde RStudio",
     "section": "",
-    "text": "Desde luego ya debes tener preparado Git en tu máquina y una cuenta en Github. Si requieres realizar estos primeros pasos te sugiero ir a esta contribución\n\n\n\n\n\n\nSimplemente hay que crear o clonar un repositorio en Github (o algún otro servico semejante) y asegurarse de trabajar con vinculación a ese repositorio. Esto es muy cómodo hacerlo con Github Desktop. RStudio debería reconocer la configuración en forma automática, incluyendo las credenciales usadas para acceder al repositorio, que habrán sido registradas por Git en la referencia al repositorio base que se suele etiquetar como origin."
+    "text": "Desde luego ya debes tener preparado Git en tu máquina y una cuenta en Github. Si requieres realizar estos primeros pasos te sugiero ir a esta contribución.\n\n\n\n\n\n\nSimplemente hay que crear o clonar un repositorio en Github (o algún otro servicio semejante) y asegurarse de trabajar con vinculación a ese repositorio. Esto es muy cómodo hacerlo con Github Desktop. RStudio debería reconocer la configuración en forma automática, incluyendo las credenciales usadas para acceder al repositorio, que habrán sido registradas por Git en la referencia al repositorio base que se suele etiquetar como origin."
   },
   {
     "objectID": "posts/2022-02-02-prueba-rb-github/index.html#colaboración",

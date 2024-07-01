@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="">
+<meta name="description" content="Preparación del vínculo entre Github y Netlify para publicación en automático">
 
-<title>Ciencia Abierta - Primeros pasos con Git</title>
+<title>Ciencia Abierta - Enlazar Github con Netlify para publicar</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -157,10 +158,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Primeros pasos con Git</h1>
-                                <div class="quarto-categories">
+      <h1 class="title">Enlazar Github con Netlify para publicar</h1>
+                  <div>
+        <div class="description">
+          Preparación del vínculo entre Github y Netlify para publicación en automático
+        </div>
+      </div>
+                          <div class="quarto-categories">
                 <div class="quarto-category">taller</div>
                 <div class="quarto-category">github</div>
+                <div class="quarto-category">netlify</div>
               </div>
                   </div>
   </div>
@@ -194,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#qué-es-git" id="toc-qué-es-git" class="nav-link active" data-scroll-target="#qué-es-git">¿Qué es Git?</a></li>
+  <li><a href="#preparación" id="toc-preparación" class="nav-link active" data-scroll-target="#preparación">Preparación</a></li>
   </ul>
 </nav>
     </div>
@@ -205,54 +212,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="qué-es-git" class="level2">
-<h2 class="anchored" data-anchor-id="qué-es-git">¿Qué es Git?</h2>
-<p>Es una aplicación diseñada por el iniciador del desarrollo de Linux <a href="https://es.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a>. <a href="https://git-scm.com/">Git</a> es un sistema eficiente confiable y distribuido de control de versiones. El control de versiones es simplemente el seguimiento y registro de los cambios que va teniendo un documento a lo largo del tiempo. El concepto <em>distribuido</em> se refiere a que el registro local que tengas en tu máquina o para el caso en cualquier número de máquinas, es un registro completo, <strong>clonado</strong> del proyecto. Estos repositorios locales plenamente funcionales permiten trabajar aún cuando no tengas acceso a Internet. Los autores realizan y registran su trabajo localmente y, cuando lo encuentren conveniente, sincronizan la copia local del repositorio con la del servidor. En la actualidad <em>Git</em> se ha convertido en el estándar mundial <em>de facto</em> para el control de versiones.</p>
-<p>Una forma muy sencilla de instalar <em>Git</em>, incluyendo un auxiliar gráfico, es recurrir a <a href="https://desktop.github.com/">Github desktop</a>. Otra forma es recurrir, si tu sistema operativo es Windows, a <a href="https://gitforwindows.org/">Git for windows</a>, que no incluye nada más que la plataforma básica de control de versiones. En todo caso, el prerrequisito es contar con alguna instalación de <em>Git</em> en el sistema, para poderlo utilizar desde <em>RStudio</em>. Para utilizarlo, podemos auxiliarnos con la biblioteca <code>usethis</code>, que ofrece una amplia batería de comandos para interactuar con la plataforma de <em>Git</em> y con el servicio de Internet <em>Github</em>.</p>
-<p>En <em>RStudio</em> hay ayuda para utilizar <em>Git</em> directamente. Para acceder a este apoyo deberás crear un proyecto que incluya el control de versiones como una característica activa. En la figura se ilustran las dos rutas para hacerlo en <em>RStudio</em>.</p>
-<p><a href="img/proyecto-con-git.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img/proyecto-con-git.png" class="img-fluid"></a></p>
-<p>Evidentemete, si seguiste la ruta azul, tu repositorio ya existe en <em>Github</em>. Si optaste por la ruta verde, entonces deberás crear un repositorio allá. Parar hacerlo hay tres sencillos pasos adicionales que dar.</p>
-<p><br>
-</p>
+<section id="preparación" class="level2">
+<h2 class="anchored" data-anchor-id="preparación">Preparación</h2>
+<p>Supondré que ya has obtenido tus cuentas de <em>Github</em> y <em>Netlify</em>. En todo caso y por si las dudas estos dos enlaces te deben ayudar.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Enlaces inicio Github y Netlify
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="https://github.com/signup?ref_cta=Sign+up&amp;ref_loc=header+logged+out&amp;ref_page=%2F&amp;source=header-home">Github</a></p>
+<p><a href="https://www.netlify.com/">Netlify</a></p>
+</div>
+</div>
+</div>
 <div>
 
 </div>
-<div class="quarto-layout-panel" data-layout="[35,60]">
+<div class="quarto-layout-panel" data-layout="[1,1]">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 36.8%;justify-content: flex-start;">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Ya tenemos un proyecto <em>Quarto</em> en <em>Rstudio</em>, al que podemos agregar la funcionalidad de control de versiones mediante <em>Git</em>. Por otro lado, también podemos iniciar un nuevo proyecto que desde un inicio tenga esta característica, la <a href="../../posts/2022-02-02-prueba-rb-github/primeros-pasos.html">forma e hacerlo está aquí</a>. Si prefieres el camino de agregar <em>Git</em> a tu proyecto ya existente habrá que agregarlo. Para saber si está <em>Git</em> habilitado basta con averiguar si tienes la pestaña respectiva en el cuadrante de <em>ambiente de trabajo</em> de <em>RStudio</em> (arriba a la izquierda normalmente)</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="img/cuadrante-ambiente.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img/cuadrante-ambiente.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Agregar control de versiones a tu proyecto
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="camino-a-usando-el-menu" class="level3">
+<h3 class="anchored" data-anchor-id="camino-a-usando-el-menu">Camino A: usando el menu</h3>
+<p><a href="img/agregar-git-proyecto.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img/agregar-git-proyecto.png" class="img-fluid"></a></p>
+</section>
+<section id="camino-b-usando-comandos" class="level3">
+<h3 class="anchored" data-anchor-id="camino-b-usando-comandos">Camino B: usando comandos</h3>
 <ol type="1">
-<li>Definir la <em>rama</em> principal (se sugiere <strong>main</strong>, aunque también se usa <strong>master</strong>).</li>
+<li>Asegúrate de tener instalada la biblioteca <code>usethis</code></li>
+<li>Ejecuta el siguiente comando en <em>R</em> y responde las preguntas que aparecerán en la consola</li>
 </ol>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 63.2%;justify-content: center;">
-<p><a href="img/rstudio-git-main.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img/rstudio-git-main.png" class="img-fluid" width="500"></a></p>
-</div>
-</div>
-</div>
-<p><br>
-</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[35,60]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 36.8%;justify-content: flex-start;">
-<ol start="2" type="1">
-<li>Haz un <em>commit</em> seleccionando todos los archivos que aparecen en la pestaña <strong>Git</strong>. Los puedes comentar anotado “inicial” o algo sugerente de ser el primer control registrado en el repositorio del proyecto.</li>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="agregar-el-nuevo-repositorio-a-github" class="level3">
+<h3 class="anchored" data-anchor-id="agregar-el-nuevo-repositorio-a-github">Agregar el nuevo repositorio a Github</h3>
+<p>Lo más sencillo es de nuevo usar la biblioteca de ayuda <code>usethis</code>. En la consola ejecuta el siguiente comando</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Lo que ocurre con este comando es lo siguiente:</p>
+<ol type="1">
+<li>Crearas un nuevo <em>repositorio en GitHub</em> con el mismo nombre de tu proyecto.</li>
+<li>Configurará el nuevo <em>repo</em> como el <em>origin</em> remoto para tu <em>repo</em> local.</li>
+<li>Preparará una rama local inicial a la que nombrará <strong>main</strong> y sobre la que se hará el seguimiento hasta nueva orden, sincronizará lo que tengas en tu máquina con <em>Github</em>.</li>
+<li>Abrirá el nuevo repositorio en el navegador para que puedas ver lo que has hecho.</li>
 </ol>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 63.2%;justify-content: center;">
-<p><a href="img/rstudio-commit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img/rstudio-commit.png" class="img-fluid" width="500"></a></p>
-</div>
+<p>De ahora en adelante puedes tomar registro de tu avance de trabajo, involucrando todos los directorios de tu proyecto, cada vez que lo consideres conveniente. También podrás sincronizar este registro con el repositorio que has creado en <em>Github</em> cuando te parezca prudente.</p>
+</section>
 </div>
 </div>
-<p><br>
-</p>
-<ol start="3" type="1">
-<li>Vincula tu repositorio local con un nuevo repositorio en <em>Github</em>. La forma más sencilla de hacer esto con <em>RStudio</em> es escribir, en la pestaña de <strong>Consola</strong> el comando de <em>R</em>:</li>
-</ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Una vez que todo está preparado la rutina de trabajo incluye hacer <em>commit</em> cada vez que convenga preservar alguna versión. De vez en cuando sincronizar con la copia maestra del rerpositorio en <em>Github</em>, primero obteniendo el estado actual con el comando <em>pull</em> y luego enviando la versión de tu equipo local con un <em>push</em>.</p>
+</div>
 
 
 </section>
@@ -668,7 +701,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"descPosition":"bottom","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":false,"openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

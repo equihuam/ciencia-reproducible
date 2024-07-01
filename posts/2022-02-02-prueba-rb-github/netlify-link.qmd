@@ -1,48 +1,75 @@
 ---
-title: "Publicar desde RStudio"
-description: "Rutina de publicación fluida: Rstudio > Github > Netlify"
+title: "Enlazar Github con Netlify para publicar"
+description: "Preparación del vínculo entre Github y Netlify para publicación en automático"
 author:
   - name: [Miguel Equihua]
     url: https://www.ie-gamma.net
-date: 25/jun/2024
-categories: [taller, github]
+date: 3/jul/2024
+categories: [taller, github, netlify]
 format: 
   html:
     toc: true
-editor_options: 
-  chunk_output_type: console
 lightbox: true
 ---
 
 
-# Preparación
+## Preparación
 
-Desde luego ya debes tener preparado _Git_ en tu máquina y una cuenta en _Github_. Si requieres realizar estos primeros pasos te sugiero [ir a esta contribución](primeros-pasos.qmd).
+Supondré que ya has obtenido tus cuentas de _Github_ y _Netlify_. En todo caso y por si las dudas estos dos enlaces te deben ayudar.
 
-::: {layout="[60, 40]"}
+::: {.callout-tip collapse="true"}
+## Enlaces inicio Github y Netlify
+[Github](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home)
 
-Simplemente hay que crear o clonar un repositorio en _Github_ (o algún otro servicio semejante) y asegurarse de trabajar con vinculación a ese repositorio. Esto es muy cómodo hacerlo con [Github Desktop](https://desktop.github.com/). RStudio debería reconocer la configuración en forma automática, incluyendo las credenciales usadas para acceder al repositorio, que habrán sido registradas por Git en la referencia al repositorio base que se suele etiquetar como __origin__.
-
-```{r}
-#| label: ciclo
-#| echo: false
-
-knitr::include_graphics("img/Git-Netlify.png")
-```
-
+[Netlify](https://www.netlify.com/)
 :::
 
-# Contribuir _posts_ desde RStudio
+::: {layout="[1,1]"}
 
-1. __Empezar__: crear un folder descriptivo para la nueva contribución y crear en él un documento _Quarto_ con nombre un nombre apropiado, `index.qmd` es usualmente conveniente.
-2. __Editar__: Especificar la sección _front matter_ al inicio del documento y agregar el contenido deseado.
-3. __Render__: Para generar la _versión de despliegue_ de la contribución.
-4. __commit__: Desde el menú **Git** en Rstudio, para registrar el avance en el sistema de control de versiones.
-5. __pull__: Después de guardar el avance con __commit__, es buena práctica pedir al sistema descargar posibles cambios del registro remoto.
-5. __push__: Para depositar la contribución en el repositorio remoto desde donde _Netlify_ lo tomará y publicará automáticamente.
+Ya tenemos un proyecto _Quarto_ en _Rstudio_, al que podemos agregar la funcionalidad de control de versiones mediante _Git_. Por otro lado, también podemos iniciar un nuevo proyecto que desde un inicio tenga esta característica, la [forma e hacerlo está aquí](primeros-pasos.qmd). Si prefieres el camino de agregar _Git_ a tu proyecto ya existente habrá que agregarlo. Para saber si está _Git_ habilitado basta con averiguar si tienes la pestaña respectiva en el cuadrante de _ambiente de trabajo_ de _RStudio_ (arriba a la izquierda normalmente)
+
+![](img/cuadrante-ambiente.png)
+:::
 
 
-## Colaboración
 
-La forma más segura de interactuar con un repositorio es mediante _pull request_ (solicitud de incorporación). Esta acción es una petición que hace el propietario de una copia del repositorio (_fork_), al propietario del repositorio original para que incorpore los _commits_ que están en la copia del solicitante. Para ver como hacer preparamos [esta contribución al respecto](pull-request.qmd).
+
+::: {.callout-tip collapse="true"}
+## Agregar control de versiones a tu proyecto
+
+### Camino A: usando el menu
+
+![](img/agregar-git-proyecto.png)
+
+### Camino B: usando comandos
+
+1. Asegúrate de tener instalada la biblioteca `usethis`
+2. Ejecuta el siguiente comando en _R_ y responde las preguntas que aparecerán en la consola
+
+```r
+usethis::use_git()
+
+```
+
+### Agregar el nuevo repositorio a Github
+
+Lo más sencillo es de nuevo usar la biblioteca de ayuda `usethis`. En la consola ejecuta el siguiente comando
+
+```r
+
+usethis::use_github()
+
+```
+
+Lo que ocurre con este comando es lo siguiente:
+
+1. Crearás un nuevo _repositorio en GitHub_ con el mismo nombre de tu proyecto.
+2. Configurarás el nuevo _repo_ como el _origin_ remoto para tu _repo_ local.
+3. Prepararás una rama local inicial a la que nombrarás **main** y sobre la que se harás el seguimiento hasta nueva orden. 
+4. Sincronizarás lo que tengas en tu máquina con _Github_.
+4. Abrirás el nuevo repositorio en el navegador para que puedas ver lo que has hecho.
+
+De ahora en adelante puedes tomar registro de tu avance de trabajo, involucrando todos los directorios de tu proyecto (salvo lso que estén en `.gitignore`), cada vez que lo consideres conveniente. También podrás sincronizar este registro con el repositorio que has creado en _Github_ cuando te parezca prudente. Toma nota de que nada de esto ocurrirá automáticamente, deberás generar la indicación cada vez que quieras que ocurra.
+:::
+
 

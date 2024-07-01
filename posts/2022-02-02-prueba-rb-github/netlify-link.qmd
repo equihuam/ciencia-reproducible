@@ -15,7 +15,7 @@ lightbox: true
 ---
 
 
-## Preparación
+# Preparación
 
 Desde luego ya debes tener preparado _Git_ en tu máquina y una cuenta en _Github_. Si requieres realizar estos primeros pasos te sugiero [ir a esta contribución](primeros-pasos.qmd).
 
@@ -32,7 +32,7 @@ knitr::include_graphics("img/Git-Netlify.png")
 
 :::
 
-## Contribuir _posts_ desde RStudio
+# Contribuir _posts_ desde RStudio
 
 1. __Empezar__: crear un folder descriptivo para la nueva contribución y crear en él un documento _Quarto_ con nombre un nombre apropiado, `index.qmd` es usualmente conveniente.
 2. __Editar__: Especificar la sección _front matter_ al inicio del documento y agregar el contenido deseado.
@@ -42,7 +42,7 @@ knitr::include_graphics("img/Git-Netlify.png")
 5. __push__: Para depositar la contribución en el repositorio remoto desde donde _Netlify_ lo tomará y publicará automáticamente.
 
 
-### Colaboración
+## Colaboración
 
 La forma más segura de interactuar con un repositorio es mediante _pull request_ (solicitud de incorporación). Esta acción es una petición que hace el propietario de una copia del repositorio (_fork_), al propietario del repositorio original para que incorpore los _commits_ que están en la copia del solicitante. Para ver como hacer preparamos [esta contribución al respecto](pull-request.qmd).
 

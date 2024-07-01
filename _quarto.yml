@@ -7,6 +7,7 @@ date-format: "[Xalapa, Ver.,] D [de] MMMM, YYYY"
 
 website:
   title: "Ciencia Abierta"
+  favicon: pluma-escritura.png
   navbar:
     right:
       - about.qmd

@@ -239,7 +239,7 @@ Enlaces para registro en Github y Netlify
 <div class="quarto-layout-panel" data-layout="[1,1]">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>Ya tenemos un proyecto <em>Quarto</em> en <em>Rstudio</em>, al que podemos agregar la funcionalidad de control de versiones mediante <em>Git</em>. Por otro lado, también podemos iniciar un nuevo proyecto que desde un inicio tenga esta característica, la <a href="../../posts/2022-02-02-prueba-rb-github/primeros-pasos.html">forma e hacerlo está aquí</a>. Si prefieres el camino de agregar <em>Git</em> a tu proyecto ya existente habrá que agregarlo. Para saber si está <em>Git</em> habilitado basta con averiguar si tienes la pestaña respectiva en el cuadrante de <em>ambiente de trabajo</em> de <em>RStudio</em> (arriba a la izquierda normalmente)</p>
+<p>Ya tenemos un proyecto <em>Quarto</em> en <em>Rstudio</em>, al que podemos agregar la funcionalidad de control de versiones mediante <em>Git</em>. Por otro lado, también podemos iniciar un nuevo proyecto que desde un inicio tenga esta característica, la <a href="../../posts/2022-02-02-prueba-rb-github/primeros-pasos.html">forma e hacerlo está aquí</a>. Si prefieres el camino de agregar <em>Git</em> a tu proyecto ya existente habrá que habilitarlo. Para saber si está <em>Git</em> habilitado basta con averiguar si tienes la pestaña respectiva en el cuadrante de <em>ambiente de trabajo</em> de <em>RStudio</em> (arriba a la izquierda normalmente)</p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><a href="img/cuadrante-ambiente.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img/cuadrante-ambiente.png" class="img-fluid"></a></p>
@@ -293,7 +293,7 @@ Agregar control de versiones a tu proyecto
 <p>Un último paso sólo para asegurar uun poco más tu espacio de trabajo y colaboración es recurrir al comando siguiente.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_vaccinate</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Con esta instrucción se revisa el archivo <code>.gitignore</code> global que especifica lo que no conviene, se quiere o debe compartir (claves confidenciales por ejemplo), en un espacio abierto.</p>
-<p>De ahora en adelante puedes tomar registro de tu avance de trabajo, involucrando todos los directorios de tu proyecto (salvo los que estén en <code>.gitignore</code>), cada vez que lo consideres conveniente. También podrás sincronizar este registro con el repositorio que has creado en <em>Github</em> cuando te parezca prudente. Toma nota de que nada de esto ocurrirá automáticamente, deberás generar la indicación cada vez que quieras que ocurra.</p>
+<p>De ahora en adelante puedes tomar registro de tu avance de trabajo, involucrando todos los directorios de tu proyecto (salvo los que estén en <code>.gitignore</code>), cada vez que lo consideres conveniente (al dar por terminada una tarea propuesta, por ejemplo). También podrás sincronizar este registro con el repositorio que has creado en <em>Github</em> cuando te parezca prudente. Toma nota de que nada de esto ocurrirá automáticamente, deberás generar la indicación cada vez que quieras que ocurra.</p>
 <p>La rutina de operación con <em>Git</em> se ilustra en la siguiente figura.</p>
 <p><a href="img/En caso de incendio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img/En caso de incendio.png" class="img-fluid" style="width:40.0%"></a></p>
 </section>
@@ -301,9 +301,18 @@ Agregar control de versiones a tu proyecto
 </div>
 </div>
 </section>
-<section id="preparar-github-para-interactuar-con-netlify" class="level1">
-<h1>Preparar Github para interactuar con Netlify</h1>
-<p>Hay que indicar a <em>Github</em> que de acceso a <em>Netlify</em> para tomar lo necesario para contruir el servicio web que deseas y publicarlo en Internet. Los pasos que hay que seguir para esto son los que se ilustran en la figura.</p>
+<section id="preparar-github-para-interactuar-con-netlify" class="level2">
+<h2 class="anchored" data-anchor-id="preparar-github-para-interactuar-con-netlify">Preparar Github para interactuar con Netlify</h2>
+<p>Hay que indicar a <em>Github</em> que de acceso a <em>Netlify</em> para tomar lo necesario para construir el servicio web que deseas y publicarlo en Internet. Los pasos que hay que seguir para esto son:</p>
+<ol type="1">
+<li><strong>En Github</strong> - En la configuración de aplicaciones, conceder acceso a Netlify al repositorio que te interesa sea la fuente de documentos para publicar.</li>
+<li><strong>En Netlify</strong> - Hay que configurar un nuevo sitio:
+<ul>
+<li>Seleccionar el origen de los documentos en Github.</li>
+<li>Seleccionar la carpeta que habrá que estar vigilando para genera el sitio.</li>
+<li>Especificar el nombre que tendrá el sitio web que se publicará. Si no dispones de un nombre de dominio de tu propiedad, el sitio será parte del dominio netlify.app, pero tampoco te costará nada publicar ni el espacio de almacenamiento que uses.</li>
+</ul></li>
+</ol>
 
 
 </section>
@@ -730,7 +739,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

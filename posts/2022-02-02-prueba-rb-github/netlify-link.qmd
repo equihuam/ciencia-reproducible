@@ -101,7 +101,13 @@ La rutina de operación con _Git_ se ilustra en la siguiente figura.
 
 ## Preparar Github para interactuar con Netlify
 
-Hay que indicar a _Github_ que de acceso a _Netlify_ para tomar lo necesario para construir el servicio web que deseas y publicarlo en Internet. Los pasos que hay que seguir para esto son los que se ilustran en la figura.
+Hay que indicar a _Github_ que de acceso a _Netlify_ para tomar lo necesario para construir el servicio web que deseas y publicarlo en Internet. Los pasos que hay que seguir para esto son:
+
+1. **En Github** - En la configuración de aplicaciones, conceder acceso a Netlify al repositorio que te interesa sea la fuente de documentos para publicar.
+2. **En Netlify** - Hay que configurar un nuevo sitio:
+   + Seleccionar el origen de los documentos en Github.
+   + Seleccionar la carpeta que habrá que estar vigilando para genera el sitio.
+   + Especificar el nombre que tendrá el sitio web que se publicará. Si no dispones de un nombre de dominio de tu propiedad, el sitio será parte del dominio netlify.app, pero tampoco te costará nada publicar ni el espacio de almacenamiento que uses.
 
 
 

@@ -69,7 +69,14 @@ Lo que ocurre con este comando es lo siguiente:
 4. Sincronizarás lo que tengas en tu máquina con _Github_.
 4. Abrirás el nuevo repositorio en el navegador para que puedas ver lo que has hecho.
 
+Casi tan simple como lo que acabamos de hacer es utilizar _Google Desktop_ para crear un _repo_ en tu cuenta, con base en un proyecto de tu máquina. Asegúrate de hacer las tareas 3 y 4 anotadas arriba.
+
+![](img/github-desktop.png)
+
 De ahora en adelante puedes tomar registro de tu avance de trabajo, involucrando todos los directorios de tu proyecto (salvo lso que estén en `.gitignore`), cada vez que lo consideres conveniente. También podrás sincronizar este registro con el repositorio que has creado en _Github_ cuando te parezca prudente. Toma nota de que nada de esto ocurrirá automáticamente, deberás generar la indicación cada vez que quieras que ocurra.
+
+
+
 :::
 
 

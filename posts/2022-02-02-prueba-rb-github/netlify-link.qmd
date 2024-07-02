@@ -18,7 +18,7 @@ lightbox: true
 Supondré que ya has obtenido tus cuentas de _Github_ y _Netlify_. En todo caso y por si las dudas estos dos enlaces te deben ayudar.
 
 ::: {.callout-tip collapse="true"}
-## Enlaces inicio Github y Netlify
+## Enlaces para registro en Github y Netlify
 [Github](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home)
 
 [Netlify](https://www.netlify.com/)
@@ -26,7 +26,7 @@ Supondré que ya has obtenido tus cuentas de _Github_ y _Netlify_. En todo caso 
 
 ::: {layout="[1,1]"}
 
-Ya tenemos un proyecto _Quarto_ en _Rstudio_, al que podemos agregar la funcionalidad de control de versiones mediante _Git_. Por otro lado, también podemos iniciar un nuevo proyecto que desde un inicio tenga esta característica, la [forma e hacerlo está aquí](primeros-pasos.qmd). Si prefieres el camino de agregar _Git_ a tu proyecto ya existente habrá que agregarlo. Para saber si está _Git_ habilitado basta con averiguar si tienes la pestaña respectiva en el cuadrante de _ambiente de trabajo_ de _RStudio_ (arriba a la izquierda normalmente)
+Ya tenemos un proyecto _Quarto_ en _Rstudio_, al que podemos agregar la funcionalidad de control de versiones mediante _Git_. Por otro lado, también podemos iniciar un nuevo proyecto que desde un inicio tenga esta característica, la [forma e hacerlo está aquí](primeros-pasos.qmd). Si prefieres el camino de agregar _Git_ a tu proyecto ya existente habrá que habilitarlo. Para saber si está _Git_ habilitado basta con averiguar si tienes la pestaña respectiva en el cuadrante de _ambiente de trabajo_ de _RStudio_ (arriba a la izquierda normalmente)
 
 ![](img/cuadrante-ambiente.png)
 :::
@@ -40,6 +40,16 @@ Ya tenemos un proyecto _Quarto_ en _Rstudio_, al que podemos agregar la funciona
 ### Camino A: usando el menu
 
 ![](img/agregar-git-proyecto.png)
+\
+\
+
+Es muy probable que por este camino tengas una rama principal llamada _master_. Aunque no hay ningún inconveniente con esto, actualmente se prefiere usar como rama principal una llamada _main_. Si esto es lo que prefieres tu también puedes usar el siguiente comando desde la pestaña de consola.
+
+```r
+
+usethis::git_default_branch_rename(from = "master", to = "main")
+
+```
 
 ### Camino B: usando comandos
 
@@ -73,10 +83,27 @@ Casi tan simple como lo que acabamos de hacer es utilizar _Google Desktop_ para 
 
 ![](img/github-desktop.png)
 
-De ahora en adelante puedes tomar registro de tu avance de trabajo, involucrando todos los directorios de tu proyecto (salvo lso que estén en `.gitignore`), cada vez que lo consideres conveniente. También podrás sincronizar este registro con el repositorio que has creado en _Github_ cuando te parezca prudente. Toma nota de que nada de esto ocurrirá automáticamente, deberás generar la indicación cada vez que quieras que ocurra.
+Un último paso sólo para asegurar uun poco más tu espacio de trabajo y colaboración es recurrir al comando siguiente.
 
+```r
+usethis::git_vaccinate()
 
+```
+Con esta instrucción se revisa el archivo `.gitignore` global que especifica lo que no conviene, se quiere o debe compartir (claves confidenciales por ejemplo), en un espacio abierto.
+
+De ahora en adelante puedes tomar registro de tu avance de trabajo, involucrando todos los directorios de tu proyecto (salvo los que estén en `.gitignore`), cada vez que lo consideres conveniente (al dar por terminada una tarea propuesta, por ejemplo). También podrás sincronizar este registro con el repositorio que has creado en _Github_ cuando te parezca prudente. Toma nota de que nada de esto ocurrirá automáticamente, deberás generar la indicación cada vez que quieras que ocurra.
+
+La rutina de operación con _Git_ se ilustra en la siguiente figura.
+
+![](img/En caso de incendio.png){width=40%}
 
 :::
+
+## Preparar Github para interactuar con Netlify
+
+Hay que indicar a _Github_ que de acceso a _Netlify_ para tomar lo necesario para construir el servicio web que deseas y publicarlo en Internet. Los pasos que hay que seguir para esto son los que se ilustran en la figura.
+
+
+
 
 

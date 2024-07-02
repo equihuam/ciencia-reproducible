@@ -202,6 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#preparación" id="toc-preparación" class="nav-link active" data-scroll-target="#preparación">Preparación</a></li>
+  <li><a href="#preparar-github-para-interactuar-con-netlify" id="toc-preparar-github-para-interactuar-con-netlify" class="nav-link" data-scroll-target="#preparar-github-para-interactuar-con-netlify">Preparar Github para interactuar con Netlify</a></li>
   </ul>
 </nav>
     </div>
@@ -221,7 +222,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Enlaces inicio Github y Netlify
+Enlaces para registro en Github y Netlify
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -259,7 +260,12 @@ Agregar control de versiones a tu proyecto
 <div class="callout-body-container callout-body">
 <section id="camino-a-usando-el-menu" class="level3">
 <h3 class="anchored" data-anchor-id="camino-a-usando-el-menu">Camino A: usando el menu</h3>
-<p><a href="img/agregar-git-proyecto.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img/agregar-git-proyecto.png" class="img-fluid"></a></p>
+<p><img src="img/agregar-git-proyecto.png" class="img-fluid"><br>
+<br>
+</p>
+<p>Es muy probable que por este camino tengas una rama principal llamada <em>master</em>. Aunque no hay ningún inconveniente con esto, actualmente se prefiere usar como rama principal una llamada <em>main</em>. Si esto es lo que prefieres tu también puedes usar el siguiente comando desde la pestaña de consola.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_default_branch_rename</span>(<span class="at">from =</span> <span class="st">"master"</span>, <span class="at">to =</span> <span class="st">"main"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="camino-b-usando-comandos" class="level3">
 <h3 class="anchored" data-anchor-id="camino-b-usando-comandos">Camino B: usando comandos</h3>
@@ -267,13 +273,13 @@ Agregar control de versiones a tu proyecto
 <li>Asegúrate de tener instalada la biblioteca <code>usethis</code></li>
 <li>Ejecuta el siguiente comando en <em>R</em> y responde las preguntas que aparecerán en la consola</li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="agregar-el-nuevo-repositorio-a-github" class="level3">
 <h3 class="anchored" data-anchor-id="agregar-el-nuevo-repositorio-a-github">Agregar el nuevo repositorio a Github</h3>
 <p>Lo más sencillo es de nuevo usar la biblioteca de ayuda <code>usethis</code>. En la consola ejecuta el siguiente comando</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Lo que ocurre con este comando es lo siguiente:</p>
 <ol type="1">
 <li>Crearás un nuevo <em>repositorio en GitHub</em> con el mismo nombre de tu proyecto.</li>
@@ -282,11 +288,22 @@ Agregar control de versiones a tu proyecto
 <li>Sincronizarás lo que tengas en tu máquina con <em>Github</em>.</li>
 <li>Abrirás el nuevo repositorio en el navegador para que puedas ver lo que has hecho.</li>
 </ol>
-<p>De ahora en adelante puedes tomar registro de tu avance de trabajo, involucrando todos los directorios de tu proyecto (salvo lso que estén en <code>.gitignore</code>), cada vez que lo consideres conveniente. También podrás sincronizar este registro con el repositorio que has creado en <em>Github</em> cuando te parezca prudente. Toma nota de que nada de esto ocurrirá automáticamente, deberás generar la indicación cada vez que quieras que ocurra.</p>
+<p>Casi tan simple como lo que acabamos de hacer es utilizar <em>Google Desktop</em> para crear un <em>repo</em> en tu cuenta, con base en un proyecto de tu máquina. Asegúrate de hacer las tareas 3 y 4 anotadas arriba.</p>
+<p><a href="img/github-desktop.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img/github-desktop.png" class="img-fluid"></a></p>
+<p>Un último paso sólo para asegurar uun poco más tu espacio de trabajo y colaboración es recurrir al comando siguiente.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_vaccinate</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Con esta instrucción se revisa el archivo <code>.gitignore</code> global que especifica lo que no conviene, se quiere o debe compartir (claves confidenciales por ejemplo), en un espacio abierto.</p>
+<p>De ahora en adelante puedes tomar registro de tu avance de trabajo, involucrando todos los directorios de tu proyecto (salvo los que estén en <code>.gitignore</code>), cada vez que lo consideres conveniente. También podrás sincronizar este registro con el repositorio que has creado en <em>Github</em> cuando te parezca prudente. Toma nota de que nada de esto ocurrirá automáticamente, deberás generar la indicación cada vez que quieras que ocurra.</p>
+<p>La rutina de operación con <em>Git</em> se ilustra en la siguiente figura.</p>
+<p><a href="img/En caso de incendio.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img/En caso de incendio.png" class="img-fluid" style="width:40.0%"></a></p>
 </section>
 </div>
 </div>
 </div>
+</section>
+<section id="preparar-github-para-interactuar-con-netlify" class="level1">
+<h1>Preparar Github para interactuar con Netlify</h1>
+<p>Hay que indicar a <em>Github</em> que de acceso a <em>Netlify</em> para tomar lo necesario para contruir el servicio web que deseas y publicarlo en Internet. Los pasos que hay que seguir para esto son los que se ilustran en la figura.</p>
 
 
 </section>
@@ -713,7 +730,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":false});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

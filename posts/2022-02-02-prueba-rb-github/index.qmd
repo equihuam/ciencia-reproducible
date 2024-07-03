@@ -4,8 +4,8 @@ description: "Rutina de publicación fluida: Rstudio > Github > Netlify"
 author:
   - name: [Miguel Equihua]
     url: https://www.ie-gamma.net
-date: 25/jun/2024
-categories: [taller, github]
+date: 5/jul/2024
+categories: [taller, github, netlify]
 format: 
   html:
     toc: true

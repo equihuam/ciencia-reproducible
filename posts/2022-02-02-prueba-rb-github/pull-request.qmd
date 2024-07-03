@@ -3,7 +3,7 @@ title: "Merge request o ¡Acepta mi contribución!"
 author:
   - name: [Miguel Equihua]
     url: https://www.ie-gamma.net
-date: 3/jul/2024
+date: 6/jul/2024
 
 categories: [taller, github]
 

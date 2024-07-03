@@ -101,7 +101,7 @@ La rutina de operación con _Git_ se ilustra en la siguiente figura.
 
 ## Preparar Github para interactuar con Netlify
 
-Hay que preparar a _Github_ para que de acceso a _Netlify_ para tomar lo necesario para construir el servicio web que deseas y publicarlo en Internet. Los pasos que hay que seguir para esta primera interacción son los que se ilustran en estas figuras.
+Hay que preparar a _Github_ dando acceso a _Netlify_ para que tome lo necesario. La meta es que construya un sitio Web con tu contenido y lo publique en Internet. Los pasos que hay que seguir para esta primera interacción son los siguiente.
 
 
 Iniciar la vinculación con Github seleccionando la opción qe ofrece importar los documentos desde n _repo_ Git. Esto dará la opción de utilizar _Github_ como origen de datos, entre otras posibilidades.

@@ -195,6 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#qué-es-git" id="toc-qué-es-git" class="nav-link active" data-scroll-target="#qué-es-git">¿Qué es Git?</a></li>
+  <li><a href="#algunos-problemas-que-se-nos-presentaron." id="toc-algunos-problemas-que-se-nos-presentaron." class="nav-link" data-scroll-target="#algunos-problemas-que-se-nos-presentaron.">Algunos problemas que se nos presentaron.</a></li>
   </ul>
 </nav>
     </div>
@@ -253,6 +254,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Una vez que todo está preparado la rutina de trabajo incluye hacer <em>commit</em> cada vez que convenga preservar alguna versión. De vez en cuando sincronizar con la copia maestra del rerpositorio en <em>Github</em>, primero obteniendo el estado actual con el comando <em>pull</em> y luego enviando la versión de tu equipo local con un <em>push</em>.</p>
+</section>
+<section id="algunos-problemas-que-se-nos-presentaron." class="level2">
+<h2 class="anchored" data-anchor-id="algunos-problemas-que-se-nos-presentaron.">Algunos problemas que se nos presentaron.</h2>
+<ol type="1">
+<li><em>Git</em> no instalado. Esperábamos que la instalación de <em>Github desktop</em> instalara <em>Git</em> en una sola operación. Por alguna razón esto no fue así.<br>
+Recurrimos a <em>Git</em> for <em>Windows</em> y lo instalamos directamente.</li>
+<li>Datos de usuario de <em>Git</em> no registrado. Lo resolvimos con <code>Git bash</code>, que es una consola de comandos para operar el equipo que está vinculado con la instalación de <em>Git</em>.</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Mona Lisa</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="st">git config --global user.email "</span>YOUR_EMAIL<span class="st">"</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Verificar que tus datos quedaron registrados:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Acceso a <em>Github</em> pide registrar un <strong>token</strong> en el equipo. Lo resolvimos con ayuda de la biblioteca <code>usethis</code> Los comandos que ejecutamos en la pestaña de <em>consola</em> fueron:</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Esto lleva a la página de Github en la que hay que generar el <strong>token</strong>. Hay que responder las preguntas que te haga la página y apretar el botón respectivo. Aparecerá una nueva pantalla con el <strong>token</strong> que habrá que copiar al <em>portapapeles</em> (ctr-c en windows). En seguida hay que ejecutar este otro comando en la consola de <em>RStudio</em></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li><p>La operación de <em>Netlify</em> parecía no funcionar correctamente. Encontramos que el proyecto en <em>RStudio</em> no estaba completamente <em>renderizado</em>. Lo resolvimos activando <strong>Render website</strong> en la pestaña <strong>Build</strong> de RStudio.</p></li>
+<li><p>Una manera de averiguar muchos detalles esenciales de tu proyecto es usar el siguiente comando. Producirá un reporte un poco largo. De particular interés es la sección <em>── Active usethis project:── Active usethis project</em>.</p></li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
@@ -679,7 +704,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

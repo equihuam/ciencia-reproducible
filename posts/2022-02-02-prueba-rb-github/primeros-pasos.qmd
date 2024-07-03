@@ -9,7 +9,7 @@ format:
   html:
     toc: true
 editor_options: 
-  chunk_output_type: console
+  chunk_output_type: inline
 lightbox: true
 ---
 
@@ -54,3 +54,44 @@ usethis::use_github()
 ```
 
 Una vez que todo está preparado la rutina de trabajo incluye hacer _commit_ cada vez que convenga preservar alguna versión. De vez en cuando sincronizar con la copia maestra del rerpositorio en _Github_, primero obteniendo el estado actual con el comando _pull_ y luego enviando la versión de tu equipo local con un _push_.
+
+## Algunos problemas que se nos presentaron.
+
+1. _Git_ no instalado.
+Esperábamos que la instalación de _Github desktop_ instalara _Git_ en una sola operación. Por alguna razón esto no fue así.  
+Recurrimos a _Git_ for _Windows_ y lo instalamos directamente. 
+2. Datos de usuario de _Git_ no registrado.
+Lo resolvimos con `Git bash`, que es una consola de comandos para operar el equipo que está vinculado con la instalación de _Git_. 
+
+``` bash
+git config --global user.name "Mona Lisa
+git config --global user.email "YOUR_EMAIL"
+```
+Verificar que tus datos quedaron registrados:
+
+``` bash
+git config --global user.name
+git config --global user.email
+```
+
+3. Acceso a _Github_ pide registrar un **token** en el equipo.
+Lo resolvimos con ayuda de la biblioteca `usethis` Los comandos que ejecutamos en la pestaña de _consola_ fueron:
+
+```r
+usethis::create_github_token()
+```
+Esto lleva a la página de Github en la que hay que generar el **token**. Hay que responder las preguntas que te haga la página y apretar el botón respectivo. Aparecerá una nueva pantalla con el **token** que habrá que copiar al _portapapeles_ (ctr-c en windows). En seguida hay que ejecutar este otro comando en la consola de _RStudio_
+
+```r
+gitcreds::gitcreds_set()
+```
+
+4. La operación de _Netlify_ parecía no funcionar correctamente. Encontramos que el proyecto en _RStudio_ no estaba completamente _renderizado_. Lo resolvimos activando **Render website** en la pestaña **Build** de RStudio.
+
+5. Una manera de averiguar muchos detalles esenciales de tu proyecto es usar el siguiente comando. Producirá un reporte un poco largo. De particular interés es la sección _── Active usethis project:── Active usethis project_.
+
+```r
+usethis::git_sitrep()
+```
+
+

@@ -262,11 +262,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Recurrimos a <em>Git</em> for <em>Windows</em> y lo instalamos directamente.</li>
 <li>Datos de usuario de <em>Git</em> no registrado. Lo resolvimos con <code>Git bash</code>, que es una consola de comandos para operar el equipo que está vinculado con la instalación de <em>Git</em>.</li>
 </ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Mona Lisa</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="st">git config --global user.email "</span>YOUR_EMAIL<span class="st">"</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Mona Lisa"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"YOUR_EMAIL"</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Verificar que tus datos quedaron registrados:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="3" type="1">
 <li>Acceso a <em>Github</em> pide registrar un <strong>token</strong> en el equipo. Lo resolvimos con ayuda de la biblioteca <code>usethis</code> Los comandos que ejecutamos en la pestaña de <em>consola</em> fueron:</li>
 </ol>
@@ -275,9 +277,13 @@ Recurrimos a <em>Git</em> for <em>Windows</em> y lo instalamos directamente.</li
 <div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="4" type="1">
 <li><p>La operación de <em>Netlify</em> parecía no funcionar correctamente. Encontramos que el proyecto en <em>RStudio</em> no estaba completamente <em>renderizado</em>. Lo resolvimos activando <strong>Render website</strong> en la pestaña <strong>Build</strong> de RStudio.</p></li>
-<li><p>Una manera de averiguar muchos detalles esenciales de tu proyecto es usar el siguiente comando. Producirá un reporte un poco largo. De particular interés es la sección <em>── Active usethis project:── Active usethis project</em>.</p></li>
+<li><p>Una manera de averiguar muchos detalles esenciales de tu proyecto es usar el siguiente comando. Producirá un reporte un poco largo. De particular interés es la sección <em>── Active usethis project</em>. También será oportunidad de verificar que estes vacunado (evita en lo posible distribuir información confidencial, entre otras cosas).</p></li>
 </ol>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Si no estas vacunado, conviene que lo hagas. Puedes encontrar más información al respecto con <code>? git_vaccinate</code> o yendo a la pestaña de ayuda y buscando el comando.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_vaccinate</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>
@@ -704,7 +710,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

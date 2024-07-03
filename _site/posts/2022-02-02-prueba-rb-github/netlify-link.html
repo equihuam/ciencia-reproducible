@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.45">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="">
 <meta name="description" content="Preparación del vínculo entre Github y Netlify para publicación en automático">
 
-<title>Ciencia Abierta - Enlazar Github con Netlify para publicar</title>
+<title>Enlazar Github con Netlify para publicar – Ciencia Abierta</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -123,7 +123,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
   </div>
             <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -149,7 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -203,6 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#preparación" id="toc-preparación" class="nav-link active" data-scroll-target="#preparación">Preparación</a></li>
   <li><a href="#preparar-github-para-interactuar-con-netlify" id="toc-preparar-github-para-interactuar-con-netlify" class="nav-link" data-scroll-target="#preparar-github-para-interactuar-con-netlify">Preparar Github para interactuar con Netlify</a></li>
+  <li><a href="#creación-de-un-nuevo-sitio-a-publicar" id="toc-creación-de-un-nuevo-sitio-a-publicar" class="nav-link" data-scroll-target="#creación-de-un-nuevo-sitio-a-publicar">Creación de un nuevo sitio a publicar</a></li>
   </ul>
 </nav>
     </div>
@@ -303,20 +304,53 @@ Agregar control de versiones a tu proyecto
 </section>
 <section id="preparar-github-para-interactuar-con-netlify" class="level2">
 <h2 class="anchored" data-anchor-id="preparar-github-para-interactuar-con-netlify">Preparar Github para interactuar con Netlify</h2>
-<p>Hay que indicar a <em>Github</em> que de acceso a <em>Netlify</em> para tomar lo necesario para construir el servicio web que deseas y publicarlo en Internet. Los pasos que hay que seguir para esto son:</p>
+<p>Hay que preparar a <em>Github</em> para que de acceso a <em>Netlify</em> para tomar lo necesario para construir el servicio web que deseas y publicarlo en Internet. Los pasos que hay que seguir para esta primera interacción son los que se ilustran en estas figuras.</p>
+<p>Iniciar la vinculación con Github seleccionando la opción qe ofrece importar los documentos desde n <em>repo</em> Git. Esto dará la opción de utilizar <em>Github</em> como origen de datos, entre otras posibilidades.</p>
+<p><a href="img/Netlify-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="img/Netlify-1.png" class="img-fluid"></a></p>
+<p>El Siguiente paso es autorizar a Netlify a acceder a Github a través de tu cuenta, así como los específicos del repositorio que te interesa vincular. Esto también implica instalar una <strong>aplicación</strong> de vínculo entre <em>Netlify</em> <em>Github</em> dentro de tu cuenta.</p>
+<p><a href="img/Netlify-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="img/Netlify-2.png" class="img-fluid"></a></p>
+<p>Si todo ocurrió sin problemas, tendrás ahora en <em>Github</em>, en el menú de aplicaciones (Avatar→ Settings→ Applications), un botón que te permitirá configurar el vínculo con Netlify según tus requerimientos. También podrás ver los <em>repos</em> que hayas autorizado desde <em>Netlify</em>.</p>
+</section>
+<section id="creación-de-un-nuevo-sitio-a-publicar" class="level2">
+<h2 class="anchored" data-anchor-id="creación-de-un-nuevo-sitio-a-publicar">Creación de un nuevo sitio a publicar</h2>
 <ol type="1">
-<li><strong>En Netlify</strong>:
+<li><p><strong>En Netlify</strong>:</p>
 <ul>
-<li>Si es la primera vez, hay que pedirle a <em>Netlify</em> que obtenga autorización y que se instale como aplicación disponible en <em>Github</em>.</li>
-<li>Seleccionar el origen de los documentos en Github.</li>
-<li>Seleccionar la carpeta que habrá que estar vigilando para genera el sitio.</li>
-<li>Especificar el nombre que tendrá el sitio web que se publicará. Si no dispones de un nombre de dominio de tu propiedad, el sitio será parte del dominio netlify.app, pero tampoco te costará nada publicar ni el espacio de almacenamiento que uses.</li>
+<li>Desde la opción <em>team</em> o <em>site</em> puedes generar un nuevo sitio.</li>
 </ul></li>
-<li><strong>En Github</strong> - En la configuración de aplicaciones, conceder acceso a Netlify al repositorio que te interesa sea la fuente de documentos para publicar.</li>
 </ol>
-<p><img src="img/Netlify-1.png" class="img-fluid"> <img src="img/Netlify-2.png" class="img-fluid"></p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="img/Netlify-new-site.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="img/Netlify-new-site.png" class="img-fluid"></a></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><a href="img/Netlify-new-site-team.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="img/Netlify-new-site-team.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+<p>Cuando aprietas el boton de <em>añadir sitio</em>, aparecerá una nueva pantalla que tiene tres secciones. Se trata de los atributos que tendrás que proporcionar para darle presencia en Internet a tu proyecto y algunos otros atributos que definen como se producirá y actualizará continuamente. Estas operaciones es poco probable que las vuelvas a ver, una vez que tu proyecto esté en producción, aunque desde luego estarán siempre ahí por si deseas hacer ajustes.</p>
+<section id="qué-nombre-le-daras" class="level4">
+<h4 class="anchored" data-anchor-id="qué-nombre-le-daras">¿Qué nombre le daras?</h4>
+<p>Deberás elegir un nombre que se convertirá en una URL para acceder a tu proyecto. Puede ser cualquier cosa que desees, pero debe ser único. En esta sección puedes escribir nombres y verificar que estén disponibles</p>
+<p><a href="img/Netlify-config-site-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="img/Netlify-config-site-1.png" class="img-fluid"></a></p>
+</section>
+<section id="qué-hará-netlify-para-operar-tu-sitio" class="level4">
+<h4 class="anchored" data-anchor-id="qué-hará-netlify-para-operar-tu-sitio">¿Qué hará Netlify para operar tu sitio?</h4>
+<p>Es una colección de atributos para indicarle a <em>Netlify</em> dónde conseguir los documentos y como manejarlos. En nuestro caso, muy simple, básicamente hay que decirle en donde están los documentos que <em>Quarto</em>, con ayuda de <em>pandoc</em>, a <em>renderizado</em>. Si no has cambiado nada en <code>_quarto.yml</code> la rama que estamos usando aquí para que <em>Git</em> los registre es <strong>main</strong> y, en ella el directorio de producción se llama **_site**. Por favor verifica el contenido de esto para ayudarte a comprender mejor lo que estás haciendo.</p>
+<p><a href="img/Netlify-config-site-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="img/Netlify-config-site-2.png" class="img-fluid"></a></p>
+</section>
+<section id="todo-listo-a-prodcción" class="level4">
+<h4 class="anchored" data-anchor-id="todo-listo-a-prodcción">¿Todo listo? ¡a prodcción!</h4>
+<p>En nuestro caso no hay más que hacer, <em>Netlify</em> tiene información suficiente para encargarse de publicar tu proyecto continuamente, incorporando los cambios que hagas en RStudio en la rama principal. Lo hará automáticamente cada vez que envíes tus cambios a <em>Github</em>.</p>
+<p><a href="img/Netlify-config-site-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="img/Netlify-config-site-3.png" class="img-fluid"></a></p>
+<p>Si todo salió bien, en este momento ya debe estar tu proyecto publicado y accesible para cualquier lector del mundo que lo localice y se interese en su contenido.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -355,18 +389,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -398,7 +421,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -406,7 +451,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -730,30 +775,37 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","openEffect":"zoom"});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"openEffect":"zoom","descPosition":"bottom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
     }
-  });
-
-};
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
           </script>
 
 

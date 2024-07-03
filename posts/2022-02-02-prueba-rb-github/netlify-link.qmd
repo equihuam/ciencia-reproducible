@@ -101,16 +101,53 @@ La rutina de operación con _Git_ se ilustra en la siguiente figura.
 
 ## Preparar Github para interactuar con Netlify
 
-Hay que indicar a _Github_ que de acceso a _Netlify_ para tomar lo necesario para construir el servicio web que deseas y publicarlo en Internet. Los pasos que hay que seguir para esto son:
+Hay que preparar a _Github_ para que de acceso a _Netlify_ para tomar lo necesario para construir el servicio web que deseas y publicarlo en Internet. Los pasos que hay que seguir para esta primera interacción son los que se ilustran en estas figuras.
 
-1. **En Netlify**:
-   + Si es la primera vez, hay que pedirle a _Netlify_ que obtenga autorización y que se instale como aplicación disponible en _Github_.
-   + Seleccionar el origen de los documentos en Github.
-   + Seleccionar la carpeta que habrá que estar vigilando para genera el sitio.
-   + Especificar el nombre que tendrá el sitio web que se publicará. Si no dispones de un nombre de dominio de tu propiedad, el sitio será parte del dominio netlify.app, pero tampoco te costará nada publicar ni el espacio de almacenamiento que uses.
-2. **En Github** - En la configuración de aplicaciones, conceder acceso a Netlify al repositorio que te interesa sea la fuente de documentos para publicar.
 
+Iniciar la vinculación con Github seleccionando la opción qe ofrece importar los documentos desde n _repo_ Git. Esto dará la opción de utilizar _Github_ como origen de datos, entre otras posibilidades.
 
 ![](img/Netlify-1.png)
+
+El Siguiente paso es autorizar a Netlify a acceder a Github a través de tu cuenta, así como los específicos del repositorio que te interesa vincular. Esto también implica instalar una **aplicación** de vínculo entre _Netlify_  _Github_ dentro de tu cuenta.   
+
 ![](img/Netlify-2.png)
+
+Si todo ocurrió sin problemas, tendrás ahora en _Github_, en el menú de aplicaciones (Avatar&rarr; Settings&rarr; Applications), un botón que te permitirá configurar el vínculo con Netlify según tus requerimientos. También podrás ver los _repos_ que hayas autorizado desde _Netlify_.
+
+## Creación de un nuevo sitio a publicar
+
+1. **En Netlify**:
+
+   + Desde la opción _team_ o _site_ puedes generar un nuevo sitio.
+   
+::: {layout="[1,1]"}
+   ![](img/Netlify-new-site.png)
+   
+   ![](img/Netlify-new-site-team.png)
+:::   
+
+Cuando aprietas el boton de _añadir sitio_, aparecerá una nueva pantalla que tiene tres secciones. Se trata de los atributos que tendrás que proporcionar para darle presencia en Internet a tu proyecto y algunos otros atributos que definen como se producirá y actualizará continuamente. Estas operaciones es poco probable que las vuelvas a ver, una vez que tu proyecto esté en producción, aunque desde luego estarán siempre ahí por si deseas hacer ajustes.  
+
+
+#### ¿Qué nombre le daras?
+
+Deberás elegir un nombre que se convertirá en una URL para acceder a tu proyecto. Puede ser cualquier cosa que desees, pero debe ser único. En esta sección puedes escribir nombres y verificar que estén disponibles
+
+![](img/Netlify-config-site-1.png)
+
+#### ¿Qué hará Netlify para operar tu sitio?
+
+Es una colección de atributos para indicarle a _Netlify_ dónde conseguir los documentos y como manejarlos. En nuestro caso, muy simple, básicamente hay que decirle en donde están los documentos que _Quarto_, con ayuda de _pandoc_, a _renderizado_. Si no has cambiado nada en `_quarto.yml` la rama que estamos usando aquí para que _Git_ los registre es **main** y, en ella el directorio de producción se llama **_site**. Por favor verifica el contenido de esto para ayudarte a comprender mejor lo que estás haciendo.
+
+![](img/Netlify-config-site-2.png)
+
+#### ¿Todo listo? ¡a prodcción!
+
+En nuestro caso no hay más que hacer, _Netlify_ tiene información suficiente para encargarse de publicar tu proyecto continuamente. Incorporará los cambios que hagas en _RStudio_ en la rama principal. Lo hará automáticamente cada vez que envíes tus cambios a _Github_. 
+
+![](img/Netlify-config-site-3.png)
+
+Si todo salió bien, en este momento ya debe estar tu proyecto publicado y accesible para cualquier lector del mundo que lo localice y se interese en su contenido. 
+
+
 

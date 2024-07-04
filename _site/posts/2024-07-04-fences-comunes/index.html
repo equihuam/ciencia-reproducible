@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="">
+<meta name="author" content="Miguel Equihua">
 
-<title>Primeros pasos con Git – Ciencia Abierta</title>
+<title>Dar formato a mi documeto – Ciencia Abierta</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -75,9 +41,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -157,10 +120,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Primeros pasos con Git</h1>
+      <h1 class="title">Dar formato a mi documeto</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">taller</div>
-                <div class="quarto-category">github</div>
+                <div class="quarto-category">formato</div>
               </div>
                   </div>
   </div>
@@ -171,14 +134,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Autor/a</div>
       <div class="quarto-title-meta-contents">
-               <p><a href="https://www.ie-gamma.net">Miguel Equihua</a> </p>
+               <p>Miguel Equihua </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Fecha de publicación</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Xalapa, Ver., 3 de julio, 2024</p>
+        <p class="date">Xalapa, Ver., 4 de julio, 2024</p>
       </div>
     </div>
     
@@ -190,15 +153,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
-   
-  <ul>
-  <li><a href="#qué-es-git" id="toc-qué-es-git" class="nav-link active" data-scroll-target="#qué-es-git">¿Qué es Git?</a></li>
-  <li><a href="#algunos-problemas-que-se-nos-presentaron." id="toc-algunos-problemas-que-se-nos-presentaron." class="nav-link" data-scroll-target="#algunos-problemas-que-se-nos-presentaron.">Algunos problemas que se nos presentaron.</a></li>
-  </ul>
-</nav>
-    </div>
+        
+    <div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -206,84 +162,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="qué-es-git" class="level2">
-<h2 class="anchored" data-anchor-id="qué-es-git">¿Qué es Git?</h2>
-<p>Es una aplicación diseñada por el iniciador del desarrollo de Linux <a href="https://es.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a>. <a href="https://git-scm.com/">Git</a> es un sistema eficiente confiable y distribuido de control de versiones. El control de versiones es simplemente el seguimiento y registro de los cambios que va teniendo un documento a lo largo del tiempo. El concepto <em>distribuido</em> se refiere a que el registro local que tengas en tu máquina o para el caso en cualquier número de máquinas, es un registro completo, <strong>clonado</strong> del proyecto. Estos repositorios locales plenamente funcionales permiten trabajar aún cuando no tengas acceso a Internet. Los autores realizan y registran su trabajo localmente y, cuando lo encuentren conveniente, sincronizan la copia local del repositorio con la del servidor. En la actualidad <em>Git</em> se ha convertido en el estándar mundial <em>de facto</em> para el control de versiones.</p>
-<p>Una forma muy sencilla de instalar <em>Git</em>, incluyendo un auxiliar gráfico, es recurrir a <a href="https://desktop.github.com/">Github desktop</a>. Otra forma es recurrir, si tu sistema operativo es Windows, a <a href="https://gitforwindows.org/">Git for windows</a>, que no incluye nada más que la plataforma básica de control de versiones. En todo caso, el prerrequisito es contar con alguna instalación de <em>Git</em> en el sistema, para poderlo utilizar desde <em>RStudio</em>. Para utilizarlo, podemos auxiliarnos con la biblioteca <code>usethis</code>, que ofrece una amplia batería de comandos para interactuar con la plataforma de <em>Git</em> y con el servicio de Internet <em>Github</em>.</p>
-<p>En <em>RStudio</em> hay ayuda para utilizar <em>Git</em> directamente. Para acceder a este apoyo deberás crear un proyecto que incluya el control de versiones como una característica activa. En la figura se ilustran las dos rutas para hacerlo en <em>RStudio</em>.</p>
-<p><a href="img/proyecto-con-git.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img/proyecto-con-git.png" class="img-fluid"></a></p>
-<p>Evidentemete, si seguiste la ruta azul, tu repositorio ya existe en <em>Github</em>. Si optaste por la ruta verde, entonces deberás crear un repositorio allá. Parar hacerlo hay tres sencillos pasos adicionales que dar.</p>
-<p><br>
-</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[35,60]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 36.8%;justify-content: flex-start;">
-<ol type="1">
-<li>Definir la <em>rama</em> principal (se sugiere <strong>main</strong>, aunque también se usa <strong>master</strong>).</li>
-</ol>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 63.2%;justify-content: center;">
-<p><a href="img/rstudio-git-main.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img/rstudio-git-main.png" class="img-fluid" width="500"></a></p>
-</div>
-</div>
-</div>
-<p><br>
-</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[35,60]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 36.8%;justify-content: flex-start;">
-<ol start="2" type="1">
-<li>Haz un <em>commit</em> seleccionando todos los archivos que aparecen en la pestaña <strong>Git</strong>. Los puedes comentar anotado “inicial” o algo sugerente de ser el primer control registrado en el repositorio del proyecto.</li>
-</ol>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 63.2%;justify-content: center;">
-<p><a href="img/rstudio-commit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img/rstudio-commit.png" class="img-fluid" width="500"></a></p>
-</div>
-</div>
-</div>
-<p><br>
-</p>
-<ol start="3" type="1">
-<li>Vincula tu repositorio local con un nuevo repositorio en <em>Github</em>. La forma más sencilla de hacer esto con <em>RStudio</em> es escribir, en la pestaña de <strong>Consola</strong> el comando de <em>R</em>:</li>
-</ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_github</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Una vez que todo está preparado la rutina de trabajo incluye hacer <em>commit</em> cada vez que convenga preservar alguna versión. De vez en cuando sincronizar con la copia maestra del rerpositorio en <em>Github</em>, primero obteniendo el estado actual con el comando <em>pull</em> y luego enviando la versión de tu equipo local con un <em>push</em>.</p>
+<section id="bloques-tipo-caja" class="level2">
+<h2 class="anchored" data-anchor-id="bloques-tipo-caja">Bloques tipo “caja”</h2>
+<p>A veces conviene ofrecer información adicional al lector, dándole la oportunidad de decidir cuándo o si es que la desea ver. Hay una colección de cajas de este tipo en <em>Quarto</em> que se engloban en la conjunto <a href="https://quarto.org/docs/authoring/callouts.html">callout</a>. Su uso es mediante <em>fences</em>, el sistema de marcado que se inicia con <code>::: {_indicación_}</code> y se cierra con <code>:::</code>.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>tipo</th>
+<th>llamada</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>note</td>
+<td>::: {.callout-note}</td>
+</tr>
+<tr class="even">
+<td>warning</td>
+<td>::: {.callout-waning}</td>
+</tr>
+<tr class="odd">
+<td>important</td>
+<td>::: {.callout-important}</td>
+</tr>
+<tr class="even">
+<td>tip</td>
+<td>::: {.callout-tip}</td>
+</tr>
+<tr class="odd">
+<td>caution</td>
+<td>::: {.callout-caution}</td>
+</tr>
+</tbody>
+</table>
+<p>En cada uno de estos casos puedes agregar la frase: <code>collapse="true"</code>. Al hacerlo, el bloque aparecerá cerrado y el lector deberá activarlo para leer su contenido. Puedes también agregar un título con la frase <code>title="Tip with Title"</code> o si anotas un texto con marcado de sub título en seguida de la llamada.</p>
+<p>::: {.callout-tip}<br>
+## Título de un bloque de “sugerencias” Algo que sea importante decir, ¡pero no indispensable!<br>
+:::</p>
 </section>
-<section id="algunos-problemas-que-se-nos-presentaron." class="level2">
-<h2 class="anchored" data-anchor-id="algunos-problemas-que-se-nos-presentaron.">Algunos problemas que se nos presentaron.</h2>
-<ol type="1">
-<li><em>Git</em> no instalado. Esperábamos que la instalación de <em>Github desktop</em> instalara <em>Git</em> en una sola operación. Por alguna razón esto no fue así.<br>
-Recurrimos a <em>Git</em> for <em>Windows</em> y lo instalamos directamente.</li>
-<li>Datos de usuario de <em>Git</em> no registrado. Lo resolvimos con <code>Git bash</code>, que es una consola de comandos para operar el equipo que está vinculado con la instalación de <em>Git</em>.</li>
-</ol>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Mona Lisa"</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"YOUR_EMAIL"</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Verificar que tus datos quedaron registrados:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="3" type="1">
-<li>Acceso a <em>Github</em> pide registrar un <strong>token</strong> en el equipo. Lo resolvimos con ayuda de la biblioteca <code>usethis</code> Los comandos que ejecutamos en la pestaña de <em>consola</em> fueron:</li>
-</ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Esto lleva a la página de Github en la que hay que generar el <strong>token</strong>. Hay que responder las preguntas que te haga la página y apretar el botón respectivo. Aparecerá una nueva pantalla con el <strong>token</strong> que habrá que copiar al <em>portapapeles</em> (ctr-c en windows). En seguida hay que ejecutar este otro comando en la consola de <em>RStudio</em></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="4" type="1">
-<li><p>La operación de <em>Netlify</em> parecía no funcionar correctamente. Encontramos que el proyecto en <em>RStudio</em> no estaba completamente <em>renderizado</em>. Lo resolvimos activando <strong>Render website</strong> en la pestaña <strong>Build</strong> de RStudio.</p></li>
-<li><p>Una manera de averiguar muchos detalles esenciales de tu proyecto es usar el siguiente comando. Producirá un reporte un poco largo. De particular interés es la sección <em>── Active usethis project</em>. También será oportunidad de verificar que estes vacunado (evita en lo posible distribuir información confidencial, entre otras cosas).</p></li>
-</ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_sitrep</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Si no estas vacunado, conviene que lo hagas. Puedes encontrar más información al respecto con <code>? git_vaccinate</code> o yendo a la pestaña de ayuda y buscando el comando.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_vaccinate</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="formato-del-texto" class="level2">
+<h2 class="anchored" data-anchor-id="formato-del-texto">Formato del texto</h2>
+<p>Se puede usar la opción <code>style</code> que admite varios componentes:</p>
+<p>::: {style=“font-size: 50%; color:green; font-family: helvetica; font-size:44px”}</p>
+<p>Esto también se puede hacer a nivel incluso de una letra con la idea siguiente:</p>
+<p>[rojo]{style=“color:red;”}.</p>
+<p>Puede interesarte una referencia a como definir los colores. Hay muchas posibilidades en la Web, pero <a href="https://htmlcolorcodes.com/es/">está es un inicio</a>. Con esta página conseguiras el código <em>hexadecimal</em>, el que está marcado con <strong>#</strong>. Lo puedes usar así:</p>
+<p>[rojo]{style=“color:#E71D02;”}</p>
+<p>Muchos <a href="https://htmlcolorcodes.com/color-names/">colores tienen nombres definidos</a>, si lo prefieres puedes usarlos en lugar del código <em>hexadecimal</em>.</p>
+<p>Otra opción del <em>atributo</em> <code>style</code> es la forma de justificación de un texto. La frase a usar es <code>text-align: justify</code>. Las variantes de justificación son las usuales: <em>justify</em>, <em>center</em>, <em>right</em>, <em>left</em>. Si quieres profundizar más en todo esto te sugiero <a href="https://www.w3schools.com/cssref/pr_text_text-align.php">empezar aquí</a></p>
+<div style="text-align: right; color:#E71D00;">
+<p>Lorem ipsum dolor sit amet consectetur adipiscing elit, augue rutrum feugiat vitae habitasse nisi aenean tellus, suspendisse malesuada faucibus nam dapibus id. Gravida felis dictumst at nibh lacinia ut hendrerit euismod pellentesque, scelerisque sed conubia commodo iaculis luctus tristique rhoncus, velit eleifend purus class non rutrum odio placerat. Integer sagittis magnis lacus erat senectus lobortis aliquet sodales, dignissim convallis conubia arcu pretium suscipit a torquent faucibus, velit laoreet maecenas auctor vivamus morbi netus.</p>
 </div>
+<p>Hay muchas posibilidades para dar formato a un documento. Lo que describí aquí son sólo cosas elementales. Otros recursos disponibles son temas, definición de estilos con archivos <code>*.css</code> o <code>*.scc</code>. Más <a href="https://quarto.org/docs/output-formats/html-themes.html">información la podrás encontrar acá</a>. Puedes darte una idea de las posibilidades <a href="https://quarto.org/docs/gallery/">visitando la galería</a>.</p>
+<p>Por otro lado, te sugiero <strong>dosificar el esfuerzo</strong>. Nuestro propósito es la <strong>comunicación efectiva de contenidos científicos</strong> y la <strong>documentación reproducible</strong> de los <strong>procesos de producción de conocimiento nuevo</strong> en los que participes. Esto sugiere que hay que procurar mantener al mínimo el uso de variantes estilísticas en tus documentos, aunque hay que recordar también que somos sensibles al valor estético de lo que observamos. Desde luego, ser <strong>minimalista</strong> no te debe impedir elaborar algunos productos muy cuidados en los que los elementos de diseño tomarán un papel relevante: presentaciones para público general, libros, manuales, infografías, tableros interactivos (<em>dashboards</em>), etc. Siempre, deberás encontrar un equilibrio entre estética y funcionalidad. También recuerda ser ordenado en tus procesos. Cada proyecto un directorio nuevo, adecuadamente documentado y preservado.</p>
 
 
 </section>
@@ -710,38 +641,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","descPosition":"bottom"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

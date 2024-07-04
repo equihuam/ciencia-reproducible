@@ -76,7 +76,7 @@ datos <- read.csv(sprintf(url_drive, dat_datos_id))
 
 [Cómo lo abordé yo](solucion-pizzas/solucion-masa-pizza.qmd)
 
-##  
+  
 
 ![](img/linea-de-hojas.svg)
 

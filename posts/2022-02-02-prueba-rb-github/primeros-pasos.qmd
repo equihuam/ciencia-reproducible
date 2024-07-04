@@ -101,9 +101,15 @@ gitcreds::gitcreds_set()
 ```r
 usethis::git_sitrep()
 ```
-Si no estas "vacunado", conviene que lo hagas. Puedes encontrar más información al respecto con `? git_vaccinate` o yendo a la pestaña de ayuda y buscando el comando.
+Si no estas "vacunado", conviene que lo hagas. Puedes encontrar más información al respecto con 
 
-```{r}
+```r
+? git_vaccinate
+```
+
+o yendo a la pestaña de ayuda y buscando este mismo comando.
+
+```r
 usethis::git_vaccinate()
 ```
 

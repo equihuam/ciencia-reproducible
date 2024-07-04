@@ -66,7 +66,7 @@ Lo resolvimos con `Git bash`, que es una consola de comandos para operar el equi
 ``` bash
 git config --global user.name "Mona Lisa"
 
-git config --global user.email "YOUR_EMAIL"
+git config --global user.email "HER_EMAIL"
 ```
 Verificar que tus datos quedaron registrados:
 

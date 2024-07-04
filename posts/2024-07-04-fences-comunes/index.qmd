@@ -35,15 +35,19 @@ En cada uno de estos casos puedes agregar la frase: `collapse="true"`. Al hacerl
 
 Se puede usar la opción `style` que admite varios componentes:
 
-*\:\:\: {style="font-size: 50%; color:green; font-family: helvetica; font-size:44px"}*
+**\:\:\: {style="font-size: 50%; color:green; font-family: helvetica; font-size:44px;"}**
+
+Tamaño de letra en _puntos_ (**px**)
+
+**\:\:\: {style="font-size:44px;"}**
 
 Esto también se puede hacer a nivel incluso de una letra con la idea siguiente:
 
-*\[rojo\]\{style="color:red;"\}*.
+**\[rojo\]\{style="color:red;"\}**.
 
 Puede interesarte una referencia a como definir los colores. Hay muchas posibilidades en la Web, pero [está es un inicio](https://htmlcolorcodes.com/es/). Con esta página conseguiras el código _hexadecimal_, el que está marcado con **#**. Lo puedes usar así:
 
-*\[rojo\]\{style="color:#E71D02;"\}*
+**\[rojo\]\{style="color:#E71D02;"\}**
 
 Muchos [colores tienen nombres definidos](https://htmlcolorcodes.com/color-names/), si lo prefieres puedes usarlos en lugar del código _hexadecimal_.
 
@@ -52,6 +56,9 @@ Otra opción del _atributo_ `style` es la forma de justificación de un texto. L
 ::: {style="text-align: right; color:#E71D00;"}
 Lorem ipsum dolor sit amet consectetur adipiscing elit, augue rutrum feugiat vitae habitasse nisi aenean tellus, suspendisse malesuada faucibus nam dapibus id. Gravida felis dictumst at nibh lacinia ut hendrerit euismod pellentesque, scelerisque sed conubia commodo iaculis luctus tristique rhoncus, velit eleifend purus class non rutrum odio placerat. Integer sagittis magnis lacus erat senectus lobortis aliquet sodales, dignissim convallis conubia arcu pretium suscipit a torquent faucibus, velit laoreet maecenas auctor vivamus morbi netus.
 :::
+
+algo así [texto de color]{style="text-align: right; color:#E71D00; font-size:44px;"} y sigo escribiendo.
+
 
 ## Información en "pestañas"
 

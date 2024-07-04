@@ -41,7 +41,7 @@ library(stringr)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-En esta libreta *RMarkdown* les comparto mis notas de lo que hice en relación con los datos de masa para pizza. Pongo aquí dos referencia que no tienen gran cosa que ver pero tienen valor ilustrativo [@pizzama2003], o cuando hablas de lo que dice @ceccarini2011.
+En esta libreta *RMarkdown* les comparto mis notas de lo que hice en relación con los datos de masa para pizza.
 
 ::: {.callout-tip collapse="true"}
 ## Habilitar la recepción de comentarios
@@ -56,11 +56,12 @@ $$
 y_{ij} = \mu + R_i + \varepsilon_{j(i)}
 $$ {#eq-mod-est-lin}
 
-En donde *i* tiene 4 niveles, uno por cada receta, *j* tiene 4 niveles, por el número de repeticiones de cada receta. Por lo tanto, los grados de libertad en el cuadro de análisis de la varianza deben ser 3 para las recetas y 12 para el error.
+En donde *i* tiene 4 niveles, uno por cada receta, *j* tiene 4 niveles, por el número de repeticiones de cada receta. Por lo tanto, los grados de libertad en el cuadro de análisis de la varianza deben ser 3 para las recetas y 12 para el error. Pongo aquí dos referencias que no tienen gran cosa que ver pero tienen valor ilustrativo [@pizzama2003], o cuando hablas de lo que dice @ceccarini2011.
+
 
 ## Exploración tabular de los datos
 
-Una vez leídos los datos del archivo plano *texto separado por comas*, con acrónimo csv), definí la columna *recetas* como *factor*, lo hice con la función `mutate` para interactuar con la tabla completa. Me asomé a los datos calculando los promedios por tratamiento (@tbl-lee-datos). Seguí la metáfora de *tubos* con ayuda de la biblioteca `tidyverse` o `dplyr`.
+Una vez leídos los datos del archivo plano *texto separado por comas* (extensión csv), definí la columna *recetas* como *factor*, lo hice con la función `mutate` para interactuar con la tabla completa. Me asomé a los datos calculando los promedios por tratamiento (@tbl-lee-datos). Seguí la metáfora de *tubos* con ayuda de la biblioteca `tidyverse` o `dplyr`.
 
 ```{r}
 #| label: tbl-lee-datos

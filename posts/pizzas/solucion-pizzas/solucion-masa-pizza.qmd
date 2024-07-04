@@ -3,7 +3,7 @@ title: "Masa para Pizza"
 author: ["Miguel Equihua"]
 date: "20/jun/2024"
 
-draft: true
+draft: false
 toc: true
 lot: true
 css: styles.css

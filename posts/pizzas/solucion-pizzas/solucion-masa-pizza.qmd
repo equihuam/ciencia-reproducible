@@ -25,10 +25,8 @@ bibliography: pizzas.bib
 csl: apa.csl
 
 comments: 
-  hypothesis:
-    theme: clean
+  hypothesis: true
 ---
-
 
 ```{r}
 #| label: setup
@@ -46,9 +44,8 @@ En esta libreta *RMarkdown* les comparto mis notas de lo que hice en relación c
 ::: {.callout-tip collapse="true"}
 ## Habilitar la recepción de comentarios
 
-He agregado a este documento de ejemplos, la opción para aceptar comentarios directamente sobre el texto. Lo hice agregando en la sección de _encabezado_ (_front matter yaml_) la especificación  `comments: ` que tiene varias opciones que puedes encontrarse [aquí](https://quarto.org/docs/output-formats/html-basics.html#commenting), aunque basta con poner `hypothesis: true`. Esta opción habilita la interacción con otro servicio Web que permite recabar comentarios hechos sobre un texto. Para operarlo será necesario obtener una cuenta en [hypothesis](https://web.hypothes.is/). Para reunir los comentarios que te interesa en una forma controlada, te sugiero utilizar **grupos privados**.
+He agregado a este documento de ejemplos, la opción para aceptar comentarios directamente sobre el texto. Lo hice agregando en la sección de *encabezado* (*front matter yaml*) la especificación `comments:` que tiene varias opciones que puedes encontrarse [aquí](https://quarto.org/docs/output-formats/html-basics.html#commenting), aunque basta con poner `hypothesis: true`. Esta opción habilita la interacción con otro servicio Web que permite recabar comentarios hechos sobre un texto. Para operarlo será necesario obtener una cuenta en [hypothesis](https://web.hypothes.is/). Para reunir los comentarios que te interesa en una forma controlada, te sugiero utilizar **grupos privados**.
 :::
-
 
 El Estudio de Marcelo es un experimento *completamente aleatorizado*, no hubo restricciones a la aleatorización como para producir **bloques** o división en parcelas (**parcela dividida**). Los tratamientos los ideó Marcelo como tratamientos factoriales, resultado de la combinación de cantidades variables de azúcar y leche, pero finalmente optó por tratarlas como una serie de recetas (sin decirnos que cantidad de leche o azúcar empleo, típico de los cocineros, guardar secretos), así que no nos queda otra que tratar al arreglo de tratamientos como una clasificación simple en *recetas* (ANOVA de una sola vía dirían otros). El modelo que describe esto es algo así (@eq-mod-est-lin):
 
@@ -57,7 +54,6 @@ y_{ij} = \mu + R_i + \varepsilon_{j(i)}
 $$ {#eq-mod-est-lin}
 
 En donde *i* tiene 4 niveles, uno por cada receta, *j* tiene 4 niveles, por el número de repeticiones de cada receta. Por lo tanto, los grados de libertad en el cuadro de análisis de la varianza deben ser 3 para las recetas y 12 para el error. Pongo aquí dos referencias que no tienen gran cosa que ver pero tienen valor ilustrativo [@pizzama2003], o cuando hablas de lo que dice @ceccarini2011.
-
 
 ## Exploración tabular de los datos
 
@@ -89,7 +85,7 @@ masa %>%
 
 ```
 
-Recetas es ahora un factor, esto implica que es un tipo especial de variable que al incorporarla en un modelo estadístico se suele desagregar en una colección de variables indicadoras o **dummy** que tienen el papel *en conjunto* de modelar el efecto de condiciones que se reconocen en forma cualitativa. Así, lo que hace el modelo es responder a la indicación de **presencia** del tratamiento indicado. L estructura que en *R* se define como `factor` es entonces un forma compacta de recoger esa indicación de cuándo está presente cada tratamiento en la estructura de datos. Una idea general de cómo funcionan las variables indicadoras se ilustra en el @tbl-dummy ([opciones de formateo de tablas aquí](https://quarto.org/docs/authoring/tables.html)). Estas estructuras deben ser _reparametrizadas_ para incluirlas en un modelo estadístico. La forma más simple de reparametrización es eliminar el primer nivel del factor. Esto hará que los estimadores que produzca el modelo serán relativos al _efecto_ de ese nivel, que tomará el papel de referencia general.
+Recetas es ahora un factor, esto implica que es un tipo especial de variable que al incorporarla en un modelo estadístico se suele desagregar en una colección de variables indicadoras o **dummy** que tienen el papel *en conjunto* de modelar el efecto de condiciones que se reconocen en forma cualitativa. Así, lo que hace el modelo es responder a la indicación de **presencia** del tratamiento indicado. L estructura que en *R* se define como `factor` es entonces un forma compacta de recoger esa indicación de cuándo está presente cada tratamiento en la estructura de datos. Una idea general de cómo funcionan las variables indicadoras se ilustra en el @tbl-dummy ([opciones de formateo de tablas aquí](https://quarto.org/docs/authoring/tables.html)). Estas estructuras deben ser *reparametrizadas* para incluirlas en un modelo estadístico. La forma más simple de reparametrización es eliminar el primer nivel del factor. Esto hará que los estimadores que produzca el modelo serán relativos al *efecto* de ese nivel, que tomará el papel de referencia general.
 
 ::: {#tbl-dummy layout="[-1, 1, -1]"}
 | A   | B   | C   | D   |
@@ -323,13 +319,12 @@ Como puedes ver funciona muy bien, es prácticamente indistinguible del modelo a
 
 ## Como citar
 
-Para tu referencia incluyo aquí información sobre como manejar el tema de las listas de [referencias bibliográficas en Quarto](https://quarto.org/docs/authoring/citations.html#sec-citations). Seguramente habrá necesidad de adecuarse a alguno de los múltiples estilos de citación que usan las revistas, muchos de ellos [están ya preparados en este repo](https://github.com/citation-style-language/styles). Si no lo encuentras ahí puedes preparar el tuyo con [ayuda de Zootero](https://www.zotero.org/support/dev/citation_styles/style_editing_step-by-step) o la del [editor de Mendeley](https://www.mendeley.com/guides/csl-editor/). Lo que tendrás que hacer es buscar el `*.csl` de tu elección y descargarlo. Ponerlo en tu proyecto y listo. A continuación está el bloque con el que _invocas_ la aparición de la lista de referencias. 
+Para tu referencia incluyo aquí información sobre como manejar el tema de las listas de [referencias bibliográficas en Quarto](https://quarto.org/docs/authoring/citations.html#sec-citations). Seguramente habrá necesidad de adecuarse a alguno de los múltiples estilos de citación que usan las revistas, muchos de ellos [están ya preparados en este repo](https://github.com/citation-style-language/styles). Si no lo encuentras ahí puedes preparar el tuyo con [ayuda de Zootero](https://www.zotero.org/support/dev/citation_styles/style_editing_step-by-step) o la del [editor de Mendeley](https://www.mendeley.com/guides/csl-editor/). Lo que tendrás que hacer es buscar el `*.csl` de tu elección y descargarlo. Ponerlo en tu proyecto y listo. A continuación está el bloque con el que *invocas* la aparición de la lista de referencias. Para agregar referencias no localizadas con los recurrsos de RStudio, puede ser de utilidad [EasyBib®](https://www.easybib.com/).
 
 ## Referencias sobre pizzas
 
 ::: {#refs}
 :::
-
 
 ## Tarea
 
@@ -344,4 +339,3 @@ De hecho, ¿por qué no repetimos este experimento en casa? Se los propongo como
 -   Azucar: 1/3 cdt
 -   Levadura seca: 1/3 sobre (sobre de 11g)
 :::
-

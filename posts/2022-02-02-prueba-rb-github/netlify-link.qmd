@@ -1,11 +1,15 @@
 ---
 title: "Enlazar Github con Netlify para publicar"
 description: "Preparación del vínculo entre Github y Netlify para publicación en automático"
+
 author:
   - name: [Miguel Equihua]
     url: https://www.ie-gamma.net
 date: 3/jul/2024
 categories: [taller, github, netlify]
+
+image: img/En caso de incendio.png
+
 format: 
   html:
     toc: true

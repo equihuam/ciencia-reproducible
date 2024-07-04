@@ -164,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="bloques-tipo-caja" class="level2">
 <h2 class="anchored" data-anchor-id="bloques-tipo-caja">Bloques tipo “caja”</h2>
-<p>A veces conviene ofrecer información adicional al lector, dándole la oportunidad de decidir cuándo o si es que la desea ver. Hay una colección de cajas de este tipo en <em>Quarto</em> que se engloban en la conjunto <a href="https://quarto.org/docs/authoring/callouts.html">callout</a>. Su uso es mediante <em>fences</em>, el sistema de marcado que se inicia con <code>::: {_indicación_}</code> y se cierra con <code>:::</code>.</p>
+<p>A veces conviene ofrecer información adicional al lector, dándole la oportunidad de decidir cuándo o si es que la desea ver. Hay una colección de cajas de este tipo en <em>Quarto</em> que se engloban en la conjunto <a href="https://quarto.org/docs/authoring/callouts.html">callout</a>. Su uso es mediante <em>fences</em> (<strong>div</strong>), el sistema de marcado que se inicia con <code>::: {_indicación_}</code> y se cierra con <code>:::</code>.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -196,22 +196,43 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 <p>En cada uno de estos casos puedes agregar la frase: <code>collapse="true"</code>. Al hacerlo, el bloque aparecerá cerrado y el lector deberá activarlo para leer su contenido. Puedes también agregar un título con la frase <code>title="Tip with Title"</code> o si anotas un texto con marcado de sub título en seguida de la llamada.</p>
-<p>::: {.callout-tip}<br>
-## Título de un bloque de “sugerencias” Algo que sea importante decir, ¡pero no indispensable!<br>
-:::</p>
+<p><em>::: {.callout-tip}</em><br>
+<em>## Título de un bloque de “sugerencias”</em> <em>Algo que sea importante decir, ¡pero no indispensable!</em><br>
+<em>:::</em></p>
 </section>
 <section id="formato-del-texto" class="level2">
 <h2 class="anchored" data-anchor-id="formato-del-texto">Formato del texto</h2>
 <p>Se puede usar la opción <code>style</code> que admite varios componentes:</p>
-<p>::: {style=“font-size: 50%; color:green; font-family: helvetica; font-size:44px”}</p>
+<p><em>::: {style=“font-size: 50%; color:green; font-family: helvetica; font-size:44px”}</em></p>
 <p>Esto también se puede hacer a nivel incluso de una letra con la idea siguiente:</p>
-<p>[rojo]{style=“color:red;”}.</p>
+<p><em>[rojo]{style=“color:red;”}</em>.</p>
 <p>Puede interesarte una referencia a como definir los colores. Hay muchas posibilidades en la Web, pero <a href="https://htmlcolorcodes.com/es/">está es un inicio</a>. Con esta página conseguiras el código <em>hexadecimal</em>, el que está marcado con <strong>#</strong>. Lo puedes usar así:</p>
-<p>[rojo]{style=“color:#E71D02;”}</p>
+<p><em>[rojo]{style=“color:#E71D02;”}</em></p>
 <p>Muchos <a href="https://htmlcolorcodes.com/color-names/">colores tienen nombres definidos</a>, si lo prefieres puedes usarlos en lugar del código <em>hexadecimal</em>.</p>
 <p>Otra opción del <em>atributo</em> <code>style</code> es la forma de justificación de un texto. La frase a usar es <code>text-align: justify</code>. Las variantes de justificación son las usuales: <em>justify</em>, <em>center</em>, <em>right</em>, <em>left</em>. Si quieres profundizar más en todo esto te sugiero <a href="https://www.w3schools.com/cssref/pr_text_text-align.php">empezar aquí</a></p>
 <div style="text-align: right; color:#E71D00;">
 <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, augue rutrum feugiat vitae habitasse nisi aenean tellus, suspendisse malesuada faucibus nam dapibus id. Gravida felis dictumst at nibh lacinia ut hendrerit euismod pellentesque, scelerisque sed conubia commodo iaculis luctus tristique rhoncus, velit eleifend purus class non rutrum odio placerat. Integer sagittis magnis lacus erat senectus lobortis aliquet sodales, dignissim convallis conubia arcu pretium suscipit a torquent faucibus, velit laoreet maecenas auctor vivamus morbi netus.</p>
+</div>
+</section>
+<section id="información-en-pestañas" class="level2">
+<h2 class="anchored" data-anchor-id="información-en-pestañas">Información en “pestañas”</h2>
+<p>Puede resultarte interesante considerar presentar tu información como si se tratara de una libreta con <a href="https://quarto.org/docs/output-formats/html-basics.html#tabsets">secciones reconocibles por pestañas</a>. Para hacerlo, el <em>bloque</em> (<strong>div</strong>) se contruye así.</p>
+<p><strong>:::</strong> <strong>{.panel-tabset}</strong><br>
+<strong>##</strong> <strong>Descripción de los datos</strong></p>
+<p><strong>Es realmente un subdocumento, que podrá tener texto, código, gráficas, etc.</strong></p>
+<p><strong>##</strong> <strong>Estrategia analítica</strong></p>
+<p><strong>Misma cosa. Subdocumento en el que abordas el tema que anuncias en la <em>pestaña</em>.</strong></p>
+<p><strong>:::</strong></p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Descripción de los datos</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Estrategia analítica</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Es realmente un subdocumento, que podrá tener texto, código, gráficas, etc.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Misma cosa. Subdocumento en el que abordas el tema que anuncias en la <em>pestaña</em>.</p>
+</div>
+</div>
 </div>
 <p>Hay muchas posibilidades para dar formato a un documento. Lo que describí aquí son sólo cosas elementales. Otros recursos disponibles son temas, definición de estilos con archivos <code>*.css</code> o <code>*.scc</code>. Más <a href="https://quarto.org/docs/output-formats/html-themes.html">información la podrás encontrar acá</a>. Puedes darte una idea de las posibilidades <a href="https://quarto.org/docs/gallery/">visitando la galería</a>.</p>
 <p>Por otro lado, te sugiero <strong>dosificar el esfuerzo</strong>. Nuestro propósito es la <strong>comunicación efectiva de contenidos científicos</strong> y la <strong>documentación reproducible</strong> de los <strong>procesos de producción de conocimiento nuevo</strong> en los que participes. Esto sugiere que hay que procurar mantener al mínimo el uso de variantes estilísticas en tus documentos, aunque hay que recordar también que somos sensibles al valor estético de lo que observamos. Desde luego, ser <strong>minimalista</strong> no te debe impedir elaborar algunos productos muy cuidados en los que los elementos de diseño tomarán un papel relevante: presentaciones para público general, libros, manuales, infografías, tableros interactivos (<em>dashboards</em>), etc. Siempre, deberás encontrar un equilibrio entre estética y funcionalidad. También recuerda ser ordenado en tus procesos. Cada proyecto un directorio nuevo, adecuadamente documentado y preservado.</p>

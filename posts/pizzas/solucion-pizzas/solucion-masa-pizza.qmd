@@ -20,12 +20,12 @@ crossref:
   tbl-title: Cuadro
   tbl-prefix: Cuadro
   lot-title: Lista de Cuadros
+  
+bibliography: pizzas.bib
+csl: apa.csl
+
 ---
 
-
-```{r}
-
-```
 
 ```{r}
 #| label: setup
@@ -38,14 +38,13 @@ library(stringr)
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-En esta libreta *RMarkdown* les comparto mis notas de lo que hice en relación con los datos de masa para pizza.
+En esta libreta *RMarkdown* les comparto mis notas de lo que hice en relación con los datos de masa para pizza. Pongo aquí dos referencia que no tienen gran cosa que ver pero tienen valor ilustrativo [@pizzama2003], o cuando hablas de lo que dice @ceccarini2011.
 
 El Estudio de Marcelo es un experimento *completamente aleatorizado*, no hubo restricciones a la aleatorización como para producir **bloques** o división en parcelas (**parcela dividida**). Los tratamientos los ideó Marcelo como tratamientos factoriales, resultado de la combinación de cantidades variables de azúcar y leche, pero finalmente optó por tratarlas como una serie de recetas (sin decirnos que cantidad de leche o azúcar empleo, típico de los cocineros, guardar secretos), así que no nos queda otra que tratar al arreglo de tratamientos como una clasificación simple en *recetas* (ANOVA de una sola vía dirían otros). El modelo que describe esto es algo así (@eq-mod-est-lin):
 
 $$
 y_{ij} = \mu + R_i + \varepsilon_{j(i)}
 $$ {#eq-mod-est-lin}
-
 
 En donde *i* tiene 4 niveles, uno por cada receta, *j* tiene 4 niveles, por el número de repeticiones de cada receta. Por lo tanto, los grados de libertad en el cuadro de análisis de la varianza deben ser 3 para las recetas y 12 para el error.
 
@@ -88,6 +87,7 @@ Recetas es ahora un factor, esto implica que es un tipo especial de variable que
 | 0   | 1   | 0   | 0   |
 | 0   | 0   | 1   | 0   |
 | 0   | 0   | 0   | 1   |
+
 : Variables indicadoras derivadas del factor *receta*. {.striped .hover}
 :::
 
@@ -310,12 +310,21 @@ resumen
 
 Como puedes ver funciona muy bien, es prácticamente indistinguible del modelo ajustado con todas las cifras significativas que resultaron del cálculo que hizo la computadora. Hay uun correspondencia término a término entre el *offset* y los coeficientes estimados y ahí también puede verse que los coeficientes corresponden muy bien y dado el *offcet*, no habría razón para estimarlos con algún ajuste. Las sumas de cuadrados residuales son prácticamente iguales en las dos versiones del modelo, difiere muy poco, la probabilidad de que los estimadores correspondan al mismo modelo es muy alta, mayor a 99.9%. No habría razón para no entregarle cualquiera de esa ecuaciones a Marcelo para que hiciera cálculos futuros al preparar pizzas.
 
+## Como citar
+
+Para tu referencia incluyo aquí información sobre como manejar el tema de las listas de [referencias bibliográficas en Quarto](https://quarto.org/docs/authoring/citations.html#sec-citations). Seguramente habrá necesidad de adecuarse a alguno de los múltiples estilos de citación que usan las revistas, muchos de ellos [están ya preparados en este repo](https://github.com/citation-style-language/styles). Si no lo encuuentras ahí puedes preparar el tuyo con [ayuda de Zootero](https://www.zotero.org/support/dev/citation_styles/style_editing_step-by-step) o la del [editor de Mendeley](https://www.mendeley.com/guides/csl-editor/). Lo que tendrás que hacer es buscar el `*.csl` de tu elección y descargarlo. Ponerlo en tu proyecto y listo. A continación está el bloque con el que _invocas_ la aparición de la lista de referencias. 
+
+## Referencias sobre pizzas
+
+::: {#refs}
+:::
+
+
 ## Tarea
 
 De hecho, ¿por qué no repetimos este experimento en casa? Se los propongo como tarea y si les parece bien, habría que reunir los datos, organizarlos para tenerlos en la nube de Google Drive y repetir individualmente el proceso analítico que vimos aquí, por lo menos los elementos básicos de la *prueba de hipótesis*. A partir de la experiencia, podremos empezar por discutir el diseño experimental, convenir en lo que harán y podríamos finalmente discutir ideas sobre *reroducibilidad*, considerando los hallazgos de cada quién y de todos en conjunto.
 
 ::: {.callout-tip collapse="true"}
-
 ## Pistas
 
 -   Harina: 150 g
@@ -324,5 +333,4 @@ De hecho, ¿por qué no repetimos este experimento en casa? Se los propongo como
 -   Azucar: 1/3 cdt
 -   Levadura seca: 1/3 sobre (sobre de 11g)
 :::
-
 

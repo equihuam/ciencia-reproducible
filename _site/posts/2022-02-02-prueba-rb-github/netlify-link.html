@@ -304,7 +304,7 @@ Agregar control de versiones a tu proyecto
 </section>
 <section id="preparar-github-para-interactuar-con-netlify" class="level2">
 <h2 class="anchored" data-anchor-id="preparar-github-para-interactuar-con-netlify">Preparar Github para interactuar con Netlify</h2>
-<p>Hay que preparar a <em>Github</em> para que de acceso a <em>Netlify</em> para tomar lo necesario para construir el servicio web que deseas y publicarlo en Internet. Los pasos que hay que seguir para esta primera interacción son los que se ilustran en estas figuras.</p>
+<p>Hay que preparar a <em>Github</em> dando acceso a <em>Netlify</em> para que tome lo necesario. La meta es que construya un sitio Web con tu contenido y lo publique en Internet. Los pasos que hay que seguir para esta primera interacción son los siguiente.</p>
 <p>Iniciar la vinculación con Github seleccionando la opción qe ofrece importar los documentos desde n <em>repo</em> Git. Esto dará la opción de utilizar <em>Github</em> como origen de datos, entre otras posibilidades.</p>
 <p><a href="img/Netlify-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="img/Netlify-1.png" class="img-fluid"></a></p>
 <p>El Siguiente paso es autorizar a Netlify a acceder a Github a través de tu cuenta, así como los específicos del repositorio que te interesa vincular. Esto también implica instalar una <strong>aplicación</strong> de vínculo entre <em>Netlify</em> <em>Github</em> dentro de tu cuenta.</p>
@@ -345,7 +345,7 @@ Agregar control de versiones a tu proyecto
 </section>
 <section id="todo-listo-a-prodcción" class="level4">
 <h4 class="anchored" data-anchor-id="todo-listo-a-prodcción">¿Todo listo? ¡a prodcción!</h4>
-<p>En nuestro caso no hay más que hacer, <em>Netlify</em> tiene información suficiente para encargarse de publicar tu proyecto continuamente, incorporando los cambios que hagas en RStudio en la rama principal. Lo hará automáticamente cada vez que envíes tus cambios a <em>Github</em>.</p>
+<p>En nuestro caso no hay más que hacer, <em>Netlify</em> tiene información suficiente para encargarse de publicar tu proyecto continuamente. Incorporará los cambios que hagas en <em>RStudio</em> en la rama principal. Lo hará automáticamente cada vez que envíes tus cambios a <em>Github</em>.</p>
 <p><a href="img/Netlify-config-site-3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="img/Netlify-config-site-3.png" class="img-fluid"></a></p>
 <p>Si todo salió bien, en este momento ya debe estar tu proyecto publicado y accesible para cualquier lector del mundo que lo localice y se interese en su contenido.</p>
 
@@ -775,7 +775,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

@@ -14,33 +14,24 @@ format:
     code-fold: true
 ---
 
-
 ## Preparación de la Masa
 
-:::: {.columns}
-::: {.column width="20%" }
-
+::: columns
+::: {.column width="20%"}
 ![](img/pizza-masa.jpg){width="600"}
 
 ![](img/vaso-de-precipitados-sin-embudo.svg){width="100" fig-align="center"}
-
 :::
 
 ::: {.column width="10%"}
 :::
 
-
 ::: {.column width="50%"}
 Para encontrar una mejor manera de hacer su pizza favorita, Marcelo se propuso reducir el tiempo que tarda en preparar la masa. Para hacerlo siguió el camino de la ciencia y **diseñó un experimento** para poner a prueba el efecto de la cantidad de azúcar y de leche en los tiempos de activación de la levadura. En concreto, probó cuatro recetas diferentes y midió cuántos segundos tardaba la misma cantidad de masa en llenar un recipiente hasta una marca que fijo como referencia. **Aleatorizó** el orden de las recetas y repitió cada tratamiento 4 veces.
-
-
 :::
-::::
+:::
 
-
-[Descargar los datos en formato de texto simple](masa-para-pizza.txt)
-o
-[Utiliza este vínculo para otenerlo de Google Drive](https://drive.google.com/file/d/1uVUOqwobv67E5xTsSSxjg9f9qypW-aIS/view?usp=sharing)
+[Descargar los datos en formato de texto simple](masa-para-pizza.txt) o [Utiliza este vínculo para otenerlo de Google Drive](https://drive.google.com/file/d/1uVUOqwobv67E5xTsSSxjg9f9qypW-aIS/view?usp=sharing)
 
 ```{=html}
 <iframe 
@@ -52,37 +43,32 @@ o
         style="border:10px solid blue;">
 </iframe>
 ```
+Pueden usar instrucciones parecidas a las que siguen para leer los datos en **R**, directamente desde un documento en la nube de *Google Drive*.
 
+------------------------------------------------------------------------
 
-Pueden usar instrucciones parecidas a las que siguen para leer los datos en **R**, directamente desde un documento en la nube de _Google Drive_.
-
----------------------
-
-
-```r
+``` r
 library(stringr)
 url_datos <- "URL de los datos"
 dat_datos_id <- str_extract(url_datos, "(?<=d/)(.*)(?=/view)")
 
 url_drive <- "https://docs.google.com/uc?id=%s&export=download" 
 datos <- read.csv(sprintf(url_drive, dat_datos_id)) 
-
 ```
---------------------
+
+------------------------------------------------------------------------
 
 ::: {style="color:GoldenRod"}
-
- 1. ¿Diseño experimental?
- 2. ¿Arreglo de tratamientos?
- 3. ¿Modelo que corresponde a este experimento?
- 4. ¿Supuestos qe harás para apoyar tu análisis estadístico?
- 5. ¿Define tu criterio o nivel de significancia?
- 6. Realiza una exploración de los datos, numérica y gráfica, comenta
- 7. Construye los modelos necesarios y selecciona el mínimo adecuado
- 8. Valora la calidad del modelo, incluyendo el análisis de los residuos
- 9. Resuelve que tratamientos difieren de los demás
+1.  ¿Diseño experimental?
+2.  ¿Arreglo de tratamientos?
+3.  ¿Modelo que corresponde a este experimento?
+4.  ¿Supuestos qe harás para apoyar tu análisis estadístico?
+5.  ¿Define tu criterio o nivel de significancia?
+6.  Realiza una exploración de los datos, numérica y gráfica, comenta
+7.  Construye los modelos necesarios y selecciona el mínimo adecuado
+8.  Valora la calidad del modelo, incluyendo el análisis de los residuos
+9.  Resuelve que tratamientos difieren de los demás
 10. Argumenta tus conclusiones
-
 :::
 
 \
@@ -90,20 +76,12 @@ datos <- read.csv(sprintf(url_drive, dat_datos_id))
 
 [Cómo lo abordé yo](solucion-pizzas/solucion-masa-pizza.qmd)
 
-
-\
---------------
+##  
 
 ![](img/linea-de-hojas.svg)
 
-
 ::: {layout="[2,1]"}
-
-> Experimentaremos con la preparación de un reporte técnico con _Quarto_. En respuesta a lo que me han preguntado y para averiguar un poco más sobre lo que puede hacerse con esta herramienta [les invito a visitar este documento](https://quarto.org/docs/manuscripts/authoring/rstudio.html). Les podría interesar tambien [este tutorial introductorio](https://quarto.org/docs/get-started/hello/rstudio.html). Una guía de referencia a _markdown_ [la pueden encontrar aca](https://tutorialmarkdown.com/guia)
-
+> Experimentaremos con la preparación de un reporte técnico con *Quarto*. En respuesta a lo que me han preguntado y para averiguar un poco más sobre lo que puede hacerse con esta herramienta [les invito a visitar este documento](https://quarto.org/docs/manuscripts/authoring/rstudio.html). Les podría interesar tambien [este tutorial introductorio](https://quarto.org/docs/get-started/hello/rstudio.html). Una guía de referencia a *markdown* [la pueden encontrar aca](https://tutorialmarkdown.com/guia)
 
 ![](img/Noteook.png)
-
 :::
-
-

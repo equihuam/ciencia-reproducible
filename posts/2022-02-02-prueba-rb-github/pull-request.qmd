@@ -17,7 +17,7 @@ editor_options:
 lightbox: true
 ---
 
-![](img/Pull-Request.png)
+![](img/Pull-Request.png){width=80%}
 
 Un _Pull request_ en _Git_ podríamos llamarlo una _Solicitud de Fusión_, aunque lo común es usar la frase en inglés. Es la base del uso de un repositorio _Git_ como plataforma de colaboración además del control de versiones. Es el mecanismo seguro de solicitar la incorporación de cambios al proyecto. La ideas es tan simple como el nombre indica: se solicita al responsable del proyecto que incorpore una nueva rama (desde un repositorio que tiene cambios propuestos), en otra (del mismo o de otro repositorio).
 
@@ -40,14 +40,19 @@ usethis::create_github_token()
 
 Al ejecutarlo te llevará a la página adecuada para la tarea en Github con la innformación recomendada ya registrada, sólo falta describir el uso que darás al token y la caducidad que prefieres. Copia el token y registralo en forma segura en _RStudio_
 
+``` r
+gitcreds::gitcreds_set()
+```
+
+
 
 ## Copiar y clonar localmente
 
-Para empezar a colaborar, lo primero es quue cada participante tenga suu propia copia (_fork_) del proyecto. Esto se puede hacer con la instrucción siguiente:
+Para empezar a colaborar, lo primero es que cada participante tenga su propia copia (_fork_) del proyecto. Esto se puede hacer con la instrucción siguiente:
 
 
 ``` r
-usethis::create_from_github("equihuam/ciencia-reproducible")
+usethis::create_from_github("equihuam/ciencia-reproducible", fork = TRUE)
 
 ```
 
@@ -55,7 +60,7 @@ Este comando hará lo siguiente:
 
 + Una copia del repositorio _ciencia-reproducible_ que tengo en mi cuenta personal.
 + Clonará la copia del repositorio en tu equipo.
-+ Definirá el _orígen remoto_ del repositorio vinculado a tuu copia en Github.
++ Definirá el _orígen remoto_ del repositorio vinculado a tu copia en Github.
 + También definirá que t copia está vinculada a mi repositorio del mismo nombre.
 + Configura el sistema para viggilar lo que ocurra en la rama principal de mi repositorio.
 + Abrir una nueva ventana de RStudio con tu copia clonada.
@@ -101,7 +106,7 @@ usethis::pr_fetch()
 
 ```
 
-Al ejecutar este comando se crea una nueva rama en el equipo del responsable con uun identificador que incluye el dato del usuario que remite la contribución. Una vez que está satisfecho con el contenido, que pdo haber ajustado según su perspectiva, deberá emitir un nuevo push:
+Al ejecutar este comando se crea una nueva rama en el equipo del responsable con un identificador que incluye el dato del usuario que remite la contribución. Una vez que está satisfecho con el contenido, que pdo haber ajustado según su perspectiva, deberá emitir un nuevo push:
 
 ``` r
 usethis::pr_push()

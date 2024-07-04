@@ -6,8 +6,11 @@ date: 4/jul/2024
 lang: es
 categories: [taller, formato]
 
+image: magnifying-glass-541626_1280.jpg
+
 lightbox: true
 ---
+
 
 ## Bloques tipo "caja"
 

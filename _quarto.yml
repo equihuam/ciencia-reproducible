@@ -19,7 +19,7 @@ website:
         href: https://www.instagram.com/ 
 format:
   html:
-    theme: cosmo
+    theme: cosmos
     css: styles.css
   pdf: 
     toc: false

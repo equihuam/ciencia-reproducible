@@ -3,6 +3,7 @@ title: "Masa para Pizza"
 author: ["Miguel Equihua"]
 date: "20/jun/2024"
 
+categories: [ejemplos, pizza, biblio, referencias]
 draft: false
 toc: true
 lot: true
@@ -20,7 +21,7 @@ crossref:
   tbl-title: Cuadro
   tbl-prefix: Cuadro
   lot-title: Lista de Cuadros
-  
+
 bibliography: pizzas.bib
 csl: apa.csl
 

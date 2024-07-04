@@ -1,0 +1,44 @@
+---
+title: "Referencias Cruzadas en Quarto"
+author: "Miguel Equihua"
+date: 04/jul/2024
+
+lang: es
+categories: [formato, referencias]
+
+lightbox: true
+---
+
+## Identificadores fijos
+
+*Quarto* tiene prevista toda una colección de identificadores para reconocer los distintos tipos de componentes que pueden requerir alguna forma de llamada en el texto. Claramente es el caso de **figuras** y **tablas**. Pero *Quarto* tiene además toda una gama de componentes que son susceptibles de *referencia cruzada*. Los anoto en el @tbl-prefijos. Algunos de ellos corresponden con *bloques de llamada* (**callouts**), qe desde luego también puede ser interesante referir en otras partes del texto.
+
+| Prefijo | Componente        |
+|---------|-------------------|
+| cau     | precaución        |
+| cnj     | conjetura         |
+| cor     | corolario         |
+| def     | definición        |
+| eq      | ecuación          |
+| exm     | ejemplo           |
+| exr     | ejercicio         |
+| fig     | figura            |
+| imp     | importante        |
+| lem     | lema              |
+| lst     | código de cómputo |
+| nte     | notas             |
+| prp     | proposición       |
+| rem     | observación       |
+| sec     | sección           |
+| sol     | solución          |
+| tbl     | cuadro            |
+| thm     | teorema           |
+| tip     | sugerencia        |
+| wrn     | advertencia       |
+
+: Lista de prefijos previstos en _Quarto_ {#tbl-prefijos}
+
+
+Me preguntabas sobre como incluir la definición de algo de interés (@def-definir). Está es la manera.
+
+[Definición de algo importante]{#def-definir}

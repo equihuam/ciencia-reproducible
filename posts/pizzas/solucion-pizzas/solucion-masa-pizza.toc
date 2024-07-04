@@ -1,0 +1,9 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {subsection}{\nonumberline Exploración tabular de los datos}{2}{subsection*.5}%
+\contentsline {subsection}{\nonumberline Exploración gráfica}{3}{subsection*.8}%
+\contentsline {subsection}{\nonumberline Prueba de hipótesis}{5}{subsection*.11}%
+\contentsline {subsection}{\nonumberline Opciones avanzadas de análisis}{12}{subsection*.13}%
+\contentsline {subsubsection}{\nonumberline Modelo ponderado}{12}{subsubsection*.15}%
+\contentsline {subsubsection}{\nonumberline Offset: Modelo ``redondeado''}{19}{subsubsection*.17}%
+\contentsline {subsection}{\nonumberline Tarea}{22}{subsection*.19}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

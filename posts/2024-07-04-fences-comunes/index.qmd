@@ -4,7 +4,7 @@ author: "Miguel Equihua"
 date: 4/jul/2024
 
 lang: es
-categories: [taller, formato]
+categories: [formato, div, fences, bloques, pestañas]
 
 image: magnifying-glass-541626_1280.jpg
 

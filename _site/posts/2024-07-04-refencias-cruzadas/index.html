@@ -8,7 +8,7 @@
 
 <meta name="author" content="Miguel Equihua">
 
-<title>Dar formato a mi documeto – Ciencia Abierta</title>
+<title>Referencias Cruzadas en Quarto – Ciencia Abierta</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -120,13 +120,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Dar formato a mi documeto</h1>
+      <h1 class="title">Referencias Cruzadas en Quarto</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">formato</div>
-                <div class="quarto-category">div</div>
-                <div class="quarto-category">fences</div>
-                <div class="quarto-category">bloques</div>
-                <div class="quarto-category">pestañas</div>
+                <div class="quarto-category">referencias</div>
               </div>
                   </div>
   </div>
@@ -165,84 +162,108 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="bloques-tipo-caja" class="level2">
-<h2 class="anchored" data-anchor-id="bloques-tipo-caja">Bloques tipo “caja”</h2>
-<p>A veces conviene ofrecer información adicional al lector, dándole la oportunidad de decidir cuándo o si es que la desea ver. Hay una colección de cajas de este tipo en <em>Quarto</em> que se engloban en la conjunto <a href="https://quarto.org/docs/authoring/callouts.html">callout</a>. Su uso es mediante <em>fences</em> (<strong>div</strong>), el sistema de marcado que se inicia con <code>::: {_indicación_}</code> y se cierra con <code>:::</code>.</p>
+<section id="identificadores-fijos" class="level2">
+<h2 class="anchored" data-anchor-id="identificadores-fijos">Identificadores fijos</h2>
+<p><em>Quarto</em> tiene prevista toda una colección de identificadores para reconocer los distintos tipos de componentes que pueden requerir alguna forma de llamada en el texto. Claramente es el caso de <strong>figuras</strong> y <strong>tablas</strong>. Pero <em>Quarto</em> tiene además toda una gama de componentes que son susceptibles de <em>referencia cruzada</em>. Los anoto en el <a href="#tbl-prefijos" class="quarto-xref">Tabla&nbsp;1</a>. Algunos de ellos corresponden con <em>bloques de llamada</em> (<strong>callouts</strong>), qe desde luego también puede ser interesante referir en otras partes del texto.</p>
+<div id="tbl-prefijos" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-prefijos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabla&nbsp;1: Lista de prefijos previstos en <em>Quarto</em>
+</figcaption>
+<div aria-describedby="tbl-prefijos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th>tipo</th>
-<th>llamada</th>
+<th>Prefijo</th>
+<th>Componente</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>note</td>
-<td>::: {.callout-note}</td>
+<td>cau</td>
+<td>precaución</td>
 </tr>
 <tr class="even">
-<td>warning</td>
-<td>::: {.callout-warning}</td>
+<td>cnj</td>
+<td>conjetura</td>
 </tr>
 <tr class="odd">
-<td>important</td>
-<td>::: {.callout-important}</td>
+<td>cor</td>
+<td>corolario</td>
 </tr>
 <tr class="even">
+<td>def</td>
+<td>definición</td>
+</tr>
+<tr class="odd">
+<td>eq</td>
+<td>ecuación</td>
+</tr>
+<tr class="even">
+<td>exm</td>
+<td>ejemplo</td>
+</tr>
+<tr class="odd">
+<td>exr</td>
+<td>ejercicio</td>
+</tr>
+<tr class="even">
+<td>fig</td>
+<td>figura</td>
+</tr>
+<tr class="odd">
+<td>imp</td>
+<td>importante</td>
+</tr>
+<tr class="even">
+<td>lem</td>
+<td>lema</td>
+</tr>
+<tr class="odd">
+<td>lst</td>
+<td>código de cómputo</td>
+</tr>
+<tr class="even">
+<td>nte</td>
+<td>notas</td>
+</tr>
+<tr class="odd">
+<td>prp</td>
+<td>proposición</td>
+</tr>
+<tr class="even">
+<td>rem</td>
+<td>observación</td>
+</tr>
+<tr class="odd">
+<td>sec</td>
+<td>sección</td>
+</tr>
+<tr class="even">
+<td>sol</td>
+<td>solución</td>
+</tr>
+<tr class="odd">
+<td>tbl</td>
+<td>cuadro</td>
+</tr>
+<tr class="even">
+<td>thm</td>
+<td>teorema</td>
+</tr>
+<tr class="odd">
 <td>tip</td>
-<td>::: {.callout-tip}</td>
+<td>sugerencia</td>
 </tr>
-<tr class="odd">
-<td>caution</td>
-<td>::: {.callout-caution}</td>
+<tr class="even">
+<td>wrn</td>
+<td>advertencia</td>
 </tr>
 </tbody>
 </table>
-<p>En cada uno de estos casos puedes agregar la frase: <code>collapse="true"</code>. Al hacerlo, el bloque aparecerá cerrado y el lector deberá activarlo para leer su contenido. Puedes también agregar un título con la frase <code>title="Tip with Title"</code> o si anotas un texto con marcado de sub título en seguida de la llamada.</p>
-<p><strong>::: {.callout-tip}</strong><br>
-<strong>## Título de un bloque de “sugerencias”</strong><br>
-<strong>Algo que sea importante decir, ¡pero no indispensable!</strong><br>
-<strong>:::</strong></p>
-</section>
-<section id="formato-del-texto" class="level2">
-<h2 class="anchored" data-anchor-id="formato-del-texto">Formato del texto</h2>
-<p>Se puede usar la opción <code>style</code> que admite varios componentes:</p>
-<p><strong>::: {style=“font-size: 50%; color:green; font-family: helvetica; font-size:44px;”}</strong></p>
-<p>Tamaño de letra en <em>puntos</em> (<strong>px</strong>)</p>
-<p><strong>::: {style=“font-size:44px;”}</strong></p>
-<p>Esto también se puede hacer a nivel incluso de una letra con la idea siguiente:</p>
-<p><strong>[rojo]{style=“color:red;”}</strong>.</p>
-<p>Puede interesarte una referencia a como definir los colores. Hay muchas posibilidades en la Web, pero <a href="https://htmlcolorcodes.com/es/">está es un inicio</a>. Con esta página conseguiras el código <em>hexadecimal</em>, el que está marcado con <strong>#</strong>. Lo puedes usar así:</p>
-<p><strong>[rojo]{style=“color:#E71D02;”}</strong></p>
-<p>Muchos <a href="https://htmlcolorcodes.com/color-names/">colores tienen nombres definidos</a>, si lo prefieres puedes usarlos en lugar del código <em>hexadecimal</em>.</p>
-<p>Otra opción del <em>atributo</em> <code>style</code> es la forma de justificación de un texto. La frase a usar es <code>text-align: justify</code>. Las variantes de justificación son las usuales: <em>justify</em>, <em>center</em>, <em>right</em>, <em>left</em>. Si quieres profundizar más en todo esto te sugiero <a href="https://www.w3schools.com/cssref/pr_text_text-align.php">empezar aquí</a></p>
-<div style="text-align: right; color:#E71D00;">
-<p>Lorem ipsum dolor sit amet consectetur adipiscing elit, augue rutrum feugiat vitae habitasse nisi aenean tellus, suspendisse malesuada faucibus nam dapibus id. Gravida felis dictumst at nibh lacinia ut hendrerit euismod pellentesque, scelerisque sed conubia commodo iaculis luctus tristique rhoncus, velit eleifend purus class non rutrum odio placerat. Integer sagittis magnis lacus erat senectus lobortis aliquet sodales, dignissim convallis conubia arcu pretium suscipit a torquent faucibus, velit laoreet maecenas auctor vivamus morbi netus.</p>
 </div>
-<p>algo así <span style="text-align: right; color:#E71D00; font-size:44px;">texto de color</span> y sigo escribiendo.</p>
-</section>
-<section id="información-en-pestañas" class="level2">
-<h2 class="anchored" data-anchor-id="información-en-pestañas">Información en “pestañas”</h2>
-<p>Puede resultarte interesante considerar presentar tu información como si se tratara de una libreta con <a href="https://quarto.org/docs/output-formats/html-basics.html#tabsets">secciones reconocibles por pestañas</a>. Para hacerlo, el <em>bloque</em> (<strong>div</strong>) se contruye así.</p>
-<p><strong>:::</strong> <strong>{.panel-tabset}</strong><br>
-<strong>##</strong> <strong>Descripción de los datos</strong></p>
-<p><strong>Es realmente un subdocumento, que podrá tener texto, código, gráficas, etc.</strong></p>
-<p><strong>##</strong> <strong>Estrategia analítica</strong></p>
-<p><strong>Misma cosa. Subdocumento en el que abordas el tema que anuncias en la <em>pestaña</em>.</strong></p>
-<p><strong>:::</strong></p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Descripción de los datos</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Estrategia analítica</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Es realmente un subdocumento, que podrá tener texto, código, gráficas, etc.</p>
+</figure>
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Misma cosa. Subdocumento en el que abordas el tema que anuncias en la <em>pestaña</em>.</p>
-</div>
-</div>
-</div>
-<p>Hay muchas posibilidades para dar formato a un documento. Lo que describí aquí son sólo cosas elementales. Otros recursos disponibles son temas, definición de estilos con archivos <code>*.css</code> o <code>*.scc</code>. Más <a href="https://quarto.org/docs/output-formats/html-themes.html">información la podrás encontrar acá</a>. Puedes darte una idea de las posibilidades <a href="https://quarto.org/docs/gallery/">visitando la galería</a>.</p>
-<p>Por otro lado, te sugiero <strong>dosificar el esfuerzo</strong>. Nuestro propósito es la <strong>comunicación efectiva de contenidos científicos</strong> y la <strong>documentación reproducible</strong> de los <strong>procesos de producción de conocimiento nuevo</strong> en los que participes. Esto sugiere que hay que procurar mantener al mínimo el uso de variantes estilísticas en tus documentos, aunque hay que recordar también que somos sensibles al valor estético de lo que observamos. Desde luego, ser <strong>minimalista</strong> no te debe impedir elaborar algunos productos muy cuidados en los que los elementos de diseño tomarán un papel relevante: presentaciones para público general, libros, manuales, infografías, tableros interactivos (<em>dashboards</em>), etc. Siempre, deberás encontrar un equilibrio entre estética y funcionalidad. También recuerda ser ordenado en tus procesos. Cada proyecto un directorio nuevo, adecuadamente documentado y preservado.</p>
 
 
 </section>

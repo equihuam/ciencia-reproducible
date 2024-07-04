@@ -24,6 +24,9 @@ crossref:
 bibliography: pizzas.bib
 csl: apa.csl
 
+comments: 
+  hypothesis:
+    theme: clean
 ---
 
 
@@ -39,6 +42,13 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 En esta libreta *RMarkdown* les comparto mis notas de lo que hice en relación con los datos de masa para pizza. Pongo aquí dos referencia que no tienen gran cosa que ver pero tienen valor ilustrativo [@pizzama2003], o cuando hablas de lo que dice @ceccarini2011.
+
+::: {.callout-tip collapse="true"}
+## Habilitar la recepción de comentarios
+
+He agregado a este documento de ejemplos, la opción para aceptar comentarios directamente sobre el texto. Lo hice agregando en la sección de _encabezado_ (_front matter yaml_) la especificación  `comments: ` que tiene varias opciones que puedes encontrarse [aquí](https://quarto.org/docs/output-formats/html-basics.html#commenting), aunque basta con poner `hypothesis: true`. Esta opción habilita la interacción con otro servicio Web que permite recabar comentarios hechos sobre un texto. Para operarlo será necesario obtener una cuenta en [hypothesis](https://web.hypothes.is/). Para reunir los comentarios que te interesa en una forma controlada, te sugiero utilizar **grupos privados**.
+:::
+
 
 El Estudio de Marcelo es un experimento *completamente aleatorizado*, no hubo restricciones a la aleatorización como para producir **bloques** o división en parcelas (**parcela dividida**). Los tratamientos los ideó Marcelo como tratamientos factoriales, resultado de la combinación de cantidades variables de azúcar y leche, pero finalmente optó por tratarlas como una serie de recetas (sin decirnos que cantidad de leche o azúcar empleo, típico de los cocineros, guardar secretos), así que no nos queda otra que tratar al arreglo de tratamientos como una clasificación simple en *recetas* (ANOVA de una sola vía dirían otros). El modelo que describe esto es algo así (@eq-mod-est-lin):
 

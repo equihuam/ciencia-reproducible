@@ -19,17 +19,17 @@ A veces conviene ofrecer información adicional al lector, dándole la oportunid
 | tipo | llamada |
 |------|---------|
 |note      |::: {.callout-note}|    
-|warning   |::: {.callout-waning}|
+|warning   |::: {.callout-warning}|
 |important |::: {.callout-important}|
 |tip       |::: {.callout-tip}|
 |caution   |::: {.callout-caution}|
 
 En cada uno de estos casos puedes agregar la frase: `collapse="true"`. Al hacerlo, el bloque aparecerá cerrado y el lector deberá activarlo para leer su contenido. Puedes también agregar un título con la frase `title="Tip with Title"` o si anotas un texto con marcado de sub título en seguida de la llamada.
 
-*\:\:\: {.callout-tip}*\
-*\#\# Título de un bloque de "sugerencias"*
-*Algo que sea importante decir, ¡pero no indispensable!*\
-*\:\:\:*
+**\:\:\: {.callout-tip}**\
+**\#\# Título de un bloque de "sugerencias"**\
+**Algo que sea importante decir, ¡pero no indispensable!**\
+**\:\:\:**
 
 ## Formato del texto
 

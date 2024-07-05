@@ -17,16 +17,21 @@ website:
         href: https://x.com/
       - icon: instagram
         href: https://www.instagram.com/ 
+
 format:
   html:
     theme: cosmos
     css: styles.css
   pdf: 
     toc: false
+
     number-sections: false
     colorlinks: true
     papersize: letter
 
+prefer-html: true
+
 execute: 
   freeze: true
+
   

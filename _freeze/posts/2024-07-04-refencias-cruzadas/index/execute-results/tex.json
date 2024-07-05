@@ -1,0 +1,17 @@
+{
+  "hash": "d05b03081a9c585981a8fffa63978b53",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Referencias Cruzadas en Quarto\"\nauthor: \"Miguel Equihua\"\ndate: 04/jul/2024\n\nlang: es\ncategories: [formato, referencias]\n\nlightbox: true\n\nprefer-html: true\n---\n\n\n\n\n\n\n\n\n\n\n## Identificadores fijos\n\n*Quarto* tiene prevista toda una colección de identificadores para reconocer los distintos tipos de componentes que pueden requerir alguna forma de llamada en el texto. Claramente es el caso de **figuras** y **tablas**. Pero *Quarto* tiene además toda una gama de componentes que son susceptibles de *referencia cruzada*. Los anoto en el @tbl-prefijos. Algunos de ellos corresponden con *bloques de llamada* (**callouts**), que desde luego también puede ser interesante referir en otras partes del texto y que podrían tener contenido distinto al sugerido por el bloque. Por ejemplo, dentro de un bloque *tip*, podría ponerse una definición a la que se hace referencia en otra parte del texto.\n\n\\\n\\\n\n| Prefijo | Componente        |\n|---------|-------------------|\n| cau     | precaución        |\n| cnj     | conjetura         |\n| cor     | corolario         |\n| def     | definición        |\n| eq      | ecuación          |\n| exm     | ejemplo           |\n| exr     | ejercicio         |\n| fig     | figura            |\n| imp     | importante        |\n| lem     | lema              |\n| lst     | código de cómputo |\n| nte     | notas             |\n| prp     | proposición       |\n| rem     | observación       |\n| sec     | sección           |\n| sol     | solución          |\n| tbl     | cuadro            |\n| thm     | teorema           |\n| tip     | sugerencia        |\n| wrn     | advertencia       |\n\n: Lista de prefijos previstos en *Quarto* {#tbl-prefijos}\n\nMe preguntabas sobre como incluir la definición de algo de interés (@def-definir). Está es la manera.\n\n::: {#def-definir}\nDefinición de algo importante\n:::\n\n\nPuede ser que interese hacer referencia a un poco de código computacional que es importante en la explicación de tus hallazgos científicos o tecnológicos. Por ejemplo, el @lst-cod-1 es el que use para producir la fig-sun-burst. \n\n\n::: {#lst-cod-1}\n\n\n\n\n\n\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(plotly)\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\nLoading required package: ggplot2\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\n\nAttaching package: 'plotly'\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\nThe following object is masked from 'package:ggplot2':\n\n    last_plot\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\nThe following object is masked from 'package:stats':\n\n    filter\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stderr}\n\n```\nThe following object is masked from 'package:graphics':\n\n    layout\n```\n\n\n:::\n\n```{.r .cell-code}\nfig <- plot_ly(\n  labels = c(\"Eve\", \"Cain\", \"Seth\", \"Enos\", \"Noam\", \"Abel\", \"Awan\", \"Enoch\", \"Azura\"),\n  parents = c(\"\", \"Eve\", \"Eve\", \"Seth\", \"Seth\", \"Eve\", \"Eve\", \"Awan\", \"Eve\"),\n  values = c(10, 14, 12, 10, 2, 6, 6, 4, 4),\n  type = 'sunburst'\n)\n```\n:::\n\n\n\n\n\n\n\n\n\n:::\n\n\n\n\n\n\n\n\n\n\n\n\n::: {.cell}\n\n:::\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": null,
+    "postProcess": false
+  }
+}

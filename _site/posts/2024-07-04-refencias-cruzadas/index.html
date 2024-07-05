@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -68,6 +102,24 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Buscar"
   }
 }</script>
+<link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="../../site_libs/plotly-binding-4.10.4.9000/plotly.js"></script>
+
+<script src="../../site_libs/typedarray-0.1/typedarray.min.js"></script>
+
+<script src="../../site_libs/jquery-3.5.1/jquery.min.js"></script>
+
+<link href="../../site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="../../site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
+
+<link href="../../site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+
+<script src="../../site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -164,7 +216,10 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="identificadores-fijos" class="level2">
 <h2 class="anchored" data-anchor-id="identificadores-fijos">Identificadores fijos</h2>
-<p><em>Quarto</em> tiene prevista toda una colección de identificadores para reconocer los distintos tipos de componentes que pueden requerir alguna forma de llamada en el texto. Claramente es el caso de <strong>figuras</strong> y <strong>tablas</strong>. Pero <em>Quarto</em> tiene además toda una gama de componentes que son susceptibles de <em>referencia cruzada</em>. Los anoto en el <a href="#tbl-prefijos" class="quarto-xref">Tabla&nbsp;1</a>. Algunos de ellos corresponden con <em>bloques de llamada</em> (<strong>callouts</strong>), qe desde luego también puede ser interesante referir en otras partes del texto.</p>
+<p><em>Quarto</em> tiene prevista toda una colección de identificadores para reconocer los distintos tipos de componentes que pueden requerir alguna forma de llamada en el texto. Claramente es el caso de <strong>figuras</strong> y <strong>tablas</strong>. Pero <em>Quarto</em> tiene además toda una gama de componentes que son susceptibles de <em>referencia cruzada</em>. Los anoto en el <a href="#tbl-prefijos" class="quarto-xref">Tabla&nbsp;1</a>. Algunos de ellos corresponden con <em>bloques de llamada</em> (<strong>callouts</strong>), que desde luego también puede ser interesante referir en otras partes del texto y que podrían tener contenido distinto al sugerido por el bloque. Por ejemplo, dentro de un bloque <em>tip</em>, podría ponerse una definición a la que se hace referencia en otra parte del texto.</p>
+<p><br>
+<br>
+</p>
 <div id="tbl-prefijos" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-prefijos-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -263,6 +318,62 @@ Tabla&nbsp;1: Lista de prefijos previstos en <em>Quarto</em>
 </table>
 </div>
 </figure>
+</div>
+<p>Me preguntabas sobre como incluir la definición de algo de interés (<a href="#def-definir" class="quarto-xref">Definición&nbsp;1</a>). Está es la manera.</p>
+<div id="def-definir" class="theorem definition">
+<p><span class="theorem-title"><strong>Definición 1</strong></span> Definición de algo importante</p>
+</div>
+<p>Puede ser que interese hacer referencia a un poco de código computacional que es importante en la explicación de tus hallazgos científicos o tecnológicos. Por ejemplo, el <a href="#lst-cod-1" class="quarto-xref">Listado&nbsp;1</a> es el que use para producir la <a href="#fig-sun-burst" class="quarto-xref">Figura&nbsp;1</a>.</p>
+<div id="lst-cod-1" class="listing quarto-float quarto-figure quarto-figure-left anchored">
+<figure class="quarto-float quarto-float-lst figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-cod-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Listado&nbsp;1: Código para producir una gráfica bonita.
+</figcaption>
+<div aria-describedby="lst-cod-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly, <span class="at">warn.conflicts =</span> <span class="cn">FALSE</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>, <span class="at">mask.ok =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>fig <span class="ot">&lt;-</span> <span class="fu">plot_ly</span>(</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Eve"</span>, <span class="st">"Cain"</span>, <span class="st">"Seth"</span>, <span class="st">"Enos"</span>, <span class="st">"Noam"</span>, <span class="st">"Abel"</span>, <span class="st">"Awan"</span>, <span class="st">"Enoch"</span>, <span class="st">"Azura"</span>),</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">parents =</span> <span class="fu">c</span>(<span class="st">""</span>, <span class="st">"Eve"</span>, <span class="st">"Eve"</span>, <span class="st">"Seth"</span>, <span class="st">"Seth"</span>, <span class="st">"Eve"</span>, <span class="st">"Eve"</span>, <span class="st">"Awan"</span>, <span class="st">"Eve"</span>),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">values =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">14</span>, <span class="dv">12</span>, <span class="dv">10</span>, <span class="dv">2</span>, <span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">4</span>),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">'sunburst'</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">sizes =</span> <span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">1</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+</figure>
+</div>
+<details class="code-fold">
+<summary>Código</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fig</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="quarto-layout-panel" data-layout="[-1,5,-1]">
+<div class="quarto-layout-row">
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 14.3%;justify-content: flex-start;">
+<p>&nbsp;</p>
+</div>
+<div class="cell quarto-layout-cell" style="flex-basis: 71.4%;justify-content: flex-start;">
+<div id="fig-sun-burst" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sun-burst-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-808d4d514051bd4a43ff" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-808d4d514051bd4a43ff">{"x":{"visdat":{"8af02914169b":["function () ","plotlyVisDat"]},"cur_data":"8af02914169b","attrs":{"8af02914169b":{"labels":["Eve","Cain","Seth","Enos","Noam","Abel","Awan","Enoch","Azura"],"parents":["","Eve","Eve","Seth","Seth","Eve","Eve","Awan","Eve"],"values":[10,14,12,10,2,6,6,4,4],"alpha_stroke":1,"sizes":[20,1],"spans":[1,20],"type":"sunburst"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"labels":["Eve","Cain","Seth","Enos","Noam","Abel","Awan","Enoch","Azura"],"parents":["","Eve","Eve","Seth","Seth","Eve","Eve","Awan","Eve"],"values":[10,14,12,10,2,6,6,4,4],"type":"sunburst","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(255,255,255,1)"}},"frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sun-burst-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Gráfica dinámica bonita con biblioteca Plotly
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 14.3%;justify-content: flex-start;">
+<p>&nbsp;</p>
+</div>
+</div>
 </div>
 
 

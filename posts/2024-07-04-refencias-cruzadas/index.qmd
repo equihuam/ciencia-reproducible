@@ -7,11 +7,18 @@ lang: es
 categories: [formato, referencias]
 
 lightbox: true
+
+code-fold: true
+
+prefer-html: true
 ---
 
 ## Identificadores fijos
 
-*Quarto* tiene prevista toda una colección de identificadores para reconocer los distintos tipos de componentes que pueden requerir alguna forma de llamada en el texto. Claramente es el caso de **figuras** y **tablas**. Pero *Quarto* tiene además toda una gama de componentes que son susceptibles de *referencia cruzada*. Los anoto en el @tbl-prefijos. Algunos de ellos corresponden con *bloques de llamada* (**callouts**), qe desde luego también puede ser interesante referir en otras partes del texto.
+*Quarto* tiene prevista toda una colección de identificadores para reconocer los distintos tipos de componentes que pueden requerir alguna forma de llamada en el texto. Claramente es el caso de **figuras** y **tablas**. Pero *Quarto* tiene además toda una gama de componentes que son susceptibles de *referencia cruzada*. Los anoto en el @tbl-prefijos. Algunos de ellos corresponden con *bloques de llamada* (**callouts**), que desde luego también puede ser interesante referir en otras partes del texto y que podrían tener contenido distinto al sugerido por el bloque. Por ejemplo, dentro de un bloque *tip*, podría ponerse una definición a la que se hace referencia en otra parte del texto.
+
+\
+\
 
 | Prefijo | Componente        |
 |---------|-------------------|
@@ -36,9 +43,44 @@ lightbox: true
 | tip     | sugerencia        |
 | wrn     | advertencia       |
 
-: Lista de prefijos previstos en _Quarto_ {#tbl-prefijos}
-
+: Lista de prefijos previstos en *Quarto* {#tbl-prefijos}
 
 Me preguntabas sobre como incluir la definición de algo de interés (@def-definir). Está es la manera.
 
-[Definición de algo importante]{#def-definir}
+::: {#def-definir}
+Definición de algo importante
+:::
+
+
+Puede ser que interese hacer referencia a un poco de código computacional que es importante en la explicación de tus hallazgos científicos o tecnológicos. Por ejemplo, el @lst-cod-1 es el que use para producir la @fig-sun-burst. 
+
+
+::: {#lst-cod-1 lst-cap="Código para producir una gráfica bonita."}
+
+```{r}
+
+library(plotly, warn.conflicts = FALSE, quietly = TRUE, mask.ok = TRUE)
+
+fig <- plot_ly(
+  labels = c("Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"),
+  parents = c("", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve"),
+  values = c(10, 14, 12, 10, 2, 6, 6, 4, 4),
+  type = 'sunburst',
+  sizes = c(20,1)
+  
+)
+```
+:::
+
+
+::: {layout="[-1,5,-1]"}
+
+```{r}
+#| label: fig-sun-burst
+#| fig-cap: Gráfica dinámica bonita con biblioteca Plotly
+
+fig
+
+```
+
+:::

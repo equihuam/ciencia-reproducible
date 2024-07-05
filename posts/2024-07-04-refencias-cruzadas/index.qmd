@@ -8,6 +8,8 @@ image: img/ai-generated-8334581_1280.png
 lang: es
 categories: [formato, referencias]
 
+number-sections: true
+
 lightbox: true
 
 code-fold: true

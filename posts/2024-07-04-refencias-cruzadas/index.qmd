@@ -3,6 +3,8 @@ title: "Referencias Cruzadas en Quarto"
 author: "Miguel Equihua"
 date: 04/jul/2024
 
+image: img/ai-generated-8334581_1280.png
+
 lang: es
 categories: [formato, referencias]
 
@@ -12,6 +14,19 @@ code-fold: true
 
 prefer-html: true
 ---
+
+
+No me gustó la configuración *default* que usa *Quarto*, de justificar a la izquierda las leyendas de las figuras. Para cambiar eso use el código de @lst-css. Esto tiene un poco que ver con el asunto de darle en general un *tema/aspecto* al proyecto. [Aquí puedes encontrar más información](https://quarto.org/docs/output-formats/html-themes.html) al respecto.
+
+::: {#lst-css lst-cap="Código css para centrar la leyenda."}
+```{css}
+
+figcaption {
+    text-align: center;
+}
+
+```
+:::
 
 ## Identificadores fijos
 
@@ -51,36 +66,57 @@ Me preguntabas sobre como incluir la definición de algo de interés (@def-defin
 Definición de algo importante
 :::
 
-
-Puede ser que interese hacer referencia a un poco de código computacional que es importante en la explicación de tus hallazgos científicos o tecnológicos. Por ejemplo, el @lst-cod-1 es el que use para producir la @fig-sun-burst. 
-
+Puede ser que interese hacer referencia a un poco de código computacional que es importante en la explicación de tus hallazgos científicos o tecnológicos. Por ejemplo, el @lst-cod-1 es el que use para producir la @fig-sun-burst. Se trata de una ilustración de la taxonomía de características de *sabor* que pueden apreciarse en una taza de café. La gráfica de la izquierda son datos un poco resumidos y los de la derecha una lista llamada *completa*. La presentación permite comparar ambos conjuntos de datos.
 
 ::: {#lst-cod-1 lst-cap="Código para producir una gráfica bonita."}
-
 ```{r}
+#| warning: false
+#| code-overflow: wrap
 
 library(plotly, warn.conflicts = FALSE, quietly = TRUE, mask.ok = TRUE)
 
-fig <- plot_ly(
-  labels = c("Eve", "Cain", "Seth", "Enos", "Noam", "Abel", "Awan", "Enoch", "Azura"),
-  parents = c("", "Eve", "Eve", "Seth", "Seth", "Eve", "Eve", "Awan", "Eve"),
-  values = c(10, 14, 12, 10, 2, 6, 6, 4, 4),
-  type = 'sunburst',
-  sizes = c(20,1)
-  
-)
+d1 <- read.csv('https://raw.githubusercontent.com/plotly/datasets/master/coffee-flavors.csv')
+d2 <- read.csv('https://raw.githubusercontent.com/plotly/datasets/718417069ead87650b90472464c7565dc8c2cb1c/sunburst-coffee-flavors-complete.csv')
+fig <- plot_ly() 
+fig <- fig %>%
+  add_trace(
+    ids = d1$ids,
+    labels = d1$labels,
+    parents = d1$parents,
+    type = 'sunburst',
+    maxdepth = 2,
+    domain = list(column = 0)
+    ) 
+fig <- fig %>%
+  add_trace(
+    ids = d2$ids,
+    labels = d2$labels,
+    parents = d2$parents,
+    type = 'sunburst',
+    maxdepth = 3,
+    domain = list(column = 1)
+  ) 
+fig <- fig %>%
+  layout(autosize=F, width = 700, height = 450, 
+         grid = list(columns =2, rows = 1),
+         margin = list(l = 0, r = 0, b = 0, t = 0),
+         sunburstcolorway = c("#636efa","#EF553B","#00cc96",
+                              "#ab63fa","#19d3f3","#e763fa",
+                              "#FECB52","#FFA15A","#FF6692",
+                              "#B6E880"),
+      extendsunburstcolors = TRUE)
 ```
 :::
 
-
 ::: {layout="[-1,5,-1]"}
-
 ```{r}
 #| label: fig-sun-burst
 #| fig-cap: Gráfica dinámica bonita con biblioteca Plotly
+#| warning: false
+#| out-width: 8in
+#| out-height: 5in
+#| echo: false
 
 fig
-
 ```
-
 :::

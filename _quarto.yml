@@ -24,7 +24,6 @@ format:
     css: styles.css
   pdf: 
     toc: false
-
     number-sections: false
     colorlinks: true
     papersize: letter

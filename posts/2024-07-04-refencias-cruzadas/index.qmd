@@ -20,7 +20,6 @@ crossrefs-hover: false
 
 bibliography: algo.bib
 csl: apa.csl
-
 ---
 
 No me gustó la configuración *default* que usa *Quarto*, de justificar a la izquierda las leyendas de las figuras. Para cambiar eso use el código del @lst-css. Esto tiene un poco que ver con el asunto de darle en general un *tema/aspecto* al proyecto. [Aquí puedes encontrar más información](https://quarto.org/docs/output-formats/html-themes.html) al respecto.

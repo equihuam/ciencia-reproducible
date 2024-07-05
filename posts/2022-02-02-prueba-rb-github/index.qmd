@@ -47,3 +47,5 @@ knitr::include_graphics("img/Git-Netlify.png")
 La forma más segura de interactuar con un repositorio es mediante _pull request_ (solicitud de incorporación). Esta acción es una petición que hace el propietario de una copia del repositorio (_fork_), al propietario del repositorio original para que incorpore los _commits_ que están en la copia del solicitante. Para ver como hacerlo preparamos [esta contribución al respecto](pull-request.qmd).
 
 Esto es algo nuevo
+
+más  nuevo

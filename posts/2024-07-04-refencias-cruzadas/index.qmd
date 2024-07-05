@@ -16,8 +16,12 @@ code-fold: true
 
 prefer-html: true
 
----
+crossrefs-hover: false
 
+bibliography: algo.bib
+csl: apa.csl
+
+---
 
 No me gustó la configuración *default* que usa *Quarto*, de justificar a la izquierda las leyendas de las figuras. Para cambiar eso use el código del @lst-css. Esto tiene un poco que ver con el asunto de darle en general un *tema/aspecto* al proyecto. [Aquí puedes encontrar más información](https://quarto.org/docs/output-formats/html-themes.html) al respecto.
 
@@ -33,7 +37,7 @@ figcaption {
 
 ## Identificadores fijos
 
-*Quarto* tiene prevista toda una colección de identificadores para reconocer los distintos tipos de componentes que pueden requerir alguna forma de llamada en el texto. Claramente es el caso de **figuras** y **tablas**. Pero *Quarto* tiene además toda una gama de componentes que son susceptibles de *referencia cruzada*. Los anoto en el @tbl-prefijos. Algunos de ellos corresponden con *bloques de llamada* (**callouts**), que desde luego también puede ser interesante referir en otras partes del texto y que podrían tener contenido distinto al sugerido por el bloque. Por ejemplo, dentro de un bloque *tip*, podría ponerse una definición a la que se hace referencia en otra parte del texto. Además, podrías definir tu propio prefijo para llevar control de alguna clase de componente de t interés. Puedes encontrar [más al respecto en la documentación de Quarto](https://quarto.org/docs/reference/metadata/crossref.html). 
+*Quarto* tiene prevista toda una colección de identificadores para reconocer los distintos tipos de componentes que pueden requerir alguna forma de llamada en el texto. Claramente es el caso de **figuras** y **tablas**. Pero *Quarto* tiene además toda una gama de componentes que son susceptibles de *referencia cruzada*. Los anoto en el @tbl-prefijos. Algunos de ellos corresponden con *bloques de llamada* (**callouts**), que desde luego también puede ser interesante referir en otras partes del texto y que podrían tener contenido distinto al sugerido por el bloque. Por ejemplo, dentro de un bloque *tip*, podría ponerse una definición a la que se hace referencia en otra parte del texto. Además, podrías definir tu propio prefijo para llevar control de alguna clase de componente de t interés. Puedes encontrar [más al respecto en la documentación de Quarto](https://quarto.org/docs/reference/metadata/crossref.html).
 
 \
 \

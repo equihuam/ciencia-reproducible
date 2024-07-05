@@ -86,3 +86,5 @@ datos <- read.csv(sprintf(url_drive, dat_datos_id))
 
 ![](img/Noteook.png)
 :::
+
+Perla 

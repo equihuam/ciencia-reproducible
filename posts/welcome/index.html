@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta charset="utf-8" />
+<meta name="generator" content="quarto-1.4.555" />
 
-<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
 
-<title>Ciencia Abierta - Merge request o ¡Acepta mi contribución!</title>
+<meta name="author" content="Miguel Equihua" />
+
+<title>Ciencia Abierta – Blog de Reproducibilidad Científica</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,63 +23,9 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
-
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../pluma-escritura.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<!-- htmldependencies:E3FAD763 -->
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -107,42 +55,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../styles.css" />
 </head>
 
-<body class="nav-fixed">
+<body>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="/index.html">
     <span class="navbar-title">Ciencia Abierta</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+  aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca"
+  onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
+    <a class="nav-link" href="/about.html"> 
 <span class="menu-text">Acerca de</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/equihuam/ciencia-reproducible"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/equihuam/ciencia-reproducible"> <i 
+  class="bi bi-github" 
+  role="img" 
+>
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://x.com/"> <i class="bi bi-x" role="img">
+    <a class="nav-link" href="https://x.com/"> <i 
+  class="bi bi-x" 
+  role="img" 
+>
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.instagram.com/"> <i class="bi bi-instagram" role="img">
+    <a class="nav-link" href="https://www.instagram.com/"> <i 
+  class="bi bi-instagram" 
+  role="img" 
+>
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -154,13 +113,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <div id="quarto-toc-target"></div>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+  <div class="quarto-title-banner">
     <div class="quarto-title column-body">
-      <h1 class="title">Merge request o ¡Acepta mi contribución!</h1>
+      <h1 class="title">Blog de Reproducibilidad Científica</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">taller</div>
-                <div class="quarto-category">github</div>
+                <div class="quarto-category">inicio</div>
               </div>
                   </div>
   </div>
@@ -171,14 +139,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Autor/a</div>
       <div class="quarto-title-meta-contents">
-               <p><a href="https://www.ie-gamma.net">Miguel Equihua</a> </p>
+               <p>Miguel Equihua </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Fecha de publicación</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">Xalapa, Ver., 6 de julio, 2024</p>
+        <p class="date">Xalapa, Ver., 11 de junio, 2024</p>
       </div>
     </div>
     
@@ -186,89 +154,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">En esta página</h2>
-   
-  <ul>
-  <li><a href="#copiar-y-clonar-localmente" id="toc-copiar-y-clonar-localmente" class="nav-link active" data-scroll-target="#copiar-y-clonar-localmente">Copiar y clonar localmente</a></li>
-  <li><a href="#crea-una-rama-y-propon-cambios" id="toc-crea-una-rama-y-propon-cambios" class="nav-link" data-scroll-target="#crea-una-rama-y-propon-cambios">Crea una rama y propon cambios</a></li>
-  </ul>
-</nav>
-    </div>
-<!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+  </header>
 
 
-
-
-
-<p><a href="img/Pull-Request.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img/Pull-Request.png" class="img-fluid" style="width:80.0%"></a></p>
-<p>Un <em>Pull request</em> en <em>Git</em> podríamos llamarlo una <em>Solicitud de Fusión</em>, aunque lo común es usar la frase en inglés. Es la base del uso de un repositorio <em>Git</em> como plataforma de colaboración además del control de versiones. Es el mecanismo seguro de solicitar la incorporación de cambios al proyecto. La ideas es tan simple como el nombre indica: se solicita al responsable del proyecto que incorpore una nueva rama (desde un repositorio que tiene cambios propuestos), en otra (del mismo o de otro repositorio).</p>
-<p>Con las peticiones de fusión puedes:</p>
-<ul>
-<li>Comparar los cambios entre dos ramas</li>
-<li>Revisar y discutir las modificaciones propuestas</li>
-<li>Construir, probar y desplegar el efecto de la modificación en el proyecto.</li>
-<li>Evitar que la adición solicitada se aplique antes de ser adecuadamente revisada.</li>
-</ul>
-<p>En <code>usethis</code> el subconjunto de funciones con el prefijo <code>pr_</code> se refieren a las operaciones relacionadas con <em>pull requests</em> en Github. Encontraras <a href="https://happygitwithr.com/">más información en Happy Git</a>.</p>
-<p>Una solicitud de fusión involucra a dos participantes, los llamaremos: contribuyente y revisor. Como las funciones <code>pr_</code> usan la infraestructura interactiva de Github (API) Necesitaras un <em>token personal de acceso</em>, lo puedes hacer con este código:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>() </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Al ejecutarlo te llevará a la página adecuada para la tarea en Github con la innformación recomendada ya registrada, sólo falta describir el uso que darás al token y la caducidad que prefieres. Copia el token y registralo en forma segura en <em>RStudio</em></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="copiar-y-clonar-localmente" class="level2">
-<h2 class="anchored" data-anchor-id="copiar-y-clonar-localmente">Copiar y clonar localmente</h2>
-<p>Para empezar a colaborar, lo primero es que cada participante tenga su propia copia (<em>fork</em>) del proyecto. Esto se puede hacer con la instrucción siguiente:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_from_github</span>(<span class="st">"equihuam/ciencia-reproducible"</span>, <span class="at">fork =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Este comando hará lo siguiente:</p>
-<ul>
-<li>Una copia del repositorio <em>ciencia-reproducible</em> que tengo en mi cuenta personal.</li>
-<li>Clonará la copia del repositorio en tu equipo.</li>
-<li>Definirá el <em>orígen remoto</em> del repositorio vinculado a tu copia en Github.</li>
-<li>También definirá que t copia está vinculada a mi repositorio del mismo nombre.</li>
-<li>Configura el sistema para viggilar lo que ocurra en la rama principal de mi repositorio.</li>
-<li>Abrir una nueva ventana de RStudio con tu copia clonada.</li>
-<li>Algunas opciones adicionales en el comando de <code>usethis</code> que podrías querer usar:
-<ul>
-<li>controla si se debe copiar o no <code>fork = TRUE</code> o <code>fork = FALSE</code>.</li>
-<li>Usa <code>destdir</code> para especifica en donde quieres poner tu clon del repositorio.</li>
-<li>Podrías incluso usar la opción <code>usethis.destdir</code> para que los nuevos proyectos siempre vayan a un directorio específico de tu preferencia.</li>
-</ul></li>
-</ul>
-</section>
-<section id="crea-una-rama-y-propon-cambios" class="level2">
-<h2 class="anchored" data-anchor-id="crea-una-rama-y-propon-cambios">Crea una rama y propon cambios</h2>
-<p>Para crear tu propuesta de cambio puedes usar la función <code>pr_init()</code> que crea una rama nueva en tu repositorio en preparación para hacer la solicitud de incorporación de cambios. Es buena práctica hacerlo así, en lugar de usar la rama principal (comunmente <em>main</em> o <em>master</em>). En este caso llamaremos a la rama nueva idea-1</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">pr_init</span>(<span class="at">branch =</span> <span class="st">"idea-1"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>La ejecución de este comando crea la rama y la hace el espacio activo de trabajo. Ahora puedes hacer todo el trabajo que gustes, hacer tus <em>commits</em> en esta rama y demás.</p>
-<p>Cuando estés lista para enviar tu contribución con las adecuaciones y cambios que deseas proponer usa el siguiente comando.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">pr_push</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>La ejecución del comando hará que se presente un ventana de tu navegador de Internet en la <em>URL</em> (Uniform Resource Locator) de interés. En la ventana podrás ver una comparación de lo que hay en el repositorio original (izquierda) y los cambios que propones (derecha). También verás un gran botón verde que dice <strong>Create Pull Request</strong>. Si estás lista, apriétalo para enviar la solicitud a la consideración del responsable. Al apretar el botón tendrás opción de indicar si es un borrador o una propuesta terminada. En el primer caso, no olvides marcarla como lista para ser revisada cuando hayas terminado de trabajarla y la consideres completa, momento en el que habrás de lanzar un nuevo <code>pr_push()</code></p>
-<p>GitHub enviará un mensaje al responsable, quien revisará tu solicitud. Podrás ver lo que está pasando con la instrucción:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">pr_view</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Te llevará a la página adecuada en tu navegador de Internet en donde se está dando segimientto a tu petición.</p>
-<p>En el proceso de revisión el responsable decidirá en algún momento llevar tu propuesta a su máquina. Lo podrá hacer con la instrucción</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">pr_fetch</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Al ejecutar este comando se crea una nueva rama en el equipo del responsable con un identificador que incluye el dato del usuario que remite la contribución. Una vez que está satisfecho con el contenido, que pdo haber ajustado según su perspectiva, deberá emitir un nuevo push:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">pr_push</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>que actualizará los cambios con sus sugerencias. Cuando todo se valora está en orden, el responsable emitirá la orden de incorporar los cambios y dar por terminado el proceso. Lo puede hacer con las siguiente instrucción.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">pr_finish</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Para poner tu copia del repositorio al día deberás emitir una penúltima instrucción</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">pr_pull</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>que incorporará la versión final de los cambios en tu copia del repositorio. Finalmente, podrás cerrar el proceso desde tu lado con:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">pr_finish</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>lo que dará por terminado el proceso.</p>
-<p>Puedes encontrar <a href="https://usethis.r-lib.org/articles/pr-functions.html">este texto útil</a> para obtener más información sobbre el tema.</p>
-
-
-</section>
+<p>Este es un espacio para conversar sobre Ciencia Reproducible. La figura ilustra los pilares de la reproducibilidad de acuerdo con lo expresado en este artículo de <a href="https://www.revistabiomedica.mx/index.php/revbiomed/article/view/840/845">González-Rayas, et al., 2020</a></p>
+<p><img src="images/840-2404-1-PB-A.png" class="img-fluid quarto-figure quarto-figure-center" style="width:60.0%" /> djdjdnnnz,nc</p>
+<div id="quarto-navigation-envelope" class="hidden">
+<p><span class="hidden" data-render-id="quarto-int-sidebar-title">Ciencia Abierta</span> <span class="hidden" data-render-id="quarto-int-navbar-title">Ciencia Abierta</span> <span class="hidden" data-render-id="quarto-int-navbar:Acerca de">Acerca de</span> <span class="hidden" data-render-id="quarto-int-navbar:/about.html">/about.html</span> <span class="hidden" data-render-id="quarto-int-navbar:https://github.com/equihuam/ciencia-reproducible">https://github.com/equihuam/ciencia-reproducible</span> <span class="hidden" data-render-id="quarto-int-navbar:https://x.com/">https://x.com/</span> <span class="hidden" data-render-id="quarto-int-navbar:https://www.instagram.com/">https://www.instagram.com/</span></p>
+</div>
+<div id="quarto-meta-markdown" class="hidden">
+<p><span class="hidden" data-render-id="quarto-metatitle">Ciencia Abierta - Blog de Reproducibilidad Científica</span> <span class="hidden" data-render-id="quarto-twittercardtitle">Ciencia Abierta - Blog de Reproducibilidad Científica</span> <span class="hidden" data-render-id="quarto-ogcardtitle">Ciencia Abierta - Blog de Reproducibilidad Científica</span> <span class="hidden" data-render-id="quarto-metasitename">Ciencia Abierta</span> <span class="hidden" data-render-id="quarto-twittercarddesc"></span> <span class="hidden" data-render-id="quarto-ogcardddesc"></span></p>
+</div>
 
 </main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+<script id = "quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -678,33 +577,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","loop":false,"selector":".lightbox","closeEffect":"zoom"});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
 
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
-    }
-  });
+</body>
 
-};
-          </script>
-
-
-
-
-</body></html>
+</html>

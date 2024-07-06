@@ -106,7 +106,7 @@ usethis::pr_fetch()
 
 ```
 
-Al ejecutar este comando se crea una nueva rama en el equipo del responsable con un identificador que incluye el dato del usuario que remite la contribución. Una vez que está satisfecho con el contenido, que pdo haber ajustado según su perspectiva, deberá emitir un nuevo push:
+Al ejecutar este comando se crea una nueva rama en el equipo del responsable con un identificador que incluye el dato del usuario que remite la contribución. Una vez que está satisfecho con el contenido, que pudo haber ajustado según su perspectiva, deberá emitir un nuevo push:
 
 ``` r
 usethis::pr_push()

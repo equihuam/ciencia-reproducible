@@ -271,7 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="algunos-problemas-encontrados" class="level2">
 <h2 class="anchored" data-anchor-id="algunos-problemas-encontrados">Algunos problemas encontrados</h2>
 <ol type="1">
-<li>Un problema que encontramos hoy fue la de operar <em>RStudio</em> fuera del proyecto de interés en forma inadvertida. Te sugiero siempre verificar que estés trabajando con el proyecto que deseas. La indicación la hace claramente <em>RStudio</em> en la equina superior izquierda. No sólo indica ahí el nombre del proyecto, si <em>Git</em> está habilitado, también indica la <strong>rama</strong> en la que estás trabajando. Si lo que se muuestra es solamente <strong>RStudio</strong>, estás fuera de todo proyecto. Ve a <strong>File → Open Project</strong> o <strong>File → Recent Projects</strong> y abre el que deseas sea tu base de trabajo.</li>
+<li>Un problema que encontramos hoy fue la de operar <em>RStudio</em> fuera del proyecto de interés en forma inadvertida. Te sugiero siempre verificar que estés trabajando con el proyecto que deseas. La indicación la hace claramente <em>RStudio</em> en la equina superior izquierda. No sólo indica ahí el nombre del proyecto, si <em>Git</em> está habilitado, también indica la <strong>rama</strong> en la que estás trabajando. Si lo que se muestra es solamente <strong>RStudio</strong>, estás fuera de todo proyecto. Ve a <strong>File → Open Project</strong> o <strong>File → Recent Projects</strong> y abre el que deseas sea tu base de trabajo.</li>
 </ol>
 <p><a href="img/Rstudio-proyecto.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img/Rstudio-proyecto.png" class="img-fluid"></a></p>
 <ol start="2" type="1">
@@ -280,21 +280,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <p><a href="img/netlify-repositorios.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img/netlify-repositorios.png" class="img-fluid"></a></p>
 <ol start="4" type="1">
-<li>Encontramos inconsistencia con la definición de la rama que toma el papel <em>principal</em> (<em>default</em>) en tu <strong>repo</strong>. Sugiero resolver esto con el comando <code>git_default_branch_rename</code> de la biblioteca <code>usethis</code>. Úsalo en la pestaña de consola de RStudio. En el siguiente ejemplo estoy suponiendo que quieres cambiar de <em>master</em> a <em>main</em>. También estoy suuponiendo que todo lo que te interesa está actualmente en <em>main</em>.</li>
+<li>Encontramos inconsistencia con la definición de la rama que toma el papel <em>principal</em> (<em>default</em>) en tu <strong>repo</strong>. Sugiero resolver esto con el comando <code>git_default_branch_rename</code> de la biblioteca <code>usethis</code>. Úsalo en la pestaña de <strong>consola</strong> de <em>RStudio</em>. En el siguiente ejemplo estoy suponiendo que quieres cambiar de <em>master</em> a <em>main</em>. También estoy suponiendo que todo lo que te interesa está actualmente en <em>main</em>.</li>
 </ol>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_default_branch_rename</span>(<span class="at">from =</span> <span class="st">"master"</span>, <span class="at">to =</span>  <span class="st">"main"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Una vez hecho esto, podría ocurrir que recordaras que hay cosas en <em>master</em> que quieres tener en <em>main</em>. Esto requiere un <code>git merge</code>.</p>
 <p>Para hacer la fusión de <em>master</em> con <em>main</em>. No debe haber problema porque <em>main</em> la originaste a partir de <em>master</em>. Bajo estas condiciones lo que sigue es lo siguiente en la pestaña <strong>terminal</strong> de <em>RStudio</em>:</p>
 <ol type="1">
 <li>Cambia a la <strong>rama</strong> <em>main</em>, asegúrate que no tienes trabajo pendiente por registrar con un <code>commit</code>.</li>
-<li>Navega en la terminal hasta asegurarte que estás en el directorio de tu proyecto.</li>
+<li>Navega en la <strong>terminal</strong> hasta asegurarte que estás en el directorio de tu proyecto.</li>
 </ol>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="st">"c:\[anota acquí la ruta a tu proyecto]"</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="3" type="1">
 <li>Ubicada en tu directorio de interés invoca el siguiente comando de <code>git</code></li>
 </ol>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge master</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Ahora <em>master</em> y <em>main</em> hacen referencia al mismo estado del proyecto, por lo tanto uno de los dos sobra. En este caso, puede convenir borrar <em>master</em>. Lo puuedes hacer con el comando siguiente en la pestaña **terminal* y desde el directorio de tu proyecto.</p>
+<p>Ahora <em>master</em> y <em>main</em> hacen referencia al mismo estado del proyecto, por lo tanto podrías considerar que uno de los dos sobra. En este caso, puede convenir borrar <em>master</em>. Lo puedes hacer con el comando siguiente en la pestaña <strong>terminal</strong> y desde el directorio de tu proyecto.</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-d</span> master</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Si resultara que la <strong>rama</strong> en cuestión, en realidad no es redundante, <em>git</em> te lo hará saber. Podrías obligar a <em>git</em> a eliminar <em>master</em> de cualquier manera, sólo cambia “-d” por “-D”, pero hazlo con mucho cuidado, pues podrías perder algo que vas a echar de menos más adelante. <a href="https://eriqande.github.io/rep-res-web/lectures/git-branch-and-merge.html">Eric C. Anderson</a> preparó esta explicación del tema, podría ser de tú interés.</p>
 
@@ -723,7 +723,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

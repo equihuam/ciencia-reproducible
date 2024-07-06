@@ -141,7 +141,7 @@ Puedes encontrar [este texto útil](https://usethis.r-lib.org/articles/pr-functi
 
 ## Algunos problemas encontrados
 
-1. Un problema que encontramos hoy fue la de operar _RStudio_ fuera del proyecto de interés en forma inadvertida. Te sugiero siempre verificar que estés trabajando con el proyecto que deseas. La indicación la hace claramente _RStudio_ en la equina superior izquierda. No sólo indica ahí el nombre del proyecto, si _Git_ está habilitado, también indica la **rama** en la que estás trabajando. Si lo que se muuestra es solamente **RStudio**, estás fuera de todo proyecto. Ve a **File &rarr; Open Project**  o **File &rarr; Recent Projects** y abre el que deseas sea tu base de trabajo. 
+1. Un problema que encontramos hoy fue la de operar _RStudio_ fuera del proyecto de interés en forma inadvertida. Te sugiero siempre verificar que estés trabajando con el proyecto que deseas. La indicación la hace claramente _RStudio_ en la equina superior izquierda. No sólo indica ahí el nombre del proyecto, si _Git_ está habilitado, también indica la **rama** en la que estás trabajando. Si lo que se muestra es solamente **RStudio**, estás fuera de todo proyecto. Ve a **File &rarr; Open Project**  o **File &rarr; Recent Projects** y abre el que deseas sea tu base de trabajo. 
 
 ![](img/Rstudio-proyecto.png)
 
@@ -151,7 +151,7 @@ Puedes encontrar [este texto útil](https://usethis.r-lib.org/articles/pr-functi
 
 ![](img/netlify-repositorios.png)
 
-4. Encontramos inconsistencia con la definición de la rama que toma el papel _principal_ (_default_) en tu **repo**. Sugiero resolver esto con el comando `git_default_branch_rename` de la biblioteca `usethis`. Úsalo en la pestaña de **consola** de _RStudio_. En el siguiente ejemplo estoy suponiendo que quieres cambiar de _master_ a _main_. También estoy suuponiendo que todo lo que te interesa está actualmente en _main_.
+4. Encontramos inconsistencia con la definición de la rama que toma el papel _principal_ (_default_) en tu **repo**. Sugiero resolver esto con el comando `git_default_branch_rename` de la biblioteca `usethis`. Úsalo en la pestaña de **consola** de _RStudio_. En el siguiente ejemplo estoy suponiendo que quieres cambiar de _master_ a _main_. También estoy suponiendo que todo lo que te interesa está actualmente en _main_.
 
 ```r
 usethis::git_default_branch_rename(from = "master", to =  "main")

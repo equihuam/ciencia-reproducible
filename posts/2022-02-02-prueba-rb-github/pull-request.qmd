@@ -17,7 +17,7 @@ editor_options:
 lightbox: true
 ---
 
-![](img/Pull-Request.png){width=80%}
+![](img/Pull-Request.png){width=70%}
 
 Un _Pull request_ en _Git_ podríamos llamarlo una _Solicitud de Fusión_, aunque lo común es usar la frase en inglés. Es la base del uso de un repositorio _Git_ como plataforma de colaboración además del control de versiones. Es el mecanismo seguro de solicitar la incorporación de cambios al proyecto. La ideas es tan simple como el nombre indica: se solicita al responsable del proyecto que incorpore una nueva rama (desde un repositorio que tiene cambios propuestos), en otra (del mismo o de otro repositorio).
 

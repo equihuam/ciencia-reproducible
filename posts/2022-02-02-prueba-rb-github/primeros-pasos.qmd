@@ -79,7 +79,7 @@ git config --global user.email
 ```
 Sin embargo, también podríamos haber usado el siguiente comando de `usethis`
 
-```{r}
+```r
 usethis::use_git_config(user.name = "Mona Lisa", user.email = "HER_EMAIL")
 ```
 

@@ -166,7 +166,7 @@ Para hacer la fusión de _master_ con _main_. No debe haber problema porque _mai
 2. Navega en la **terminal** hasta asegurarte que estás en el directorio de tu proyecto.
 
 ```bash
-cd "c:\[anota acquí la ruta a tu proyecto]"
+cd "c:\[anota aquí la ruta a tu proyecto]"
 
 ```
 

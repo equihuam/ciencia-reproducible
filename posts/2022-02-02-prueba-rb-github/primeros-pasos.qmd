@@ -13,6 +13,8 @@ editor_options:
 lightbox: true
 ---
 
+![Fuente: _Final.doc_ en **Piled Higher and Deeper** por Jorge Cham, http://www.phdcomics.com](img/version_control_motivation_comics.png){width=60%}
+
 ## ¿Qué es Git?
 
 Es una aplicación diseñada por el iniciador del desarrollo de Linux [Linus Torvalds](https://es.wikipedia.org/wiki/Linus_Torvalds). [Git](https://git-scm.com/) es un sistema eficiente confiable y distribuido de control de versiones. El control de versiones es simplemente el seguimiento y registro de los cambios que va teniendo un documento a lo largo del tiempo. El concepto _distribuido_  se refiere a que el registro local que tengas en tu máquina o para el caso en cualquier número de máquinas, es un registro completo, **clonado** del proyecto. Estos repositorios locales plenamente funcionales permiten trabajar aún cuando no tengas acceso a Internet. Los autores realizan y registran su trabajo localmente y, cuando lo encuentren conveniente, sincronizan la copia local del repositorio con la del servidor. En la actualidad _Git_ se ha convertido en el estándar mundial _de facto_ para el control de versiones.

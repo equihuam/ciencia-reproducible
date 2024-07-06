@@ -1,11 +1,11 @@
 ---
-title: "Merge request o ¡Acepta mi contribución!"
+title: "Pull request o ¡Acepta mi contribución!"
 author:
   - name: [Miguel Equihua]
     url: https://www.ie-gamma.net
 date: 6/jul/2024
 
-categories: [taller, github]
+categories: [github, colaboración, fork, copiar repo, usethis]
 
 image: img/Pull-Request.png
 
@@ -138,6 +138,52 @@ lo que dará por terminado el proceso.
 
 Puedes encontrar [este texto útil](https://usethis.r-lib.org/articles/pr-functions.html) para obtener más información sobbre el tema.
 
+
+## Algunos problemas encontrados
+
+1. Un problema que encontramos hoy fue la de operar _RStudio_ fuera del proyecto de interés en forma inadvertida. Te sugiero siempre verificar que estés trabajando con el proyecto que deseas. La indicación la hace claramente _RStudio_ en la equina superior izquierda. No sólo indica ahí el nombre del proyecto, si _Git_ está habilitado, también indica la **rama** en la que estás trabajando. Si lo que se muuestra es solamente **RStudio**, estás fuera de todo proyecto. Ve a **File &rarr; Open Project**  o **File &rarr; Recent Projects** y abre el que deseas sea tu base de trabajo. 
+
+![](img/Rstudio-proyecto.png)
+
+2. Después de hacer el _fork_ con `usethis::create_from_github("equihuam/ciencia-reproducible", fork = TRUE)`, se hizo correctamente la copia,  se  obtuvo un clón del nuevo repositorio, etc. Sin embargo, el acceso al nuevo repositorio apareció inhabilitado (_pull_ y _push_ grises). Es seguro que esto se deba a un problema de configuración del proyecto. My probablemente tenga que ver con los permisos con los que estás operando y eso lo controla el token que tienes registrado. Pudieran ser también algunas otras cosas. Para empezar a explorar el problema lo mejor será usar `git_sitrepo` como sugiere [Matthew Carson](https://forum.posit.co/t/cant-push-git-commit/176827
+), que además de mostrarte detalles de configuración te sugerirá en dónde puede haber problemas y la forma de buscar solución al problema detectado. 
+3. En el vínculo entre _Github_ y _Netlify_ anotaste la rama de interés para publicar que no es la que querías. La solución es redefinir el repositorio de origen. En la figura te sugiero como acceder a esto. Básicamente la idea es reconstruir el vínculo entre _Github_ y _Netlify_ eligiendo los datos correctos de **rama** y **directorio**.
+
+![](img/netlify-repositorios.png)
+
+4. Encontramos inconsistencia con la definición de la rama que toma el papel _principal_ (_default_) en tu **repo**. Sugiero resolver esto con el comando `git_default_branch_rename` de la biblioteca `usethis`. Úsalo en la pestaña de **consola** de _RStudio_. En el siguiente ejemplo estoy suponiendo que quieres cambiar de _master_ a _main_. También estoy suuponiendo que todo lo que te interesa está actualmente en _main_.
+
+```r
+usethis::git_default_branch_rename(from = "master", to =  "main")
+
+```
+
+Una vez hecho esto, podría ocurrir que recordaras que hay cosas en _master_ que quieres tener en _main_. Esto requiere un `git merge`.
+
+Para hacer la fusión de _master_ con _main_. No debe haber problema porque _main_ la originaste a partir de _master_. Bajo estas condiciones lo que sigue es lo siguiente en la pestaña **terminal** de _RStudio_:
+
+1. Cambia a la **rama** _main_, asegúrate que no tienes trabajo pendiente por registrar con un `commit`.
+2. Navega en la **terminal** hasta asegurarte que estás en el directorio de tu proyecto.
+
+```bash
+cd "c:\[anota acquí la ruta a tu proyecto]"
+
+```
+
+3. Ubicada en tu directorio de interés invoca el siguiente comando de `git`
+
+```bash
+git merge master
+
+```
+
+Ahora _master_ y _main_ hacen referencia al mismo estado del proyecto, por lo tanto podrías considerar que uno de los dos sobra. En este caso, puede convenir borrar _master_. Lo puedes hacer con el comando siguiente en la pestaña **terminal** y desde el directorio de tu proyecto.
+
+```bash
+git branch -d master
+```
+
+Si resultara que la **rama** en cuestión, en realidad no es redundante, _git_ te lo hará saber. Podrías obligar a _git_ a eliminar _master_ de cualquier manera, sólo cambia "-d" por "-D", pero hazlo con mucho cuidado, pues podrías perder algo que vas a echar de menos más adelante. [Eric C. Anderson](https://eriqande.github.io/rep-res-web/lectures/git-branch-and-merge.html) preparó esta explicación del tema, podría ser de tú interés.
 
 
 

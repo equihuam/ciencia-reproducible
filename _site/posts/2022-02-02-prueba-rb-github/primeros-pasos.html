@@ -206,12 +206,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="img/version_control_motivation_comics.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Fuente: Final.doc en Piled Higher and Deeper por Jorge Cham, http://www.phdcomics.com"><img src="img/version_control_motivation_comics.png" class="img-fluid figure-img" style="width:60.0%" alt="Fuente: Final.doc en Piled Higher and Deeper por Jorge Cham, http://www.phdcomics.com"></a></p>
+<figcaption>Fuente: <em>Final.doc</em> en <strong>Piled Higher and Deeper</strong> por Jorge Cham, http://www.phdcomics.com</figcaption>
+</figure>
+</div>
 <section id="qué-es-git" class="level2">
 <h2 class="anchored" data-anchor-id="qué-es-git">¿Qué es Git?</h2>
 <p>Es una aplicación diseñada por el iniciador del desarrollo de Linux <a href="https://es.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a>. <a href="https://git-scm.com/">Git</a> es un sistema eficiente confiable y distribuido de control de versiones. El control de versiones es simplemente el seguimiento y registro de los cambios que va teniendo un documento a lo largo del tiempo. El concepto <em>distribuido</em> se refiere a que el registro local que tengas en tu máquina o para el caso en cualquier número de máquinas, es un registro completo, <strong>clonado</strong> del proyecto. Estos repositorios locales plenamente funcionales permiten trabajar aún cuando no tengas acceso a Internet. Los autores realizan y registran su trabajo localmente y, cuando lo encuentren conveniente, sincronizan la copia local del repositorio con la del servidor. En la actualidad <em>Git</em> se ha convertido en el estándar mundial <em>de facto</em> para el control de versiones.</p>
 <p>Una forma muy sencilla de instalar <em>Git</em>, incluyendo un auxiliar gráfico, es recurrir a <a href="https://desktop.github.com/">Github desktop</a>. Otra forma es recurrir, si tu sistema operativo es Windows, a <a href="https://gitforwindows.org/">Git for windows</a>, que no incluye nada más que la plataforma básica de control de versiones. En todo caso, el prerrequisito es contar con alguna instalación de <em>Git</em> en el sistema, para poderlo utilizar desde <em>RStudio</em>. Para utilizarlo, podemos auxiliarnos con la biblioteca <code>usethis</code>, que ofrece una amplia batería de comandos para interactuar con la plataforma de <em>Git</em> y con el servicio de Internet <em>Github</em>.</p>
 <p>En <em>RStudio</em> hay ayuda para utilizar <em>Git</em> directamente. Para acceder a este apoyo deberás crear un proyecto que incluya el control de versiones como una característica activa. En la figura se ilustran las dos rutas para hacerlo en <em>RStudio</em>.</p>
-<p><a href="img/proyecto-con-git.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img/proyecto-con-git.png" class="img-fluid"></a></p>
+<p><a href="img/proyecto-con-git.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img/proyecto-con-git.png" class="img-fluid"></a></p>
 <p>Evidentemete, si seguiste la ruta azul, tu repositorio ya existe en <em>Github</em>. Si optaste por la ruta verde, entonces deberás crear un repositorio allá. Parar hacerlo hay tres sencillos pasos adicionales que dar.</p>
 <p><br>
 </p>
@@ -226,7 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 63.2%;justify-content: center;">
-<p><a href="img/rstudio-git-main.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img/rstudio-git-main.png" class="img-fluid" width="500"></a></p>
+<p><a href="img/rstudio-git-main.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img/rstudio-git-main.png" class="img-fluid" width="500"></a></p>
 </div>
 </div>
 </div>
@@ -243,7 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 63.2%;justify-content: center;">
-<p><a href="img/rstudio-commit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img/rstudio-commit.png" class="img-fluid" width="500"></a></p>
+<p><a href="img/rstudio-commit.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="img/rstudio-commit.png" class="img-fluid" width="500"></a></p>
 </div>
 </div>
 </div>
@@ -717,7 +723,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":false,"openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

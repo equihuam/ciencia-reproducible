@@ -160,7 +160,7 @@ usethis::git_default_branch_rename(from = "master", to =  "main")
 
 Una vez hecho esto, podría ocurrir que recordaras que hay cosas en _master_ que quieres tener en _main_. Esto requiere un `git merge`.
 
-Para hacer la fusión de _master_ con _main_. No debe haber problema porque _main_ la originaste a partir de _master_. Bajo estas condiciones lo que sigue es lo siguiente en la pestaña **terminal** de _RStudio_:
+Para hacer la fusión de _master_ con _main_. No debe haber problema porque _main_ la originaste a partir de _master_. Bajo estas condiciones puedes usar las operaciones siguientes y ejecutar algunos comandos más en la pestaña **terminal** de _RStudio_:
 
 1. Cambia a la **rama** _main_, asegúrate que no tienes trabajo pendiente por registrar con un `commit`.
 2. Navega en la **terminal** hasta asegurarte que estás en el directorio de tu proyecto.

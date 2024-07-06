@@ -284,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">git_default_branch_rename</span>(<span class="at">from =</span> <span class="st">"master"</span>, <span class="at">to =</span>  <span class="st">"main"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Una vez hecho esto, podría ocurrir que recordaras que hay cosas en <em>master</em> que quieres tener en <em>main</em>. Esto requiere un <code>git merge</code>.</p>
-<p>Para hacer la fusión de <em>master</em> con <em>main</em>. No debe haber problema porque <em>main</em> la originaste a partir de <em>master</em>. Bajo estas condiciones lo que sigue es lo siguiente en la pestaña <strong>terminal</strong> de <em>RStudio</em>:</p>
+<p>Para hacer la fusión de <em>master</em> con <em>main</em>. No debe haber problema porque <em>main</em> la originaste a partir de <em>master</em>. Bajo estas condiciones puedes usar las operaciones siguientes y ejecutar algunos comandos más en la pestaña <strong>terminal</strong> de <em>RStudio</em>:</p>
 <ol type="1">
 <li>Cambia a la <strong>rama</strong> <em>main</em>, asegúrate que no tienes trabajo pendiente por registrar con un <code>commit</code>.</li>
 <li>Navega en la <strong>terminal</strong> hasta asegurarte que estás en el directorio de tu proyecto.</li>
@@ -723,7 +723,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

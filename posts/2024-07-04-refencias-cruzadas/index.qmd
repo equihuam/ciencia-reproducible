@@ -38,36 +38,53 @@ figcaption {
 \
 \
 
-| Prefijo | Componente        |
-|---------|-------------------|
-| cau     | precaución        |
-| cnj     | conjetura         |
-| cor     | corolario         |
-| def     | definición        |
-| eq      | ecuación          |
-| exm     | ejemplo           |
-| exr     | ejercicio         |
-| fig     | figura            |
-| imp     | importante        |
-| lem     | lema              |
-| lst     | código de cómputo |
-| nte     | notas             |
-| prp     | proposición       |
-| rem     | observación       |
-| sec     | sección           |
-| sol     | solución          |
-| tbl     | cuadro            |
-| thm     | teorema           |
-| tip     | sugerencia        |
-| wrn     | advertencia       |
-
+| Prefijo    | Componente        |
+|------------|-------------------|
+| {tu clave} | {tus términos}    |
+| cau        | precaución        |
+| cnj        | conjetura         |
+| cor        | corolario         |
+| def        | definición        |
+| eq         | ecuación          |
+| exm        | ejemplo           |
+| exr        | ejercicio         |
+| fig        | figura            |
+| imp        | importante        |
+| lem        | lema              |
+| lst        | código de cómputo |
+| nte        | notas             |
+| prp        | proposición       |
+| rem        | observación       |
+| sec        | sección           |
+| sol        | solución          |
+| tbl        | cuadro            |
+| thm        | teorema           |
+| tip        | sugerencia        |
+| wrn        | advertencia       |
 : Lista de prefijos previstos en *Quarto* {#tbl-prefijos}
 
+\
+
 Me preguntabas sobre como incluir la definición de algo de interés (@def-definir). Está es la manera.
+
+\
+
+**\:\:\: \{\#def-definir\}**\
+**Definición de algo importante**\
+**\:\:\:**\
+
+\
+
+-------------
 
 ::: {#def-definir}
 Definición de algo importante
 :::
+
+------------
+
+\
+\
 
 Puede ser que interese hacer referencia a un poco de código computacional que es importante en la explicación de tus hallazgos científicos o tecnológicos. Por ejemplo, el @lst-cod-1 es el que use para producir la @fig-sun-burst. Se trata de una ilustración de la taxonomía de características de *sabor* que pueden apreciarse en una taza de café. La gráfica de la izquierda son datos un poco resumidos y los de la derecha una lista llamada *completa*. La presentación permite comparar ambos conjuntos de datos.
 

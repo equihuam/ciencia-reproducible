@@ -6,7 +6,7 @@ date: 9/jul/2024
 lang: es
 categories: [datos, datos abiertos, API]
 
-image: magnifying-glass-541626_1280.jpg
+image: img/Escalera-Open Access.png
 
 code-fold: true
 

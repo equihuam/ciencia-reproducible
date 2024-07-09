@@ -222,6 +222,3 @@ ggplot(df1, aes(x = TIME_PERIOD, y = OBS_VALUE / 1000000)) +
 
 Esta es una tarea usualmente complicada. A lo mejor la lectura de lo que propone [ Stephen Few](https://www.perceptualedge.com/articles/visual_business_intelligence/statistical_narrative.pdf), nos puede ayudar a profundizar esta reflexión.
 
-## Extensiones para Quarto
-
-_Quarto_, como _R_, es una pieza de software que propicia la colaboración abierta en su desarrollo, así que hay creciente núumero de extensiones. Algunas de ellas las [encuentras aqí](https://quarto.org/docs/extensions/listing-revealjs.html). Para el caso partticular de las presentaciones te interesará aprender [algunas técnicas avanzadas](https://quarto.org/docs/presentations/revealjs/advanced.html)

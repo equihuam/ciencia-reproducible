@@ -1,0 +1,38 @@
+---
+title: "Configuración: _quarto.yml"
+author: "Miguel Equihua"
+date: 9/jul/2024
+
+lang: es
+categories: [website, blog, revealjs, configuración, yaml]
+
+image: img/Escalera-Open Access.png
+
+code-fold: true
+
+lightbox: true
+---
+
+[Cómo configurar un sitio web en Quarto](https://quarto.org/docs/websites/website-navigation.html)
+
+::: {layout-ncol=2}
+![](img/web-1.png){width=300}
+
+![](img/web-2.png){width=300}
+
+:::
+
+[Configura un Blog](https://quarto.org/docs/websites/website-blog.html)
+
+Es básicamente un Website con una _landing-page_ que genera automáticamente una lista del contenido del blog (los documentos contenidos en **posts**).
+
++ documento definiendo la _landing-page_ **index.qmd** en directorio raíz.
++ especificar en el archivo de control un directorio base de contribuciones.
++ documento de metadatos que especifica como tratar el contenido de contribuciones
+
+[Escribir una presentación Revealjs](https://quarto.org/docs/presentations/revealjs/)
+
+## Extensiones para Quarto
+
+_Quarto_, como _R_, es una pieza de software que propicia la colaboración abierta en su desarrollo, así que hay creciente núumero de extensiones. Algunas de ellas las [encuentras aqí](https://quarto.org/docs/extensions/listing-revealjs.html). Para el caso particular de las presentaciones te interesará aprender [algunas técnicas avanzadas](https://quarto.org/docs/presentations/revealjs/advanced.html)
+

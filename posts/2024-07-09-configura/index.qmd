@@ -32,6 +32,8 @@ Es básicamente un Website con una _landing-page_ que genera automáticamente un
 
 [Escribir una presentación Revealjs](https://quarto.org/docs/presentations/revealjs/)
 
+![](img/reveal-js.png)
+
 ## Extensiones para Quarto
 
 _Quarto_, como _R_, es una pieza de software que propicia la colaboración abierta en su desarrollo, así que hay creciente núumero de extensiones. Algunas de ellas las [encuentras aqí](https://quarto.org/docs/extensions/listing-revealjs.html). Para el caso particular de las presentaciones te interesará aprender [algunas técnicas avanzadas](https://quarto.org/docs/presentations/revealjs/advanced.html)

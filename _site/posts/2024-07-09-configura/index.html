@@ -190,6 +190,7 @@ ul.task-list li input[type="checkbox"] {
 <li>documento de metadatos que especifica como tratar el contenido de contribuciones</li>
 </ul>
 <p><a href="https://quarto.org/docs/presentations/revealjs/">Escribir una presentación Revealjs</a></p>
+<p><a href="img/reveal-js.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img/reveal-js.png" class="img-fluid"></a></p>
 <section id="extensiones-para-quarto" class="level2">
 <h2 class="anchored" data-anchor-id="extensiones-para-quarto">Extensiones para Quarto</h2>
 <p><em>Quarto</em>, como <em>R</em>, es una pieza de software que propicia la colaboración abierta en su desarrollo, así que hay creciente núumero de extensiones. Algunas de ellas las <a href="https://quarto.org/docs/extensions/listing-revealjs.html">encuentras aqí</a>. Para el caso particular de las presentaciones te interesará aprender <a href="https://quarto.org/docs/presentations/revealjs/advanced.html">algunas técnicas avanzadas</a></p>
@@ -619,7 +620,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

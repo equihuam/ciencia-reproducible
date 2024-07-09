@@ -8,12 +8,92 @@ categories: [datos, datos abiertos, API]
 
 image: magnifying-glass-541626_1280.jpg
 
+code-fold: true
+
 lightbox: true
 ---
 
-## Obtención de Datos
+## Datos en Mi equipo
+
+Obviamente, la forma más sencilla de acceder a datos es cuando los tenemos en nuestro propio equipo. En este caso lo usual es que sea alguno de los formatos de Microsoft (Word o Excel) o algún formato genérico como los identificados como **txt** (_texto plano_) o **csv** (_valores separados por comas_). Puuede haber otras variantes de archivos de datos, como **kml**, **GeoJason**, **GeoTIFF** o **shp** (_shape file_) usuales en la gestión de _datos geográficos_. En Genómica está el formato **fasta**, que también cuenta con bibliotecas adecuadas en _R_. Hay una correspondiente variedad de recursos para leer todos estos tipos de datos en _R_ así como para analizarlos y preparar resúmenes, modelos y gráficos de interés. A continuación veremos algunos ejemplos sencillos para tener una idea del proceso general.
+
+Para nuestros fines didácticos ya hemos visto como podemos interactuar con documentos de tipo texto plano. Ahora quisiera que vieramos como leer datos de Excel y de Word.
+
+### Datos Excel
+
+Tengo este archivo de datos obtenidos por D.L. Cunningham de la Universidad de Cornell. Son registros de masa corporal (g) de pollos de acuerdo con su posición en la _jerarquía de picotazos_.  Veamos los datos.
+
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+library(ggplot2)
+library(readxl)
+pollos_peso <- read_excel("datos/peck_odr.xls", skip = 2)
+
+```
+
+los datos están un formato poco conveniente para un análisis general. Hagamos algunas operaciones para ponerlos en una forma más adecuada
+
+```{r}
+
+pollos_peso <- pollos_peso %>%
+                 rename(jerarquia = `Jerarquía\npor picoteo`) %>% 
+                 pivot_longer(cols = `Gallinero 1`:`Gallinero 7`, 
+                              names_to = "gallinero",
+                              values_to = "peso") %>% 
+                 mutate(gallinero = factor(gallinero),
+                        jerarquia = as.integer(jerarquia))
+
+ggplot(pollos_peso, aes(x = jerarquia, y = peso)) +
+  geom_point(color = "orange")
+
+
+```
+
+¿qué análisis sugieres habría que hacer ahora?
+
+
+### Datos en word
+
+Utilizo la bibliotec **docxtractr** para extraer las tablas contenidas en el documento Word (en versión *docx*). Hay que cargar el documento y luego extraer las tablas, una por una. Lo primero que recuperé es la tabla de *Colonia Olmeca*.
+
+
+```{r}
+library(flextable)
+library(docxtractr)
+
+docx <- list.files("datos/", pattern = "^A.*docx$", full.names = TRUE)
+docx <- read_docx(docx)
+
+nombre_vars <-c("sp", "alt", "dens_rel", "frec_rel", "cob_rel", "ivi") 
+
+# Olmeca
+arboles <- docx_extract_tbl(docx = docx, tbl_number = 1, header = TRUE)
+olmeca <- arboles %>% 
+          assign_colnames(row = 1) %>% 
+          mutate_at(2:6, as.numeric) %>% 
+          filter(!row_number() %in% (length(arboles[[1]]) - 1))
+
+names(olmeca) <- nombre_vars
+
+olmeca %>% 
+  flextable() %>% 
+  set_header_labels(sp = "\n\nEspecie", 
+                    alt = "Altura\npromedio\n(m)",
+                    dens_rel = "Densidad\nRelativa\n(%)",
+                    frec_rel = "Frecuencia\nRelativa\n(%)",
+                    cob_rel = "Cobertura\nRelativa\n(%)",
+                    ivi = "Valor\nde Importancia\n(%)")
+
+```
+
+
+
+
+## Obtención de Datos Abiertos
 
 Las fuentes de datos, especialmente hoy, pueden ser muy variadas. Desde los datos que conseguimos directamente en campo a partir de mediciones directas o encuestas, hasta los datos que podemos obtener de _fuentes de datos abiertos_. Considero que será de tu interés explorar las distintas formas de interacción que las fuentes de datos implican para nuestros procesos de producción _científica reproducible_.
+
+![](img/Escalera-Open Access.png)
 
 ### Manejo de claves confidenciales
 
@@ -41,6 +121,10 @@ Veamos un primer ejemplo con **INEGI**. Te sugiero ir a [https://www.inegi.org.m
 Lo primero que haremos es preparar el acceso a los datos con el **token** confidencial y obtenemos los datos, sin haber registrado la _URL_ de acceso, pues como viste arriba, incluye tu **token**, así que habrá que manejarla con seguridad. El resultado de este _código_ es una estruuctra de datos que ya no contiene información confidencial.
 
 ```{r}
+#| label: preparar
+#| echo: false
+#| include: false
+
 library(httr)
 library(jsonlite)
 library(rjson)
@@ -133,3 +217,11 @@ ggplot(df1, aes(x = TIME_PERIOD, y = OBS_VALUE / 1000000)) +
 
 ```
 
+
+## Contar historias con números
+
+Esta es una tarea usualmente complicada. A lo mejor la lectura de lo que propone [ Stephen Few](https://www.perceptualedge.com/articles/visual_business_intelligence/statistical_narrative.pdf), nos puede ayudar a profundizar esta reflexión.
+
+## Extensiones para Quarto
+
+_Quarto_, como _R_, es una pieza de software que propicia la colaboración abierta en su desarrollo, así que hay creciente núumero de extensiones. Algunas de ellas las [encuentras aqí](https://quarto.org/docs/extensions/listing-revealjs.html). Para el caso partticular de las presentaciones te interesará aprender [algunas técnicas avanzadas](https://quarto.org/docs/presentations/revealjs/advanced.html)

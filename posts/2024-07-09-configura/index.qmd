@@ -6,7 +6,7 @@ date: 9/jul/2024
 lang: es
 categories: [website, blog, revealjs, configuración, yaml]
 
-image: img/Escalera-Open Access.png
+image: img/computer-science-1331578_1280.png
 
 code-fold: true
 
@@ -14,6 +14,7 @@ lightbox: true
 ---
 
 [Cómo configurar un sitio web en Quarto](https://quarto.org/docs/websites/website-navigation.html)
+
 
 ::: {layout-ncol=2}
 ![](img/web-1.png){width=300}

@@ -2,9 +2,9 @@
 title: "Ciencia abierta"
 author: "Miguel Equihua"
   
-date: "2024/jun/20"
+date: "20/jun/2024"
 date-format: "[Xalapa, Ver.] D MMMM YYYY"
-categories: [presentación, conceptos, propuestas]
+categories: [conceptos]
 lang: es
 draft: false
 

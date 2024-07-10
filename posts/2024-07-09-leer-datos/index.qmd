@@ -15,7 +15,7 @@ lightbox: true
 
 ## Datos en Mi equipo
 
-Obviamente, la forma más sencilla de acceder a datos es cuando los tenemos en nuestro propio equipo. En este caso lo usual es que sea alguno de los formatos de Microsoft (Word o Excel) o algún formato genérico como los identificados como **txt** (_texto plano_) o **csv** (_valores separados por comas_). Puuede haber otras variantes de archivos de datos, como **kml**, **GeoJason**, **GeoTIFF** o **shp** (_shape file_) usuales en la gestión de _datos geográficos_. En Genómica está el formato **fasta**, que también cuenta con bibliotecas adecuadas en _R_. Hay una correspondiente variedad de recursos para leer todos estos tipos de datos en _R_ así como para analizarlos y preparar resúmenes, modelos y gráficos de interés. A continuación veremos algunos ejemplos sencillos para tener una idea del proceso general.
+Obviamente, la forma más sencilla de acceder a datos es cuando los tenemos en nuestro propio equipo. En este caso lo usual es que sea alguno de los formatos de Microsoft (Word o Excel) o algún formato genérico como los identificados como **txt** (_texto plano_) o **csv** (_valores separados por comas_). Puuede haber otras variantes de archivos de datos, como **kml**, **GeoJson**, **GeoTIFF** o **shp** (_shape file_) usuales en la gestión de _datos geográficos_. En Genómica está el formato **fasta**, que también cuenta con bibliotecas adecuadas en _R_. Hay una correspondiente variedad de recursos para leer todos estos tipos de datos en _R_ así como para analizarlos y preparar resúmenes, modelos y gráficos de interés. A continuación veremos algunos ejemplos sencillos para tener una idea del proceso general.
 
 Para nuestros fines didácticos ya hemos visto como podemos interactuar con documentos de tipo texto plano. Ahora quisiera que vieramos como leer datos de Excel y de Word.
 
@@ -31,7 +31,7 @@ pollos_peso <- read_excel("datos/peck_odr.xls", skip = 2)
 
 ```
 
-los datos están un formato poco conveniente para un análisis general. Hagamos algunas operaciones para ponerlos en una forma más adecuada
+los datos están en un formato poco conveniente para un análisis general. Hagamos algunas operaciones para ponerlos en una forma más adecuada
 
 ```{r}
 
@@ -41,11 +41,11 @@ pollos_peso <- pollos_peso %>%
                               names_to = "gallinero",
                               values_to = "peso") %>% 
                  mutate(gallinero = factor(gallinero),
-                        jerarquia = as.integer(jerarquia))
+                        jerarquia = as.integer(jerarquia)) %>% 
+                 arrange(gallinero)
 
 ggplot(pollos_peso, aes(x = jerarquia, y = peso)) +
   geom_point(color = "orange")
-
 
 ```
 
@@ -64,15 +64,15 @@ library(docxtractr)
 docx <- list.files("datos/", pattern = "^A.*docx$", full.names = TRUE)
 docx <- read_docx(docx)
 
-nombre_vars <-c("sp", "alt", "dens_rel", "frec_rel", "cob_rel", "ivi") 
-
 # Olmeca
 arboles <- docx_extract_tbl(docx = docx, tbl_number = 1, header = TRUE)
+
 olmeca <- arboles %>% 
           assign_colnames(row = 1) %>% 
           mutate_at(2:6, as.numeric) %>% 
           filter(!row_number() %in% (length(arboles[[1]]) - 1))
 
+nombre_vars <-c("sp", "alt", "dens_rel", "frec_rel", "cob_rel", "ivi") 
 names(olmeca) <- nombre_vars
 
 olmeca %>% 
@@ -109,14 +109,16 @@ Esto hará el registro de tus credenciales en tu máquina, fuera de la vista. A 
 \
 
 ```r
-key_ger(service = "[dale un nombre]", username = "[el que desees]")
+key_get(service = "[dale un nombre]", username = "[el que desees]")
 
 ```
 \
 
 Esta última línea recupera los datos confidenciales, así que deberás cuidar usar las credenciales de inmediato y procurar no guardarlas y menos desplegarlas o habilitar medios para mostrarlas, durante el proceso.
 
-Veamos un primer ejemplo con **INEGI**. Te sugiero ir a [https://www.inegi.org.mx/servicios/api_indicadores.html](https://www.inegi.org.mx/servicios/api_indicadores.html), en donde **INEGI** nos muestra un ejemplo de como acceder a los datos abiertos que _compilan_, _mantienen_ y _custodian_. Deberás obtener un **token** personal, el mismo sitio de **INEGI** te dirá como obtenerlo. El ejemplo muestra como obtener datos de la **serie histórica** del indicador de la **Población total** de los Estados Unidos Mexicanos, en idioma español, en formato _JSON_. Una vez que los obtengamos mostraremos los datos en tablas y gráficas.
+Veamos un primer ejemplo con **INEGI**. Te sugiero ir a [https://www.inegi.org.mx/servicios/api_indicadores.html](https://www.inegi.org.mx/servicios/api_indicadores.html) al constructor de consultas, en donde **INEGI** nos muestra un ejemplo de como acceder a los datos abiertos que _compilan_, _mantienen_ y _custodian_. Deberás obtener un **token** personal, el mismo sitio de **INEGI** te dirá como obtenerlo. El ejemplo muestra como obtener datos de la **serie histórica** del indicador de la **Población total** de los Estados Unidos Mexicanos, en idioma español, en formato _JSON_. Una vez que los obtengamos mostraremos los datos en tablas y gráficas.
+
+![](img/API.png)
 
 Lo primero que haremos es preparar el acceso a los datos con el **token** confidencial y obtenemos los datos, sin haber registrado la _URL_ de acceso, pues como viste arriba, incluye tu **token**, así que habrá que manejarla con seguridad. El resultado de este _código_ es una estruuctra de datos que ya no contiene información confidencial.
 
@@ -179,7 +181,6 @@ cat("\nNúmero de observaciones: ", length(flujoDatos[[1]]),
 Ahora convierto lista de listas en un tabla con los datos de población y año de censado.
 
 ```{r}
-
 
 df1 <- flujoDatos[[1]] %>% 
       sapply(., c) %>% 

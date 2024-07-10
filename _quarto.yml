@@ -20,7 +20,7 @@ website:
 
 format:
   html:
-    theme: cosmos
+    theme: default
     css: styles.css
   pdf: 
     toc: false

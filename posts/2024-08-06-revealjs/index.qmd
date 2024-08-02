@@ -83,9 +83,12 @@ title-slide-attributes:
 \
 \
 
-[**Jaguar**]{style="font-size:70px; color:white; padding-left: 6em;"}
+[**Jaguar**]{style="font-size:80px; color:white; padding-left: 5.1em;"}
 
 [Miguel Equihua]{style="font-size:40px; color:yellow; padding-left: 10em;"}
+
+[_6-agosto-2024_]{style="font-size:30px; color:cyan; padding-left: 14.5em;"}
+
 
 # Usar *plugins* y *extensiones*
 

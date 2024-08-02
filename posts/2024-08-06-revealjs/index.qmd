@@ -110,24 +110,34 @@ title-slide-attributes:
 
 ```
 
+::::{.fragment}
+[texto 10, 0, 0]{style="font-size:10px; color:cyan; position: absolute; top:0em; left:0em;"}
+[texto 10, 0, 50%]{style="font-size:10px; color:cyan; position: absolute; top:0em; left:50%;"}
+[texto 10, 50%, 0]{style="font-size:10px; color:cyan; position: absolute; top:50%; left:0em;"}
+[texto 10, 100%, 100%]{style="font-size:10px; color:cyan; position: absolute; top:100%; left:93.08%;"}
+
 :::{.vline}
 :::
 :::{.hline}
 :::
 ::: {.box}
 :::
+::::
 
-[**Jaguar**]{style="font-size:80px; color:white; position: absolute; top: 250px; left: 500px"}
+
+:::{.fragment style="font-size:80px; color:white; text-align:center; padding-top:25%"}
+**Jaguar**
+:::
+
+:::{.fragment style="font-size:40px; color:yellow; text-align:center; padding-top:-10%"}
+Miguel Equihua
+:::
+
+:::{.fragment style="font-size:30px; color:cyan; text-align:center;"}
+_6-agosto-2024_
+:::
 
 
-[Miguel Equihua]{style="font-size:40px; color:yellow; position: absolute; top:360px; left:490px;"}
-
-[_6-agosto-2024_]{style="font-size:30px; color:cyan; position: absolute; top: 400px; left:530px;"}
-
-[texto 10, 0, 0]{style="font-size:10px; color:cyan; position: absolute; top:0em; left:0em;"}
-[texto 10, 0, 50%]{style="font-size:10px; color:cyan; position: absolute; top:0em; left:50%;"}
-[texto 10, 50%, 0]{style="font-size:10px; color:cyan; position: absolute; top:50%; left:0em;"}
-[texto 10, 100%, 100%]{style="font-size:10px; color:cyan; position: absolute; top:100%; left:93.08%;"}
 
 # Usar *plugins* y *extensiones*
 

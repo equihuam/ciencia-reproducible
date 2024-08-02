@@ -6,6 +6,8 @@ code-fold: true
 
 format: 
   revealjs:
+    width: 1280
+    height: 720
     preview-links: true
     chalkboard:
       theme: chalkboard
@@ -22,6 +24,7 @@ format:
 revealjs-plugins:
   - pointer
 ---
+
 
 # Ir más allá de lo básico
 
@@ -79,16 +82,52 @@ title-slide-attributes:
 
 ##  {background-image="img/jaguar-2894706_1280.jpg"}
 
-\
-\
-\
+```{css, echo=FALSE}
+.vline {
+  position: absolute;
+  border-left: 2px solid white;
+  margin-left: 0px;
+  top: 0;
+  height: 101.5%;
+  left: 50%;
+}
 
-[**Jaguar**]{style="font-size:80px; color:white; padding-left: 5.1em;"}
+.hline {
+  position: absolute;
+  border-top: 2px solid white;
+  margin-top: 0px;
+  top: 50%;
+  width: 100%;
+}
 
-[Miguel Equihua]{style="font-size:40px; color:yellow; padding-left: 10em;"}
+.box {
+  position: absolute;
+  top: 0;
+  border: 1px solid yellow;
+  height: 101.5%;
+  width: 100%
+}
 
-[_6-agosto-2024_]{style="font-size:30px; color:cyan; padding-left: 14.5em;"}
+```
 
+:::{.vline}
+:::
+:::{.hline}
+:::
+::: {.box}
+:::
+
+[**Jaguar**]{style="font-size:80px; color:white; position: absolute; top: 250px; left: 500px"}
+
+
+[Miguel Equihua]{style="font-size:40px; color:yellow; position: absolute; top:360px; left:490px;"}
+
+[_6-agosto-2024_]{style="font-size:30px; color:cyan; position: absolute; top: 400px; left:530px;"}
+
+[texto 10, 0, 0]{style="font-size:10px; color:cyan; position: absolute; top:0em; left:0em;"}
+[texto 10, 0, 50%]{style="font-size:10px; color:cyan; position: absolute; top:0em; left:50%;"}
+[texto 10, 50%, 0]{style="font-size:10px; color:cyan; position: absolute; top:50%; left:0em;"}
+[texto 10, 100%, 100%]{style="font-size:10px; color:cyan; position: absolute; top:100%; left:93.08%;"}
 
 # Usar *plugins* y *extensiones*
 

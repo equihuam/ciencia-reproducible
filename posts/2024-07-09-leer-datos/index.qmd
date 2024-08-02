@@ -6,41 +6,121 @@ date: 9/jul/2024
 lang: es
 categories: [datos, datos abiertos, API]
 
-image: magnifying-glass-541626_1280.jpg
+image: img/Escalera-Open Access.png
+
+code-fold: true
 
 lightbox: true
 ---
 
-## Obtención de Datos
+## Datos en Mi equipo
 
-Las fuentes de datos, especialmente hoy, pueden ser muy variadas. Desde los datos que conseguimos directamente en campo a partir de mediciones directas o encuestas, hasta los datos que podemos obtener de _fuentes de datos abiertos_. Considero que será de tu interés explorar las distintas formas de interacción que las fuentes de datos implican para nuestros procesos de producción _científica reproducible_.
+Obviamente, la forma más sencilla de acceder a datos es cuando los tenemos en nuestro propio equipo. En este caso lo usual es que sea alguno de los formatos de Microsoft (Word o Excel) o algún formato genérico como los identificados como **txt** (*texto plano*) o **csv** (*valores separados por comas*). Puuede haber otras variantes de archivos de datos, como **kml**, **GeoJson**, **GeoTIFF** o **shp** (*shape file*) usuales en la gestión de *datos geográficos*. En Genómica está el formato **fasta**, que también cuenta con bibliotecas adecuadas en *R*. Hay una correspondiente variedad de recursos para leer todos estos tipos de datos en *R* así como para analizarlos y preparar resúmenes, modelos y gráficos de interés. A continuación veremos algunos ejemplos sencillos para tener una idea del proceso general.
+
+Para nuestros fines didácticos ya hemos visto como podemos interactuar con documentos de tipo texto plano. Ahora quisiera que vieramos como leer datos de Excel y de Word.
+
+### Datos Excel
+
+Tengo este archivo de datos obtenidos por D.L. Cunningham de la Universidad de Cornell. Son registros de masa corporal (g) de pollos de acuerdo con su posición en la *jerarquía de picotazos*. Veamos los datos.
+
+```{r}
+suppressPackageStartupMessages(library(tidyverse))
+library(ggplot2)
+library(readxl)
+pollos_peso <- read_excel("datos/peck_odr.xls", skip = 2)
+
+```
+
+los datos están en un formato poco conveniente para un análisis general. Hagamos algunas operaciones para ponerlos en una forma más adecuada
+
+```{r}
+
+pollos_peso <- pollos_peso %>%
+                 rename(jerarquia = `Jerarquía\npor picoteo`) %>% 
+                 pivot_longer(cols = `Gallinero 1`:`Gallinero 7`, 
+                              names_to = "gallinero",
+                              values_to = "peso") %>% 
+                 mutate(gallinero = factor(gallinero),
+                        jerarquia = as.integer(jerarquia)) %>% 
+                 arrange(gallinero)
+
+ggplot(pollos_peso, aes(x = jerarquia, y = peso)) +
+  geom_point(color = "orange")
+
+```
+
+¿qué análisis sugieres habría que hacer ahora?
+
+### Datos en word
+
+Utilizo la bibliotec **docxtractr** para extraer las tablas contenidas en el documento Word (en versión *docx*). Hay que cargar el documento y luego extraer las tablas, una por una. Lo primero que recuperé es la tabla de *Colonia Olmeca*.
+
+```{r}
+library(flextable)
+library(docxtractr)
+
+docx <- list.files("datos/", pattern = "^A.*docx$", full.names = TRUE)
+docx <- read_docx(docx)
+
+# Olmeca
+arboles <- docx_extract_tbl(docx = docx, tbl_number = 1, header = TRUE)
+
+olmeca <- arboles %>% 
+          assign_colnames(row = 1) %>% 
+          mutate_at(2:6, as.numeric) %>% 
+          filter(!row_number() %in% (length(arboles[[1]]) - 1))
+
+nombre_vars <-c("sp", "alt", "dens_rel", "frec_rel", "cob_rel", "ivi") 
+names(olmeca) <- nombre_vars
+
+olmeca %>% 
+  flextable() %>% 
+  set_header_labels(sp = "\n\nEspecie", 
+                    alt = "Altura\npromedio\n(m)",
+                    dens_rel = "Densidad\nRelativa\n(%)",
+                    frec_rel = "Frecuencia\nRelativa\n(%)",
+                    cob_rel = "Cobertura\nRelativa\n(%)",
+                    ivi = "Valor\nde Importancia\n(%)")
+
+```
+
+## Obtención de Datos Abiertos
+
+Las fuentes de datos, especialmente hoy, pueden ser muy variadas. Desde los datos que conseguimos directamente en campo a partir de mediciones directas o encuestas, hasta los datos que podemos obtener de *fuentes de datos abiertos*. Considero que será de tu interés explorar las distintas formas de interacción que las fuentes de datos implican para nuestros procesos de producción *científica reproducible*.
+
+![](img/Escalera-Open%20Access.png)
 
 ### Manejo de claves confidenciales
 
-Un tema importante a cuidar es preservar la confidencialidad de claves, **tokens** y otras formas de identificación personal que puede implicar el proceso de acceso a datos en línea. Así que veremos eso como primer asunto. Queda claro que debemos evitar por todos los medios evitar poner esa información en carpetas o código que pueden acabar siendo registradas en Github en nuestro repositorio público. Haberte vacunado con `usethis::git_vaccinate()` ayuda en gran medida, pero desde luego no es remplazo a estar atentos a lo que estamos haciendo. La estrategia de registro de datos confidenciales que te propongo es la biblioteca `keyring`. Esta biblioteca accede al sistema de almacenamiento de credenciales de tu máquina desde _R_. La describen como una **API** _Independiente de la Plataforma_ para acceder al depósito de credenciales del sistema operativo de tu máquina. [Este sitio explica que es una API (Application Programming Interface)](https://aws.amazon.com/es/what-is/api/). Actualmente `keyring` soporta:  **Keychain** en _macOS_, **Credential Store** wn _Windows_, **the Secret Service API** en _Linux_, soluciones simples (sin plataforma específica) desarrollados con variables de sistema o archivos encristalados e incluso ofrece la posibilidad de desarrollar algunas soluciones propias con sencillez. En nuestro caso, básicamente usaremos dos funciones de esta biblioteca. Primero y desde la pantalla de **Consola** ejecuta:
-\
+Un tema importante a cuidar es preservar la confidencialidad de claves, **tokens** y otras formas de identificación personal que puede implicar el proceso de acceso a datos en línea. Así que veremos eso como primer asunto. Queda claro que debemos evitar por todos los medios evitar poner esa información en carpetas o código que pueden acabar siendo registradas en Github en nuestro repositorio público. Haberte vacunado con `usethis::git_vaccinate()` ayuda en gran medida, pero desde luego no es remplazo a estar atentos a lo que estamos haciendo. La estrategia de registro de datos confidenciales que te propongo es la biblioteca `keyring`. Esta biblioteca accede al sistema de almacenamiento de credenciales de tu máquina desde *R*. La describen como una **API** *Independiente de la Plataforma* para acceder al depósito de credenciales del sistema operativo de tu máquina. [Este sitio explica que es una API (Application Programming Interface)](https://aws.amazon.com/es/what-is/api/). Actualmente `keyring` soporta: **Keychain** en *macOS*, **Credential Store** wn *Windows*, **the Secret Service API** en *Linux*, soluciones simples (sin plataforma específica) desarrollados con variables de sistema o archivos encristalados e incluso ofrece la posibilidad de desarrollar algunas soluciones propias con sencillez. En nuestro caso, básicamente usaremos dos funciones de esta biblioteca. Primero y desde la pantalla de **Consola** ejecuta:\
 
-```r
+``` r
 key_set(service = "[dale un nombre]", username = "[el que desees]")
 ```
+
 \
 
-Esto hará el registro de tus credenciales en tu máquina, fuera de la vista. A partir de ese momento y mientras no elimines el registro explícitamente, estarán disponibles los datos que hayas registrado y los podrás obtener con: 
-\
+Esto hará el registro de tus credenciales en tu máquina, fuera de la vista. A partir de ese momento y mientras no elimines el registro explícitamente, estarán disponibles los datos que hayas registrado y los podrás obtener con:\
 
-```r
-key_ger(service = "[dale un nombre]", username = "[el que desees]")
-
+``` r
+key_get(service = "[dale un nombre]", username = "[el que desees]")
 ```
+
 \
 
 Esta última línea recupera los datos confidenciales, así que deberás cuidar usar las credenciales de inmediato y procurar no guardarlas y menos desplegarlas o habilitar medios para mostrarlas, durante el proceso.
 
-Veamos un primer ejemplo con **INEGI**. Te sugiero ir a [https://www.inegi.org.mx/servicios/api_indicadores.html](https://www.inegi.org.mx/servicios/api_indicadores.html), en donde **INEGI** nos muestra un ejemplo de como acceder a los datos abiertos que _compilan_, _mantienen_ y _custodian_. Deberás obtener un **token** personal, el mismo sitio de **INEGI** te dirá como obtenerlo. El ejemplo muestra como obtener datos de la **serie histórica** del indicador de la **Población total** de los Estados Unidos Mexicanos, en idioma español, en formato _JSON_. Una vez que los obtengamos mostraremos los datos en tablas y gráficas.
+Veamos un primer ejemplo con **INEGI**. Te sugiero ir a <https://www.inegi.org.mx/servicios/api_indicadores.html> al constructor de consultas, en donde **INEGI** nos muestra un ejemplo de como acceder a los datos abiertos que *compilan*, *mantienen* y *custodian*. Deberás obtener un **token** personal, el mismo sitio de **INEGI** te dirá como obtenerlo. El ejemplo muestra como obtener datos de la **serie histórica** del indicador de la **Población total** de los Estados Unidos Mexicanos, en idioma español, en formato *JSON*. Una vez que los obtengamos mostraremos los datos en tablas y gráficas.
 
-Lo primero que haremos es preparar el acceso a los datos con el **token** confidencial y obtenemos los datos, sin haber registrado la _URL_ de acceso, pues como viste arriba, incluye tu **token**, así que habrá que manejarla con seguridad. El resultado de este _código_ es una estruuctra de datos que ya no contiene información confidencial.
+![](img/API.png)
+
+Lo primero que haremos es preparar el acceso a los datos con el **token** confidencial y obtenemos los datos, sin haber registrado la *URL* de acceso, pues como viste arriba, incluye tu **token**, así que habrá que manejarla con seguridad. El resultado de este *código* es una estruuctra de datos que ya no contiene información confidencial.
 
 ```{r}
+#| label: preparar
+#| echo: false
+#| include: false
+
 library(httr)
 library(jsonlite)
 library(rjson)
@@ -62,9 +142,7 @@ datosGenerales <- content(GET(str_replace(url,
 
 ```
 
-
-La siguiente tarea que haremos ahora es simplemente arreglar los datos y ponerlos de la manera que requiero. Los datos son actualmente una base de datos _JSON_, que es una estructura parecida a un diccionario jerárquico, que tiene una etiqueta seguida de los datos que le corresponden. Aquí te muestro un fragmento de los datos de **INEGI** que obtuvimos. Es la sección etiquetada como _Header_. Podemos ver que esta etiqueta tiene como contenido los datos _Name_ y _email_, a su vez con sus respectivos datos.
-
+La siguiente tarea que haremos ahora es simplemente arreglar los datos y ponerlos de la manera que requiero. Los datos son actualmente una base de datos *JSON*, que es una estructura parecida a un diccionario jerárquico, que tiene una etiqueta seguida de los datos que le corresponden. Aquí te muestro un fragmento de los datos de **INEGI** que obtuvimos. Es la sección etiquetada como *Header*. Podemos ver que esta etiqueta tiene como contenido los datos *Name* y *email*, a su vez con sus respectivos datos.
 
 ```{r}
 descrip <- fromJSON(datosGenerales[[1]])$Header
@@ -73,7 +151,7 @@ prettify(toJSON(descrip))
 
 \
 
-Ahora haremos algunas operaciones para arreglar los datos del _JSON_ en una tabla de tipo _data.frame_ (_tibble_ si optamos por una variante actual) en _R_. Los datos que nos interesan son los que están en la etiqueta _Series_ y dentro de estas _Series_ están las listas de _OBSERVATIONS_, que en este caso son 15.
+Ahora haremos algunas operaciones para arreglar los datos del *JSON* en una tabla de tipo *data.frame* (*tibble* si optamos por una variante actual) en *R*. Los datos que nos interesan son los que están en la etiqueta *Series* y dentro de estas *Series* están las listas de *OBSERVATIONS*, que en este caso son 15.
 
 ```{r}
 #| label: json-txt
@@ -95,7 +173,6 @@ cat("\nNúmero de observaciones: ", length(flujoDatos[[1]]),
 Ahora convierto lista de listas en un tabla con los datos de población y año de censado.
 
 ```{r}
-
 
 df1 <- flujoDatos[[1]] %>% 
       sapply(., c) %>% 
@@ -133,3 +210,6 @@ ggplot(df1, aes(x = TIME_PERIOD, y = OBS_VALUE / 1000000)) +
 
 ```
 
+## Contar historias con números
+
+Esta es una tarea usualmente complicada. A lo mejor la lectura de lo que propone [Stephen Few](https://www.perceptualedge.com/articles/visual_business_intelligence/statistical_narrative.pdf), nos puede ayudar a profundizar esta reflexión.

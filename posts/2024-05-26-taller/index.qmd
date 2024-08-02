@@ -3,7 +3,6 @@ title: "Una Nueva Manera de Escribir"
 author: "Miguel Equihua"
 lang: es
 date: 18/jun/2024
-
 categories: [taller]
 image: "Poster-r-ciencia.png"
 format: 

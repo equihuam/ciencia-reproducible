@@ -33,9 +33,29 @@ Te sugiero:
 -   [Extensiones de Quarto](https://quarto.org/docs/extensions/listing-revealjs.html)
 -   [El proyecto Slidecraft 101, de Emil Hvitfeldt](https://emilhvitfeldt.com/project/slidecraft-101/#blog-posts)
 
-## 
+## Esta es la segunda Diapositiva
 
-a ver?
++ Conteniod 1
++ Contenido 2
+
+## ¿Una gráfica con ggplot?
+
+```{r}
+#| title: graf-1
+#| echo: false
+
+suppressPackageStartupMessages(library(tidyverse))
+library(ggplot2)
+
+datos <- tibble(x = seq(0, 10, 0.1)) %>% 
+  mutate(y = sin(x) + cos(x) + 10 + rnorm(length(x)))
+
+ggplot(datos, aes(x = x, y = y)) +
+  geom_smooth() +
+  xlab(label = "tiempo (segundos)") +
+  ylab(label = expression(paste("proteina (", mu, "g ", mm^-3,")")))
+```
+
 
 # Cambio
 
@@ -47,6 +67,11 @@ Sirve de ejemplo de traducción automática. Consigue tus [credenciales aquí](h
 \
 
 ```{r}
+#| title: traduce
+#| include: false
+#| echo: false
+#| eval: false
+
 library(deeplr)
 library(keyring)
 
@@ -60,6 +85,8 @@ translate2(text = texto,
            auth_key = key_get(service = "trad-deepL", username = "miguel"))
 
 ```
+
+Tenga en cuenta que la especificación de recursos incrustados puede ralentizar la renderización en un par de segundos, por lo que es posible que desee activar los recursos incrustados sólo cuando esté listo para publicar. Ten en cuenta también que el plugin Chalkboard de Reveal no es compatible con embed-resources - cuando el plugin Chalkboard está activado, especificar embed-resources: true dará lugar a un error.
 :::
 
 # Poner una diapo de portada
@@ -124,19 +151,19 @@ title-slide-attributes:
 :::
 ::::
 
-
-:::{.fragment style="font-size:80px; color:white; text-align:center; padding-top:25%"}
+::::{style="margin-top:23%; line-height:0.8;"}
+:::{.fragment style="font-size:80px; color:white; text-align:center;"}
 **Jaguar**
 :::
 
-:::{.fragment style="font-size:40px; color:yellow; text-align:center; padding-top:-10%"}
+:::{.fragment style="font-size:40px; color:yellow; text-align:center;"}
 Miguel Equihua
 :::
 
-:::{.fragment style="font-size:30px; color:cyan; text-align:center; padding-top:-30%"}
+:::{.fragment style="font-size:30px; color:cyan; text-align:center;"}
 _6-agosto-2024_
 :::
-
+::::
 
 
 # Usar *plugins* y *extensiones*

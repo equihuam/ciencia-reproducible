@@ -4,6 +4,8 @@ author: "Miguel Equihua"
 
 code-fold: true
 
+css: miguel-1.css
+
 format: 
   revealjs:
     width: 1280

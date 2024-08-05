@@ -11,6 +11,6 @@ contributes:
       theme: [default, blackboard.scss]
       css: theme.css
       footer: |
-              <a href="https://mr.schochastics.net">theme by schochastics</a>
+              <a href="https://ciencia-reproducible.netlify.app">ciencia abierta</a>
       title-slide-attributes:
         data-background-image: blackboard.png

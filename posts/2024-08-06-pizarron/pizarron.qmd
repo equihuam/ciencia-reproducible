@@ -1,6 +1,6 @@
 ---
-title: "Quarto Blackboard theme"
-subtitle: "for revealjs"
+title: "Pizarrón"
+subtitle: "para revealjs"
 author: "David Schoch"
 institute: "GESIS - Leibniz Institute for the Social Sciences"
 format: blackboard-revealjs

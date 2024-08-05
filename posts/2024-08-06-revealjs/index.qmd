@@ -36,7 +36,7 @@ Te sugiero:
 
 ## Esta es la segunda Diapositiva
 
-+ Conteniod 1
++ Contenido 1
 + Contenido 2
 
 ## ¿Una gráfica con ggplot?
@@ -57,42 +57,76 @@ ggplot(datos, aes(x = x, y = y)) +
   ylab(label = expression(paste("proteina (", mu, "g ", mm^-3,")")))
 ```
 
-
-# Cambio
-
-## 
-
-::: callout-warning
-Sirve de ejemplo de traducción automática. Consigue tus [credenciales aquí](https://www.deepl.com/es/pro-api){preview-link="false"}. Acuérdate de protegerlas con `keyring`.
-
-\
+## Diapo con un bonito mapa
 
 ```{r}
-#| title: traduce
-#| include: false
-#| echo: false
-#| eval: false
+library(leaflet)
+library(leaflet.extras)
 
-library(deeplr)
-library(keyring)
+basemap <- leaflet() %>%
+  # ubicación y nivel de zoom
+  setView(lng = -96.91810, lat = 19.51603, zoom = 20) %>% 
+  # Añade proveedor de maa
+  addProviderTiles(
+    "OpenStreetMap",
+    # Dale un nombre a la capa
+    group = "Mapa-OpenStreet"
+  ) %>% 
+  addProviderTiles("Esri.WorldImagery", 
+                   group = "ESRI") %>% 
+  addWMSTiles(
+    "http://gaia.inegi.org.mx/NLB/tunnel/wms/wms61?",
+    layers = "Ortofotos",
+    options = WMSTileOptions(format = "image/png", transparent = TRUE),
+    attribution = "Inegi",
+    group = "Inegi-ortofoto") %>% 
+  addWMSTiles(
+    "http://gaia.inegi.org.mx/NLB/tunnel/wms/wms61?",
+    layers = "c407",
+    options = WMSTileOptions(format = "image/png", transparent = TRUE),
+    attribution = "Inegi",
+    group = "Humedad del suelo") 
+
+#%>% 
+#  addWMSLegend("http://gaia.inegi.org.mx/NLB/tunnel/wms/wms61",
+#        'REQUEST=GetLegendGraphic&VERSION=1.1.0',
+#        '&FORMAT=image/png&LAYER=c407')  
 
 
+icon.fa <- makeAwesomeIcon(icon = "bicycle", markerColor = "green",
+                           library = "fa",
+                           iconColor = "red")
 
-texto <- "Note that specifying embed-resources can slow down rendering by a couple of seconds, so you may want to enable embed-resources only when you are ready to publish. Also note that Reveal plugin Chalkboard is not compatible with embed-resources — when Chalkboard plugin is enabled, specifying embed-resources: true will result an error."
+map_1 <- basemap %>%
+  addAwesomeMarkers(
+    lat = 19.51603,
+    lng = -96.91810,
+    label = "Starting point",
+    icon = icon.fa
+  ) %>% 
+  # Layers control
+  addLayersControl(
+    baseGroups = c(
+      "Mapa-OpenStreet",
+      "ESRI",
+      "Inegi-ortofoto",
+      "Humedad del suelo"
+    ),
+    options = layersControlOptions(collapsed = FALSE)
+  )
 
-translate2(text = texto, 
-           source_lang = "EN",
-           target_lang = "ES",
-           auth_key = key_get(service = "trad-deepL", username = "miguel"))
+map_1
 
 ```
 
-Tenga en cuenta que la especificación de recursos incrustados puede ralentizar la renderización en un par de segundos, por lo que es posible que desee activar los recursos incrustados sólo cuando esté listo para publicar. Ten en cuenta también que el plugin Chalkboard de Reveal no es compatible con embed-resources - cuando el plugin Chalkboard está activado, especificar embed-resources: true dará lugar a un error.
-:::
+
+# A otros temas
 
 # Poner una diapo de portada
 
 ## Para personalizar la *Title Slide* puedes
+
+En orden de complejidad:
 
 -   Evitar la portada automática. No pongas ni título ni autor al encabezado **YAML** de tu documento.
 -   Usar `title-slide-attributes`.
@@ -208,48 +242,4 @@ revealjs-plugins:
 :::
 
 
-## Diapo con un bonito mapa
-
-```{r}
-library(leaflet)
-basemap <- leaflet() %>%
-  # ubicación y nivel de zoom
-  setView(lng = -96.91810, lat = 19.51603, zoom = 20) %>% 
-  # Añade proveedor de maa
-  addProviderTiles(
-    "OpenStreetMap",
-    # Dale un nombre a la capa
-    group = "Mapa-OpenStreet"
-  ) %>% 
-  addProviderTiles("Esri.WorldImagery", 
-                   group = "ESRI") %>% 
-  addProviderTiles("NASAGIBS.ModisTerraTrueColorCR",
-                   group = "NASA")
-
-icon.fa <- makeAwesomeIcon(
-  icon = "bicycle", markerColor = "green",
-  library = "fa",
-  iconColor = "red"
-)
-
-map_1 <- basemap %>%
-  addAwesomeMarkers(
-    lat = 19.51603,
-    lng = -96.91810,
-    label = "Starting point",
-    icon = icon.fa
-  ) %>% 
-  # Layers control
-  addLayersControl(
-    baseGroups = c(
-      "Mapa-OpenStreet",
-      "ESRI",
-      "NASA"
-    ),
-    options = layersControlOptions(collapsed = FALSE)
-  )
-
-map_1
-
-```
 

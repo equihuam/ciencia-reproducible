@@ -1,5 +1,5 @@
 ---
-title: "Cómo hacer una presentación"
+title: "Pizarrón"
 author: "Miguel Equihua"
 
 code-fold: true

@@ -23,6 +23,7 @@ format:
       color: 'red'      
 revealjs-plugins:
   - pointer
+  - attribution
 ---
 
 
@@ -51,7 +52,7 @@ datos <- tibble(x = seq(0, 10, 0.1)) %>%
   mutate(y = sin(x) + cos(x) + 10 + rnorm(length(x)))
 
 ggplot(datos, aes(x = x, y = y)) +
-  geom_smooth() +
+  geom_smooth(fill = "orange") +
   xlab(label = "tiempo (segundos)") +
   ylab(label = expression(paste("proteina (", mu, "g ", mm^-3,")")))
 ```
@@ -195,4 +196,60 @@ revealjs-plugins:
   - pointer`
 ```
 
+## !Listo! ¿como lo usas?
+::: {.attribution}
+**Fuente:** Imagen de [edmondlafoto en Pixabay](href="https://pixabay.com/es/users/edmondlafoto-7913128/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=4508682)
+:::
+
+::: {layout="[1,1]"}
 -   ahora podrás prender y apagar el apuntador con la tecla **q**
+
+![](img/zoo-4508682_1280.jpg)
+:::
+
+
+## Diapo con un bonito mapa
+
+```{r}
+library(leaflet)
+basemap <- leaflet() %>%
+  # ubicación y nivel de zoom
+  setView(lng = -96.91810, lat = 19.51603, zoom = 20) %>% 
+  # Añade proveedor de maa
+  addProviderTiles(
+    "OpenStreetMap",
+    # Dale un nombre a la capa
+    group = "Mapa-OpenStreet"
+  ) %>% 
+  addProviderTiles("Esri.WorldImagery", 
+                   group = "ESRI") %>% 
+  addProviderTiles("NASAGIBS.ModisTerraTrueColorCR",
+                   group = "NASA")
+
+icon.fa <- makeAwesomeIcon(
+  icon = "bicycle", markerColor = "green",
+  library = "fa",
+  iconColor = "red"
+)
+
+map_1 <- basemap %>%
+  addAwesomeMarkers(
+    lat = 19.51603,
+    lng = -96.91810,
+    label = "Starting point",
+    icon = icon.fa
+  ) %>% 
+  # Layers control
+  addLayersControl(
+    baseGroups = c(
+      "Mapa-OpenStreet",
+      "ESRI",
+      "NASA"
+    ),
+    options = layersControlOptions(collapsed = FALSE)
+  )
+
+map_1
+
+```
+

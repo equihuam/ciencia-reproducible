@@ -103,6 +103,7 @@
   <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-attribution/attribution.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
@@ -389,6 +390,36 @@
       margin-right: 0; 
     }
   </style>
+  <link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+  <script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+  <link href="../../site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+
+  <script src="../../site_libs/leaflet-1.3.1/leaflet.js"></script>
+
+  <link href="../../site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+
+  <script src="../../site_libs/proj4-2.6.2/proj4.min.js"></script>
+
+  <script src="../../site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+
+  <link href="../../site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+
+  <script src="../../site_libs/leaflet-binding-2.2.2/leaflet.js"></script>
+
+  <script src="../../site_libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
+
+  <script src="../../site_libs/leaflet-providers-plugin-2.2.2/leaflet-providers-plugin.js"></script>
+
+  <link href="../../site_libs/leaflet-awesomemarkers-2.0.3/leaflet.awesome-markers.css" rel="stylesheet">
+
+  <script src="../../site_libs/leaflet-awesomemarkers-2.0.3/leaflet.awesome-markers.min.js"></script>
+
+  <link href="../../site_libs/fontawesome-4.7.0/font-awesome.min.css" rel="stylesheet">
+
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -557,9 +588,36 @@ Miguel Equihua
 <span id="cb2-6"><a></a></span>
 <span id="cb2-7"><a></a>revealjs-plugins:</span>
 <span id="cb2-8"><a></a>  - pointer`</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="listo-como-lo-usas" class="slide level2">
+<h2>!Listo! ¿como lo usas?</h2>
+<div class="attribution">
+<p><strong>Fuente:</strong> Imagen de <a href="href=&quot;https://pixabay.com/es/users/edmondlafoto-7913128/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4508682">edmondlafoto en Pixabay</a></p>
+</div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <ul>
 <li>ahora podrás prender y apagar el apuntador con la tecla <strong>q</strong></li>
 </ul>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="img/zoo-4508682_1280.jpg"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="diapo-con-un-bonito-mapa" class="slide level2">
+<h2>Diapo con un bonito mapa</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-b5fcd5cb57d80a5c5930" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-b5fcd5cb57d80a5c5930">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[19.51603,-96.9181],20,[]],"calls":[{"method":"addProviderTiles","args":["OpenStreetMap",null,"Mapa-OpenStreet",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addProviderTiles","args":["Esri.WorldImagery",null,"ESRI",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addProviderTiles","args":["NASAGIBS.ModisTerraTrueColorCR",null,"NASA",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addAwesomeMarkers","args":[19.51603,-96.9181,{"icon":"bicycle","markerColor":"green","iconColor":"red","spin":false,"squareMarker":false,"iconRotate":0,"font":"monospace","prefix":"fa"},null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Starting point",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLayersControl","args":[["Mapa-OpenStreet","ESRI","NASA"],[],{"collapsed":false,"autoZIndex":true,"position":"topright"}]}],"limits":{"lat":[19.51603,19.51603],"lng":[-96.9181,-96.9181]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
@@ -579,6 +637,7 @@ Miguel Equihua
   <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
   <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
   <script src="../../site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-attribution/attribution.js"></script>
   <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -772,7 +831,7 @@ Miguel Equihua
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, RevealAttribution, QuartoSupport,
 
           RevealMath,
           RevealNotes,

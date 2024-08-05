@@ -1,0 +1,198 @@
+---
+title: "Cómo hacer una presentación"
+author: "Miguel Equihua"
+
+code-fold: true
+
+format: 
+  revealjs:
+    width: 1280
+    height: 720
+    preview-links: true
+    chalkboard:
+      theme: chalkboard
+      boardmarker-width: 5
+      buttons: false
+    link-external-newwindow: true
+    navigation-mode: vertical
+    menu:
+      side: left
+      width: normal
+    pointer:
+      pointerSize: 18
+      color: 'red'      
+revealjs-plugins:
+  - pointer
+---
+
+
+# Ir más allá de lo básico
+
+Te sugiero:
+
+-   [Extensiones de Quarto](https://quarto.org/docs/extensions/listing-revealjs.html)
+-   [El proyecto Slidecraft 101, de Emil Hvitfeldt](https://emilhvitfeldt.com/project/slidecraft-101/#blog-posts)
+
+## Esta es la segunda Diapositiva
+
++ Conteniod 1
++ Contenido 2
+
+## ¿Una gráfica con ggplot?
+
+```{r}
+#| title: graf-1
+#| echo: false
+
+suppressPackageStartupMessages(library(tidyverse))
+library(ggplot2)
+
+datos <- tibble(x = seq(0, 10, 0.1)) %>% 
+  mutate(y = sin(x) + cos(x) + 10 + rnorm(length(x)))
+
+ggplot(datos, aes(x = x, y = y)) +
+  geom_smooth(fill = "orange") +
+  xlab(label = "tiempo (segundos)") +
+  ylab(label = expression(paste("proteina (", mu, "g ", mm^-3,")")))
+```
+
+
+# Cambio
+
+## 
+
+::: callout-warning
+Sirve de ejemplo de traducción automática. Consigue tus [credenciales aquí](https://www.deepl.com/es/pro-api){preview-link="false"}. Acuérdate de protegerlas con `keyring`.
+
+\
+
+```{r}
+#| title: traduce
+#| include: false
+#| echo: false
+#| eval: false
+
+library(deeplr)
+library(keyring)
+
+
+
+texto <- "Note that specifying embed-resources can slow down rendering by a couple of seconds, so you may want to enable embed-resources only when you are ready to publish. Also note that Reveal plugin Chalkboard is not compatible with embed-resources — when Chalkboard plugin is enabled, specifying embed-resources: true will result an error."
+
+translate2(text = texto, 
+           source_lang = "EN",
+           target_lang = "ES",
+           auth_key = key_get(service = "trad-deepL", username = "miguel"))
+
+```
+
+Tenga en cuenta que la especificación de recursos incrustados puede ralentizar la renderización en un par de segundos, por lo que es posible que desee activar los recursos incrustados sólo cuando esté listo para publicar. Ten en cuenta también que el plugin Chalkboard de Reveal no es compatible con embed-resources - cuando el plugin Chalkboard está activado, especificar embed-resources: true dará lugar a un error.
+:::
+
+# Poner una diapo de portada
+
+## Para personalizar la *Title Slide* puedes
+
+-   Evitar la portada automática. No pongas ni título ni autor al encabezado **YAML** de tu documento.
+-   Usar `title-slide-attributes`.
+
+```{+yaml} 
+
+title-slide-attributes: 
+  data-background-image: /ruta/a/imágen_para_portada.png   
+  data-background-size: contain   
+  data-background-opacity: "0.5"
+```
+
+
+-   Substituir todo con `template-partials` que permite usar una plantilla `html` a tu gusto.
+
+##  {background-image="img/jaguar-2894706_1280.jpg"}
+
+```{css, echo=FALSE}
+.vline {
+  position: absolute;
+  border-left: 2px solid white;
+  margin-left: 0px;
+  top: 0;
+  height: 101.5%;
+  left: 50%;
+}
+
+.hline {
+  position: absolute;
+  border-top: 2px solid white;
+  margin-top: 0px;
+  top: 50%;
+  width: 100%;
+}
+
+.box {
+  position: absolute;
+  top: 0;
+  border: 1px solid yellow;
+  height: 101.5%;
+  width: 100%
+}
+
+```
+
+::::{.fragment}
+[texto 10, 0, 0]{style="font-size:10px; color:cyan; position: absolute; top:0em; left:0em;"}
+[texto 10, 0, 50%]{style="font-size:10px; color:cyan; position: absolute; top:0em; left:50%;"}
+[texto 10, 50%, 0]{style="font-size:10px; color:cyan; position: absolute; top:50%; left:0em;"}
+[texto 10, 100%, 100%]{style="font-size:10px; color:cyan; position: absolute; top:100%; left:93.08%;"}
+
+:::{.vline}
+:::
+:::{.hline}
+:::
+::: {.box}
+:::
+::::
+
+::::{style="margin-top:23%; line-height:0.8;"}
+:::{.fragment style="font-size:80px; color:white; text-align:center;"}
+**Jaguar**
+:::
+
+:::{.fragment style="font-size:40px; color:yellow; text-align:center;"}
+Miguel Equihua
+:::
+
+:::{.fragment style="font-size:30px; color:cyan; text-align:center;"}
+_6-agosto-2024_
+:::
+::::
+
+
+# Usar *plugins* y *extensiones*
+
+-   Por ejemplo, podemos querer tener un **puntero** disponible
+-   En `revealjs` esto requiere agregar la funcionalidad con un *plugin*
+
+## Cómo hacerlo
+
+-   En la pestaña de **consola** ejecuta el siguiente comando
+
+`quarto add quarto-ext/pointer`
+
+-   Esto creará un directorio `_extensions` en la raíz de tu proyecto,
+-   Dentro de `_extensions` está lo necesario para usar los *plugins* que instales.
+
+## Configuración
+
+-   Agrega esto en el encabezado de tu presentación
+
+```{+yaml} 
+title: Mi presentación 
+  format: 
+    revealjs: default
+      pointer: pointerSize: 18       
+      color: #32cd32'       
+
+revealjs-plugins:
+  - pointer`
+```
+
+-   ahora podrás prender y apagar el apuntador con la tecla **q**

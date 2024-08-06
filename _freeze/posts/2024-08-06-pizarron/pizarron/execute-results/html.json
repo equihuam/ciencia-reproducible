@@ -1,8 +1,8 @@
 {
-  "hash": "763da72ba25d1f5ddbf63ea85cd6299d",
+  "hash": "2cf225989766f18c96639f4d3afaa0b1",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Pizarrón\"\nsubtitle: \"para revealjs\"\nauthor: \"David Schoch\"\ninstitute: \"GESIS - Leibniz Institute for the Social Sciences\"\nformat: blackboard-revealjs\n\nrevealjs-plugins:\n  - pointer\n  - attribution\n\n---\n\n\n\n\n## Code style and ggplot theme\n\n\n::: {.cell layout-align=\"center\"}\n\n```{.r .cell-code}\nggplot(cars) +\n  geom_point(aes(speed,dist),col=\"white\")+\n  theme_chalk()\n```\n\n::: {.cell-output-display}\n![](pizarron_files/figure-revealjs/testing-1.png){fig-align='center' width=1152 height=100%}\n:::\n:::\n\n\n## Images and text with frame\n\n::: {.attribution}\n**Imágen por:** Gernot from Pixabay\n:::\n\n:::{.framed}\nImages and text can be framed!\n:::\n\n![](img/jaguar-3493552_1280-bw.png){.framed}\n\n## Lists\n\n- Lists\n\n- are \n\n- fun\n\n  - fun fun",
+    "markdown": "---\ntitle: \"Pizarrón\"\nsubtitle: \"para revealjs\"\nauthor: \"David Schoch\"\ninstitute: \"GESIS - Leibniz Institute for the Social Sciences\"\n\nimage: \"img/school-3258934_1280.jpg\"\n\ncss: miguel-pz.css\n\nformat: blackboard-revealjs\n\nrevealjs-plugins:\n  - pointer\n  - attribution\n\n---\n\n\n\n\n\n## Estilo de _chunks_ y tema para _ggplot_\n\n\n\n::: {.cell layout-align=\"center\"}\n\n```{.r .cell-code}\nggplot(cars) +\n  geom_point(aes(speed, dist), col = \"white\") +\n  theme_chalk()\n```\n\n::: {.cell-output-display}\n![](pizarron_files/figure-revealjs/testing-1.png){fig-align='center' width=1152 height=100%}\n:::\n:::\n\n\n\n## Imágenes y texto enmarcados\n\n::: {.attribution}\n**Imágen por:** Gernot from Pixabay\n:::\n\n:::{.framed}\n!Puedes poner un marco a lo que quieras!\\\nusa la _fence_: `:::{.framed}`\n:::\n\n![](img/jaguar-3493552_1280-bw.png){.framed}\n\n## Listas\n\n- Hacer Listas\n\n- es \n\n- divertido\n\n  - La diversión puede ir más allá",
     "supporting": [
       "pizarron_files"
     ],

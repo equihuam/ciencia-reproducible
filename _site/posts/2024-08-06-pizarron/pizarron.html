@@ -9,10 +9,10 @@
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.555">
+  <meta name="generator" content="quarto-1.5.45">
 
   <meta name="author" content="David Schoch">
-  <title>Ciencia Abierta - Pizarrón</title>
+  <title>Ciencia Abierta – Pizarrón</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -43,7 +43,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -98,6 +98,7 @@
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="_extensions/schochastics/blackboard/theme.css">
+  <link rel="stylesheet" href="miguel-pz.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -410,11 +411,11 @@ David Schoch
 </div>
 
 </section>
-<section id="code-style-and-ggplot-theme" class="slide level2" data-background-image="_extensions/schochastics/blackboard/blackboard.png" data-background-size="cover">
-<h2>Code style and ggplot theme</h2>
+<section id="estilo-de-chunks-y-tema-para-ggplot" class="slide level2" data-background-image="_extensions/schochastics/blackboard/blackboard.png" data-background-size="cover">
+<h2>Estilo de <em>chunks</em> y tema para <em>ggplot</em></h2>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">ggplot</span>(cars) <span class="sc">+</span></span>
-<span id="cb1-2"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(speed,dist),<span class="at">col=</span><span class="st">"white"</span>)<span class="sc">+</span></span>
+<span id="cb1-2"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(speed, dist), <span class="at">col =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
 <span id="cb1-3"><a></a>  <span class="fu">theme_chalk</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -425,24 +426,25 @@ David Schoch
 </div>
 </div>
 </section>
-<section id="images-and-text-with-frame" class="slide level2" data-background-image="_extensions/schochastics/blackboard/blackboard.png" data-background-size="cover">
-<h2>Images and text with frame</h2>
+<section id="imágenes-y-texto-enmarcados" class="slide level2" data-background-image="_extensions/schochastics/blackboard/blackboard.png" data-background-size="cover">
+<h2>Imágenes y texto enmarcados</h2>
 <div class="attribution">
 <p><strong>Imágen por:</strong> Gernot from Pixabay</p>
 </div>
 <div class="framed">
-<p>Images and text can be framed!</p>
+<p>!Puedes poner un marco a lo que quieras!<br>
+usa la <em>fence</em>: <code>:::{.framed}</code></p>
 </div>
 
 <img data-src="img/jaguar-3493552_1280-bw.png" class="framed r-stretch"></section>
-<section id="lists" class="slide level2" data-background-image="_extensions/schochastics/blackboard/blackboard.png" data-background-size="cover">
-<h2>Lists</h2>
+<section id="listas" class="slide level2" data-background-image="_extensions/schochastics/blackboard/blackboard.png" data-background-size="cover">
+<h2>Listas</h2>
 <ul>
-<li><p>Lists</p></li>
-<li><p>are</p></li>
-<li><p>fun</p>
+<li><p>Hacer Listas</p></li>
+<li><p>es</p></li>
+<li><p>divertido</p>
 <ul>
-<li>fun fun</li>
+<li>La diversión puede ir más allá</li>
 </ul></li>
 </ul>
 
@@ -773,18 +775,7 @@ David Schoch
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -816,7 +807,29 @@ David Schoch
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -824,7 +837,7 @@ David Schoch
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {

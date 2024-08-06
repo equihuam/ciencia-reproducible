@@ -77,6 +77,7 @@ El curso-taller abordará los siguientes temas:
 
 \
 
+```{=html}
 <!---
 ::: {layout="[-1,3,-1]"}
 
@@ -90,13 +91,13 @@ El curso-taller abordará los siguientes temas:
 
 :::
 -->
-
-
+```
 ## Actividades presenciales
 
 Las sesiones presenciales se llevarán a cabo en el **Aula 9** (por confirmar). Se desarrollarán de 10-13hrs de acuerdo con el siguiente calendario.
 
 \
+
 ```{r}
 #| label: calendario
 #| echo: false
@@ -158,11 +159,6 @@ plot(code, col = c("white", "#2268bb"))
 ```
 :::
 
+**Quarto** es un sistema de *fuente abierta* para la autoría de documentos científicos y técnicos. Puedes aprender más sobre lo que ofrece [**Quarto** en este enlace.](https://quarto.org/)
 
-**Quarto** es un sistema de _fuente abierta_ para la autoría de documentos científicos y técnicos. Puedes aprender más sobre lo que ofrece [**Quarto** en este enlace.](https://quarto.org/)
-
-
-La construcción de _comunidades de aprendizaje_ requiere compartir intereses y actitudes. Al respecto pongo a su consideración
-el [_Pacto del Contribuyente_](https://www.contributor-covenant.org/es/version/1/4/code-of-conduct/), que busca exponer ideas y conceptos que hace la convivencia grata y productiva. Pienso que el espíritu de este documento es muy adecuado para estimular la reflexión que buscamos propicie lo que estaremos haciendo en este taller.
-
-
+La construcción de *comunidades de aprendizaje* requiere compartir intereses y actitudes. Al respecto pongo a su consideración el [*Pacto del Contribuyente*](https://www.contributor-covenant.org/es/version/1/4/code-of-conduct/), que busca exponer ideas y conceptos que hace la convivencia grata y productiva. Pienso que el espíritu de este documento es muy adecuado para estimular la reflexión que buscamos propicie lo que estaremos haciendo en este taller.

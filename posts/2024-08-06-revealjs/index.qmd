@@ -16,7 +16,8 @@ format:
     chalkboard:
       theme: chalkboard
       boardmarker-width: 5
-      buttons: false
+      buttons: true
+      src: notas.json
     link-external-newwindow: true
     navigation-mode: vertical
     menu:
@@ -27,10 +28,12 @@ format:
       color: 'red'   
     footer: "[inicio](../../index.qmd)"
 
-   
 revealjs-plugins:
   - pointer
   - attribution
+  
+comments: 
+  hypothesis: true
 ---
 
 # Ir más allá de lo básico

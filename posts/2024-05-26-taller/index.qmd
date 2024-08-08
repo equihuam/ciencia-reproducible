@@ -10,7 +10,7 @@ format:
     toc: true
     html-math-method: katex
     css: styles.css
-editor_options: 
+xeditor_options: 
   chunk_output_type: console
 lightbox: true
 ---
@@ -92,6 +92,7 @@ El curso-taller abordará los siguientes temas:
 :::
 -->
 ```
+
 ## Actividades presenciales
 
 Las sesiones presenciales se llevarán a cabo en el **Aula 9** (por confirmar). Se desarrollarán de 10-13hrs de acuerdo con el siguiente calendario.

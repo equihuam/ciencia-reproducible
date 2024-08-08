@@ -12,6 +12,8 @@ image: img/Pull-Request.png
 format: 
   html:
     toc: true
+  pdf: default
+  
 editor_options: 
   chunk_output_type: inline
 lightbox: true

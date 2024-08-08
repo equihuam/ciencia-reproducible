@@ -13,6 +13,7 @@ image: img/En caso de incendio.png
 format: 
   html:
     toc: true
+  pdf: default
 lightbox: true
 ---
 

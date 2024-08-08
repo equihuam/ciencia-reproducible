@@ -18,6 +18,7 @@ format:
       boardmarker-width: 5
       buttons: true
       src: notas.json
+      
     link-external-newwindow: true
     navigation-mode: vertical
     menu:

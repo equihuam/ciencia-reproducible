@@ -8,6 +8,7 @@ categories: [taller, github]
 format: 
   html:
     toc: true
+  pdf: default
 editor_options: 
   chunk_output_type: inline
 lightbox: true
@@ -29,22 +30,22 @@ Evidentemete, si seguiste la ruta azul, tu repositorio ya existe en _Github_. Si
 
 \
 
-::: {layout="[35,60]"}
+::: {layout="[35,-5,55]"}
 
 1. Definir la _rama_ principal (se sugiere **main**, aunque también se usa **master**).
 
-![](img/rstudio-git-main.png){width=500}
+![](img/rstudio-git-main.png){width=400}
 
 :::
 
 \
 
-::: {layout="[35,60]"}
+::: {layout="[35,-5,55]"}
 
 2. Haz un _commit_ seleccionando todos los archivos que aparecen en la pestaña **Git**. Los puedes comentar anotado  "inicial" o algo sugerente de ser el primer control registrado en el repositorio del proyecto.
 
 
-![](img/rstudio-commit.png){width=500}
+![](img/rstudio-commit.png){width=400}
 :::
 
 \

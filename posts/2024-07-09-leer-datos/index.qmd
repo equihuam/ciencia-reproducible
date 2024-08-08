@@ -8,6 +8,8 @@ categories: [datos, datos abiertos, API]
 
 image: img/Escalera-Open Access.png
 
+toc: true
+
 code-fold: true
 
 lightbox: true

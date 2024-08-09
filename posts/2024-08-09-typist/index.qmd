@@ -1,0 +1,20 @@
+---
+title: "¡Conocer _Typst_!"
+
+author: Miguel Equihua
+
+lang: es
+
+date: 09-08-2024
+
+categories: [formateo pdf]
+
+format:
+  typst:
+    toc: true
+    section-numbering: 1.1.a
+    columns: 2
+  html: default
+---
+
+Hemos estado usando **Markdown** como medio de dar formato a los documentos. Ahora nos acercaremos a **Typst**, que es una nueva oferta de **lenguaje de marcación** para formateo tipográfico, que ha surgido como *código abierto*. Se trata de una alternativa a **LaTex** y busca compartir la potencia de producción de esa plataforma y ser, al mismo tiempo, mucho más accesible y sencilla de usar. **Typst** está demostrando ser particularmente exitoso para producir hermosos documentos en formato *PDF*, que además pueden producirse con notable velocidad de despliegue.

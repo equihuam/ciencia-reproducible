@@ -4,7 +4,6 @@ author: "Miguel Equihua"
 date: 11/jun/2024
 
 lang: es
-categories: [inicio]
 
 lightbox: true
 ---

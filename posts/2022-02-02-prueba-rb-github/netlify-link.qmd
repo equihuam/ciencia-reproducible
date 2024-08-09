@@ -6,13 +6,14 @@ author:
   - name: [Miguel Equihua]
     url: https://www.ie-gamma.net
 date: 3/jul/2024
-categories: [taller, github, netlify]
+categories: [usethis, github, netlify]
 
 image: img/En caso de incendio.png
 
 format: 
   html:
     toc: true
+  pdf: default
 lightbox: true
 ---
 

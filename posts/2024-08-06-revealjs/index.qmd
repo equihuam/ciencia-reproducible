@@ -4,6 +4,10 @@ author: "Miguel Equihua"
 
 code-fold: true
 
+image: "img/idea-3976295_1280.png"
+
+categories: [mapas, revealjs, extensiones, diapo portada]
+
 format: 
   revealjs:
     width: 1280
@@ -12,7 +16,9 @@ format:
     chalkboard:
       theme: chalkboard
       boardmarker-width: 5
-      buttons: false
+      buttons: true
+      src: notas.json
+      
     link-external-newwindow: true
     navigation-mode: vertical
     menu:
@@ -20,12 +26,16 @@ format:
       width: normal
     pointer:
       pointerSize: 18
-      color: 'red'      
+      color: 'red'   
+    footer: "[inicio](../../index.qmd)"
+
 revealjs-plugins:
   - pointer
   - attribution
+  
+comments: 
+  hypothesis: true
 ---
-
 
 # Ir más allá de lo básico
 

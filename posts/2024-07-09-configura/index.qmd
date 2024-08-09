@@ -4,7 +4,7 @@ author: "Miguel Equihua"
 date: 9/jul/2024
 
 lang: es
-categories: [website, blog, revealjs, configuración, yaml]
+categories: [website, blog, revealjs, yaml]
 
 image: img/computer-science-1331578_1280.png
 

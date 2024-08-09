@@ -5,7 +5,7 @@ author:
   - name: [Miguel Equihua]
     url: https://www.ie-gamma.net
 date: 5/jul/2024
-categories: [taller, github, netlify]
+categories: [github, netlify]
 format: 
   html:
     toc: true

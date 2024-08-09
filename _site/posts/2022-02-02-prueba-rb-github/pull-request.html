@@ -160,10 +160,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <h1 class="title">Pull request o ¡Acepta mi contribución!</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">github</div>
-                <div class="quarto-category">colaboración</div>
                 <div class="quarto-category">fork</div>
-                <div class="quarto-category">copiar repo</div>
                 <div class="quarto-category">usethis</div>
+                <div class="quarto-category">token</div>
               </div>
                   </div>
   </div>
@@ -222,8 +221,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>En <code>usethis</code> el subconjunto de funciones con el prefijo <code>pr_</code> se refieren a las operaciones relacionadas con <em>pull requests</em> en Github. Encontraras <a href="https://happygitwithr.com/">más información en Happy Git</a>.</p>
 <p>Una solicitud de fusión involucra a dos participantes, los llamaremos: contribuyente y revisor. Como las funciones <code>pr_</code> usan la infraestructura interactiva de Github (API) Necesitaras un <em>token personal de acceso</em>, lo puedes hacer con este código:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">create_github_token</span>() </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Al ejecutarlo te llevará a la página adecuada para la tarea en Github con la innformación recomendada ya registrada, sólo falta describir el uso que darás al token y la caducidad que prefieres. Copia el token y registralo en forma segura en <em>RStudio</em></p>
+<p>Al ejecutarlo te llevará a la página adecuada para la tarea en Github con la información recomendada ya registrada, sólo falta describir el uso que darás al token y la caducidad que prefieres. Copia el token y registralo en forma segura en <em>RStudio</em></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Si ya ttenía un <em>token</em> registrado, el comando anterior te lo hará saber y te preguntará sobre si quieres verlo. Como probablemente estás aquí ¡porque tu <em>token</em> venció!, lo apropiado será remplazar lo que está registrado en este momento. Elige la opción apropiada para hacerlo.</p>
 <section id="copiar-y-clonar-localmente" class="level2">
 <h2 class="anchored" data-anchor-id="copiar-y-clonar-localmente">Copiar y clonar localmente</h2>
 <p>Para empezar a colaborar, lo primero es que cada participante tenga su propia copia (<em>fork</em>) del proyecto. Esto se puede hacer con la instrucción siguiente:</p>
@@ -723,7 +723,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {

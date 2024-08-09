@@ -6,7 +6,7 @@ date: 04/jul/2024
 image: img/ai-generated-8334581_1280.png
 
 lang: es
-categories: [formato, referencias]
+categories: [css, referencias]
 
 number-sections: true
 

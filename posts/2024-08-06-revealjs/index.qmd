@@ -4,9 +4,9 @@ author: "Miguel Equihua"
 
 code-fold: true
 
-#css: miguel-1.css
-
 image: "img/idea-3976295_1280.png"
+
+categories: [mapas, revealjs, extensiones, diapo portada]
 
 format: 
   revealjs:

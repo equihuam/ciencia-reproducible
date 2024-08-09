@@ -4,7 +4,7 @@ author: "Miguel Equihua"
 date: 9/jul/2024
 
 lang: es
-categories: [datos, datos abiertos, API]
+categories: [leer datos, datos abiertos, API]
 
 image: img/Escalera-Open Access.png
 

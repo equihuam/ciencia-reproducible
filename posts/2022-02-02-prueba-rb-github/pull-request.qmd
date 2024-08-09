@@ -5,7 +5,7 @@ author:
     url: https://www.ie-gamma.net
 date: 6/jul/2024
 
-categories: [github, colaboración, fork, copiar repo, usethis]
+categories: [github, fork, usethis, token]
 
 image: img/Pull-Request.png
 
@@ -40,13 +40,13 @@ Una solicitud de fusión involucra a dos participantes, los llamaremos: contribu
 usethis::create_github_token() 
 ```
 
-Al ejecutarlo te llevará a la página adecuada para la tarea en Github con la innformación recomendada ya registrada, sólo falta describir el uso que darás al token y la caducidad que prefieres. Copia el token y registralo en forma segura en _RStudio_
+Al ejecutarlo te llevará a la página adecuada para la tarea en Github con la información recomendada ya registrada, sólo falta describir el uso que darás al token y la caducidad que prefieres. Copia el token y registralo en forma segura en _RStudio_
 
 ``` r
 gitcreds::gitcreds_set()
 ```
 
-
+Si ya ttenía un _token_ registrado, el comando anterior te lo hará saber y te preguntará sobre si quieres verlo. Como probablemente estás aquí ¡porque tu _token_ venció!, lo apropiado será remplazar lo que está registrado en este momento. Elige la opción apropiada para hacerlo. 
 
 ## Copiar y clonar localmente
 

@@ -4,7 +4,7 @@ author: "Miguel Equihua"
   
 date: "2024/jun/18"
 date-format: "[Xalapa, Ver.] D MMMM YYYY"
-categories: [conceptos]
+categories: [tiempo para pensar, reflexionar]
 lang: es
 draft: false
 

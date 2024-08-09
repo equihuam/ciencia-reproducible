@@ -4,7 +4,7 @@ author: "Miguel Equihua"
   
 date: "20/jun/2024"
 date-format: "[Xalapa, Ver.] D MMMM YYYY"
-categories: [conceptos]
+categories: [ciclo investigación, reproducibilidad]
 lang: es
 draft: false
 

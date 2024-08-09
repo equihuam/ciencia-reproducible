@@ -4,7 +4,7 @@ author:
   - name: [Miguel Equihua]
     url: https://www.ie-gamma.net
 date: 3/jul/2024
-categories: [taller, github]
+categories: [usethis, token, github]
 format: 
   html:
     toc: true

@@ -3,7 +3,7 @@ title: "Masa para Pizza"
 author: ["Miguel Equihua"]
 date: "20/jun/2024"
 
-categories: [ejemplos, pizza, biblio, referencias, comentarios]
+categories: [biblio, referencias, comentarios, estadística, reporte]
 draft: false
 toc: true
 lot: true

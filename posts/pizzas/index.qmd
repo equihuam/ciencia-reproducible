@@ -8,7 +8,7 @@ draft: false
 image: img/pizza-masa.jpg
 lightbox: true
 
-categories: [estadística]
+categories: [estadística, reporte]
 format:
   html:
     code-fold: true

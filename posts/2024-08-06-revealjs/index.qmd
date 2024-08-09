@@ -2,6 +2,8 @@
 title: "Cómo hacer una presentación"
 author: "Miguel Equihua"
 
+date: 08-aug-2024
+
 code-fold: true
 
 image: "img/idea-3976295_1280.png"

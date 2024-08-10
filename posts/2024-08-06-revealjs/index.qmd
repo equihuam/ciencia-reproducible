@@ -10,10 +10,13 @@ image: "img/idea-3976295_1280.png"
 
 categories: [mapas, revealjs, extensiones, diapo portada]
 
+css: miguel-1.css
+
 format: 
   revealjs:
     width: 1280
     height: 720
+    margin: 0.02
     preview-links: true
     chalkboard:
       theme: chalkboard
@@ -34,6 +37,8 @@ format:
 revealjs-plugins:
   - pointer
   - attribution
+  
+
   
 comments: 
   hypothesis: true

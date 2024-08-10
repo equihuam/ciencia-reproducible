@@ -11,10 +11,37 @@ categories: [formateo pdf]
 
 format:
   typst:
-    toc: true
+    papersize: "us-letter"
+    toc: false
     section-numbering: 1.1.a
     columns: 2
-  html: default
 ---
 
+## Introducción
+
 Hemos estado usando **Markdown** como medio de dar formato a los documentos. Ahora nos acercaremos a **Typst**, que es una nueva oferta de **lenguaje de marcación** para formateo tipográfico, que ha surgido como *código abierto*. Se trata de una alternativa a **LaTex** y busca compartir la potencia de producción de esa plataforma y ser, al mismo tiempo, mucho más accesible y sencilla de usar. **Typst** está demostrando ser particularmente exitoso para producir hermosos documentos en formato *PDF*, que además pueden producirse con notable velocidad de despliegue.
+
+## Mapa mental
+
+Prueba de concepto
+
+```{mermaid}
+mindmap
+  root((mindmap))
+    Origins
+      Long history
+      ::icon(fa fa-book)
+      Popularisation
+        British popular psychology author Tony Buzan
+    Research
+      On effectivness<br/>and features
+      On Automatic creation
+        Uses
+            Creative techniques
+            Strategic planning
+            Argument mapping
+    Tools
+      Pen and paper
+      Mermaid
+```
+

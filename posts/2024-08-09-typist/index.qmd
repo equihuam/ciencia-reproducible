@@ -11,15 +11,19 @@ categories: [formateo pdf]
 
 format:
   typst:
-    papersize: "us-letter"
+    papersize: us-letter
+    margin: 
+      x: 2.54cm
+      y: 2.54cm
     toc: false
     section-numbering: 1.1.a
-    columns: 2
 ---
 
 ## Introducción
 
+::: {.block fill="luma(230)" inset="8pt" radius="4pt"}
 Hemos estado usando **Markdown** como medio de dar formato a los documentos. Ahora nos acercaremos a **Typst**, que es una nueva oferta de **lenguaje de marcación** para formateo tipográfico, que ha surgido como *código abierto*. Se trata de una alternativa a **LaTex** y busca compartir la potencia de producción de esa plataforma y ser, al mismo tiempo, mucho más accesible y sencilla de usar. **Typst** está demostrando ser particularmente exitoso para producir hermosos documentos en formato *PDF*, que además pueden producirse con notable velocidad de despliegue.
+:::
 
 ## Mapa mental
 
@@ -45,3 +49,29 @@ mindmap
       Mermaid
 ```
 
+```{=typst}
+#set page(flipped: true)
+```
+
+## Diagrama de Gantt
+
+```{mermaid}
+%%| fig-width: 9.5
+%%| fig-height: 1
+
+gantt
+    title Ejemplo de Diagrama de Gantt
+    dateFormat YYYY-MM-DD
+    section Equipo A
+        Tarea 1         :a1, 2014-01-01, 30d
+        Tarea 2         :after a1, 20d
+    section Equipo B
+        Tarea A (equipo B) :2014-01-12, 12d
+        Tarea B (equipo B) :24d
+```
+
+
+
+```{=typst}
+#set page(flipped: false)
+```

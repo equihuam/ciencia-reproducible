@@ -44,7 +44,7 @@ my_graphviz
 # -----------------------------------------------------------
 
 # Una gráfica con GraphViz
-grViz("digraph{
+gvz <- grViz("digraph{
  
       graph[rankdir = LR]
   
@@ -93,6 +93,8 @@ grViz("digraph{
       I -> E
       
       }")
+
+gvz
 
 # -------------------------------------------------------------
 

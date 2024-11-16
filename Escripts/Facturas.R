@@ -23,4 +23,3 @@ for (n in nodos)
   valores <- cbind(valores, vals)
 }
 
-
